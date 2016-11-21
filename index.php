@@ -7,6 +7,7 @@
     </head>
     <body>
         <a href="\inc\UserPages\loginPage.php">loginPage</a>
+    <p>hello world</p>
     </body>
     </html>
 <?php
