@@ -39,7 +39,5 @@ while($row = $result->fetch_array()){
 $result->close();
 $db->close();
 
-session_start();
-$clubIDSession = $_SESSION[clubID_session];
 
 ?>
