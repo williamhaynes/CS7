@@ -1,3 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+</head>
+
+<body>
+
+
+</body>
+</html>
+
+
+
 <?php
 /**
  * Created by PhpStorm.
@@ -5,6 +20,8 @@
  * Date: 21/11/2016
  * Time: 14:12
  */
+
+include("dbconnect.php");
 
 $userName = $_POST['userName'];
 $password = $_POST['password'];

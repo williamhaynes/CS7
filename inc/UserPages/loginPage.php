@@ -8,7 +8,7 @@
 
 <body>
 
-<form action="" method="post">
+<form action="../scripts/checkLogin.php" method="post">
     <input type="text" placeholder="User Name" name="userName">
     <input type="text" placeholder="Password" name="password">
     <input type="submit" value='Go Go Go!'>
@@ -24,7 +24,5 @@
  * Date: 07/11/2016
  * Time: 12:08
  */
-//include database
-include ("../scripts/dbconnect.php");
 
 ?>
