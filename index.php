@@ -6,7 +6,7 @@
 
     </head>
     <body>
-        <a href="inc\UserPages\loginPage.php">loginPage</a>
+        <a href="\inc\UserPages\loginPage.php">loginPage</a>
     </body>
     </html>
 <?php
