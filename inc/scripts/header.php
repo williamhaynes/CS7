@@ -9,22 +9,23 @@ session_start();
     <title>header</title>
 </head>
 <body>
-<header>
-    <nav>
-        <ul>
-            <li><img src="https://pmcdeadline2.files.wordpress.com/2016/07/logo-tv-logo.png" alt="Logo" style="width:304px;height:228px;"></li>
-            <li><a href="\inc\healthAndWellbeing.php">Health & Wellbeing</a></li>
-            <li><a href="\inc\clubsAndSocieties.php">Clubs & Societies</a></li>
-            <li><a href="\inc\mapPage.php">Maps</a></li>
-            <!-- Code that could be useful for specific users
-             <?
-            if (isset($_SESSION['username'])) {
-                echo "<li><a href='createarticle'>Create Article</a></li>";
-                echo "<li><a href='logout'>Logout</a></li>";
-            } else {
-                echo "<li><a href='login'>Login</a></li>";
-            }
-            ?>-->
-        </ul>
-    </nav>
-</header>
+    <header>
+        <nav>
+            <ul>
+                <li><img src="https://pmcdeadline2.files.wordpress.com/2016/07/logo-tv-logo.png" alt="Logo" style="width:304px;height:228px;"></li>
+                <li><a href="\inc\healthAndWellbeing.php">Health & Wellbeing</a></li>
+                <li><a href="\inc\clubsAndSocieties.php">Clubs & Societies</a></li>
+                <li><a href="\inc\mapPage.php">Maps</a></li>
+                <!-- Code that could be useful for specific users
+                 <?
+                if (isset($_SESSION['username'])) {
+                    echo "<li><a href='createarticle'>Create Article</a></li>";
+                    echo "<li><a href='logout'>Logout</a></li>";
+                } else {
+                    echo "<li><a href='login'>Login</a></li>";
+                }
+                ?>-->
+            </ul>
+        </nav>
+    </header>
+</body>
