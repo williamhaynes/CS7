@@ -26,7 +26,7 @@ include("dbconnect.php");
 $userName = $_POST['userName'];
 $password = $_POST['password'];
 
-$sql_query = "SELECT * FROM User WHERE userName = $userName AND password = $password";
+$sql_query = "SELECT * FROM User";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()){
