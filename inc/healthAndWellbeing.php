@@ -2,9 +2,13 @@
 overlay to authorise/reject blog posts. As per System Requirements.-->
 
 <?php
-/**
- * Created by PhpStorm.
- * User: hype_
- * Date: 07/11/2016
- * Time: 12:18
- */
+    include ("scripts/header.php");
+
+    echo "
+    <main>
+    <p>Welcome to Health and Wellbeing</p>
+    </main>
+    ";
+
+    include ("scripts/footer.php");
+?>
