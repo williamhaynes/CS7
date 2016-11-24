@@ -1,4 +1,9 @@
 <!-- Distinct login page for site - existing users-->
+
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,7 @@
 </head>
 
 <body>
-<?php
+<?
 include ("scripts/header.php");
 ?>
 
@@ -16,8 +21,11 @@ include ("scripts/header.php");
     <input type="text" placeholder="Password" name="password">
     <input type="submit" value='Go Go Go!'>
 </form>
-<?php
+
+<?
 include ("scripts/footer.php");
 ?>
+
 </body>
 </html>
+
