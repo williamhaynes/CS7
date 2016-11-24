@@ -4,9 +4,9 @@ session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-<link rel="stylesheet" href="style/style.css" type="text/css">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style/styles.css">
     <title>header</title>
 </head>
 <body>
