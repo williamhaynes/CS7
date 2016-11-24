@@ -30,8 +30,8 @@ $sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "';";
 
 $result = $db->query($sql_query);
 
-if(mysql_num_rows($result)){
-    echo "<p>Username Incorrect</p>";
+if($result == 0){
+    echo "<p>Incorrect Username</p>";
 }
 else {
     while ($row = $result->fetch_array()) {
