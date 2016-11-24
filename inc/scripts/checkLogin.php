@@ -26,24 +26,27 @@ include("dbconnect.php");
 $userName = $_POST['userName'];
 $password = $_POST['password'];
 
-$sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "';";
+$sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "' AND password = '" . $password ."';";
 
 $result = $db->query($sql_query);
-$row = $result->fetch_array();
-if($row == 0){
-    echo "<p>Username not found</p>";
+
+// Mysql_num_row is counting table row
+$count = mysqli_num_rows($result);
+
+if($count<1){
+    echo "<p>Username/Password Incorrect</p>";
 }
-    while ($row = $result->fetch_array()) {
-        if ($row['password'] == $password) {
-            echo "<p>" . $row['userName'] . "</p>";
-            echo "<p>" . $row['password'] . "</p>";
-            echo "<p>" . $row['emailAddress'] . "</p>";
-            echo "<p>" . $row['displayName'] . "</p>";
-            echo "<p>" . $row['levelCode'] . "</p>";
-        } else {
-            echo "<p>Username/Password Incorrect</p>";
-        }
+else{
+while ($row = $result->fetch_array()) {
+    if ($row['password'] == $password) {
+        echo "<p>" . $row['userName'] . "</p>";
+        echo "<p>" . $row['password'] . "</p>";
+        echo "<p>" . $row['emailAddress'] . "</p>";
+        echo "<p>" . $row['displayName'] . "</p>";
+        echo "<p>" . $row['levelCode'] . "</p>";
     }
+}
+}
 
 
 
