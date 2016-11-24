@@ -36,5 +36,6 @@ nav li a :hover {
 }
 
 #logoIMG{
-    size: 50px;
+    width: 50px;
+    height: auto;
 }
