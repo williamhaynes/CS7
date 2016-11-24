@@ -26,28 +26,26 @@ include("dbconnect.php");
 $userName = $_POST['userName'];
 $password = $_POST['password'];
 
-try {
-    $sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "';";
-}
-catch(Exception $e){
-    echo "<p>username not found</p>";
-}
+$sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "';";
+
 $result = $db->query($sql_query);
 
-
-    while($row = $result->fetch_array()){
-        if($row['password'] == $password) {
+if(mysql_num_rows($result)){
+    echo "<p>Username Incorrect</p>";
+}
+else {
+    while ($row = $result->fetch_array()) {
+        if ($row['password'] == $password) {
             echo "<p>" . $row['userName'] . "</p>";
             echo "<p>" . $row['password'] . "</p>";
             echo "<p>" . $row['emailAddress'] . "</p>";
             echo "<p>" . $row['displayName'] . "</p>";
             echo "<p>" . $row['levelCode'] . "</p>";
+        } else {
+            echo "<p>Username/Password Incorrect</p>";
         }
-        else{
-                echo"<p>Username/Password Incorrect</p>";
-            }
     }
-
+}
 
 
 $result->close();
