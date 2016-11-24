@@ -1,8 +1,13 @@
 <!-- Distinct register page for site - new users-->
+
 <?php
-/**
- * Created by PhpStorm.
- * User: hype_
- * Date: 07/11/2016
- * Time: 12:08
- */
+include ("scripts/header.php");
+
+echo "
+    <main>
+    <p>registerPage</p>
+    </main>
+    ";
+
+include ("scripts/footer.php");
+?>

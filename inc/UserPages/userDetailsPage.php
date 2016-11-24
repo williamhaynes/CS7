@@ -6,9 +6,13 @@ requirement.
 -->
 
 <?php
-/**
- * Created by PhpStorm.
- * User: hype_
- * Date: 07/11/2016
- * Time: 12:09
- */
+include ("scripts/header.php");
+
+echo "
+    <main>
+    <p>userDetailsPage</p>
+    </main>
+    ";
+
+include ("scripts/footer.php");
+?>
