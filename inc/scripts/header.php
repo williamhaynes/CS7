@@ -17,16 +17,18 @@ session_start();
                 <li id="healthAndWellbeing"><a href="/inc/healthAndWellbeing.php">Health & Wellbeing</a></li>
                 <li id="clubsAndSocieties"><a href="/inc/clubsAndSocietiesPage.php">Clubs & Societies</a></li>
                 <li id="mapPage"><a href="/inc/mapPage.php">Maps</a></li>
-                <!-- Code that could be useful for specific users
-                 <?
-                if (isset($_SESSION['username'])) {
-                    echo "<li><a href='createarticle'>Create Article</a></li>";
-                    echo "<li><a href='logout'>Logout</a></li>";
-                } else {
-                    echo "<li><a href='login'>Login</a></li>";
-                }
-                ?>-->
+
             </ul>
         </nav>
     </header>
 </body>
+
+<!-- Code that could be useful for specific users
+                 <?
+if (isset($_SESSION["username"])) {
+    echo "<li><a href='createarticle'>Create Article</a></li>";
+    echo "<li><a href='logout'>Logout</a></li>";
+} else {
+    echo "<li><a href='login'>Login</a></li>";
+}
+?>-->
