@@ -6,7 +6,7 @@ include ("../scripts/header.php");
 
 <head>
     <meta charset="UTF-8">
-    <title>Events Form</title>
+    <title>Login Page</title>
 </head>
 
 <body>
@@ -15,7 +15,7 @@ include ("../scripts/header.php");
 <form action="../scripts/checkLogin.php" method="post">
     <input type="text" placeholder="User Name" name="userName">
     <input type="text" placeholder="Password" name="password">
-    <input type="submit" value='Go Go Go!'>
+    <input type="submit" value='Login'>
 </form>
 
 
