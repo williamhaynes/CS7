@@ -14,7 +14,7 @@ include ("../scripts/header.php");
 
 <form action="../scripts/checkLogin.php" method="post">
     <input type="text" placeholder="User Name" name="userName">
-    <input type="text" placeholder="Password" name="password">
+    <input type="password" placeholder="Password" name="password">
     <input type="submit" value='Login'>
 </form>
 

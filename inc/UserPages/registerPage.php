@@ -16,8 +16,8 @@ include ("../scripts/header.php");
     <input type="text" placeholder="User Name" name="userName">
     <input type="text" placeholder="Email Address" name="emailAddress">
     <input type="text" placeholder="Display Name" name="displayName">
-    <input type="text" placeholder="Password" name="password">
-    <input type="text" placeholder="Confirm Password" name="confirmPassword">
+    <input type="password" placeholder="Password" name="password">
+    <input type="password" placeholder="Confirm Password" name="confirmPassword">
     <input type="submit" value='Go Go Go!'>
 </form>
 
