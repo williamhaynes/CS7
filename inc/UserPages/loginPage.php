@@ -4,7 +4,7 @@
 include ("../scripts/header.php");
 include ("../scripts/footer.php");
 ?>
-
+<!--
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,3 +24,4 @@ include ("../scripts/footer.php");
 
 </body>
 </html>
+-->
