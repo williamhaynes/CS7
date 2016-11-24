@@ -26,8 +26,11 @@ include("dbconnect.php");
 $userName = $_POST['userName'];
 $password = $_POST['password'];
 
-if($sql_query = "SELECT EXISTS(SELECT * FROM User WHERE userName ='" . $userName . "'AND password ='" . $password . "');"){
-    $result = $db->query($sql_query);
+$sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "';";
+
+$result = $db->query($sql_query);
+
+if($row['password'] == $password){
     while($row = $result->fetch_array()){
         echo"<p>" . $row['userName'] . "</p>";
         echo"<p>" . $row['password'] . "</p>";
@@ -36,11 +39,9 @@ if($sql_query = "SELECT EXISTS(SELECT * FROM User WHERE userName ='" . $userName
         echo"<p>" . $row['levelCode'] . "</p>";
     }
 }
- else {
-    echo "<p>password or username incorrect</p>";
+else{
+    echo"<p>Username/Password Incorrect</p>";
 }
-
-
 
 $result->close();
 $db->close();
