@@ -30,18 +30,21 @@ $sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "';";
 
 $result = $db->query($sql_query);
 
-if($row['password'] == $password){
+
     while($row = $result->fetch_array()){
-        echo"<p>" . $row['userName'] . "</p>";
-        echo"<p>" . $row['password'] . "</p>";
-        echo"<p>" . $row['emailAddress'] . "</p>";
-        echo"<p>" . $row['displayName'] . "</p>";
-        echo"<p>" . $row['levelCode'] . "</p>";
+        if($row['password'] == $password) {
+            echo "<p>" . $row['userName'] . "</p>";
+            echo "<p>" . $row['password'] . "</p>";
+            echo "<p>" . $row['emailAddress'] . "</p>";
+            echo "<p>" . $row['displayName'] . "</p>";
+            echo "<p>" . $row['levelCode'] . "</p>";
+        }
+        else{
+                echo"<p>Username/Password Incorrect</p>";
+            }
     }
-}
-else{
-    echo"<p>Username/Password Incorrect</p>";
-}
+
+
 
 $result->close();
 $db->close();
