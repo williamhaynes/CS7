@@ -14,7 +14,7 @@ session_start();
             <ul id="header">
                 <li id="logo"><img src="https://pmcdeadline2.files.wordpress.com/2016/07/logo-tv-logo.png" alt="Logo" style="width:304px;height:228px;"></li>
                 <li id="healthAndWellbeing"><a href="\inc\healthAndWellbeing.php">Health & Wellbeing</a></li>
-                <li id="clubsAndSocieties"><a href="\inc\clubsAndSocieties.php">Clubs & Societies</a></li>
+                <li id="clubsAndSocieties"><a href="\inc\clubsAndSocietiesPage.php">Clubs & Societies</a></li>
                 <li id="mapPage"><a href="\inc\mapPage.php">Maps</a></li>
                 <!-- Code that could be useful for specific users
                  <?
