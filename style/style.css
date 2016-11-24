@@ -22,15 +22,19 @@ nav ul {
 nav li {
     float: left;
 }
-nav li a
-{
+
+nav li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
-nav li a :hover
-{
+
+nav li a :hover {
     background-color: #111;
+}
+
+#logo{
+    size: 50px;
 }
