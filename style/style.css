@@ -1,11 +1,17 @@
-    /* FOOTER */
-footer
-{
+/* FOOTER */
+
+footer {
     background-color: #a1a1a1;
     padding: 5px 0 5px 10px;
 }
 
-    /* NAVIGATION BAR*/
+/* BACKGROUND */
+body{
+    background-color: #a1a1a1;
+}
+
+
+/* NAVIGATION BAR*/
 nav ul {
     list-style-type: none;
     margin: 0;
