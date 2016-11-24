@@ -33,17 +33,18 @@ $result = $db->query($sql_query);
 // Mysql_num_row is counting table row
 $count = mysqli_num_rows($result);
 
-if($count<1){
+// Checks to see if there was a result from the query
+if($count<1){   //if query returned no result
     echo "<p>Username/Password Incorrect</p>";
 }
-else{
-while ($row = $result->fetch_array()) {
-    echo "<p>" . $row['userName'] . "</p>";
-    echo "<p>" . $row['password'] . "</p>";
-    echo "<p>" . $row['emailAddress'] . "</p>";
-    echo "<p>" . $row['displayName'] . "</p>";
-    echo "<p>" . $row['levelCode'] . "</p>";
-}
+else{           //if query returned a result
+    while ($row = $result->fetch_array()) {
+        echo "<p>" . $row['userName'] . "</p>";
+        echo "<p>" . $row['password'] . "</p>";
+        echo "<p>" . $row['emailAddress'] . "</p>";
+        echo "<p>" . $row['displayName'] . "</p>";
+        echo "<p>" . $row['levelCode'] . "</p>";
+    }
 }
 
 
