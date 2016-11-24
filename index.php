@@ -6,7 +6,8 @@
 
     </head>
     <body>
-        <a href="\inc\UserPages\loginPage.php">loginPage</a>
+        <a href="\inc\UserPages\loginPage.php">Login Page</a>
+        <a href="\inc\UserPages\registerPage.php">Register Page</a>
         <a href="\inc\scripts\header.php">header</a>
         <a href="\inc\clubPage.php">clubPage</a>
         <a href="\inc\clubsAndSocietiesPage.php">clubsAndSocietiesPage</a>
