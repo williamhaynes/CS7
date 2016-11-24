@@ -27,7 +27,7 @@ $userName = $_POST['userName'];
 $password = $_POST['password'];
 
 try {
-    $sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "'AND WHERE password ='" . $password . "';";
+    $sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "'AND password ='" . $password . "';";
 } catch (Exception $e) {
     echo "<p>password or username incorrect</p>";
 }
