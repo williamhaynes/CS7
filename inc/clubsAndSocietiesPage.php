@@ -2,7 +2,7 @@
 filtered. Will also have an events overview calendar.-->
 
 <?php
-include ("scripts/header.php");
+include ("/inc/scripts/header.php");
 
 echo "
     <main>
@@ -10,5 +10,5 @@ echo "
     </main>
     ";
 
-include ("scripts/footer.php");
+include ("/inc/scripts/footer.php");
 ?>
