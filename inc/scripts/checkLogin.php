@@ -29,11 +29,10 @@ $password = $_POST['password'];
 $sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "';";
 
 $result = $db->query($sql_query);
-
-if($result == 0){
-    echo "<p>Incorrect Username</p>";
+$row = $result->fetch_array();
+if($row == 0){
+    echo "<p>Username not found</p>";
 }
-else {
     while ($row = $result->fetch_array()) {
         if ($row['password'] == $password) {
             echo "<p>" . $row['userName'] . "</p>";
@@ -45,7 +44,7 @@ else {
             echo "<p>Username/Password Incorrect</p>";
         }
     }
-}
+
 
 
 $result->close();
