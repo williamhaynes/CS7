@@ -7,6 +7,7 @@ include ("/inc/scripts/header.php");
 echo "
     <main>
     <p>Welcome to Clubs and Societies Page</p>
+    <a href=\"\inc\scripts\header.php\">header</a>
     </main>
     ";
 
