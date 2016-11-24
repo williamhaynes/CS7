@@ -26,8 +26,12 @@ include("dbconnect.php");
 $userName = $_POST['userName'];
 $password = $_POST['password'];
 
-$sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "';";
-
+try {
+    $sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "';";
+}
+catch(Exception $e){
+    echo "<p>username not found</p>";
+}
 $result = $db->query($sql_query);
 
 
