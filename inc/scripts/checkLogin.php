@@ -26,21 +26,22 @@ include("dbconnect.php");
 $userName = $_POST['userName'];
 $password = $_POST['password'];
 
-try {
-    $sql_query = "SELECT * FROM User WHERE userName ='" . $userName . "'AND password ='" . $password . "';";
-} catch (Exception $e) {
+if($sql_query = "SELECT EXISTS(SELECT * FROM User WHERE userName ='" . $userName . "'AND password ='" . $password . "');"){
+    $result = $db->query($sql_query);
+    while($row = $result->fetch_array()){
+        echo"<p>" . $row['userName'] . "</p>";
+        echo"<p>" . $row['password'] . "</p>";
+        echo"<p>" . $row['emailAddress'] . "</p>";
+        echo"<p>" . $row['displayName'] . "</p>";
+        echo"<p>" . $row['levelCode'] . "</p>";
+    }
+}
+ else {
     echo "<p>password or username incorrect</p>";
 }
 
 
-$result = $db->query($sql_query);
-while($row = $result->fetch_array()){
-    echo"<p>" . $row['userName'] . "</p>";
-    echo"<p>" . $row['password'] . "</p>";
-    echo"<p>" . $row['emailAddress'] . "</p>";
-    echo"<p>" . $row['displayName'] . "</p>";
-    echo"<p>" . $row['levelCode'] . "</p>";
-}
+
 $result->close();
 $db->close();
 
