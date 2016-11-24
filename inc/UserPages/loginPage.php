@@ -2,11 +2,8 @@
 
 <?php
 include ("../scripts/header.php");
-include ("../scripts/footer.php");
 ?>
-<!--
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Events Form</title>
@@ -23,5 +20,13 @@ include ("../scripts/footer.php");
 
 
 </body>
+
+<?
+include ("../scripts/footer.php");
+?>
+<!--
+<!DOCTYPE html>
+<html lang="en">
+
 </html>
 -->
