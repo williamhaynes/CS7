@@ -38,13 +38,11 @@ if($count<1){
 }
 else{
 while ($row = $result->fetch_array()) {
-    if ($row['password'] == $password) {
-        echo "<p>" . $row['userName'] . "</p>";
-        echo "<p>" . $row['password'] . "</p>";
-        echo "<p>" . $row['emailAddress'] . "</p>";
-        echo "<p>" . $row['displayName'] . "</p>";
-        echo "<p>" . $row['levelCode'] . "</p>";
-    }
+    echo "<p>" . $row['userName'] . "</p>";
+    echo "<p>" . $row['password'] . "</p>";
+    echo "<p>" . $row['emailAddress'] . "</p>";
+    echo "<p>" . $row['displayName'] . "</p>";
+    echo "<p>" . $row['levelCode'] . "</p>";
 }
 }
 
