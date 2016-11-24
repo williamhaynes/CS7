@@ -1,4 +1,4 @@
-//page header - hyperlinks for all pages go here
+<!--page header - hyperlinks for all pages go here-->
 <?
 session_start();
 ?>
