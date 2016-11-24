@@ -2,6 +2,7 @@
 
 <?php
 include ("/inc/scripts/header.php");
+include ("scripts/footer.php");
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +24,3 @@ include ("/inc/scripts/header.php");
 
 </body>
 </html>
-
-<?
-include ("scripts/footer.php");
-?>
