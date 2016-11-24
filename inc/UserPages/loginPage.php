@@ -1,8 +1,8 @@
 <!-- Distinct login page for site - existing users-->
 
 <?php
-include ("/inc/scripts/header.php");
-include ("scripts/footer.php");
+include ("../scripts/header.php");
+include ("../scripts/footer.php");
 ?>
 
 <!DOCTYPE html>
