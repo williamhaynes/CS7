@@ -38,13 +38,16 @@ if($count<1){   //if query returned no result
     echo "<p>Username/Password Incorrect</p>";
 }
 else{           //if query returned a result
-    while ($row = $result->fetch_array()) {
+    /*while ($row = $result->fetch_array()) {
         echo "<p>" . $row['userName'] . "</p>";
         echo "<p>" . $row['password'] . "</p>";
         echo "<p>" . $row['emailAddress'] . "</p>";
         echo "<p>" . $row['displayName'] . "</p>";
         echo "<p>" . $row['levelCode'] . "</p>";
-    }
+    }*/
+    echo "<p>Welcome " . $userName . "</p>";
+    session_start();
+    $_SESSION["username"] = $username;
 }
 
 
