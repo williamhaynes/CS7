@@ -2,9 +2,13 @@
 filtered. Will also have an events overview calendar.-->
 
 <?php
-/**
- * Created by PhpStorm.
- * User: hype_
- * Date: 07/11/2016
- * Time: 12:11
- */
+include ("scripts/header.php");
+
+echo "
+    <main>
+    <p>Welcome to Clubs and Societies Page</p>
+    </main>
+    ";
+
+include ("scripts/footer.php");
+?>

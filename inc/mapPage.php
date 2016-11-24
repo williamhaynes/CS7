@@ -2,9 +2,13 @@
 System Requirements.-->
 
 <?php
-/**
- * Created by PhpStorm.
- * User: hype_
- * Date: 07/11/2016
- * Time: 12:13
- */
+include ("scripts/header.php");
+
+echo "
+    <main>
+    <p>Welcome to map Page</p>
+    </main>
+    ";
+
+include ("scripts/footer.php");
+?>

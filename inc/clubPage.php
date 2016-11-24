@@ -1,9 +1,13 @@
 <!--Will display all the stored information on each club as single web pages-->
 
 <?php
-/**
- * Created by PhpStorm.
- * User: hype_
- * Date: 07/11/2016
- * Time: 12:12
- */
+include ("scripts/header.php");
+
+echo "
+    <main>
+    <p>Welcome to SPECIFIC!! Clubs and Societies Page</p>
+    </main>
+    ";
+
+include ("scripts/footer.php");
+?>
