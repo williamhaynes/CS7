@@ -1,7 +1,7 @@
 <!-- Distinct login page for site - existing users-->
 
 <?php
-
+include ("scripts/header.php");
 ?>
 
 <!DOCTYPE html>
@@ -12,9 +12,7 @@
 </head>
 
 <body>
-<?
-include ("scripts/header.php");
-?>
+
 
 <form action="../scripts/checkLogin.php" method="post">
     <input type="text" placeholder="User Name" name="userName">
@@ -22,10 +20,10 @@ include ("scripts/header.php");
     <input type="submit" value='Go Go Go!'>
 </form>
 
-<?
-include ("scripts/footer.php");
-?>
 
 </body>
 </html>
 
+<?
+include ("scripts/footer.php");
+?>
