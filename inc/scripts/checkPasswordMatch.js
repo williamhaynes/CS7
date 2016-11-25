@@ -1,6 +1,10 @@
 /**
  * Created by hype_ on 25/11/2016.
  */
+$(document).ready(function () {
+    $("#confirmPassword").keyup(checkPasswordMatch);
+});
+
 function checkPasswordMatch() {
     var password = $("#firstPassword").val();
     var confirmPassword = $("#secondPassword").val();
@@ -11,6 +15,3 @@ function checkPasswordMatch() {
         $("#body").html("Passwords match.");
 }
 
-$(document).ready(function () {
-    $("#confirmPassword").keyup(checkPasswordMatch);
-});
