@@ -7,6 +7,9 @@ include ("../scripts/header.php");
 <head>
     <meta charset="UTF-8">
     <title>Login Page</title>
+    <!-- Javascript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../scripts/checkPasswordMatch.js"></script>
 </head>
 
 <body>
@@ -17,7 +20,7 @@ include ("../scripts/header.php");
     <input type="text" placeholder="Email Address" name="emailAddress">
     <input type="text" placeholder="Display Name" name="displayName">
     <input type="password" placeholder="Password" name="password">
-    <input type="password" placeholder="Confirm Password" name="confirmPassword">
+    <input type="password" placeholder="Confirm Password" onchange="checkPasswordMatch()" name="confirmPassword">
     <input type="submit" value='Go Go Go!'>
 </form>
 
