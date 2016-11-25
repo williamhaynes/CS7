@@ -10,3 +10,7 @@ function checkPasswordMatch() {
     else
         $("#body").html("Passwords match.");
 }
+
+$(document).ready(function () {
+    $("#confirmPassword").keyup(checkPasswordMatch);
+});
