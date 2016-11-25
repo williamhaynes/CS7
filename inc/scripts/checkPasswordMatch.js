@@ -2,7 +2,7 @@
  * Created by hype_ on 25/11/2016.
  */
 $(document).ready(function () {
-    $("#confirmPassword").onkeyup(checkPasswordMatch);
+    $("#secondPassword").onkeyup(checkPasswordMatch);
 });
 
 function checkPasswordMatch() {
