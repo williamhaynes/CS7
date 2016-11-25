@@ -1,5 +1,7 @@
 <!--Allows Club Admin/Site Admin to add events to the Calendar.-->
-
+<?php
+include ("../scripts/header.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +28,7 @@
  * Time: 12:27
  */
 
+include ("../scripts/footer.php");
 //include database
 include ("../scripts/dbconnect.php");
 

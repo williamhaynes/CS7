@@ -1,5 +1,7 @@
 <!--Allows user/site admin to write blog posts for the health and wellbeing page. As per System Requirements.-->
-
+<?php
+include ("../scripts/header.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +21,9 @@
 
 </body>
 </html>
-
+<?
+include ("../scripts/footer.php");
+?>
 
 <?php
 /**
