@@ -2,8 +2,8 @@
  * Created by hype_ on 25/11/2016.
  */
 function checkPasswordMatch() {
-    var password = $("#password").val();
-    var confirmPassword = $("#confirmPassword").val();
+    var password = $("#firstPassword").val();
+    var confirmPassword = $("#secondPassword").val();
 
     if (password != confirmPassword)
         $("#body").html("Passwords do not match!");
