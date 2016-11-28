@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include("scripts/footer.php");
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    include("../scripts/dbconnect.php");
+    include("scripts/dbconnect.php");
 
     $username = $_POST['username'];
     $password = $_POST['password'];
