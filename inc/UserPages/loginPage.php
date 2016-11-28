@@ -1,28 +1,50 @@
 <!-- Distinct login page for site - existing users-->
 
 <?php
-include ("../scripts/header.php");
-?>
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-<head>
-    <meta charset="UTF-8">
-    <title>Login Page</title>
-</head>
+    include("../scripts/header.php");
+    ?>
+    <main>
+        <form action="loginPage.php" method="post">
+            <input type="text" placeholder="User Name" name="username">
+            <input type="password" placeholder="Password" name="password">
+            <p><input type="submit" value='Login'></p>
+        </form>
+    </main>
+    <?
+    include("../scripts/footer.php");
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-<body>
+    include("../scripts/dbconnect.php");
 
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+//username is the variable, userName is the column in the table
+    function checklogin($username, $password, $db){
+        $sql_query = "SELECT * FROM User WHERE userName ='" . $username . "' AND password = '" . $password ."';";
+        $result = $db->query($sql_query);
+        while($row = $result->fetch_array()){
+            return true;
+        }
+        return false;
+    }
 
-<form action="../scripts/checkLogin.php" method="post">
-    <input type="text" placeholder="User Name" name="userName">
-    <input type="password" placeholder="Password" name="password">
-    <input type="submit" value='Login'>
-</form>
+    if (checklogin($username, $password, $db)){
+        session_start();
+        $_SESSION['username'] = $username;
+        header("location:../clubsAndSocietiesPage.php");
+        print('success!');
+    }
+    else{
+        header("location:loginPage.php");
+        print('wrong password or username');
+    }
+}
+    else{
+        print('unreachable statement');
+    }
 
-
-</body>
-
-<?
-include ("../scripts/footer.php");
 ?>
 <!--
 <!DOCTYPE html>
