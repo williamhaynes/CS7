@@ -13,7 +13,7 @@ $rules = array(
     //scripts
     //
     'login' => "/scripts/loginPage",
-    'logout' => "/scripts/logout",
+    'logout' => "/logout",
     //
     // Home Page
     //
