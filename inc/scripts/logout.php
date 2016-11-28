@@ -1,10 +1,12 @@
 <?php
-session_start()
-;
+session_start();
 if (isset($_SESSION['username'])) {
     unset
     ($_SESSION['username']);
 }
-header("location:../clubsAndSocietiesPage")
+else{
+    //do nothing
+}
+header("location:../clubsAndSocietiesPage.php")
 ;
 ?> 
