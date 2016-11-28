@@ -1,17 +1,19 @@
 <!--Functional Requirement. A page to display all the clubs and societies in a list, and allow them to be searched and
 filtered. Will also have an events overview calendar.-->
 
-<?php
-include ("scripts/header.php");
+<!--Allows user to view all verified health and wellbeing blog posts as per system requirements. Site Admin will have
+overlay to authorise/reject blog posts. As per System Requirements.-->
 
+<?php
+include ("scripts/dbconnect.php");
+include ("scripts/header.php");
 echo "
-    <main>
-    <p>Welcome to Clubs and Societies Page</p>
-    </main>
-    ";
-include ("scripts/footer.php");
-?>
-<!--
+<main>
+<h2>Clubs and Societies</h2>
+<p>Below is a list of all Clubs and Societies</p>
+<ul>
+";
+
 //Takes all database information from the Club Table.
 $sql_query = "SELECT * FROM Club;";
 
@@ -19,11 +21,19 @@ $sql_query = "SELECT * FROM Club;";
 $result = $db->query($sql_query);
 
 // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
-while ($row = $result->fetch_array()) {
-    echo "<p>" . $row['clubName'] . "</p>";
-    echo "<p>" . $row['clubDescription'] . "</p>";
-    echo "<p>" . $row['contactInformation'] . "</p>";
-}*/-->
+while($row = $result->fetch_array()){
+    $clubID = $row['clubID'];
+    $clubName = $row['clubName'];
+    $clubDescription = $row['clubDescription'];
+    $contactInformation = $row['contactInformation'];
+    $adminID = $row['adminID'];
+    echo "<li><p><h1>$clubName</h1></p><p>$clubDescription</p><p>$contactInformation</p></li>";
+}
+
+echo "</main>";
+include ("scripts/footer.php");
+
+?>
 
 
 
