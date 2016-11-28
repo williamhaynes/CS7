@@ -23,7 +23,7 @@ session_start();
                     echo "<li><a href='createarticle'>Create Article</a></li>";
                     echo "<li><a href='logout'>Logout</a></li>";
                 } else {
-                    echo "<li><a href='login'>Login</a></li>";
+                    echo "<li><a href='loginPage'>Login</a></li>";
                 }
                 ?>
             </ul>
