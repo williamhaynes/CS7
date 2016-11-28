@@ -5,8 +5,8 @@ $rules = array(
     //main pages
     //
     'clubPage' => "/clubPage",
-    'clubsAndSocietiesPage' => "/",
-    'healthAndWellbeing' => "/healthAndWellbeing",
+    'clubsAndSocietiesPage' => "/clubsAndSocietiesPage",
+    'healthAndWellbeingPage' => "/healthAndWellbeingPage",
     'mapPage' => "/mapPage",
     //'blog_article' => "/blog/(?'blogID'[\w\-]+)",
     //
