@@ -41,14 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         print('wrong password or username');
     }
 }
-    else{
-        echo "
-<main>
-<h2>I LOADED THE PAGE</h2>
-<p>Below is a list of all health and wellbeing articles</p>
-<ul>
-";
-    }
 
 ?>
 <!--
