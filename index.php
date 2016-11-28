@@ -12,8 +12,8 @@ $rules = array(
     //
     //scripts
     //
-    /*'login' => "/loginPage",
-    'logout' => "/scripts/logout",*/
+    'login' => "/loginPage",
+    'logout' => "/scripts/logout",
     //
     // Home Page
     //
