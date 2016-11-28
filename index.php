@@ -13,6 +13,7 @@ $rules = array(
     //scripts
     //
     'loginPage' => "/loginPage",
+    'scripts/logout' => "/logout",
     //
     // Home Page
     //
@@ -30,10 +31,13 @@ $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
 $uri = '/' . trim(str_replace($uri,
         ''
         , $_SERVER['REQUEST_URI']), '/');
+
 $uri = urldecode($uri);
+
+echo $_SERVER['REQUEST_URI'];
 foreach ($rules as $action => $rule) {
     if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
-        include(INCLUDE_DIR . $action . '.php');
+        include(INCLUDE_DIR . $action . '.php'.$params);
         exit();
     }
 }
