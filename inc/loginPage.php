@@ -3,7 +3,7 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-    include("../scripts/header.php");
+    include ("scripts/header.php");
     ?>
     <main>
         <form action="loginPage.php" method="post">
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         </form>
     </main>
     <?
-    include("../scripts/footer.php");
+    include("scripts/footer.php");
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     include("../scripts/dbconnect.php");
