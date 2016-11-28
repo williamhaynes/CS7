@@ -37,9 +37,11 @@ else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         session_start();
         $_SESSION['userName'] = $userName;
         header("location:../clubsAndSocieties.php");
+        print('success!');
     }
     else{
         header("location:loginPage.php");
+        print('wrong password or username');
     }
 }
     else{
