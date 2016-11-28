@@ -7,24 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
 
     ?>
-
-    <head>
-        <meta charset="UTF-8">
-        <title>Login Page</title>
-    </head>
-
-    <body>
-
-
-    <form action="loginPage.php" method="post">
-        <input type="text" placeholder="User Name" name="userName">
-        <input type="password" placeholder="Password" name="password">
-        <input type="submit" value='Login'>
-    </form>
-
-
-    </body>
-
+    <main>
+        <form action="loginPage.php" method="post">
+            <input type="text" placeholder="User Name" name="userName">
+            <input type="password" placeholder="Password" name="password">
+            <input type="submit" value='Login'>
+        </form>
+    </main>
     <?
     include("../scripts/footer.php");
 }
