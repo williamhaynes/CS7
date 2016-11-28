@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include ("scripts/header.php");
     ?>
     <main>
-        <form action="loginPage.php" method="post">
+        <form action="login" method="post">
             <input type="text" placeholder="User Name" name="username">
             <input type="password" placeholder="Password" name="password">
             <p><input type="submit" value='Login'></p>
