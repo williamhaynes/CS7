@@ -24,7 +24,7 @@ $result = $db->query($sql_query);
 while($row = $result->fetch_array()){
     $clubID = $row['clubID'];
     $clubName = $row['clubName'];
-    echo "<li><a href='clubPage/$clubName'> $clubName </a></li>";
+    echo "<li><a href='clubPage/$clubID'> $clubName </a></li>";
 }
 
 echo "</main>";
