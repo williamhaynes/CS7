@@ -42,7 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
 }
     else{
-        print('unreachable statement');
+        echo "
+<main>
+<h2>I LOADED THE PAGE</h2>
+<p>Below is a list of all health and wellbeing articles</p>
+<ul>
+";
     }
 
 ?>
