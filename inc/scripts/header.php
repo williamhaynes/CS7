@@ -17,7 +17,7 @@ session_start();
                 <li id="healthAndWellbeing"><a href="../healthAndWellbeingPage">Health & Wellbeing</a></li>
                 <li id="clubsAndSocieties"><a href="../clubsAndSocietiesPage">Clubs & Societies</a></li>
                 <li id="mapPage"><a href="../mapPage">Maps</a></li>
-
+                <li><a href='../loginFuckingpotato'>Login</a></li>
                  <?php
                 if (isset($_SESSION['username'])) {
                     echo "<li><a href='createarticle'>Create Article</a></li>";
