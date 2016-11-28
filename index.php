@@ -1,23 +1,35 @@
-//dynamic main page
-<!-- Distinct login page for site - existing users-->
-<!DOCTYPE html>
-    <html>
-    <head>
-
-    </head>
-    <body>
-        <a href="\inc\UserPages\loginPage.php">Login Page</a>
-        <a href="\inc\UserPages\registerPage.php">Register Page</a>
-        <a href="\inc\scripts\header.php">header</a>
-        <a href="\inc\clubPage.php">clubPage</a>
-        <a href="\inc\clubsAndSocietiesPage.php">clubsAndSocietiesPage</a>
-        <a href="\inc\healthAndWellbeing.php">healthAndWellbeing</a>
-        <a href="\inc\Forms\healthAndWellbeingForm.php">Health And Wellbeing Form</a>
-        <a href="\inc\mapPage.php">mapPage</a>
-        <p>modification to test branch usage</p>
-    <p>hello world</p>
-    </body>
-    </html>
-<?php
-
+<?
+define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
+$rules = array(
+    //
+    //main pages
+    //
+    'clubPage' => "/clubPage",
+    'clubsAndSocietiesPage' => "/clubsAndSocietiesPage",
+    'healthAndWellbeingPage' => "/healthAndWellbeingPage",
+    'mapPage' => "/mapPage",
+    //'blog_article' => "/blog/(?'blogID'[\w\-]+)",
+    //
+    //scripts
+    //
+    'login' => "/scripts/loginPage",
+    'logout' => "/scripts/logout",
+    //
+    // Home Page
+    //
+    'home' => "/"
+);
+$uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
+$uri = '/' . trim(str_replace($uri,
+        ''
+        , $_SERVER['REQUEST_URI']), '/');
+$uri = urldecode($uri);
+foreach ($rules as $action => $rule) {
+    if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
+        include(INCLUDE_DIR . $action . '.php');
+        exit();
+    }
+}
+// nothing is found so handle the 404 error
+include(INCLUDE_DIR . '404.php');
 ?>
