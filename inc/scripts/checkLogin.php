@@ -46,9 +46,10 @@ else{           //if query returned a result
         echo "<p>" . $row['levelCode'] . "</p>";
     }*/
     echo "<p>Welcome " . $userName . "</p>";
+
     session_start();
     $_SESSION["username"] = $username;
-    //header("location:..\healthAndWellbeing.php");
+    header("location: ../clubsAndSocietiesPage.php");
 }
 
 
