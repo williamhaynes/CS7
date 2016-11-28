@@ -17,7 +17,8 @@
             $clubName = $row['clubName'];
             $clubDescription = $row['clubDescription'];
             $contactInformation = $row['contactInformation'];
-            $adminID = $row['adminID'];
+            //Check adminID is not null
+            if($row['adminID'] != 'NULL'){$adminID = $row['adminID'];}
             echo "
             <atricle>
                  <h2>{$clubName}</h2>
