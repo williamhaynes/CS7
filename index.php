@@ -21,10 +21,10 @@ $rules = array(
     //
     // Forms Page
     //
-    'clubAdminForm' => "/Forms/clubAdminForm",
-    'eventsForm' => "/Forms/eventsForm",
-    'healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
-    'mapForm' => "/Forms/mapForm",
+    '/Forms/clubAdminForm' => "/Forms/clubAdminForm",
+    '/Forms/eventsForm' => "/Forms/eventsForm",
+    '/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
+    '/Forms/mapForm' => "/Forms/mapForm",
 
 );
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
