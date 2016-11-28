@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-
+//username is the variable, userName is the column in the table
     function checklogin($username, $password, $db){
         $sql_query = "SELECT * FROM User WHERE userName ='" . $username . "' AND password = '" . $password ."';";
         $result = $db->query($sql_query);
