@@ -4,20 +4,17 @@
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     include("../scripts/header.php");
-
-
     ?>
     <main>
         <form action="loginPage.php" method="post">
-            <input type="text" placeholder="User Name" name="userName">
+            <input type="text" placeholder="User Name" name="username">
             <input type="password" placeholder="Password" name="password">
-            <input type="submit" value='Login'>
+            <p><input type="submit" value='Login'></p>
         </form>
     </main>
     <?
     include("../scripts/footer.php");
-}
-else if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     include("dbconnect.php");
 
