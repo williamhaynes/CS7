@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <?
     include("scripts/footer.php");
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
+    include ("scripts/header.php");
     include("scripts/dbconnect.php");
 
     $username = $_POST['username'];
