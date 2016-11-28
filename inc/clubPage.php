@@ -7,7 +7,7 @@
     $clubID = $params['clubID'];
     echo "<main>";
         //Takes all database information from the Club Table for a chosen club.
-        $sql = "SELECT * FROM club where clubID = '/clubPage/{$clubID}'";
+        $sql = "SELECT * FROM club where clubID = '$clubID'";
         //Process the query
         $result = $db->query($sql);
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)

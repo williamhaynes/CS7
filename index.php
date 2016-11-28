@@ -8,7 +8,7 @@ $rules = array(
     'clubsAndSocietiesPage' => "/clubsAndSocietiesPage",
     'healthAndWellbeingPage' => "/healthAndWellbeingPage",
     'mapPage' => "/mapPage",
-    //'blog_article' => "/blog/(?'blogID'[\w\-]+)",
+    'clubPage' => "/clubPage/(?'clubID'[\w\-]+)",
     //
     //scripts
     //
