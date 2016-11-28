@@ -10,7 +10,7 @@ overlay to authorise/reject blog posts. As per System Requirements.-->
     </main>
     ";
 
-
+/*
 //Takes all database information from the Health News Table.
 $sql_query = "SELECT * FROM Health News;";
 
@@ -21,7 +21,7 @@ $result = $db->query($sql_query);
 while ($row = $result->fetch_array()) {
     echo "<p>" . $row['title'] . "</p>";
     echo "<p>" . $row['content'] . "</p>";
-}
+}*/
 
 
 
