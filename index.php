@@ -9,6 +9,7 @@ $rules = array(
     'healthAndWellbeingPage' => "/healthAndWellbeingPage",
     'mapPage' => "/mapPage",
     'clubPage' => "/clubPage/(?'clubID'[\w\-]+)",
+    'clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
     //
     //scripts
     //
@@ -21,7 +22,7 @@ $rules = array(
     //
     // Forms Page
     //
-    '/Forms/clubAdminForm' => "/Forms/clubAdminForm",
+    //'/Forms/clubAdminForm' => "/Forms/clubAdminForm",
     '/Forms/eventsForm' => "/Forms/eventsForm",
     '/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
     '/Forms/mapForm' => "/Forms/mapForm",
