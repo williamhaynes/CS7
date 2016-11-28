@@ -12,7 +12,7 @@ echo "
 ";
 
 //Takes all database information from the Health News Table.
-$sql_query = "SELECT * FROM Health News;";
+$sql_query = "SELECT * FROM HealthNews;";
 
 //Process the query
 $result = $db->query($sql_query);
