@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include ("scripts/header.php");
     ?>
     <main>
-        <form action="login" method="post">
+        <form action="loginPage" method="post">
             <input type="text" placeholder="User Name" name="username">
             <input type="password" placeholder="Password" name="password">
             <p><input type="submit" value='Login'></p>
@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <?
     include("scripts/footer.php");
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    include ("scripts/header.php");
+
     include("scripts/dbconnect.php");
 
     $username = $_POST['username'];
@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         print('success!');
     }
     else{
-        header("location:hitElse");
+        header("location:loginPage");
         print('wrong password or username');
     }
 }
