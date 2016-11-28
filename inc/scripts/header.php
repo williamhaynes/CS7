@@ -14,7 +14,7 @@ session_start();
         <nav id="navBar">
             <ul id="header">
                 <li id="logo"><img id="logoIMG" src="https://pmcdeadline2.files.wordpress.com/2016/07/logo-tv-logo.png" alt="Logo"></li>
-                <li id="healthAndWellbeing"><a href="/healthAndWellbeing">Health & Wellbeing</a></li>
+                <li id="healthAndWellbeing"><a href="/healthAndWellbeingPage">Health & Wellbeing</a></li>
                 <li id="clubsAndSocieties"><a href="/clubsAndSocietiesPage">Clubs & Societies</a></li>
                 <li id="mapPage"><a href="/mapPage">Maps</a></li>
                 <!-- Code that could be useful for specific users
