@@ -37,7 +37,7 @@ $uri = urldecode($uri);
 echo $_SERVER['REQUEST_URI'];
 foreach ($rules as $action => $rule) {
     if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
-        include(INCLUDE_DIR . $action . '.php'.$params);
+        include(INCLUDE_DIR . $action . '.php'/*.$params*/);
         exit();
     }
 }
