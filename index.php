@@ -12,7 +12,7 @@ $rules = array(
     //
     //scripts
     //
-    'login' => "/loginPage",
+    'loginFuckingpotato' => "/loginPage",
     'logout' => "/scripts/logout",
     //
     // Home Page
