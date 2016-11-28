@@ -17,13 +17,12 @@ session_start();
                 <li id="healthAndWellbeing"><a href="../healthAndWellbeingPage">Health & Wellbeing</a></li>
                 <li id="clubsAndSocieties"><a href="../clubsAndSocietiesPage">Clubs & Societies</a></li>
                 <li id="mapPage"><a href="../mapPage">Maps</a></li>
-                <li><a href='../loginPage'>Login</a></li>
                  <?php
                 if (isset($_SESSION['username'])) {
                     echo "<li><a href='createarticle'>Create Article</a></li>";
-                    echo "<li><a href='../logout'>Logout</a></li>";
+                    echo "<li><a href='logout'>Logout</a></li>";
                 } else {
-                    echo "<li><a href='../loginPage.php'>Login</a></li>";
+                    echo "<li><a href='login'>Login</a></li>";
                 }
                 ?>
             </ul>
