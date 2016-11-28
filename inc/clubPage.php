@@ -27,5 +27,11 @@
              </atricle>";
         }
         echo "</main>";
+
+        if (isset($_SESSION['username'])) {
+            echo "<li><a href='clubAdminForm'>clubAdminForm</a></li>";
+        } else {
+        }
+             
     include ("scripts/footer.php");
 ?>
