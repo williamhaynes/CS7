@@ -7,6 +7,5 @@ if (isset($_SESSION['username'])) {
 else{
     //do nothing
 }
-header("location:../clubsAndSocietiesPage.php")
-;
+header("location:../clubsAndSocietiesPage");
 ?> 
