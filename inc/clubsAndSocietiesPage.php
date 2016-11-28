@@ -9,8 +9,9 @@ echo "
     <p>Welcome to Clubs and Societies Page</p>
     </main>
     ";
-
-/*
+include ("scripts/footer.php");
+?>
+<!--
 //Takes all database information from the Club Table.
 $sql_query = "SELECT * FROM Club;";
 
@@ -22,9 +23,7 @@ while ($row = $result->fetch_array()) {
     echo "<p>" . $row['clubName'] . "</p>";
     echo "<p>" . $row['clubDescription'] . "</p>";
     echo "<p>" . $row['contactInformation'] . "</p>";
-}*/
+}*/-->
 
 
 
-include ("scripts/footer.php");
-?>
