@@ -3,6 +3,6 @@ session_start();
 if (isset($_SESSION['username'])) {
     unset($_SESSION['username']);
 }
-header("location:./")
+header("location:../clubsAndSocietiesPage")
 ;
 ?>
