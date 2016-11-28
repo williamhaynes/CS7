@@ -17,7 +17,15 @@ $rules = array(
     //
     // Home Page
     //
-    'home' => "/"
+    'home' => "/",
+    //
+    // Forms Page
+    //
+    'clubAdminForm' => "/Forms/clubAdminForm",
+    'eventsForm' => "/Forms/eventsForm",
+    'healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
+    'mapForm' => "/Forms/mapForm",
+
 );
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
 $uri = '/' . trim(str_replace($uri,
