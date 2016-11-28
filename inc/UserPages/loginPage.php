@@ -33,11 +33,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (checklogin($username, $password, $db)){
         session_start();
         $_SESSION['username'] = $username;
-        header("location:../clubsAndSocietiesPage.php");
+        header("location:../clubsAndSocietiesPage");
         print('success!');
     }
     else{
-        header("location:loginPage.php");
+        header("location:loginPage");
         print('wrong password or username');
     }
 }
