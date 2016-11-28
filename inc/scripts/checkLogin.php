@@ -48,7 +48,7 @@ else{           //if query returned a result
     echo "<p>Welcome " . $userName . "</p>";
 
     session_start();
-    $_SESSION["username"] = $username;
+    $_SESSION['username'] = $username;
     header("location: ../clubsAndSocietiesPage.php");
 }
 

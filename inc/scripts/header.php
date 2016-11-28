@@ -19,7 +19,7 @@ session_start();
                 <li id="mapPage"><a href="/inc/mapPage.php">Maps</a></li>
 
                  <?php
-                if (isset($_SESSION["username"])) {
+                if (isset($_SESSION['username'])) {
                     echo "<li><a href='createarticle'>Create Article</a></li>";
                     echo "<li><a href='logout'>Logout</a></li>";
                 } else {
@@ -29,4 +29,3 @@ session_start();
             </ul>
         </nav>
     </header>
-</body>
