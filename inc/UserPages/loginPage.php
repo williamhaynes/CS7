@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     include("../scripts/dbconnect.php");
 
-    $userName = $_POST['userName'];
+    $userName = $_POST['username'];
     $password = $_POST['password'];
 
     function checklogin($username, $password, $db){
@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         return false;
     }
 
-    if (checklogin($userName, $password, $db)){
+    if (checklogin($username, $password, $db)){
         session_start();
-        $_SESSION['userName'] = $userName;
+        $_SESSION['userName'] = $username;
         header("location:../clubsAndSocieties.php");
         print('success!');
     }
