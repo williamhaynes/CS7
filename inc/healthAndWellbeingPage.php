@@ -11,7 +11,7 @@ echo "
 <ul>
 ";
 
-//Takes all database information from the Health News Table.
+//Takes all database information from the Health News Table if it has been verified.
 $sql_query = "SELECT * FROM HealthNews WHERE verified = '1';";
 
 //Process the query
