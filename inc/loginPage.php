@@ -36,7 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         print('success!');
     }
     else{
-        header("location:loginPage");
+        header("location:hitElse");
         print('wrong password or username');
     }
 }
