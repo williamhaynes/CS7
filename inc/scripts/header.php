@@ -24,7 +24,8 @@ session_start();
                     echo "<li><a href='../logoutPage'>Logout</a></li>";
                     echo "<li><a href='../userDetailsPage'>My Account</a></li>";
                     if($_SESSION['accessLevel'] == 41){
-
+                        echo "<li><a href='../userDetailsPage'>Club Admin Page</a></li>";
+                        echo "<li><a href='../userDetailsPage'>User Admin Page</a></li>";
                     }
                 } else {
                     echo "<li><a href='../loginPage'>Login</a></li>";
