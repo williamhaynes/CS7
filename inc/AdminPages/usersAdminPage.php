@@ -1,4 +1,4 @@
-<!-- Another ANother another Comment-->
+<!-- Another ANother another another Comment-->
 <?php
 include(__DIR__."../scripts/header.php");
 echo "<p>" . __DIR__ . "</p>"
@@ -31,7 +31,7 @@ echo "<p>" . __DIR__ . "</p>"
             die ('Connection Failed :'.$db->connect_error);
         }
         //Takes all database information from the Users Table.
-        $sql_query = "SELECT userName, emailAddress, displayName, levelCode FROM User;";
+        $sql_query = "SELECT * FROM User;";
         //Process the query
         if (mysqli_query($db, $sql_query)) {
         } else {
