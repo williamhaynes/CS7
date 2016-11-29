@@ -21,7 +21,7 @@ include("../scripts/header.php");
             <th>Example</th>
         </tr>
         <tr>
-        <?php
+        <?
         //Takes all database information from the Users Table.
         $sql_query = "SELECT * FROM User;";
         //Process the query
