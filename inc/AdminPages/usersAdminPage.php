@@ -1,7 +1,7 @@
-<!-- Another ANother another another Comment-->
+<!-- Bbanother Comment-->
 <?php
 include(__DIR__."../scripts/header.php");
-echo "<p>" . __DIR__ . "</p>"
+echo "<p>" . __DIR__ . "../scripts/header.php" . "</p>"
 ?>
 <main>
     <h2>Users Admin Page</h2>
