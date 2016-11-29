@@ -24,10 +24,7 @@ $result = $db->query($sql_query);
 while($row = $result->fetch_array()){
     $clubID = $row['clubID'];
     $clubName = $row['clubName'];
-    $clubDescription = $row['clubDescription'];
-    $contactInformation = $row['contactInformation'];
-    $adminID = $row['adminID'];
-    echo "<li><p><h1>$clubName</h1></p><p>$clubDescription</p><p>$contactInformation</p></li>";
+    echo "<li><a href='clubPage/{$clubID}'> $clubName </a></li>";
 }
 
 echo "</main>";

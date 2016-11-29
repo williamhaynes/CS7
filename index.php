@@ -8,12 +8,13 @@ $rules = array(
     'clubsAndSocietiesPage' => "/clubsAndSocietiesPage",
     'healthAndWellbeingPage' => "/healthAndWellbeingPage",
     'mapPage' => "/mapPage",
-    //'blog_article' => "/blog/(?'blogID'[\w\-]+)",
+    'clubPage' => "/clubPage/(?'clubID'[\w\-]+)",
+    '/Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
     //
     //scripts
     //
     'loginPage' => "/loginPage",
-    'logout' => "/logout",
+    'logoutPage' => "/logoutPage",
     //
     // Home Page
     //
@@ -21,10 +22,10 @@ $rules = array(
     //
     // Forms Page
     //
-    'clubAdminForm' => "/Forms/clubAdminForm",
-    'eventsForm' => "/Forms/eventsForm",
-    'healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
-    'mapForm' => "/Forms/mapForm",
+    //'/Forms/clubAdminForm' => "/Forms/clubAdminForm",
+    '/Forms/eventsForm' => "/Forms/eventsForm",
+    '/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
+    '/Forms/mapForm' => "/Forms/mapForm",
 
 );
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');

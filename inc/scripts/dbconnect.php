@@ -1,4 +1,4 @@
-//php file to connect to server
+<!-- php file to connect to server -->
 
 <?php
 

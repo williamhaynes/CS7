@@ -6,6 +6,8 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
         include("scripts/header.php");
         ?>
         <main>
+            <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+            <script>tinymce.init({selector: 'textarea'});</script>
             <form action="clubAdminForm" method="post">
                 <p>Club Name: </p><input type="text" name="clubName" placeholder="<?php print $_SESSION["clubName"];?>">
                 <p>Club Description: </p><textarea name="clubDescription" placeholder="<?php print $_SESSION["clubDescription"];?>"></textarea>
