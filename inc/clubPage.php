@@ -29,7 +29,7 @@
         echo "</main>";
 
         if (isset($_SESSION['username'])) {
-            echo "<li><a href='Forms/clubAdminForm'>clubAdminForm</a></li>";
+            echo "<li><a href='{$clubID}/clubAdminForm'>clubAdminForm</a></li>";
         } else {
         }
              
