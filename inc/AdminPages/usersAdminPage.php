@@ -1,6 +1,5 @@
 <!-- Exclusively accessed by Site Administrators. Allows site administrators to view all users, their details, and
 change their access controls.-->
-
 <?php
 include("../scripts/header.php");
 echo "
