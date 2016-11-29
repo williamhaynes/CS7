@@ -12,12 +12,6 @@ include(__DIR__."/../scripts/header.php");
             <th>Display Name</th>
             <th>Level Code</th>
         </tr>
-        <tr>
-            <th>Example</th>
-            <th>Example</th>
-            <th>Example</th>
-            <th>Example</th>
-        </tr>
         <?
         include (__DIR__ . "/../scripts/dbconnect.php");
         //Takes all database information from the Users Table.
@@ -36,14 +30,7 @@ include(__DIR__."/../scripts/header.php");
             echo "<th>" . $row['levelCode'] . "</th></tr>";
         }
         ?>
-        <tr>
-            <th>Example2</th>
-            <th>Example2</th>
-            <th>Example2</th>
-            <th>Example2</th>
-        </tr>
     </table>
-    <p>Got to between table and main</p>
 </main>
 <?
 echo "<p>Got to end of file before footer</p>";
