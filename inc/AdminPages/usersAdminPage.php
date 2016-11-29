@@ -1,6 +1,7 @@
 <!-- Another ANother another Comment-->
 <?php
 include(__DIR__."../scripts/header.php");
+echo "<p>" . __DIR__ . "</p>"
 ?>
 <main>
     <h2>Users Admin Page</h2>
