@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['username'])) //SESSION DOES EXIST
 {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        include("scripts/header.php");
+        include("../scripts/header.php");
         ?>
         <main>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
@@ -18,7 +18,7 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
             </form>
         </main>
         <?
-        include("scripts/footer.php");
+        include("../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include ('../scripts/dbconnect.php');
         $clubID = $_SESSION["clubID"];
