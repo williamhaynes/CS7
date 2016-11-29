@@ -19,9 +19,9 @@ session_start();
                 <li id="mapPage"><a href="../mapPage">Maps</a></li>
                  <?php
                 if (isset($_SESSION['username'])) {
-                    echo "<li><a href='logoutPage'>Logout</a></li>";
+                    echo "<li><a href='../logoutPage'>Logout</a></li>";
                 } else {
-                    echo "<li><a href='loginPage'>Login</a></li>";
+                    echo "<li><a href='../loginPage'>Login</a></li>";
                 }
                 ?>
             </ul>
