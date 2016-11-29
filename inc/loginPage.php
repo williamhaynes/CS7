@@ -31,7 +31,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     function getLevelCode($username, $db){
         $sql_query = "SELECT levelCode FROM User WHERE userName ='" . $username ."';";
         $result = $db->query($sql_query);
-        return $result;
+        $thisLevelCode = 0;
+        while($row = $result->fetch_array()){
+            $thisLevelCode = $row['levelCode'];
+        }
+        return $thisLevelCode;
     }
 
     if (checklogin($username, $password, $db)){
