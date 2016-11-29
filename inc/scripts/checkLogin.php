@@ -14,6 +14,8 @@
 
 
 <?php
+//Deprecated 28/11/16
+
 /**
  * Created by PhpStorm.
  * User: hype_
