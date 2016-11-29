@@ -27,7 +27,7 @@ include ("scripts/footer.php");
     $username = $_POST['username'];
     $emailAddress = $_POST['emailAddress'];
     $displayName = $_POST['displayName'];
-    $password = $_POST['firstPassword'];
+    $password = $_POST['password'];
 
 //username is the variable, userName is the column in the table
     function checkUserUnique($username, $emailAddress, $db){
