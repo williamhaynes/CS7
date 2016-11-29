@@ -1,4 +1,4 @@
-<!-- A Comment-->
+<!-- Another Comment-->
 <?php
 include(__DIR__."../scripts/header.php");
 ?>
