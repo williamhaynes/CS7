@@ -2,7 +2,7 @@
 change their access controls.-->
 
 <?php
-include("../scripts/header.php");
+include("./scripts/header.php");
 echo "
 <main>
 <h2>Users Admin Page</h2>
@@ -16,7 +16,7 @@ echo "
     </tr>";
 
 //Takes all database information from the Users Table.
-include("../scripts/dbconnect.php");
+include("./scripts/dbconnect.php");
 $sql_query = "SELECT * FROM User;";
 
 //Process the query
@@ -34,5 +34,5 @@ while($row = $result->fetch_array()){
 }
 echo "</table>
         </main>";
-include ("../scripts/footer.php");
+include ("./scripts/footer.php");
 ?>
