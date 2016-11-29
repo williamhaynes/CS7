@@ -2,12 +2,12 @@
 
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-include ("../scripts/header.php");
+include ("scripts/header.php");
 ?>
 
 <head>
     <meta charset="UTF-8">
-    <title>Login Page</title>
+    <title>Register Page</title>
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="scripts/checkPasswordMatch.js"></script>
@@ -29,7 +29,7 @@ include ("../scripts/header.php");
 </body>
 
 <?
-include ("../scripts/footer.php");
+include ("scripts/footer.php");
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     include("scripts/dbconnect.php");
