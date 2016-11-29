@@ -40,7 +40,7 @@ include ("scripts/footer.php");
 
 
 
-include ("../../scripts/header.php");
+include ("header.php");
 
 echo "
     <main>
@@ -48,5 +48,5 @@ echo "
     </main>
     ";
 
-include ("../../scripts/footer.php");
+include ("footer.php");
 ?>
