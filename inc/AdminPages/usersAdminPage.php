@@ -2,7 +2,7 @@
 change their access controls.-->
 
 <?php
-include ("scripts/header.php");
+include ("../scripts/header.php");
 
 echo "
 <main>
