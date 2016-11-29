@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
         return false;
     }
-    function getLevelCode($username, $password, $db){
-        $sql_query = "SELECT levelCode FROM User WHERE userName ='" . $username . "' AND password = '" . $password ."';";
+    function getLevelCode($username, $db){
+        $sql_query = "SELECT levelCode FROM User WHERE userName ='" . $username ."';";
         $result = $db->query($sql_query);
         return $result;
     }
