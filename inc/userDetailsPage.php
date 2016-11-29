@@ -7,20 +7,12 @@ requirement.
 
 <?php
 include ("scripts/header.php");
+include("scripts/dbconnect.php");
 
 echo "
     <main>
-    <p>userDetailsPage</p>
-    </main>
-    ";
+    <p>userDetailsPage</p>";
 
-include ("scripts/footer.php");
-?>
-
-
-<?
-
-include("scripts/dbconnect.php");
 if (isset($_SESSION['username'])) {
     $sql_query = "SELECT * FROM User WHERE userName ='" . $_SESSION['username'] ."';";
     $result = $db->query($sql_query);
@@ -32,4 +24,7 @@ if (isset($_SESSION['username'])) {
         echo "<p>" . $row['levelCode'] . "</p>";
     }
 }
+    echo "</main>";
+
+include ("scripts/footer.php");
 ?>
