@@ -1,6 +1,6 @@
 <!-- Canother Comment-->
 <?php
-include(__DIR__."../scripts/header.php");
+include(__DIR__."/../scripts/header.php");
 echo "<p>" . __DIR__ . "../scripts/header.php" . "</p>"
 ?>
 <main>
