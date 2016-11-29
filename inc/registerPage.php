@@ -45,11 +45,11 @@ include ("scripts/footer.php");
                       VALUES ('". $username ."', '". $password ."', '". $emailAddress ."','" . $displayName ."', 1);";
 
         //and navigate to login page
-        headerheader("location:loginPage");
+        header("location:../loginPage");
         print('success!');
     }
     else{
-        header("location:registerPage");
+        header("location:../registerPage");
         print('That username or email address is already in use');
     }
 
