@@ -1,8 +1,8 @@
 <!-- Exclusively accessed by Site Administrators. Allows site administrators to view all users, their details, and
 change their access controls.-->
 <?php
-include("../scripts/dbconnect.php");
-include("../scripts/header.php");
+include(__DIR__."../scripts/dbconnect.php");
+include(__DIR__."../scripts/header.php");
 ?>
 <main>
     <h2>Users Admin Page</h2>
@@ -46,5 +46,5 @@ include("../scripts/header.php");
 </main>
 <?
 echo "<p>Got to end of file before footer</p>";
-include("../scripts/footer.php");
+include(__DIR__."../scripts/footer.php");
 ?>
