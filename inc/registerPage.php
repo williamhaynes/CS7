@@ -5,28 +5,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 include ("scripts/header.php");
 ?>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Register Page</title>
-    <!-- Javascript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script type="text/javascript" src="scripts/checkPasswordMatch.js"></script>
-</head>
 
-<body>
-
-
-<form action="registerUser" method="post">
-    <input type="text" placeholder="User Name" name="username">
-    <input type="text" placeholder="Email Address" name="emailAddress">
-    <input type="text" placeholder="Display Name" name="displayName">
-    <input type="password" placeholder="Password" id="firstPassword" name="password">
-    <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch();" name="confirmPassword">
-    <p><input type="submit" value='Register'></p>
-</form>
-
-
-</body>
+<main>
+    <form action="registerUser" method="post">
+        <input type="text" placeholder="User Name" name="username">
+        <input type="text" placeholder="Email Address" name="emailAddress">
+        <input type="text" placeholder="Display Name" name="displayName">
+        <input type="password" placeholder="Password" id="firstPassword" name="password">
+        <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch()" name="confirmPassword">
+        <p><input type="submit" value='Register'></p>
+    </form>
+</main>
 
 <?
 include ("scripts/footer.php");
