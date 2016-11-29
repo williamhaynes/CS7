@@ -14,6 +14,12 @@ include("../scripts/header.php");
             <th>Display Name</th>
             <th>Level Code</th>
         </tr>
+        <tr>
+            <th>Example</th>
+            <th>Example</th>
+            <th>Example</th>
+            <th>Example</th>
+        </tr>
         <?php
         //Takes all database information from the Users Table.
         $sql_query = "SELECT * FROM User;";
