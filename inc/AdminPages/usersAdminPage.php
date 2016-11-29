@@ -20,7 +20,15 @@ include(__DIR__."../scripts/header.php");
         </tr>
         <tr>
         <?
-        include(__DIR__."../scripts/dbconnect.php");
+        $db = new mysqli(
+            "eu-cdbr-azure-north-e.cloudapp.net",
+            "b1fa144aa688ff",
+            "4e96e436",
+            "db_pgo_cs7" );
+
+        if ($db->connect_errno){
+            die ('Connection Failed :'.$db->connect_error);
+        }
         //Takes all database information from the Users Table.
         $sql_query = "SELECT userName, emailAddress, displayName, levelCode FROM User;";
         //Process the query
