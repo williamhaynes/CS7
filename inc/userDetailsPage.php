@@ -6,7 +6,7 @@ requirement.
 -->
 
 <?php
-include("scripts/header.php");
+include ("scripts/header.php");
 
 echo "
     <main>
@@ -14,17 +14,18 @@ echo "
     </main>
     ";
 
-include("scripts/footer.php");
+include ("scripts/footer.php");
 ?>
 
-<?
-    if (isset($_SESSION['username'])) {
-        while ($row = $result->fetch_array()) {
-            echo "<p>" . $row['userName'] . "</p>";
-            echo "<p>" . $row['password'] . "</p>";
-            echo "<p>" . $row['emailAddress'] . "</p>";
-            echo "<p>" . $row['displayName'] . "</p>";
-            echo "<p>" . $row['levelCode'] . "</p>";
-        }
+
+<!--<?
+if (isset($_SESSION['username'])) {
+    while ($row = $result->fetch_array()) {
+        echo "<p>" . $row['userName'] . "</p>";
+        echo "<p>" . $row['password'] . "</p>";
+        echo "<p>" . $row['emailAddress'] . "</p>";
+        echo "<p>" . $row['displayName'] . "</p>";
+        echo "<p>" . $row['levelCode'] . "</p>";
     }
-?>
+}
+?>-->
