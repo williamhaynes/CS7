@@ -16,7 +16,7 @@ $rules = array(
     'loginPage' => "/loginPage",
     'logoutPage' => "/logoutPage",
     'registerPage' => "/registerPage",
-    'userDetailsPage' => "/userDetailsPage" ,
+    'userDetailsPage' => "/userDetailsPage",
     //
     // Home Page
     //
