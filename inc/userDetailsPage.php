@@ -6,7 +6,7 @@ requirement.
 -->
 
 <?php
-include ("../scripts/header.php");
+include("scripts/header.php");
 
 echo "
     <main>
@@ -14,7 +14,7 @@ echo "
     </main>
     ";
 
-include ("../scripts/footer.php");
+include("scripts/footer.php");
 ?>
 
 <?
