@@ -22,7 +22,7 @@ include(__DIR__."../scripts/header.php");
         <?
         include(__DIR__."../scripts/dbconnect.php");
         //Takes all database information from the Users Table.
-        $sql_query = "SELECT * FROM User;";
+        $sql_query = "SELECT userName, emailAddress, displayName, levelCode FROM User;";
         //Process the query
         if (mysqli_query($db, $sql_query)) {
         } else {
