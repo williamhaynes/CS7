@@ -44,7 +44,7 @@ include("../scripts/header.php");
     </table>
     <p>Got to between table and main</p>
 </main>
-<?php
+<?
 echo "<p>Got to end of file before footer</p>";
-include ("../scripts/footer.php");
+include("../scripts/footer.php");
 ?>
