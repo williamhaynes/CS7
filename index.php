@@ -11,10 +11,11 @@ $rules = array(
     'clubPage' => "/clubPage/(?'clubID'[\w\-]+)",
     '/Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
     //
-    //scripts
+    //user auth pages
     //
     'loginPage' => "/loginPage",
     'logoutPage' => "/logoutPage",
+    'registerPage' => "/registerPage",
     //
     // Home Page
     //

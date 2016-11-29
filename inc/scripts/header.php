@@ -22,6 +22,7 @@ session_start();
                     echo "<li><a href='../logoutPage'>Logout</a></li>";
                 } else {
                     echo "<li><a href='../loginPage'>Login</a></li>";
+                    echo "<li><a href='../registerPage'>Register</a></li>";
                 }
                 ?>
             </ul>
