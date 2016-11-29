@@ -1,6 +1,7 @@
 <!-- Exclusively accessed by Site Administrators. Allows site administrators to view all users, their details, and
 change their access controls.-->
 <?php
+include("../scripts/dbconnect.php");
 include("../scripts/header.php");
 
 echo "
@@ -14,9 +15,8 @@ echo "
         <th>Display Name</th>
         <th>Level Code</th>
     </tr>";
-
 //Takes all database information from the Users Table.
-include("../scripts/dbconnect.php");
+
 $sql_query = "SELECT * FROM User;";
 
 //Process the query
