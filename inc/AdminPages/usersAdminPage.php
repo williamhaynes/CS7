@@ -34,5 +34,6 @@ while($row = $result->fetch_array()){
 }
 echo "</table>
         </main>";
+echo "<p>Got to end of file before footer</p>";
 include ("../scripts/footer.php");
 ?>
