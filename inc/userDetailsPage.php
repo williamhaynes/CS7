@@ -17,11 +17,11 @@ if (isset($_SESSION['username'])) {
     $sql_query = "SELECT * FROM User WHERE userName ='" . $_SESSION['username'] ."';";
     $result = $db->query($sql_query);
     while ($row = $result->fetch_array()) {
-        echo "<p>" . $row['userName'] . "</p>";
-        echo "<p>" . $row['password'] . "</p>";
-        echo "<p>" . $row['emailAddress'] . "</p>";
-        echo "<p>" . $row['displayName'] . "</p>";
-        echo "<p>" . $row['levelCode'] . "</p>";
+        echo "<p>UserName: " . $row['userName'] . "</p>";
+        echo "<p>Password: " . $row['password'] . "</p>";
+        echo "<p>Email Address: " . $row['emailAddress'] . "</p>";
+        echo "<p>Display Name: " . $row['displayName'] . "</p>";
+        echo "<p>Level Code: " . $row['levelCode'] . "</p>";
     }
 }
     echo "</main>";
