@@ -23,7 +23,7 @@ include ("scripts/footer.php");
 
     include("scripts/dbconnect.php");
 
-    //Variables
+    //Variables - NEED TO ADD SECURITY TO THIS BECAUSE ALLOWS SQL INJECTION CURRENTLY
     $username = $_POST['username'];
     $emailAddress = $_POST['emailAddress'];
     $displayName = $_POST['displayName'];
@@ -41,7 +41,6 @@ include ("scripts/footer.php");
 
     if (checkUserUnique($username, $emailAddress, $db)){
         //if Unique user then add to database
-
         $sql_query = "INSERT INTO User (userName, password, emailAddress, displayName, levelCode)
                       VALUES ('". $username ."', '". $password ."', '". $emailAddress ."','" . $displayName ."', 1);";
 
