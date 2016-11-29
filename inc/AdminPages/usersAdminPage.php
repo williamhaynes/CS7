@@ -1,7 +1,7 @@
 <!-- Exclusively accessed by Site Administrators. Allows site administrators to view all users, their details, and
 change their access controls.-->
 
-<?php/*
+<?php
 include ("../scripts/header.php");
 
 echo "
@@ -35,18 +35,6 @@ while($row = $result->fetch_array()){
 }
 
 echo "</table></main>";
-include ("scripts/footer.php");
-*/
+include ("../scripts/footer.php");
 
-
-
-include ("header.php");
-
-echo "
-    <main>
-    <p>Welcome to map Page</p>
-    </main>
-    ";
-
-include ("footer.php");
 ?>
