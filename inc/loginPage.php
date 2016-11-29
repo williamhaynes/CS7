@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (checklogin($username, $password, $db)){
         session_start();
         $_SESSION['username'] = $username;
-        $_SESSION['accessLevel'] = getLevelCode($username, $password, $db);
+        $_SESSION['accessLevel'] = getLevelCode($username, $db);
         header("location:../clubsAndSocietiesPage");
         print('success!');
     }
