@@ -21,7 +21,7 @@ $rules = array(
     // Home Page
     //
     'home' => "/",
-    'usersAdminPage' => '/AdminPages/usersAdminPage',
+    'usersAdminPage' => '/usersAdminPage',
     //
     // Forms Page
     //
