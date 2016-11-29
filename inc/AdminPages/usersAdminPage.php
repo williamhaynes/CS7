@@ -33,8 +33,8 @@ while($row = $result->fetch_array()){
     echo "<th>" . $row['levelCode'] . "</th>";
     echo"</tr>";
 }
-
-echo "</table></main>";
+echo "</table>
+        </main>";
 include ("../scripts/footer.php");
 
 ?>
