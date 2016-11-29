@@ -1,6 +1,5 @@
 <!-- Exclusively accessed by Site Administrators. Allows site administrators to view all users, their details, and
 change their access controls.-->
-<!--
 <?php
 include("../scripts/header.php");
 
@@ -36,21 +35,4 @@ while($row = $result->fetch_array()){
 echo "</table>
         </main>";
 include ("../scripts/footer.php");
-?>-->
-<?php
-if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-    include ("../scripts/header.php");
-    ?>
-    <main>
-        <form action="loginPage" method="post">
-            <input type="text" placeholder="User Name" name="username">
-            <input type="password" placeholder="Password" name="password">
-            <p><input type="submit" value='Login'></p>
-        </form>
-    </main>
-    <?
-    include("../scripts/footer.php");
-} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-    include("../scripts/dbconnect.php");
-}?>
+?>
