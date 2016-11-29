@@ -17,7 +17,7 @@ echo "
     </tr>";
 
 //Takes all database information from the Users Table.
-include ("../scripts/dbconnect.php");
+include ("dbconnect.php");
 $sql_query = "SELECT * FROM User;";
 
 //Process the query
