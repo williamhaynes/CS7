@@ -1,7 +1,6 @@
 <!-- Canother Comment-->
 <?php
 include(__DIR__."/../scripts/header.php");
-echo "<p>" . __DIR__ . "../scripts/header.php" . "</p>"
 ?>
 <main>
     <h2>Users Admin Page</h2>
@@ -20,15 +19,7 @@ echo "<p>" . __DIR__ . "../scripts/header.php" . "</p>"
             <th>Example</th>
         </tr>
         <?
-        $db = new mysqli(
-            "eu-cdbr-azure-north-e.cloudapp.net",
-            "b1fa144aa688ff",
-            "4e96e436",
-            "db_pgo_cs7" );
-
-        if ($db->connect_errno){
-            die ('Connection Failed :'.$db->connect_error);
-        }
+        include (__DIR__ . "/../scripts/dbconnect.php");
         //Takes all database information from the Users Table.
         $sql_query = "SELECT * FROM User;";
         //Process the query
@@ -56,5 +47,5 @@ echo "<p>" . __DIR__ . "../scripts/header.php" . "</p>"
 </main>
 <?
 echo "<p>Got to end of file before footer</p>";
-include(__DIR__."../scripts/footer.php");
+include(__DIR__."/../scripts/footer.php");
 ?>
