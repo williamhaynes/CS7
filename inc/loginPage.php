@@ -28,10 +28,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
         return false;
     }
+    function getLevelCode($username, $password, $db){
+        $sql_query = "SELECT levelCode FROM User WHERE userName ='" . $username . "' AND password = '" . $password ."';";
+        $result = $db->query($sql_query);
+        return $result;
+    }
 
     if (checklogin($username, $password, $db)){
         session_start();
         $_SESSION['username'] = $username;
+        $_SESSION['accessLevel'] = getLevelCode($username, $password, $db);
         header("location:../clubsAndSocietiesPage");
         print('success!');
     }
