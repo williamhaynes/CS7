@@ -22,6 +22,7 @@ if (isset($_SESSION['username'])) {
         echo "<p>Email Address: " . $row['emailAddress'] . "</p>";
         echo "<p>Display Name: " . $row['displayName'] . "</p>";
         echo "<p>Level Code: " . $row['levelCode'] . "</p>";
+        echo "<p>" . $_SESSION['accessLevel'] . "</p>";
     }
 }
     echo "</main>";
