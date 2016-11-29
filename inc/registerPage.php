@@ -33,10 +33,10 @@ include ("scripts/footer.php");
     function checkUserUnique($username, $emailAddress, $db){
         $sql_query = "SELECT * FROM User WHERE userName ='" . $username . "' OR emailAddress = '" . $emailAddress ."';";
         $result = $db->query($sql_query);
-        while($row = $result->fetch_array()){
-            return true;
+        while($row = $result->fetch_array()){ //if in database return false
+            return false;
         }
-        return false;
+        return true; //if unique return true
     }
 
     if (checkUserUnique($username, $emailAddress, $db)){
