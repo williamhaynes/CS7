@@ -23,7 +23,6 @@ $rules = array(
     'home' => "/",
     //
     // Forms Page
-    'AdminPages/usersAdminPage' => "/AdminPages/usersAdminPage",
     //
     //'/Forms/clubAdminForm' => "/Forms/clubAdminForm",
     '/Forms/eventsForm' => "/Forms/eventsForm",
