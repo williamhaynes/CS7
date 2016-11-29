@@ -24,13 +24,11 @@ include("../scripts/header.php");
 
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while($row = $result->fetch_array()){
-
-            echo "<tr>";
-            echo "<th>" . $row['userName'] . "</th>";
+            echo "<tr><th>" . $row['userName'] . "</th>";
             echo "<th>" . $row['emailAddress'] . "</th>";
             echo "<th>" . $row['displayName'] . "</th>";
             echo "<th>" . $row['levelCode'] . "</th>";
-            echo"</tr>";
+            echo "</tr>";
         }
         ?>
     </table>
