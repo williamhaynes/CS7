@@ -20,7 +20,7 @@ include ("scripts/footer.php");
 
 <?
 
-
+include("scripts/dbconnect.php");
 if (isset($_SESSION['username'])) {
     $sql_query = "SELECT * FROM User WHERE userName ='" . $_SESSION['username'] ."';";
     $result = $db->query($sql_query);
