@@ -8,7 +8,7 @@ session_start();
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/style/style.css">
     <title>header</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="checkPasswordMatch.js"></script>
 </head>
 <body>
