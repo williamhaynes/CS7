@@ -7,7 +7,7 @@ include ("scripts/header.php");
 
 
 <main>
-    <form action="registerUser" method="post">
+    <form action="registerPage" method="post">
         <input type="text" placeholder="User Name" name="username">
         <input type="text" placeholder="Email Address" name="emailAddress">
         <input type="text" placeholder="Display Name" name="displayName">
