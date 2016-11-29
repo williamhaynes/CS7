@@ -1,5 +1,3 @@
-<!-- Exclusively accessed by Site Administrators. Allows site administrators to view all users, their details, and
-change their access controls.-->
 <?php
 include(__DIR__."../scripts/dbconnect.php");
 include(__DIR__."../scripts/header.php");
