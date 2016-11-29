@@ -1,5 +1,5 @@
+<!-- A Comment-->
 <?php
-include(__DIR__."../scripts/dbconnect.php");
 include(__DIR__."../scripts/header.php");
 ?>
 <main>
@@ -20,6 +20,7 @@ include(__DIR__."../scripts/header.php");
         </tr>
         <tr>
         <?
+        include(__DIR__."../scripts/dbconnect.php");
         //Takes all database information from the Users Table.
         $sql_query = "SELECT * FROM User;";
         //Process the query
