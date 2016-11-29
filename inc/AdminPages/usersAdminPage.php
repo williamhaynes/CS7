@@ -2,7 +2,7 @@
 change their access controls.-->
 
 <?php
-include ("scripts/dbconnect.php");
+include ("../scripts/dbconnect.php");
 include ("scripts/header.php");
 
 echo "
@@ -34,8 +34,7 @@ while($row = $result->fetch_array()){
           </tr>";
 }
 
-echo "</table>
-</main>";
+echo "</table></main>";
 include ("scripts/footer.php");
 
 ?>
