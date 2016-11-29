@@ -1,4 +1,4 @@
-<!-- Bbanother Comment-->
+<!-- Canother Comment-->
 <?php
 include(__DIR__."../scripts/header.php");
 echo "<p>" . __DIR__ . "../scripts/header.php" . "</p>"
@@ -19,7 +19,6 @@ echo "<p>" . __DIR__ . "../scripts/header.php" . "</p>"
             <th>Example</th>
             <th>Example</th>
         </tr>
-        <tr>
         <?
         $db = new mysqli(
             "eu-cdbr-azure-north-e.cloudapp.net",
@@ -40,13 +39,12 @@ echo "<p>" . __DIR__ . "../scripts/header.php" . "</p>"
         $result = $db->query($sql_query);
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while($row = $result->fetch_array()){
-            echo "<th>" . $row['userName'] . "</th>";
+            echo "<tr><th>" . $row['userName'] . "</th>";
             echo "<th>" . $row['emailAddress'] . "</th>";
             echo "<th>" . $row['displayName'] . "</th>";
-            echo "<th>" . $row['levelCode'] . "</th>";
+            echo "<th>" . $row['levelCode'] . "</th></tr>";
         }
         ?>
-        </tr>
         <tr>
             <th>Example2</th>
             <th>Example2</th>
