@@ -24,9 +24,9 @@ include(__DIR__."../scripts/header.php");
         //Takes all database information from the Users Table.
         $sql_query = "SELECT * FROM User;";
         //Process the query
-        if (mysqli_query($db, $sql)) {
+        if (mysqli_query($db, $sql_query)) {
         } else {
-            echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
+            echo "Error: " . $sql_query . "<br>Error Message:" . mysqli_error($db);
         }
         $result = $db->query($sql_query);
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
