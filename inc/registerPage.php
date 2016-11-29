@@ -41,9 +41,9 @@ include ("scripts/footer.php");
 
     if (checkUserUnique($username, $emailAddress, $db)){
         //if Unique user then add to database
-        $sql_query = "INSERT INTO User (userName, password, emailAddress, displayName, levelCode)
+        $sql = "INSERT INTO User (userName, password, emailAddress, displayName, levelCode)
                       VALUES ('". $username ."', '". $password ."', '". $emailAddress ."','" . $displayName ."', '1');";
-        $result = $db->query($sql_query);
+        $result = $db->query($sql);
         //and navigate to login page
         header("location:../loginPage");
         print('success!');
