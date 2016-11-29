@@ -18,8 +18,12 @@ include ("scripts/footer.php");
 ?>
 
 
-<!--<?
+<?
+
+
 if (isset($_SESSION['username'])) {
+    $sql_query = "SELECT * FROM User WHERE userName ='" . $_SESSION['username'] ."';";
+    $result = $db->query($sql_query);
     while ($row = $result->fetch_array()) {
         echo "<p>" . $row['userName'] . "</p>";
         echo "<p>" . $row['password'] . "</p>";
@@ -28,4 +32,4 @@ if (isset($_SESSION['username'])) {
         echo "<p>" . $row['levelCode'] . "</p>";
     }
 }
-?>-->
+?>
