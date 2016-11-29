@@ -2,18 +2,18 @@
 change their access controls.-->
 <?php
 include("../scripts/header.php");
-echo "
+?>
 <main>
-<h2>Users Admin Page</h2>
-<p>Below is a list of all Members</p>
-<table>
-    <tr>
-        <th>Username</th>
-        <th>Email Address</th>
-        <th>Display Name</th>
-        <th>Level Code</th>
-    </tr>";
-
+    <h2>Users Admin Page</h2>
+    <p>Below is a list of all Members</p>
+        <table>
+        <tr>
+            <th>Username</th>
+            <th>Email Address</th>
+            <th>Display Name</th>
+            <th>Level Code</th>
+        </tr>
+<?php
 //Takes all database information from the Users Table.
 include("../scripts/dbconnect.php");
 $sql_query = "SELECT * FROM User;";
