@@ -26,12 +26,12 @@ $result = $db->query($sql_query);
 // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
 while($row = $result->fetch_array()){
 
-    echo "<tr>
-                <th>" . $row['userName'] . "</th>
-                <th>" . $row['emailAddress'] . "</th>
-                <th>" . $row['displayName'] . "</th>
-                <th>" . $row['levelCode'] . "</th>
-          </tr>";
+    echo "<tr>";
+    echo "<th>" . $row['userName'] . "</th>";
+    echo "<th>" . $row['emailAddress'] . "</th>";
+    echo "<th>" . $row['displayName'] . "</th>";
+    echo "<th>" . $row['levelCode'] . "</th>";
+    echo"</tr>";
 }
 
 echo "</table></main>";
