@@ -37,11 +37,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
         return $thisLevelCode;
     }
+    function getUserID($username, $db){
+        $sql_query = "SELECT userID FROM User WHERE userName ='" . $username ."';";
+        $result = $db->query($sql_query);
+        $thisUserID = 0;
+        while($row = $result->fetch_array()){
+            $thisUserID = $row['userID'];
+        }
+        return $thisUserID;
+    }
 
     if (checklogin($username, $password, $db)){
         session_start();
         $_SESSION['username'] = $username;
         $_SESSION['accessLevel'] = getLevelCode($username, $db);
+        $_SESSION['userID'] = getUserID($username, $db);
         header("location:../clubsAndSocietiesPage");
         print('success!');
     }

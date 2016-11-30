@@ -13,7 +13,7 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
                 <p>Club Description: </p><textarea name="clubDescription"> <?php print $_SESSION["clubDescription"];?> </textarea>
                 <p>Contact Information: </p><input type="text" name="contactInformation" value="<?php print $_SESSION["contactInformation"];?>" placeholder="Contact Information">
                 //Only if admin can change next value
-                //if($_SESSION["adminID"] == 1){
+                //if($_SESSION["userID"] == $adminID){
                     <p>Club Admin ID: </p><input type="number" name="adminID" value="<?php print $_SESSION["adminID"];?>" placeholder="Admin ID">
                 //}
                 <p><input type="submit" value='Submit'></p>
