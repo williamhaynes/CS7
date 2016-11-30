@@ -26,6 +26,11 @@ if (isset($_SESSION['username']))
         $contactInformation = $_POST['contactInformation'];
         $adminID = $_POST["adminID"];
 
+        //If adminID is blank set it to NULL
+        if ($adminID == ""){
+            $adminID = NULL;
+        }
+
         $sql = "INSERT INTO Club (clubName, clubDescription, contactInformation, adminID)
         VALUES ('".$clubName."', '".$clubDescription."','".$contactInformation."', '".$adminID."')";
         if (mysqli_query($db, $sql)) {
