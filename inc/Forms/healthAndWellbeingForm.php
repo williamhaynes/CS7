@@ -39,8 +39,8 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $articleName = $_POST["title"];
-        $articleText = $_POST["content"];
+        $title = $_POST["title"];
+        $content = $_POST["content"];
         $verified = $_POST["verified"];
 
         $sql = "UPDATE healthnews 
