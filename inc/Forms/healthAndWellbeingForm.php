@@ -17,7 +17,7 @@ if (isset($_SESSION['username']))
             while($row = $result->fetch_array()) {
                 $title = $row['title'];
                 $_SESSION['title'] = $title;
-                $articleText = 'WHY NOT CONTENT';
+                $content = $row['content'];
                 $_SESSION['content'] = $content;
                 $verified = $row['verified'];
                 $_SESSION['verified'] = $verified;
