@@ -44,7 +44,7 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
             } else {
                 echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
             }
-            header("location:../clubsAndSocietiesPage");
+            header("location:../clubPage/$clubID");
 //        }
 //        else{
 //            $sql = "INSERT INTO Club (clubID, clubName, clubDescription, contactInformation, adminID)
