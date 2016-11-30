@@ -49,6 +49,7 @@
             $_SESSION['adminID'] = $row['adminID'];
 
             //fb logo https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png
+            //www logo http://www.charlenebower.com/wp-content/uploads/2014/11/website-image.jpg
 
             echo "
             <atricle>
@@ -59,7 +60,7 @@
                  <p id='contactName'>Contact: $contactName</p>
                  <p id='contactNumber'>Contact Number: $contactNumber</p>
                  <p id='contactEmail'>Email: $contactEmail</p>
-                 <a id='websiteUrl'></a>
+                 <a id='websiteUrl'><img id='websiteLogo' src='' alt='' style='width:50px;height:50px;'></a>
                  <a id='facebookUrl'><img id='facebookLogo' src='' alt='' style='width:50px;height:50px;'></a>
                  <script>
                     var website = $website;
@@ -68,8 +69,10 @@
                     var facebookUrl = '{$facebookUrl}';
                     
                     if (website==1){
-                        document.getElementById('websiteUrl').innerHTML = websiteUrl;
                         document.getElementById('websiteUrl').setAttribute ('href', websiteUrl);
+                        document.getElementById('websiteLogo').setAttribute('src','http://www.charlenebower.com/wp-content/uploads/2014/11/website-image.jpg');
+                    }else{
+                        document.getElementById('websiteLogo').setAttribute('style','width:0px;height:0px;')
                     }
                     if (facebook==1){
                         document.getElementById('facebookUrl').setAttribute ('href', facebookUrl);
