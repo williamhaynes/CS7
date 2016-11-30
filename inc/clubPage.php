@@ -35,7 +35,7 @@
         }
         echo "</main>";
 
-        if (isset($_SESSION['username'])) {
+        if (($_SESSION['userID']==$_SESSION['adminID'])) {
             echo "<li><a href='{$clubID}/clubAdminForm'>clubAdminForm</a></li>";
         } else {
         }
