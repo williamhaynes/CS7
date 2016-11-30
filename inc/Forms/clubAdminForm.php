@@ -31,10 +31,11 @@ if ($_SESSION['userID']==$_SESSION["adminID"]) //CHECK USERID VS ADMINID OF CLUB
                     SET clubName = '" .$clubName."', clubDescription = '".$clubDescription."', contactInformation = '".$contactInformation."', adminID = '".$adminID."' 
                     WHERE clubID = $clubID";
             if (mysqli_query($db, $sql)) {
+                header("location:../$clubID");
             } else {
                 echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
             }
-            header("location:../$clubID");
+
 
 
 //            UNNEEDED CHECK BECAUSE IF YOU ARE AT THIS PAGE THERE MUST ALREADY BE A CLUB SHOULD HAVE

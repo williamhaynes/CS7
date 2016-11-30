@@ -47,6 +47,7 @@ if (isset($_SESSION['username']))
                     SET title = '" .$title."', content = '".$content."', verified = ".$verified." 
                     WHERE itemID = $itemID";
         if (mysqli_query($db, $sql)) {
+            header("location:../healthAndWellbeingPage");
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
         }
