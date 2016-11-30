@@ -32,7 +32,7 @@ if (isset($_SESSION['username']))
         }
 
         $sql = "INSERT INTO Club (clubName, clubDescription, contactInformation, adminID)
-        VALUES ('".$clubName."', '".$clubDescription."','".$contactInformation."', '.$adminID.')";
+        VALUES ('".$clubName."', '".$clubDescription."','".$contactInformation."', ".$adminID.")";
         if (mysqli_query($db, $sql)) {
             header("location:../clubsAndSocietiesPage");
         } else {
