@@ -36,20 +36,21 @@ if (isset($_SESSION['username']))
                 <?
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        include (__DIR__ . "/../scripts/dbconnect.php");
         $itemID = $_SESSION["itemID"];
         $title = $_POST["title"];
         $content = $_POST["content"];
         $verified = $_POST["verified"];
 
-        $sql =      "UPDATE Healthnews 
-                    SET title = '" .$title."', content = '".$content."', verified = '".$verified."' 
-                    WHERE itemID = '" .$itemID."'";
 
+        $sql = "UPDATE Healthnews 
+                    SET title = '" .$title."', content = '".$content."', verified = '".verified."' 
+                    WHERE itemID = $itemID";
         if (mysqli_query($db, $sql)) {
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
         }
-        header("location:/healthAndWellbeingPage");
+        header("location:../$itemID");
     }
 //test
 } else {
