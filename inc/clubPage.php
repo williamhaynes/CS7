@@ -56,7 +56,9 @@
                  <p id='activity'>{$activity}</p>
                  <p id='clubDescription'>{$clubDescription}</p>
                  <p id='session'>{$session}</p>
-                 <p id='contactInfo'>Contact: $contactName, Number: $contactNumber, Email: $contactEmail</p>
+                 <p id='contactName'>Contact: $contactName</p>
+                 <p id='contactNumber'>Contact Number: $contactNumber</p>
+                 <p id='contactEmail'>Email: $contactEmail</p>
                  <p id='websiteUrl'></p>
                  <p id='facebookUrl'></p>
                  <script>
