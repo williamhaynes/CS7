@@ -44,7 +44,7 @@ if (isset($_SESSION['username']))
 
 
         $sql = "UPDATE healthnews 
-                    SET title = '" .$title."', content = '".$content."', verified = '".$verified."' 
+                    SET title = '" .$title."', content = '".$content."', verified = ".$verified." 
                     WHERE itemID = $itemID";
         if (mysqli_query($db, $sql)) {
         } else {
