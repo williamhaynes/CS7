@@ -60,7 +60,7 @@
                  <p id='contactNumber'>Contact Number: $contactNumber</p>
                  <p id='contactEmail'>Email: $contactEmail</p>
                  <a id='websiteUrl'></a>
-                 <a id='facebookUrl'><img id='facebookLogo' src='a'></a>
+                 <a id='facebookUrl'><img id='facebookLogo' src='a' alt='some_text' style='width:128px;height:128px;'></a>
                  <script>
                     var website = $website;
                     var facebook = $facebook;
