@@ -29,6 +29,7 @@ $rules = array(
     '/Forms/eventsForm' => "/Forms/eventsForm",
     '/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
     '/Forms/mapForm' => "/Forms/mapForm",
+    '/Forms/createClubForm' => "/Forms/createClubForm",
 
 );
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
