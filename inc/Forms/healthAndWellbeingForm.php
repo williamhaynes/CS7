@@ -43,14 +43,21 @@ if (isset($_SESSION['username']))
         $verified = $_POST["verified"];
 
 
-        $sql = "UPDATE Healthnews 
+        $sql = "UPDATE healthnews 
                     SET title = '" .$title."', content = '".$content."', verified = '".verified."' 
                     WHERE itemID = 1";
         if (mysqli_query($db, $sql)) {
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
         }
-        header("location:../$itemID");
+        //header("location:../$itemID");
+        ?>
+
+        <main>
+            <p><?php print $_SESSION["itemID"];?></p>
+        </main>
+
+<?
     }
 //test
 } else {
