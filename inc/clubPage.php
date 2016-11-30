@@ -72,6 +72,7 @@
                     }
                     if (facebook==1){
                         document.getElementById('facebookUrl').innerHTML = facebookUrl;
+                        document.getElementById('facebookUrl').setAttribute ('href', facebookUrl);
                     }
                  </script>
              </atricle>";
