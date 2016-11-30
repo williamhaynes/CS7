@@ -50,7 +50,6 @@ if (isset($_SESSION['username']))
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
         }
-        //header("location:../$itemID");
         ?>
 
         <main>
