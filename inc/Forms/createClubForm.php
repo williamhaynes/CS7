@@ -28,7 +28,7 @@ if (isset($_SESSION['username']))
 
         //If adminID is blank set it to NULL
         if ($adminID == ""){
-            $adminID = NULL;
+            $adminID = "0";
         }
 
         $sql = "INSERT INTO Club (clubName, clubDescription, contactInformation, adminID)
