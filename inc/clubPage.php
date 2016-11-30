@@ -86,7 +86,7 @@
         echo "</main>";
         //31 is equal to the admin levelcode
         if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
-            echo "<a id='clubAdminFormEditLink' href='{$clubID}/clubAdminForm'>clubAdminForm</a>";
+            echo "<a id='clubAdminFormEditLink' href='{$clubID}/clubAdminForm'>Club Admin Form</a>";
         } else {
         }
              
