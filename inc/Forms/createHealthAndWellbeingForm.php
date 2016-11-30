@@ -22,7 +22,7 @@ if (isset($_SESSION['username']))
         $articleName = $_POST["articleName"];
         $articleText = $_POST["articleText"];
 
-        $sql = "INSERT INTO Health News (title, content, verified) VALUES ('" . $articleName . "', '" . $articleText . "', NULL )";
+        $sql = "INSERT INTO healthnews (title, content, verified) VALUES ('" . $articleName . "', '" . $articleText . "', 0 )";
         if (mysqli_query($db, $sql)) {
             header("location:../healthAndWellbeingPage");
         } else {
