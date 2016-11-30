@@ -62,7 +62,7 @@
                  <p id='websiteUrl'></p>
                  <p id='facebookUrl'></p>
                  <script>
-                    var website = <?php echo $website ?>;
+                    var website = $website;
                     var facebook = <?php echo $facebook ?>;
                     var websiteUrl = <?php echo $websiteUrl ?>;
                     var facebookUrl = <?php echo $facebookUrl ?>;
