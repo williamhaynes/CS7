@@ -9,10 +9,13 @@ include ("scripts/dbconnect.php");
 include ("scripts/header.php");
 echo "
 <main>
-<h2>Clubs and Societies</h2>
-<a href='/Forms/createClubForm'> Create New Club </a>
-<p>Below is a list of all Clubs and Societies</p>
-<ul>
+<h2>Clubs and Societies</h2>";
+if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
+            echo "<a id='createClubFormLink' href='/createClubForm'>Create Club Form</a>";
+        }
+
+echo "
+    <p>Below is a list of all Clubs and Societies</p><ul>
 ";
 
 //Takes all database information from the Club Table.
