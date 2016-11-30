@@ -10,7 +10,7 @@ include ("scripts/header.php");
 echo "
 <main>
 <h2>Clubs and Societies</h2>
-<a href='createClubForm'> Create New Club </a>
+<a href='/Forms/createClubForm'> Create New Club </a>
 <p>Below is a list of all Clubs and Societies</p>
 <ul>
 ";
