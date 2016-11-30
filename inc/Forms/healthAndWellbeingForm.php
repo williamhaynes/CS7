@@ -45,7 +45,7 @@ if (isset($_SESSION['username']))
 
         $sql = "UPDATE healthnews 
                     SET title = '" .$title."', content = '".$content."', verified = '".$verified."' 
-                    WHERE itemID = ''$itemID''";
+                    WHERE itemID = '$itemID'";
         if (mysqli_query($db, $sql)) {
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
