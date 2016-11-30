@@ -62,10 +62,10 @@
                  <p id='websiteUrl'></p>
                  <p id='facebookUrl'></p>
                  <script>
-                    if ($website == 1){
+                    if ($website==1){
                         document.getElementById('websiteUrl').innerHTML = {$websiteUrl}
                     }
-                    if ($facebook == 1){
+                    if ($facebook==1){
                         document.getElementById('websiteUrl').innerHTML = {$facebookUrl}
                     }
                  </script>
