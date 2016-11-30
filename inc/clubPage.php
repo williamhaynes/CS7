@@ -71,7 +71,7 @@
                         document.getElementById('websiteUrl').innerHTML = websiteUrl;
                     }
                     if (facebook==1){
-                        document.getElementById('facebookUrl').innerHTML = (<a href= facebookUrl </a>);
+                        document.getElementById('facebookUrl').innerHTML = facebookUrl;
                     }
                  </script>
              </atricle>";
