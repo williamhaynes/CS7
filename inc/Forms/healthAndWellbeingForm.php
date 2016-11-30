@@ -15,7 +15,7 @@ if (isset($_SESSION['username']))
             $result = $db->query($sql);
             // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
             while($row = $result->fetch_array()) {
-                $title = $row['title'];
+                $title = "TITLE";
                 $_SESSION['title'] = $title;
                 $articleText = $row['content'];
                 $_SESSION['content'] = $content;
