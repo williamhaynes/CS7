@@ -60,7 +60,7 @@
                  <p id='contactNumber'>Contact Number: $contactNumber</p>
                  <p id='contactEmail'>Email: $contactEmail</p>
                  <a id='websiteUrl'></a>
-                 <a id='facebookUrl'><img id='facebookLogo' src='https://ksr-ugc.imgix.net/assets/002/662/206/abd4f7740f0506378bd73a75680e95f2_original.png?w=680&fit=max&v=1412032744&auto=format&lossless=true&s=10dfe78ea4c576865769715d5eccebce' alt='some_text' style='width:128px;height:128px;'></a>
+                 <a id='facebookUrl'><img id='facebookLogo' src='https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png' alt='some_text' style='width:50px;height:50px;'></a>
                  <script>
                     var website = $website;
                     var facebook = $facebook;
@@ -74,7 +74,6 @@
                     if (facebook==1){
                         document.getElementById('facebookUrl').innerHTML = facebookUrl;
                         document.getElementById('facebookUrl').setAttribute ('href', facebookUrl);
-                        document.getElementById('facebookLogo').setAttribute('src', 'https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png');
                     }
                  </script>
              </atricle>";
