@@ -27,7 +27,7 @@ if (isset($_SESSION['username']))
         $adminID = $_POST["adminID"];
 
         $sql = "INSERT INTO Club (clubName, clubDescription, contactInformation, adminID)
-        VALUES ('" .$clubName."', '".$clubDescription."','".$contactInformation."', '".$adminID."')";
+        VALUES ('".$clubName."', '".$clubDescription."','".$contactInformation."', '".$adminID."')";
         if (mysqli_query($db, $sql)) {
             header("../clubsAndSocietiesPage");
         } else {
