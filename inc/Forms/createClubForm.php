@@ -10,10 +10,10 @@ if (isset($_SESSION['username']))
             <script>tinymce.init({selector: 'textarea'});</script>
             <form action="createClubForm" method="post">
                 <h2>Create New Club</h2>
-                <p>Club Name: </p><input type="text" name="clubName" value="<?php print $_SESSION["clubName"];?>" placeholder="Club Name">
-                <p>Club Description: </p><textarea name="clubDescription"> <?php print $_SESSION["clubDescription"];?> </textarea>
-                <p>Contact Information: </p><input type="text" name="contactInformation" value="<?php print $_SESSION["contactInformation"];?>" placeholder="Contact Information">
-                <p>Club Admin ID: </p><input type="number" name="adminID" value="<?php print $_SESSION["adminID"];?>" placeholder="Admin ID">
+                <p>Club Name: </p><input type="text" name="clubName" placeholder="Club Name">
+                <p>Club Description: </p><textarea name="clubDescription"></textarea>
+                <p>Contact Information: </p><input type="text" name="contactInformation" placeholder="Contact Information">
+                <p>Club Admin ID: </p><input type="number" name="adminID" placeholder="Admin ID">
                 <p><input type="submit" value='Submit'></p>
             </form>
         </main>
