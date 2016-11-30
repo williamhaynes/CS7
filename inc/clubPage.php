@@ -71,7 +71,7 @@
                         document.getElementById('websiteUrl').innerHTML = websiteUrl;
                     }
                     if (facebook==1){
-                        document.getElementById('facebookUrl').innerHTML =<a href= facebookUrl ><img border='0' alt='facebookPage' src='facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png' width='100' height='100'></a> ;
+                        document.getElementById('facebookUrl').innerHTML ='<a href= facebookUrl ><img border='0' alt=facebookPage src='facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png' width='100' height='100'></a>';
                     }
                  </script>
              </atricle>";
