@@ -8,7 +8,7 @@ if (isset($_SESSION['username']))
         <main>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
-            <form action="createClubForm" method="post">
+            <form action='' method="post">
                 <h2>Create New Club</h2>
                 <p>Club Name: </p><input type="text" name="clubName" placeholder="Club Name">
                 <p>Club Description: </p><textarea name="clubDescription"></textarea>
