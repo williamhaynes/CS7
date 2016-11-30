@@ -57,13 +57,14 @@
                  <p id='clubDescription'>{$clubDescription}</p>
                  <p id='session'>{$session}</p>
                  <p id='contactInfo'>Contact: $contactName, Number: $contactNumber, Email: $contactEmail</p>
+                 <p id='websiteUrl'></p>
+                 <p id='facebookUrl'></p>
                  <script>
                     if ($website == 1){
-                        <p id='websiteUrl'>{$websiteUrl}</p>
+                        document.getElementById('websiteUrl').innerHTML = {$websiteUrl}
                     }
                     if ($facebook == 1){
-                        <p id='facebookUrl'>{$facebookUrl}</p>
-
+                        document.getElementById('websiteUrl').innerHTML = {$facebookUrl}
                     }
                  </script>
              </atricle>";
