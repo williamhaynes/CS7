@@ -22,8 +22,8 @@ if (isset($_SESSION['username']))
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
         $clubName = $_POST["clubName"];
-        $clubDescription = $_POST["clubDescription"];
-        $contactInformation = $_POST['contactInformation'];
+        $clubDescription = $_POST['"clubDescription"'];
+        $contactInformation = $_POST['"contactInformation"'];
         $adminID = $_POST["adminID"];
 
         //If description is blank set it to NULL
