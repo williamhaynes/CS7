@@ -10,10 +10,12 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
             <script>tinymce.init({selector: 'textarea'});</script>
             <form action="clubAdminForm" method="post">
                 <p>Club Name: </p><input type="text" name="clubName" value="<?php print $_SESSION["clubName"];?>" placeholder="Club Name">
-                <p>Club Description: </p><textarea name="clubDescription"> <?php print $_SESSION["clubDescription"];?> </textarea>
-                <p>Contact Information: </p><input type="text" name="contactInformation" value="<?php print $_SESSION["contactInformation"];?>">
+                <p>Club Description: </p><textarea name="clubDescription" placeholder="Club Description"> <?php print $_SESSION["clubDescription"];?> </textarea>
+                <p>Contact Information: </p><input type="text" name="contactInformation" value="<?php print $_SESSION["contactInformation"];?>" placeholder="Contact Information">
                 //Only if admin can change next value
-                <p>Club Admin ID: </p><input type="number" name="adminID" value="<?php print $_SESSION["adminID"];?>">
+                //if($_SESSION["adminID"] == 1){
+                    <p>Club Admin ID: </p><input type="number" name="adminID" value="<?php print $_SESSION["adminID"];?>" placeholder="Admin ID">
+                //}
                 <p><input type="submit" value='Submit'></p>
             </form>
         </main>
