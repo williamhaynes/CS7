@@ -36,20 +36,24 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
             return false;
         }
 
-        if (checkClubExist($clubID, $db)){
+        //if (checkClubExist($clubID, $db)){
             $sql = "UPDATE Club SET (clubName = '" .$clubName."', clubDescription = '".$clubDescription."', contactInformation = '".$contactInformation."', adminID = '".$adminID."') 
             WHERE (clubID = '". $clubID ."')";
-            header("location:../clubsAndSocietiesPage");
-        }
-        else{
-            $sql = "INSERT INTO Club (clubID, clubName, clubDescription, contactInformation, adminID) 
-            VALUES ('". $clubID ."', '" .$clubName."', '".$clubDescription."','".$contactInformation."', '".$adminID."')";
             if (mysqli_query($db, $sql)) {
             } else {
                 echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
             }
-            header("../clubPage");
-        }
+            header("location:../clubsAndSocietiesPage");
+//        }
+//        else{
+//            $sql = "INSERT INTO Club (clubID, clubName, clubDescription, contactInformation, adminID)
+//            VALUES ('". $clubID ."', '" .$clubName."', '".$clubDescription."','".$contactInformation."', '".$adminID."')";
+//            if (mysqli_query($db, $sql)) {
+//            } else {
+//                echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
+//            }
+//            header("../clubPage");
+//        }
 
 
     }
