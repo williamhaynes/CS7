@@ -74,6 +74,8 @@
                     if (facebook==1){
                         document.getElementById('facebookUrl').setAttribute ('href', facebookUrl);
                         document.getElementById('facebookLogo').setAttribute('src','https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png');
+                    }else{
+                        document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
                  </script>
              </atricle>";
