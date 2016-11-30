@@ -64,8 +64,8 @@
                  <script>
                     var website = $website;
                     var facebook = $facebook;
-                    var websiteUrl = $websiteUrl;
-                    var facebookUrl = $facebookUrl;
+                    var websiteUrl = '{$websiteUrl}';
+                    var facebookUrl = '{$facebookUrl}';
                     
                     if (website==1){
                         document.getElementById('websiteUrl').innerHTML = websiteUrl;
