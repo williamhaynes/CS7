@@ -22,6 +22,7 @@ if (isset($_SESSION['username']))
         $articleName = $_POST["articleName"];
         $articleText = $_POST["articleText"];
 
+        //If admin the verified value should be 1 and not 0
         $sql = "INSERT INTO healthnews (title, content, verified) VALUES ('" . $articleName . "', '" . $articleText . "', 0 )";
         if (mysqli_query($db, $sql)) {
             header("location:../healthAndWellbeingPage");

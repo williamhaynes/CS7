@@ -20,10 +20,11 @@ $result = $db->query($sql_query);
 
 // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
 while($row = $result->fetch_array()){
+    $itemID = $row['itemID'];
     $title = $row['title'];
     $content = $row['content'];
     //We should probably add an author
-    echo "<li><p><h1>$title</h1></p><p>$content</p></li>";
+    echo "<li><p><h1>$title</h1></p><p>$content</p><a href='Forms/healthAndWellbeingForm/{$itemID}'> Edit </a></li>";
 }
 echo "</main>";
 include ("scripts/footer.php");

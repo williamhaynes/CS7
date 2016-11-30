@@ -10,6 +10,7 @@ $rules = array(
     'mapPage' => "/mapPage",
     'clubPage' => "/clubPage/(?'clubID'[\w\-]+)",
     '/Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
+    '/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
     //
     //user auth pages
     //
@@ -27,10 +28,10 @@ $rules = array(
     //
     //'/Forms/clubAdminForm' => "/Forms/clubAdminForm",
     '/Forms/eventsForm' => "/Forms/eventsForm",
-    '/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
+    //'/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
     '/Forms/mapForm' => "/Forms/mapForm",
     '/Forms/createClubForm' => "/Forms/createClubForm",
-    '/Forms/createHealthAndWellbeingForm' => "/Forms/createHealthAndWellbeingForm",
+
 
 );
 $uri = rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/');
