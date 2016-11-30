@@ -9,7 +9,7 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
             <form action="clubAdminForm" method="post">
-                <p>Club Name: </p><input type="text" name="clubName" value="<?php print $_SESSION["clubName"];?>">
+                <p>Club Name: </p><input type="text" name="clubName" value="<?php print $_SESSION["clubName"];?>" placeholder="Club Name">
                 <p>Club Description: </p><textarea name="clubDescription"> <?php print $_SESSION["clubDescription"];?> </textarea>
                 <p>Contact Information: </p><input type="text" name="contactInformation" value="<?php print $_SESSION["contactInformation"];?>">
                 //Only if admin can change next value
@@ -27,24 +27,27 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
         $contactInformation = $_POST['contactInformation'];
         $adminID = $_POST["adminID"];
 
-        function checkClubExist($clubID, $db){
-            $sql_query = "SELECT * FROM Club WHERE clubID ='" . $clubID . "';";
-            $result = $db->query($sql_query);
-            while($row = $result->fetch_array()){
-                return true;
-            }
-            return false;
-        }
 
-        //if (checkClubExist($clubID, $db)){
             $sql = "UPDATE Club 
-                    SET clubName = $clubName, clubDescription = $clubDescription, contactInformation = $contactInformation, adminID = $adminID
+                    SET clubName = '" .$clubName."', clubDescription = '".$clubDescription."', contactInformation = '".$contactInformation."', adminID = '".$adminID."' 
                     WHERE clubID = $clubID";
             if (mysqli_query($db, $sql)) {
             } else {
                 echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
             }
             header("location:../$clubID");
+
+
+//            UNNEEDED CHECK BECAUSE IF YOU ARE AT THIS PAGE THERE MUST ALREADY BE A CLUB SHOULD HAVE
+//                function checkClubExist($clubID, $db){
+//            $sql_query = "SELECT * FROM Club WHERE clubID ='" . $clubID . "';";
+//            $result = $db->query($sql_query);
+//            while($row = $result->fetch_array()){
+//                return true;
+//            }
+//            return false;
+//        }
+//if (checkClubExist($clubID, $db)){
 //        }
 //        else{
 //            $sql = "INSERT INTO Club (clubID, clubName, clubDescription, contactInformation, adminID)
