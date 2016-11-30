@@ -14,11 +14,18 @@
         while($row = $result->fetch_array())
         {
             $clubID = $row['clubID'];
+            $_SESSION['clubID'] = $clubID;
             $clubName = $row['clubName'];
+            $_SESSION['clubName'] = $clubName;
             $clubDescription = $row['clubDescription'];
+            $_SESSION['clubDescription'] = $clubDescription;
             $contactInformation = $row['contactInformation'];
+            $_SESSION['contactInformation'] = $contactInformation;
             //Check adminID is not null
-            if($row['adminID'] != 'NULL'){$adminID = $row['adminID'];}
+            if($row['adminID'] != 'NULL'){
+                $adminID = $row['adminID'];
+                $_SESSION['adminID'] = $adminID;
+            }
             echo "
             <atricle>
                  <h2>{$clubName}</h2>
