@@ -26,13 +26,23 @@ if (isset($_SESSION['username']))
         $contactInformation = $_POST['contactInformation'];
         $adminID = $_POST["adminID"];
 
+        //If description is blank set it to NULL
+        if ($clubDescription == ""){
+            $clubDescription = 'NULL';
+        }
+
+        //If contactInformation is blank set to NULL
+        if ($contactInformation == ""){
+            $contactInformation = 'NULL';
+        }
+
         //If adminID is blank set it to NULL
         if ($adminID == ""){
             $adminID = 'NULL';
         }
 
         $sql = "INSERT INTO Club (clubName, clubDescription, contactInformation, adminID)
-        VALUES ('".$clubName."', '".$clubDescription."','".$contactInformation."', ".$adminID.")";
+        VALUES ('".$clubName."', ".$clubDescription.",".$contactInformation.", ".$adminID.")";
         if (mysqli_query($db, $sql)) {
             header("location:../clubsAndSocietiesPage");
         } else {
