@@ -63,15 +63,15 @@
                  <p id='facebookUrl'></p>
                  <script>
                     var website = $website;
-                    var facebook = <?php echo $facebook ?>;
-                    var websiteUrl = <?php echo $websiteUrl ?>;
-                    var facebookUrl = <?php echo $facebookUrl ?>;
+                    var facebook = $facebook;
+                    var websiteUrl = $websiteUrl;
+                    var facebookUrl = $facebookUrl;
                     
                     if (website==1){
-                        document.getElementById('websiteUrl').innerHTML = 'websiteUrl';
+                        document.getElementById('websiteUrl').innerHTML = websiteUrl;
                     }
                     if (facebook==1){
-                        document.getElementById('websiteUrl').innerHTML = 'facebookUrl';
+                        document.getElementById('websiteUrl').innerHTML = facebookUrl;
                     }
                  </script>
              </atricle>";
