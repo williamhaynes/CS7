@@ -60,7 +60,7 @@
                  <p id='contactNumber'>Contact Number: $contactNumber</p>
                  <p id='contactEmail'>Email: $contactEmail</p>
                  <a id='websiteUrl'></a>
-                 <a id='facebookUrl'><img id='facebookLogo' src='https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png' alt='some_text' style='width:50px;height:50px;'></a>
+                 <a id='facebookUrl'><img id='facebookLogo' src='' alt='' style='width:50px;height:50px;'></a>
                  <script>
                     var website = $website;
                     var facebook = $facebook;
@@ -73,6 +73,7 @@
                     }
                     if (facebook==1){
                         document.getElementById('facebookUrl').setAttribute ('href', facebookUrl);
+                        document.getElementById('facebookLogo').setAttribute('src','https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png');
                     }
                  </script>
              </atricle>";
