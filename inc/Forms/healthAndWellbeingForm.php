@@ -29,7 +29,7 @@ if (isset($_SESSION['username']))
                 <script>tinymce.init({selector: 'textarea'});</script>
                 <form action='/Forms/healthAndWellbeingForm/<?php print $_SESSION["itemID"];?>' method="post">
                     <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
-                    <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?> </textarea>
+                    <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?> Text itemid: <?php print $_SESSION["itemID"];?> </textarea>
                     <p>Verified: </p> <input type="text" name="verified" value="<?php print $_SESSION["verified"];?>" placeholder="verified">
                     <p><input type="submit" value='Submit'></p>
                 </form>
@@ -43,9 +43,10 @@ if (isset($_SESSION['username']))
         $content = $_POST["content"];
         $verified = $_POST["verified"];
 
-        $sql = "UPDATE healthnews 
+        $sql =      "UPDATE healthnews 
                     SET title = '" .$title."', content = '".$content."', verified = '".$verified."' 
-                    WHERE itemID = $itemID";
+                    WHERE itemID = '" .$itemID."'";
+
         if (mysqli_query($db, $sql)) {
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
