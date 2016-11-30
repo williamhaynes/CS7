@@ -22,28 +22,19 @@ if (isset($_SESSION['username']))
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
         $clubName = $_POST["clubName"];
-        $clubDescription = $_POST['"clubDescription"'];
-        $contactInformation = $_POST['"contactInformation"'];
+        $clubDescription = $_POST["clubDescription"];
+        $contactInformation = $_POST['contactInformation'];
         $adminID = $_POST["adminID"];
 
-        //If description is blank set it to NULL
-        if ($clubDescription == ""){
-            $clubDescription = 'NULL';
-        }
-
-        //If contactInformation is blank set to NULL
-        if ($contactInformation == ""){
-            $contactInformation = 'NULL';
-        }
+        //IF clubDescription, contactInformation or clubName is blank it will just add a blank to that column
 
         //If adminID is blank set it to NULL
         if ($adminID == ""){
             $adminID = 'NULL';
         }
 
-        //Insert into TABLE
         $sql = "INSERT INTO Club (clubName, clubDescription, contactInformation, adminID)
-        VALUES ('".$clubName."', ".$clubDescription.",".$contactInformation.", ".$adminID.")";
+        VALUES ('".$clubName."', '".$clubDescription."','".$contactInformation."', ".$adminID.")";
         if (mysqli_query($db, $sql)) {
             header("location:../clubsAndSocietiesPage");
         } else {
