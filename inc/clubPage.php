@@ -56,7 +56,7 @@
                  <p id='activity'>{$activity}</p>
                  <p id='clubDescription'>{$clubDescription}</p>
                  <p id='session'>{$session}</p>
-                 <p id='contactInfo'>{'$contactName', '$contactNumber', '$contactEmail'}</p>
+                 <p id='contactInfo'>$contactName: $contactNumber $contactEmail</p>
                  <script>
                     if ($website == 1){
                         <p id='websiteUrl'>{$websiteUrl}</p>
