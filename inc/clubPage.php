@@ -60,7 +60,7 @@
                  <p id='contactNumber'>Contact Number: $contactNumber</p>
                  <p id='contactEmail'>Email: $contactEmail</p>
                  <a id='websiteUrl'></a>
-                 <a id='facebookUrl'><img id='facebookLogo' src='a' alt='some_text' style='width:128px;height:128px;'></a>
+                 <a id='facebookUrl'><img id='facebookLogo' src='https://ksr-ugc.imgix.net/assets/002/662/206/abd4f7740f0506378bd73a75680e95f2_original.png?w=680&fit=max&v=1412032744&auto=format&lossless=true&s=10dfe78ea4c576865769715d5eccebce' alt='some_text' style='width:128px;height:128px;'></a>
                  <script>
                     var website = $website;
                     var facebook = $facebook;
