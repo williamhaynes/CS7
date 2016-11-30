@@ -18,9 +18,9 @@ if (isset($_SESSION['username']))
                 <p>Contact Number: </p><input type="text" name="contactNumber" placeholder="Contact Number">
                 <p>Contact Email: </p><input type="text" name="contactEmail" placeholder="Contact Email">
                 <p>Tick if you have a website: </p><input type="checkbox" name="website">
-                <p>Contact Email: </p><input type="text" name="websiteUrl" placeholder="websiteUrl">
+                <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl">
                 <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook">
-                <p>Contact Email: </p><input type="text" name="facebookUrl" placeholder="facebookUrl">
+                <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl">
                 <p>Club Admin ID: </p><input type="number" name="adminID" value=<?php print $_SESSION["userID"];?> placeholder="Admin ID">
                 <p><input type="submit" value='Submit'></p>
             </form>
