@@ -42,20 +42,15 @@ if (isset($_SESSION['username']))
         $content = $_POST["content"];
         $verified = $_POST["verified"];
 
+
         $sql = "UPDATE healthnews 
-                    SET title = '" .$title."', content = '".$content."', verified = '".verified."' 
+                    SET title = '" .$title."', content = '".$content."', verified = '".$verified."' 
                     WHERE itemID = 1";
         if (mysqli_query($db, $sql)) {
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
         }
-        ?>
-
-        <main>
-            <p><?php print $_SESSION["itemID"];?></p>
-        </main>
-
-<?
+        header("location:../$itemID");
     }
 //test
 } else {
