@@ -4,8 +4,8 @@ session_start();
 if (isset($_SESSION['username']))
 {
     include (__DIR__ . "/../scripts/dbconnect.php");
-    $itemID = $params['itemID'];
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        $itemID = $params['itemID'];
         include(__DIR__."/../scripts/header.php");
 
 
@@ -15,6 +15,7 @@ if (isset($_SESSION['username']))
             $result = $db->query($sql);
             // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
             while($row = $result->fetch_array()) {
+                $_SESSION['itemID'] = $itemID;
                 $title = $row['title'];
                 $_SESSION['title'] = $title;
                 $content = $row['content'];
@@ -26,7 +27,7 @@ if (isset($_SESSION['username']))
             <main>
                 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
                 <script>tinymce.init({selector: 'textarea'});</script>
-                <form action='/Forms/healthAndWellbeingForm' method="post">
+                <form action='Forms/healthAndWellbeingForm' method="post">
                     <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
                     <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?> </textarea>
                     <p>Verified: </p> <input type="text" name="verified" value="<?php print $_SESSION["verified"];?>" placeholder="verified">
