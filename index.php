@@ -11,6 +11,7 @@ $rules = array(
     'clubPage' => "/clubPage/(?'clubID'[\w\-]+)",
     '/Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
     '/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
+    'fileUploadPage' => "/fileUploadPage",
     //
     //user auth pages
     //
