@@ -41,6 +41,7 @@ if (isset($_SESSION['username']))
             $adminID = 'NULL';
         }
 
+        //Insert into TABLE
         $sql = "INSERT INTO Club (clubName, clubDescription, contactInformation, adminID)
         VALUES ('".$clubName."', ".$clubDescription.",".$contactInformation.", ".$adminID.")";
         if (mysqli_query($db, $sql)) {
