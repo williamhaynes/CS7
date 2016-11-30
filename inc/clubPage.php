@@ -68,10 +68,10 @@
                     var facebookUrl = <?php echo $facebookUrl ?>;
                     
                     if (website==1){
-                        document.getElementById('websiteUrl').innerHTML = websiteUrl;
+                        document.getElementById('websiteUrl').innerHTML = 'websiteUrl';
                     }
                     if (facebook==1){
-                        document.getElementById('websiteUrl').innerHTML = facebookUrl;
+                        document.getElementById('websiteUrl').innerHTML = 'facebookUrl';
                     }
                  </script>
              </atricle>";
