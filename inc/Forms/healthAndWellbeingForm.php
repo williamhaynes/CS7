@@ -26,7 +26,7 @@ if (isset($_SESSION['username']))
             <main>
                 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
                 <script>tinymce.init({selector: 'textarea'});</script>
-                <form action="healthAndWellbeingForm.php" method="post">
+                <form action="/Forms/healthAndWellbeingForm" method="post">
                     <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
                     <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?> </textarea>
                     <p>Verified: </p> <input type="text" name="verified" value="<?php print $_SESSION["verified"];?>" placeholder="verified">
