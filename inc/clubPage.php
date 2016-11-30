@@ -59,8 +59,8 @@
                  <p id='contactName'>Contact: $contactName</p>
                  <p id='contactNumber'>Contact Number: $contactNumber</p>
                  <p id='contactEmail'>Email: $contactEmail</p>
-                 <p id='websiteUrl'></p>
-                 <p id='facebookUrl'></p>
+                 <a id='websiteUrl'></a>
+                 <a id='facebookUrl'></a>
                  <script>
                     var website = $website;
                     var facebook = $facebook;
