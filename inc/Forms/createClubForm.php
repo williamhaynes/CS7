@@ -11,9 +11,17 @@ if (isset($_SESSION['username']))
             <form action='' method="post">
                 <h2>Create New Club</h2>
                 <p>Club Name: </p><input type="text" name="clubName" placeholder="Club Name">
+                <p>Activity: </p><input type="text" name="activity" placeholder="Activity">
                 <p>Club Description: </p><textarea name="clubDescription"></textarea>
-                <p>Contact Information: </p><input type="text" name="contactInformation" placeholder="Contact Information">
-                <p>Club Admin ID: </p><input type="number" name="adminID" placeholder="Admin ID">
+                <p>Sessions: </p><textarea name="session"></textarea>
+                <p>Contact Name: </p><input type="text" name="contactName" placeholder="Contact Name">
+                <p>Contact Number: </p><input type="text" name="contactNumber" placeholder="Contact Number">
+                <p>Contact Email: </p><input type="text" name="contactEmail" placeholder="Contact Email">
+                <p>Tick if you have a website: </p><input type="checkbox" name="website">
+                <p>Contact Email: </p><input type="text" name="websiteUrl" placeholder="websiteUrl">
+                <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook">
+                <p>Contact Email: </p><input type="text" name="facebookUrl" placeholder="facebookUrl">
+                <p>Club Admin ID: </p><input type="number" name="adminID" value=<?php print $_SESSION["userID"];?> placeholder="Admin ID">
                 <p><input type="submit" value='Submit'></p>
             </form>
         </main>
@@ -25,6 +33,7 @@ if (isset($_SESSION['username']))
         $clubDescription = $_POST["clubDescription"];
         $contactInformation = $_POST['contactInformation'];
         $adminID = $_POST["adminID"];
+
 
         //IF clubDescription, contactInformation or clubName is blank it will just add a blank to that column
 
