@@ -62,11 +62,16 @@
                  <p id='websiteUrl'></p>
                  <p id='facebookUrl'></p>
                  <script>
-                    if ($website==1){
-                        document.getElementById('websiteUrl').innerHTML = {$websiteUrl}
+                    var website = <?php echo $website ?>;
+                    var facebook = <?php echo $facebook ?>;
+                    var websiteUrl = <?php echo $websiteUrl ?>;
+                    var facebookUrl = <?php echo $facebookUrl ?>;
+                    
+                    if (website==1){
+                        document.getElementById('websiteUrl').innerHTML = websiteUrl;
                     }
-                    if ($facebook==1){
-                        document.getElementById('websiteUrl').innerHTML = {$facebookUrl}
+                    if (facebook==1){
+                        document.getElementById('websiteUrl').innerHTML = facebookUrl;
                     }
                  </script>
              </atricle>";
