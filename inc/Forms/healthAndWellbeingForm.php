@@ -9,15 +9,15 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/header.php");
 
 
-            //Takes all database information from the Club Table for a chosen club.
+            //Takes all database information from the healthnews for a chosen article.
             $sql = "SELECT * FROM healthnews where itemID = '$itemID'";
             //Process the query
             $result = $db->query($sql);
             // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
             while($row = $result->fetch_array()) {
-                $title = "TITLE";
+                $title = $row['title'];
                 $_SESSION['title'] = $title;
-                $articleText = $row['content'];
+                $articleText = 'WHY NOT CONTENT';
                 $_SESSION['content'] = $content;
                 $verified = $row['verified'];
                 $_SESSION['verified'] = $verified;
@@ -27,7 +27,7 @@ if (isset($_SESSION['username']))
                 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
                 <script>tinymce.init({selector: 'textarea'});</script>
                 <form action="healthAndWellbeingForm.php" method="post">
-                    <p>Article Name: </p><input type="text" name="title" value=<?php print $_SESSION["title"];?>placeholder="Article Name">
+                    <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
                     <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?> </textarea>
                     <p>Verified: </p> <input type="text" name="verified" value="<?php print $_SESSION["verified"];?>" placeholder="verified">
                     <p><input type="submit" value='Submit'></p>
