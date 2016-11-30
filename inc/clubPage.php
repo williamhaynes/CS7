@@ -13,24 +13,59 @@
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while($row = $result->fetch_array())
         {
-            $clubID = $row['clubID'];
-            $_SESSION['clubID'] = $clubID;
+            $_SESSION['clubID'] = $row['clubID'];
+
             $clubName = $row['clubName'];
-            $_SESSION['clubName'] = $clubName;
+            $_SESSION['clubName'] = $row['clubName'];
+
+            $activity = $row['activity'];
+            $_SESSION['activity'] = $row['activity'];
+
             $clubDescription = $row['clubDescription'];
-            $_SESSION['clubDescription'] = $clubDescription;
-            $contactInformation = $row['contactInformation'];
-            $_SESSION['contactInformation'] = $contactInformation;
-            //Check adminID is not null
-            if($row['adminID'] != 'NULL'){
-                $adminID = $row['adminID'];
-                $_SESSION['adminID'] = $adminID;
-            }
+            $_SESSION['clubDescription'] = $row['clubDescription'];
+
+            $contactName = $row['contactName'];
+            $_SESSION['contactName'] = $row['contactName'];
+
+            $contactNumber = $row['contactNumber'];
+            $_SESSION['contactNumber'] = $row['contactNumber'];
+
+            $contactEmail = $row['contactEmail'];
+            $_SESSION['contactEmail'] = $row['contactEmail'];
+
+            $website = $row['website'];
+            $_SESSION['website'] = $row['website'];
+
+            $websiteUrl = $row['websiteUrl'];
+            $_SESSION['websiteUrl'] = $row['websiteUrl'];
+
+            $facebook = $row['facebook'];
+            $_SESSION['facebook'] = $row['facebook'];
+
+            $facebookUrl = $row['facebookUrl'];
+            $_SESSION['facebookUrl'] = $row['facebookUrl'];
+
+            $adminID = $row['adminID'];
+            $_SESSION['adminID'] = $row['adminID'];
+
+            //fb logo https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png
+
             echo "
             <atricle>
-                 <h2>{$clubName}</h2>
-                 <p>{$clubDescription}</p>
-                 <p>{$contactInformation}</p>
+                 <h2 id='clubName'>{$clubName}</h2>
+                 <p id='activity'>{$activity}</p>
+                 <p id='clubDescription'>{$clubDescription}</p>
+                 <p id='session'>{$session}</p>
+                 <p id='contactInfo'>{'$contactName', '$contactNumber', '$contactEmail'}</p>
+                 <script>
+                    if ($website == 1){
+                        <p id='websiteUrl'>{$websiteUrl}</p>
+                    }
+                    if ($facebook == 1){
+                        <p id='facebookUrl'>{$facebookUrl}</p>
+
+                    }
+                 </script>
              </atricle>";
         }
         echo "</main>";
