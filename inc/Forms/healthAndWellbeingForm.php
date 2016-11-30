@@ -16,17 +16,20 @@ if (isset($_SESSION['username']))
             // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
             while($row = $result->fetch_array()) {
                 $title = $row['title'];
+                $_SESSION['title'] = $title;
                 $articleText = $row['content'];
+                $_SESSION['content'] = $content;
                 $verified = $row['verified'];
+                $_SESSION['verified'] = $verified;
             }
             ?>
             <main>
                 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
                 <script>tinymce.init({selector: 'textarea'});</script>
                 <form action="healthAndWellbeingForm.php" method="post">
-                    <input type="text" name="title" value="$title" placeholder="Article Name">
-                    <textarea name="content"> $content </textarea>
-                    <input type="text" name="verified" value="$verified" placeholder="verified">
+                    <input type="text" name="title" value=<?php print $_SESSION["title"];?>placeholder="Article Name">
+                    <textarea name="content"><?php print $_SESSION["content"];?></textarea>
+                    <input type="text" name="verified" value="<?php print $_SESSION["verified"];?>" placeholder="verified">
                     <input type="submit">
                 </form>
             </main>
