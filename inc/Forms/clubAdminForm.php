@@ -16,6 +16,7 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
                 if($_SESSION["userID"] == $_SESSION["adminID"]){
                     <p>Club Admin ID: </p><input type="number" name="adminID" value="<?php print $_SESSION["adminID"];?>" placeholder="Admin ID">
                 }
+                <p>USER ID: </p><input type="number" name="userID" value="<?php print $_SESSION["userID"];?>" placeholder="user ID">
                 <p><input type="submit" value='Submit'></p>
             </form>
         </main>
