@@ -15,20 +15,17 @@ if (isset($_SESSION['username']))
             $result = $db->query($sql);
             // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
             while($row = $result->fetch_array()) {
-                $articleName = $row['articleName'];
-                $_SESSION['articleName'] = $artcileName;
-                $articleText = $row['articleText'];
-                $_SESSION['articleText'] = $articleText;
+                $title = $row['title'];
+                $articleText = $row['content'];
                 $verified = $row['verified'];
-                $_SESSION['verified'] = $verified;
             }
             ?>
             <main>
                 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
                 <script>tinymce.init({selector: 'textarea'});</script>
                 <form action="healthAndWellbeingForm.php" method="post">
-                    <input type="text" name="articleName" value="$articleName" placeholder="Article Name">
-                    <textarea name="articleText"> $articletext </textarea>
+                    <input type="text" name="title" value="$title" placeholder="Article Name">
+                    <textarea name="content"> $content </textarea>
                     <input type="text" name="verified" value="$verified" placeholder="verified">
                     <input type="submit">
                 </form>
@@ -38,13 +35,12 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-        $articleName = $_POST["articleName"];
-        $articleText = $_POST["articleText"];
+        $articleName = $_POST["title"];
+        $articleText = $_POST["content"];
         $verified = $_POST["verified"];
 
-
         $sql = "UPDATE healthnews 
-                    SET articleName = '" .$articleName."', articleText = '".$articleText."', verified = '".$verified."' 
+                    SET title = '" .$title."', content = '".$content."', verified = '".$verified."' 
                     WHERE itemID = $itemID";
         if (mysqli_query($db, $sql)) {
         } else {
@@ -54,6 +50,6 @@ if (isset($_SESSION['username']))
     }
 //test
 } else {
-    header("location:login");
+    header("location:../login");
 }
 ?>
