@@ -42,7 +42,6 @@ if (isset($_SESSION['username']))
         $content = $_POST["content"];
         $verified = $_POST["verified"];
 
-
         $sql = "UPDATE healthnews 
                     SET title = '" .$title."', content = '".$content."', verified = '".verified."' 
                     WHERE itemID = 1";
