@@ -29,7 +29,7 @@ if (isset($_SESSION['username']))
         $sql = "INSERT INTO Club (clubName, clubDescription, contactInformation, adminID)
         VALUES ('".$clubName."', '".$clubDescription."','".$contactInformation."', '".$adminID."')";
         if (mysqli_query($db, $sql)) {
-            header("../clubsAndSocietiesPage");
+            header("location:../clubsAndSocietiesPage");
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
         }
