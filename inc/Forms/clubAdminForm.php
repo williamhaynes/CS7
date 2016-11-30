@@ -38,7 +38,7 @@ if (isset($_SESSION['username'])) //SESSION DOES EXIST
 
         //if (checkClubExist($clubID, $db)){
             $sql = "UPDATE Club 
-                    SET clubName = '" .$clubName."', clubDescription = '".$clubDescription."', contactInformation = '".$contactInformation."', adminID = '".$adminID."' 
+                    SET clubName = $clubName, clubDescription = $clubDescription, contactInformation = $contactInformation, adminID = $adminID
                     WHERE clubID = $clubID";
             if (mysqli_query($db, $sql)) {
             } else {
