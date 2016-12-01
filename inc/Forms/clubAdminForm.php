@@ -72,6 +72,6 @@ if ($_SESSION['userID']==$_SESSION["adminID"] || $_SESSION['accessLevel'] === 31
     }
 //test
 } else {
-    header("location:loginPage");
+    //header("location:loginPage");
 }
 ?>
