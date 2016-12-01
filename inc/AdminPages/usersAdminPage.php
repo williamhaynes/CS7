@@ -32,8 +32,8 @@ include(__DIR__."/../scripts/header.php");
             echo "<th>";
             //If the user is a club administrator
             if ($row['levelCode'] == 21 || $row['levelCode'] == 31){
-                echo "<p>" . $row['levelCode'] . "</p>";
-                echo "<p>" . $row['userID'] . "</p>";
+                //echo "<p>" . $row['levelCode'] . "</p>";
+                //echo "<p>" . $row['userID'] . "</p>";
                 $sql_query2 = "SELECT clubName FROM Club WHERE adminID = '" . $row['userID'] ."';";
                 if (mysqli_query($db, $sql_query2)) {
                 } else {
