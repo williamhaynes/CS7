@@ -24,6 +24,9 @@
             $clubDescription = $row['clubDescription'];
             $_SESSION['clubDescription'] = $row['clubDescription'];
 
+            $sessionTime = $row['sessionTime'];
+            $_SESSION['sessionTime'] = $row['sessionTime'];
+
             $contactName = $row['contactName'];
             $_SESSION['contactName'] = $row['contactName'];
 
@@ -45,6 +48,9 @@
             $facebookUrl = $row['facebookUrl'];
             $_SESSION['facebookUrl'] = $row['facebookUrl'];
 
+            $genreID = $row['genreID'];
+            $_SESSION['genreID'] = $row['genreID'];
+
             $adminID = $row['adminID'];
             $_SESSION['adminID'] = $row['adminID'];
 
@@ -56,7 +62,7 @@
                  <h2 id='clubName'>{$clubName}</h2>
                  <p id='activity'>{$activity}</p>
                  <p id='clubDescription'>{$clubDescription}</p>
-                 <p id='session'>{$session}</p>
+                 <p id='sessionTime'>{$sessionTime}</p>
                  <p id='contactName'>Contact: $contactName</p>
                  <p id='contactNumber'>Contact Number: $contactNumber</p>
                  <p id='contactEmail'>Email: $contactEmail</p>
