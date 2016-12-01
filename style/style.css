@@ -39,6 +39,10 @@ nav li a :hover {
     background-color: #111;
 }
 
+.loginButton{
+    background-color: blue;
+}
+
 #logoIMG{
     width: 90px;
     height: 60px;
