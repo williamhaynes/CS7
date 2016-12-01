@@ -87,7 +87,7 @@ if (isset($_SESSION['username']))
             $facebook = 0;
             $facebookUrl = NULL;
         }
-
+        $genreID = $_POST["genreID"];
         $adminID = $_SESSION["userID"];
 
 
