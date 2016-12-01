@@ -17,17 +17,17 @@ if (isset($_SESSION['username']))
                 <p>Contact Name: </p><input type="text" name="contactName" placeholder="Contact Name">
                 <p>Contact Number: </p><input type="text" name="contactNumber" placeholder="Contact Number">
                 <p>Contact Email: </p><input type="text" name="contactEmail" placeholder="Contact Email">
-                <p>Tick if you have a website: </p><input type="checkbox" name="website">
+                <p>Tick if you have a website: </p><input type="checkbox" name="website" id="website">
                 <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl">
-                <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook">
+                <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook" id="facebook">
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl">
                 <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
                 <script>
 
-                    if (document.getElementsByName('website').getAttribute('checked')==false){
-                        document.getElementsByName('websiteUrl').setAttribute ('disabled', 'true');
+                    if (document.getElementById('website').getAttribute('checked')==false){
+                        document.getElementById('websiteUrl').setAttribute ('disabled', 'true');
                     }else{
-                        document.getElementsByName('websiteUrl').setAttribute ('disabled', 'false');
+                        document.getElementById('websiteUrl').setAttribute ('disabled', 'false');
                     }
                 </script>
 
