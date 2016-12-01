@@ -37,7 +37,7 @@ include(__DIR__."/../scripts/header.php");
                 }
                 $result2 = $db->query($sql_query2);
                 $listOfClubs = "";
-                while($row = $result->fetch_array()) {
+                while($row = $result2->fetch_array()) {
                     $listOfClubs .= $row['clubName'] . "<br>";
                 }
                 echo "<th>" . $listOfClubs . "</th>";
