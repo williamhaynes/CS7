@@ -10,17 +10,19 @@ if (isset($_SESSION['username']))
             <script>
                 function checkboxClicked() {
                     if (document.getElementById('website').checked) {
-                        alert("Checked");
+                        alert("Website Checked");
                         document.getElementById('websiteUrl').setAttribute('disabled', 'true');
                     }
                     else{
-                        alert("UNChecked");
+                        alert("Website UNChecked");
                         document.getElementById('websiteUrl').setAttribute('disabled', 'false');
                     }
                     if (document.getElementById('facebook').checked) {
+                        alert("Facebook Checked");
                         document.getElementById('facebookUrl').setAttribute('disabled', 'true');
                     }
                     else{
+                        alert("Facebook UNChecked");
                         document.getElementById('facebookUrl').setAttribute('disabled', 'false');
                     }
                 }
