@@ -15,8 +15,27 @@ if($_SESSION['accessLevel'] == '31') {
                 <th>Level Code</th>
                 <th>Club Name</th>
             </tr>
+
             <?
             include(__DIR__ . "/../scripts/dbconnect.php");
+            /*
+             * Function to translate the level code in to a string which makes more sense to a site administrator
+             * @param - $levelCode is the numerical value returned from the database
+             */
+            function translateLevelCode($levelCode){
+                switch ($levelCode) {
+                    case 1:
+                        return "Contributor";
+                    case 11:
+                        return "NKPAG";
+                    case 21:
+                        return "Club Administrator";
+                    case 31:
+                        return "Site Administrator";
+                    default:
+                        return "Unknown User";
+                }
+            }
             //Takes all database information from the Users Table.
             $sql_query = "SELECT * FROM User;";
             //Process the query
@@ -53,27 +72,6 @@ if($_SESSION['accessLevel'] == '31') {
                 echo "</th>";
                 echo "</tr>";
             }
-
-            /*
-             * Function to translate the level code in to a string which makes more sense to a site administrator
-             * @param - $levelCode is the numerical value returned from the database
-             */
-            function translateLevelCode($levelCode)
-            {
-                switch ($levelCode) {
-                    case 1:
-                        return "Contributor";
-                    case 11:
-                        return "NKPAG";
-                    case 21:
-                        return "Club Administrator";
-                    case 31:
-                        return "Site Administrator";
-                    default:
-                        return "Unknown User";
-                }
-            }
-
             ?>
         </table>
     </main>
