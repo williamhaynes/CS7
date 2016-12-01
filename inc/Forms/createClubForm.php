@@ -40,7 +40,7 @@ if (isset($_SESSION['username']))
                 <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook" id="facebook" onclick="checkboxClicked()">
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl" id="facebookUrl" disabled=true>
                 <p>Genre: </p>
-                <select name="genreID" id="genreID" onclick="getGenres()">
+                <select name="genreID" id="genreID">
                     <?
                         //Takes all database information from the Genre TABLE.
                         $sql_query = "SELECT * FROM Genre";
