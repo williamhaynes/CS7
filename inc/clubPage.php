@@ -24,6 +24,9 @@
             $clubDescription = $row['clubDescription'];
             $_SESSION['clubDescription'] = $row['clubDescription'];
 
+            $sessionTime = $row['sessionTime'];
+            $_SESSION['sessionTime'] = $row['sessionTime'];
+
             $contactName = $row['contactName'];
             $_SESSION['contactName'] = $row['contactName'];
 
