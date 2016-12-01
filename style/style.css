@@ -80,6 +80,7 @@ th, tr {
     text-align: left;
 }
 
-.hoverableRowsAndColumns {
+.hoverableRowsAndColumns:hover {
+
     background-color: lightskyblue;
 }
