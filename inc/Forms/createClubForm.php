@@ -10,19 +10,15 @@ if (isset($_SESSION['username']))
             <script>
                 function checkboxClicked() {
                     if (document.getElementById('website').checked) {
-                        alert("Website Checked");
                         document.getElementById('websiteUrl').disabled = false;
                     }
                     else{
-                        alert("Website UNChecked");
                         document.getElementById('websiteUrl').disabled = true;
                     }
                     if (document.getElementById('facebook').checked) {
-                        alert("Facebook Checked");
                         document.getElementById('facebookUrl').disabled = false;
                     }
                     else{
-                        alert("Facebook UNChecked");
                         document.getElementById('facebookUrl').disabled = true;
                     }
                 }
