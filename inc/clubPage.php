@@ -45,6 +45,9 @@
             $facebookUrl = $row['facebookUrl'];
             $_SESSION['facebookUrl'] = $row['facebookUrl'];
 
+            $genreID = $row['genreID'];
+            $_SESSION['genreID'] = $row['genreID'];
+
             $adminID = $row['adminID'];
             $_SESSION['adminID'] = $row['adminID'];
 
