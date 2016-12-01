@@ -20,6 +20,9 @@ session_start();
                 <li id="clubsAndSocieties"><a href="/clubsAndSocietiesPage">Clubs & Societies</a></li>
                 <li id="mapPage"><a href="/mapPage">Maps</a></li>
                  <?php
+                 /*
+                  * 
+                  */
                 if (isset($_SESSION['username'])) {
                     echo "<li><a href='/logoutPage'>Logout</a></li>";
                     echo "<li><a href='/userDetailsPage'>My Account</a></li>";
