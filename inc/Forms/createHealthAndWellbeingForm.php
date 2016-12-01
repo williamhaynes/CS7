@@ -21,9 +21,14 @@ if (isset($_SESSION['username']))
         include (__DIR__ . "/../scripts/dbconnect.php");
         $articleName = $_POST["articleName"];
         $articleText = $_POST["articleText"];
-
+        $userName = $_SESSION["username"];
         //If admin the verified value should be 1 and not 0
-        $sql = "INSERT INTO healthnews (title, content, verified) VALUES ('" . $articleName . "', '" . $articleText . "', 0 )";
+        if($_SESSION['accessLevel'] == '31'){
+            $verified = 1;
+        }else{
+            $verified = 0;
+        }
+        $sql = "INSERT INTO healthnews (title, content, verified, userName) VALUES ('" . $articleName . "', '" . $articleText . "', " . $verified . ", '" . $userName . "')";
         if (mysqli_query($db, $sql)) {
             header("location:../healthAndWellbeingPage");
         } else {
