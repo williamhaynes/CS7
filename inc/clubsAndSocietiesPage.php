@@ -1,5 +1,6 @@
-<!--Functional Requirement. A page to display all the clubs and societies in a list, and allow them to be searched and
-filtered. Will also have an events overview calendar.-->
+<!-- Displays all Club and Societies as a list, which can be searched and filtered by the user. Will include information
+about the clubs like events and descriptions of each club. It will also include an events overview calender to show
+when the latest events are for each club and society.-->
 
 <!--Allows user to view all verified health and wellbeing blog posts as per system requirements. Site Admin will have
 overlay to authorise/reject blog posts. As per System Requirements.-->
@@ -18,13 +19,20 @@ echo "
     <p>Below is a list of all Clubs and Societies</p><ul>
 ";
 
-//Takes all database information from the Club Table.
+/*
+ * Using the database take all the information from the Club Table
+ * Using an SQL command to pull all the information
+ */
 $sql_query = "SELECT * FROM Club;";
 
-//Process the query
+/*
+ * Once all information has been pulled process the SQL query
+ */
 $result = $db->query($sql_query);
 
-// Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
+/*
+ * Iterate through and sort out all the data
+ */
 while($row = $result->fetch_array()){
     $clubID = $row['clubID'];
     $clubName = $row['clubName'];
@@ -35,6 +43,3 @@ echo "</main>";
 include ("scripts/footer.php");
 
 ?>
-
-
-
