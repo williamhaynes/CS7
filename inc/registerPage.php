@@ -41,25 +41,25 @@ include ("scripts/header.php");
             if($('#usersname').val()){
                 username = true;
                 console.log("username true");
-            }
+            } else{ username = false;}
             if($('#usersEmailAddress').val()){
                 emailAddress = true;
                 console.log("emailaddress true");
-            }
+            } else{ emailAddress = false;}
             if($('#usersDisplayName').val()){
                 displayName = true;
                 console.log("displayname true");
                 console.log($('#usersDisplayName').val.toString());
-            }
+            } else{ displayName = false;}
             if($('#firstPassword').val()){
                 passwords = true;
                 console.log("firstpassword true");
                 console.log("fieldsfull should be true if passwords match");
-            }
+            } else{ passwords = false;}
             if(username == true && emailAddress == true && displayName == true && passwords == true){
                 fieldsFilled = true;
                 console.log("fieldsfilled true");
-            }
+            } else{ fieldsFilled = false;}
             if(fieldsFilled == true && passwordsMatch == true){
                 $('#submitRegisterButton').removeAttr("disabled");
                 console.log("enabled registerbutton");
