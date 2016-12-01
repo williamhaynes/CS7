@@ -9,16 +9,16 @@ if (isset($_SESSION['username']))
             <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
             <script>
                 function checkboxClicked() {
-                    if (document.getElementById('website').getAttribute('checked') == false) {
+                    if (document.getElementById('website').checked) {
                         document.getElementById('websiteUrl').setAttribute('disabled', 'true');
                     }
-                    if (document.getElementById('website').getAttribute('checked') == true) {
+                    else{
                         document.getElementById('websiteUrl').setAttribute('disabled', 'false');
                     }
-                    if (document.getElementById('facebook').getAttribute('checked') == false) {
+                    if (document.getElementById('facebook').checked) {
                         document.getElementById('facebookUrl').setAttribute('disabled', 'true');
                     }
-                    if (document.getElementById('facebook').getAttribute('checked') == true) {
+                    else{
                         document.getElementById('facebookUrl').setAttribute('disabled', 'false');
                     }
                 }
