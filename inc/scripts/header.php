@@ -10,6 +10,7 @@ session_start();
     <title>header</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script type="text/javascript" src="../scripts/checkPasswordMatch.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 </head>
 <body>
     <header>
