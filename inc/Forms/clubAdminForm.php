@@ -75,7 +75,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 
 
             $sql = "UPDATE Club 
-                    SET clubName = '" .$clubName."', clubDescription = '".$clubDescription."', contactInformation = '".$contactInformation."', adminID = '".$adminID."' 
+                    SET clubName = '" .$clubName."', activity = '".$activity."', clubDescription = '".$clubDescription."', sessionTime = '".$sessionTime."', contactName = '".$contactName."', contactNumber = '".$contactNumber."', contactEmail = '".$contactEmail."', website = '".$website."', websiteUrl = '".$websiteUrl."', facebook = '".$facebook."', facebookUrl = '".$facebookUrl."', genreID = '".$genreID."', adminID = '".$adminID."' 
                     WHERE clubID = $clubID";
             if (mysqli_query($db, $sql)) {
                 header("location:../$clubID");
