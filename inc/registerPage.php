@@ -11,6 +11,10 @@ include ("scripts/header.php");
         $(document).ready(function() {
             $('#secondPassword').keyup(checkPasswordMatch());
             $('#firstPassword').keyup(checkPasswordMatch());
+            $('#usersname').keyup(checkFields());
+            $('#usersEmailAddress').keyup(checkFields());
+            $('#usersEmailAddress').keyup(checkFields());
+            $('#firstPassword').keyup(checkFields());
         });
 
         function checkPasswordMatch() {
@@ -23,17 +27,38 @@ include ("scripts/header.php");
             }
             else{
                 $('#passwordConfirmer').html("Passwords match!");
-                $('#submitRegisterButton').attr("enabled", true);
+            }
+        }
+        function checkFields(){
+            var username = false;
+            var emailAddress = false;
+            var displayName = false;
+            var passwords = false;
+
+            if($('#usersname').val != null){
+                username = true;
+            }
+            if($('#usersEmailAddress').val != null){
+                emailAddress = true;
+            }
+            if($('#usersDisplayName').val != null){
+                displayName = true;
+            }
+            if($('#firstPassword').val() != null && checkPasswordMatch()){
+                passwords = true;
+            }
+            if(username == true && emailAddress == true && displayName == true && passwords == true){
+                $('#submitRegisterButton').attr("enabled", false);
             }
         }
 
     </script>
     <form action="registerPage" method="post">
-        <input type="text" placeholder="User Name" name="username">
-        <input type="text" placeholder="Email Address" name="emailAddress">
-        <input type="text" placeholder="Display Name" name="displayName">
+        <input type="text" placeholder="User Name" id="usersname" onchange="checkFields()" name="username">
+        <input type="text" placeholder="Email Address" id="usersEmailAddress" onchange="checkFields()" name="emailAddress">
+        <input type="text" placeholder="Display Name" id="usersDisplayName" onchange="checkFields()" name="displayName">
         <input type="password" placeholder="Password" id="firstPassword" onchange="checkPasswordMatch()" name="password">
-        <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch()" name="confirmPassword">
+        <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch(); checkFields();" name="confirmPassword">
         <p id="passwordConfirmer"></p>
         <p><input type="submit" id='submitRegisterButton' value='Register'></p>
     </form>
