@@ -1,7 +1,7 @@
 <?php
 session_start();
-if ($_SESSION['userID']==$_SESSION["adminID"] || $_SESSION['accessLevel'] === 31) //CHECK USERID VS ADMINID OF CLUB
-{
+//if ($_SESSION['userID']==$_SESSION["adminID"] || $_SESSION['accessLevel'] === 31) //CHECK USERID VS ADMINID OF CLUB
+//{
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         include(__DIR__."/../scripts/header.php");
         ?>
@@ -71,7 +71,7 @@ if ($_SESSION['userID']==$_SESSION["adminID"] || $_SESSION['accessLevel'] === 31
 
     }
 //test
-} else {
+//} else {
     //header("location:loginPage");
-}
+//}
 ?>
