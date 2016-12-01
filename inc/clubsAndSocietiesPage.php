@@ -40,15 +40,13 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         } else {
             echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
         }
-
-        $genreArray = array();
+        $genreArray = array(); //array to store genre ids and names as key -> value pairs
         $result2 = $db->query($sql_query2);
-        while ($row2 = $result2->fetch_array()){
-            $index = $row2['genreID'];
-            $value = $row2['name'];
-            $genreArray[$index] = $value;
+        while ($row2 = $result2->fetch_array()){    //iterate through result to create array
+            $index = $row2['genreID'];  //index of array
+            $value = $row2['name'];     //value of array
+            $genreArray[$index] = $value; //array values
         }
-        echo "<p>". var_dump($genreArray) ."</p>";
 
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while ($row = $result->fetch_array()) {
