@@ -23,10 +23,11 @@ if (isset($_SESSION['username']))
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl">
                 <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
                 <script>
-                    if (document.getElementsByTagName('website').getAttribute('checked')==false){
-                        document.getElementsByTagName('websiteUrl').setAttribute ('disabled', 'true');
+
+                    if (document.getElementsByName('website').getAttribute('checked')==false){
+                        document.getElementsByName('websiteUrl').setAttribute ('disabled', 'true');
                     }else{
-                        document.getElementsByTagName('websiteUrl').setAttribute ('disabled', 'false');
+                        document.getElementsByName('websiteUrl').setAttribute ('disabled', 'false');
                     }
                 </script>
 
