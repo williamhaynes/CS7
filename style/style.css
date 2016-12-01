@@ -84,6 +84,6 @@ th, tr {
     background-color: lightskyblue;
 }
 
-.hoverableSpecificRowAndColumn{
+.hoverableSpecificRowAndColumn:hover{
     background-color: dodgerblue;
 }
