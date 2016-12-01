@@ -11,12 +11,14 @@ if (isset($_SESSION['username']))
                 function checkboxClicked() {
                     if (document.getElementById('website').getAttribute('checked') == false) {
                         document.getElementById('websiteUrl').setAttribute('disabled', 'true');
-                    } else {
+                    }
+                    if (document.getElementById('website').getAttribute('checked') == true) {
                         document.getElementById('websiteUrl').setAttribute('disabled', 'false');
                     }
                     if (document.getElementById('facebook').getAttribute('checked') == false) {
                         document.getElementById('facebookUrl').setAttribute('disabled', 'true');
-                    } else {
+                    }
+                    if (document.getElementById('facebook').getAttribute('checked') == true) {
                         document.getElementById('facebookUrl').setAttribute('disabled', 'false');
                     }
                 }
