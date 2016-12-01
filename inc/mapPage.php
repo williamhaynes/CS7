@@ -5,8 +5,24 @@ System Requirements.-->
 include ("scripts/header.php");
 
 echo "
+    <head>
+        <title>Map</title>
+        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE' type='text/JavaScript'></script> 
+        <script type=\"text/JavaScript\">
+            function load() {
+              var map = new google.maps.Map(document.getElementById('map'), {
+                center: new google.maps.LatLng(47.6145, -122.3418),
+                zoom: 13,
+                mapTypeId: 'roadmap'
+              });
+            }
+        </script>
+
+    </head>
     <main>
-    <p>Welcome to map Page</p>
+        <body onload='load()'>
+             <div id='map' style='width: 500px; height: 300px'></div>
+        </body>
     </main>
     ";
 
