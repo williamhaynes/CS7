@@ -77,6 +77,6 @@ if($_SESSION['accessLevel'] == '31') {
     <?
     include(__DIR__ . "/../scripts/footer.php");
 } else{
-    //header("location:../404");
+    header("location:../404");
 }
 ?>
