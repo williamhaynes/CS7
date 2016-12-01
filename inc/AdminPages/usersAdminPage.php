@@ -27,9 +27,27 @@ include(__DIR__."/../scripts/header.php");
             echo "<tr><th>" . $row['userName'] . "</th>";
             echo "<th>" . $row['emailAddress'] . "</th>";
             echo "<th>" . $row['displayName'] . "</th>";
-            echo "<th>" . translateLevelCode($row['levelCode']) . "</th></tr>";
+            echo "<th>" . translateLevelCode($row['levelCode']) . "</th>";
+            //If the user is a club administrator
+            if ($row['levelCode'] === 21){
+                $sql_query2 = "SELECT clubName FROM Club WHERE adminID = '" . $row['userID'] ."';";
+                if (mysqli_query($db, $sql_query2)) {
+                } else {
+                    echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
+                }
+                $result2 = $db->query($sql_query2);
+                $listOfClubs = "";
+                while($row = $result->fetch_array()) {
+                    $listOfClubs .= $row['clubName'] . "<br>";
+                }
+                echo "<th>" . $listOfClubs . "</th>";
+            }
+            echo "</tr>";
         }
-
+        /*
+         * Function to translate the level code in to a string which makes more sense to a site administrator
+         * @param - $levelCode is the numerical value returned from the database
+         */
         function translateLevelCode($levelCode){
             switch ($levelCode) {
                 case 1:
