@@ -18,20 +18,16 @@ include ("scripts/header.php");
         });
 
         function checkPasswordMatch() {
-            var passwordsMatch = true;
             var password = $('#firstPassword').val();
             var confirmPassword = $('#secondPassword').val();
 
             if (password != confirmPassword) {
                 $('#passwordConfirmer').html("Passwords do not match!");
                 $('#submitRegisterButton').attr("disabled", true);
-                passwordsMatch = false;
             }
             else{
                 $('#passwordConfirmer').html("Passwords match!");
-                passwordsMatch = true;
             }
-            return passwordsMatch;
         }
         function checkFields(){
             var username = false;
@@ -64,7 +60,7 @@ include ("scripts/header.php");
         <input type="password" placeholder="Password" id="firstPassword" onchange="checkPasswordMatch()" name="password">
         <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch(); checkFields();" name="confirmPassword">
         <p id="passwordConfirmer"></p>
-        <p><input type="submit" id='submitRegisterButton' value='Register' disabled></p>
+        <p><input type="submit" id='submitRegisterButton' value='Register'></p>
     </form>
 </main>
 
