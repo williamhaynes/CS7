@@ -40,16 +40,21 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         } else {
             echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
         }
+
+        $genreArray = array();
         $result2 = $db->query($sql_query2);
         while ($row2 = $result2->fetch_array()){
-            echo "<p>" . $row2['genreID'] . "</p>";
-            echo "<p>" . $row2['name'] . "</p>";
+            $index = $row2['genreID'];
+            $value = $row2['name'];
+            $genreArray[$index] = $value;
         }
+        echo "<p>". var_dump($genreArray) ."</p>";
 
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while ($row = $result->fetch_array()) {
+            $index2 = $row['genreID'];
             echo "<tr class='hoverableRowsAndColumns'><th class='hoverableSpecificRowAndColumn'>" . $row['clubName'] . "</th>";
-            echo "<th class='hoverableSpecificRowAndColumn'>" . $genreArray[$row['genreID']] . "</th>"; //the name row contains the name of the genre
+            echo "<th class='hoverableSpecificRowAndColumn'>" . $genreArray[$index2] . "</th>"; //the name row contains the name of the genre
             echo "<th class='hoverableSpecificRowAndColumn'>" . $row['clubDescription'] . "</th>";
             echo "</tr>";
         }
