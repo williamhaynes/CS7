@@ -40,6 +40,8 @@ include(__DIR__."/../scripts/header.php");
                     return "Club Administrator";
                 case 31:
                     return "Site Administrator";
+                default:
+                    return "Unknown User";
             }
         }
         ?>
