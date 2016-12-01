@@ -1,8 +1,9 @@
 <!--
-Will hold details on the specific user's account, this will allow them to make any changes to their details as they see
-fit, it will also allow users to clearly see what their access rights are to the site. Possible ability to expand upon
-this and allow them to see their pending and verified posts, though this is an option for expandability not a
-requirement.
+The page will hold details about the current user. They will be allowed to make any changes to their details and to clearly
+see what their access rights are, i.e. club Administrator rights.
+
+Possible ability to expand upon this and allow them to see their pending and verified posts, though this is
+an option for expandability and is not a requirement.
 -->
 
 <?php
@@ -13,6 +14,15 @@ echo "
     <main>
     <p>userDetailsPage</p>";
 
+/*
+ * If a user is logged in, according to the session cookie, then select all the data from the database for that user
+ * Pull the following information:
+ * Username: The username of the user
+ * Password: The password of the user
+ * Email Address: The email address of the user
+ * Display Name: The display name of the user
+ * Level Code: The level code for the user
+ */
 if (isset($_SESSION['username'])) {
     $sql_query = "SELECT * FROM User WHERE userName ='" . $_SESSION['username'] ."';";
     $result = $db->query($sql_query);
