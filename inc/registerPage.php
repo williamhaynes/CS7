@@ -18,10 +18,8 @@ include ("scripts/header.php");
 
             if (password != confirmPassword){
                 $('#body').html("Passwords do not match!");
-                print("passwords don't match");}
             else {
                 $('#body').html("Passwords match.");
-                print("passwords don't match");
             }
         }
     </script>
