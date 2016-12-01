@@ -2,7 +2,7 @@
 include("inc/scripts/header.php");
 ?>
     <main>
-        <p>Oh look, it's the actual home page</p>
+        <p>Oh look, it's Wills BRanch</p>
     </main>
 <?php
 include("inc/scripts/footer.php");
