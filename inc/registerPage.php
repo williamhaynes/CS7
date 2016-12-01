@@ -49,7 +49,7 @@ include ("scripts/header.php");
             if($('#usersDisplayName').val()){
                 displayName = true;
                 console.log("displayname true");
-                console.log($('#usersDisplayName').val.toString());
+                //console.log($('#usersDisplayName').val.toString());
             } else{ displayName = false;}
             if($('#firstPassword').val()){
                 passwords = true;
