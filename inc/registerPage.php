@@ -38,20 +38,20 @@ include ("scripts/header.php");
             var passwords = false;
             var fieldsFilled = false;
 
-            if($('#usersname').val != null){
+            if($('#usersname').val){
                 username = true;
                 console.log("username true");
             }
-            if($('#usersEmailAddress').val != null){
+            if($('#usersEmailAddress').val){
                 emailAddress = true;
                 console.log("emailaddress true");
             }
-            if($('#usersDisplayName').val != null){
+            if($('#usersDisplayName').val){
                 displayName = true;
                 console.log("displayname true");
-                console.log($('#usersDisplayName').val);
+                console.log($('#usersDisplayName').val.toString());
             }
-            if($('#firstPassword').val() != null){
+            if($('#firstPassword').val()){
                 passwords = true;
                 console.log("firstpassword true");
                 console.log("fieldsfull should be true if passwords match");
