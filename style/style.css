@@ -40,7 +40,7 @@ nav li a :hover {
 }
 
 #loginButton{
-    padding-top: 2px;
+    padding-top: -2px;
     background-color: blue;
 }
 
