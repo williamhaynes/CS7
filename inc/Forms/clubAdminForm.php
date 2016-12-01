@@ -33,7 +33,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 <p>Contact Number: </p><input type="text" name="contactNumber" value="<?php print $_SESSION["contactNumber"];?>" placeholder="Contact Number">
                 <p>Contact Email: </p><input type="text" name="contactEmail" value="<?php print $_SESSION["contactEmail"];?>" placeholder="Contact Email">
                 <p>Tick if you have a website: </p><input type="checkbox" name="website" id="website" <?php if($_SESSION["website"]==1){print checked;}?>  onclick="checkboxClicked()">
-                <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl" id="websiteUrl" value="<?php if($_SESSION["website"]==1){print $_SESSION["websiteUrl"];}else{print 'disabled=true';}?>" >
+                <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl" id="websiteUrl" value="<?php if($_SESSION["website"]==1){print $_SESSION["websiteUrl"];}?>" >
                 <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook" id="facebook" <?php if($_SESSION["facebook"]==1){print checked;}?> onclick="checkboxClicked()">
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl" id="facebookUrl" value="<?php if($_SESSION["facebook"]==1){print $_SESSION["facebookUrl"];}?>" >
                 <p>Genre: </p>
@@ -69,8 +69,17 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         include (__DIR__ . "/../scripts/dbconnect.php");
         $clubID = $_SESSION["clubID"];
         $clubName = $_POST["clubName"];
+        $activity = $_POST["activity"];
         $clubDescription = $_POST["clubDescription"];
-        $contactInformation = $_POST['contactInformation'];
+        $sessionTime = $_POST["sessionTime"];
+        $contactName = $_POST['contactName'];
+        $contactNumber = $_POST['contactNumber'];
+        $contactEmail = $_POST['contactEmail'];
+        $website = $_POST['website'];
+        $websiteUrl = $_POST['websiteUrl'];
+        $facebook = $_POST['facebook'];
+        $facebookUrl = $_POST['facebookUrl'];
+        $genreID = $_POST['genreID'];
         $adminID = $_POST["adminID"];
 
 
