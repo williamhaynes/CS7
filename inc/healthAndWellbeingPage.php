@@ -39,7 +39,7 @@ while($row = $result->fetch_array()){
     if($_SESSION['accessLevel'] == 31) {
        echo "<a href='Forms/healthAndWellbeingForm/{$itemID}'> Edit </a>";
     }
-echo "<p>$userName</p></li>";
+echo "<p>$authorName</p></li>";
 }
 echo "</main>";
 include ("scripts/footer.php");
