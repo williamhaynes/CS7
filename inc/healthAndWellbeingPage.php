@@ -12,13 +12,20 @@ echo "
 <ul>
 ";
 
-//Takes all database information from the Health News Table if it has been verified.
+/*
+ * Pulls database information from the 'Health News Table' if it has been verified
+ */
 $sql_query = "SELECT * FROM HealthNews WHERE verified = '1';";
 
-//Process the query
+/*
+ * Processes the SQL Query
+ */
 $result = $db->query($sql_query);
 
-// Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
+
+/*
+ * Iterate through the table and output the data 
+ */
 while($row = $result->fetch_array()){
     $itemID = $row['itemID'];
     $title = $row['title'];
