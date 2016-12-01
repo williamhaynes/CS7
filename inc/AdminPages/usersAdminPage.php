@@ -27,7 +27,20 @@ include(__DIR__."/../scripts/header.php");
             echo "<tr><th>" . $row['userName'] . "</th>";
             echo "<th>" . $row['emailAddress'] . "</th>";
             echo "<th>" . $row['displayName'] . "</th>";
-            echo "<th>" . $row['levelCode'] . "</th></tr>";
+            echo "<th>" . translateLevelCode($row['levelCode']) . "</th></tr>";
+        }
+
+        function translateLevelCode($levelCode){
+            switch ($levelCode) {
+                case 1:
+                    return "Contributor";
+                case 11:
+                    return "NKPAG";
+                case 21:
+                    return "Club Administrator";
+                case 31:
+                    return "Site Administrator";
+            }
         }
         ?>
     </table>
