@@ -5,7 +5,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         include(__DIR__."/../scripts/header.php");
         include (__DIR__ . "/../scripts/dbconnect.php");
         ?>
-        <main  onload="checkboxClicked()">
+        <main>
             <script>
                 function checkboxClicked() {
                     if (document.getElementById('website').checked) {
@@ -75,10 +75,22 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         $contactName = $_POST['contactName'];
         $contactNumber = $_POST['contactNumber'];
         $contactEmail = $_POST['contactEmail'];
-        $website = $_POST['website'];
-        $websiteUrl = $_POST['websiteUrl'];
-        $facebook = $_POST['facebook'];
-        $facebookUrl = $_POST['facebookUrl'];
+        if( $_POST["website"] == 'on') {
+            $website = 1;
+            $websiteUrl = $_POST["websiteUrl"];
+        }
+        else{
+            $website = 0;
+            $websiteUrl = NULL;
+        }
+        if( $_POST["facebook"] == 'on') {
+            $facebook = 1;
+            $facebookUrl = $_POST["websiteUrl"];
+        }
+        else{
+            $facebook = 0;
+            $facebookUrl = NULL;
+        }
         $genreID = $_POST['genreID'];
         $adminID = $_SESSION["userID"];
 
