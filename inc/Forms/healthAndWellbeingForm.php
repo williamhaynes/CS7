@@ -20,6 +20,8 @@ if (isset($_SESSION['username']))
                 $_SESSION['content'] = $content;
                 $verified = $row['verified'];
                 $_SESSION['verified'] = $verified;
+                $authorName = $row['authorName'];
+                $_SESSION['authorName'] = $authorName;
             }
             ?>
             <main>
@@ -41,10 +43,10 @@ if (isset($_SESSION['username']))
         $title = $_POST["title"];
         $content = $_POST["content"];
         $verified = $_POST["verified"];
-
+        $authorName = $_POST["authorName"];
 
         $sql = "UPDATE healthnews 
-                    SET title = '" .$title."', content = '".$content."', verified = ".$verified." 
+                    SET title = '" .$title."', content = '".$content."', verified = ".$verified.", verified = '".$authorName."' 
                     WHERE itemID = $itemID";
         if (mysqli_query($db, $sql)) {
             header("location: /healthAndWellbeingPage");
