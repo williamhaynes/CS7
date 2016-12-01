@@ -49,7 +49,11 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                     while($row = $result->fetch_array()){
                         $genreID = $row['genreID'];
                         $name = $row['name'];
-                        echo "<option value='{$genreID}'>$name</option>";
+                        if($_SESSION["genreID"]==$genreID) {
+                            echo "<option value='{$genreID}' selected='selected'>$name</option>";
+                        }else{
+                            echo "<option value='{$genreID}'>$name</option>";
+                        }
                     }
 
                     ?>
