@@ -21,6 +21,15 @@ if (isset($_SESSION['username']))
                 <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl">
                 <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook">
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl">
+                <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
+                <script>
+                    if (document.getElementById('website').getAttribute('checked')==false){
+                        document.getElementById('websiteUrl').setAttribute ('disabled', 'true');
+                    }else{
+                        document.getElementById('websiteUrl').setAttribute ('disabled', 'false');
+                    }
+                </script>
+
                 <p>Club Admin ID: </p><input type="number" name="adminID" value=<?php print $_SESSION["userID"];?> placeholder="Admin ID">
                 <p><input type="submit" value='Submit'></p>
             </form>
