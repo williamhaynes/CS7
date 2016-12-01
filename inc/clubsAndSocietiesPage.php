@@ -13,7 +13,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         }
 ?>
 <main>
-    <h2>Clubs and Societies Portlethen</h2>
+    <h2>Clubs and Societies of Portlethen</h2>
     <p>Below is a list of all Clubs and Societies</p>
     <table>
         <tr>
