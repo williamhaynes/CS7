@@ -28,16 +28,28 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         include(__DIR__ . "/../scripts/dbconnect.php");
         //Takes all database information from the clubs Table.
         $sql_query = "SELECT * FROM club;";
-        //Process the query
+        $sql_query2 = "SELECT * FROM genre";
+        //Process the queries
         if (mysqli_query($db, $sql_query)) {
         } else {
             echo "Error: " . $sql_query . "<br>Error Message:" . mysqli_error($db);
         }
         $result = $db->query($sql_query);
+        //Takes all database information from the genre Table.
+        if (mysqli_query($db, $sql_query2)) {
+        } else {
+            echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
+        }
+        $genreArray = array();
+        $result2 = $db->query($sql_query2);
+        while ($row2 = $result2->fetch_array()){
+            $genreArray = array($row2['genreID'], $row2['name']);
+        }
+
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while ($row = $result->fetch_array()) {
             echo "<tr class='hoverableRowsAndColumns'><th class='hoverableSpecificRowAndColumn'>" . $row['clubName'] . "</th>";
-            echo "<th class='hoverableSpecificRowAndColumn'>" . $row['name'] . "</th>"; //the name row contains the name of the genre
+            echo "<th class='hoverableSpecificRowAndColumn'>" . $genreArray[$row['genreID']] . "</th>"; //the name row contains the name of the genre
             echo "<th class='hoverableSpecificRowAndColumn'>" . $row['clubDescription'] . "</th>";
             echo "</tr>";
         }
