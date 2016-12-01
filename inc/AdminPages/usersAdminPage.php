@@ -11,6 +11,7 @@ include(__DIR__."/../scripts/header.php");
             <th>Email Address</th>
             <th>Display Name</th>
             <th>Level Code</th>
+            <th>Club Name</th>
         </tr>
         <?
         include (__DIR__ . "/../scripts/dbconnect.php");
@@ -28,8 +29,9 @@ include(__DIR__."/../scripts/header.php");
             echo "<th>" . $row['emailAddress'] . "</th>";
             echo "<th>" . $row['displayName'] . "</th>";
             echo "<th>" . translateLevelCode($row['levelCode']) . "</th>";
+            echo "<th>";
             //If the user is a club administrator
-            if ($row['levelCode'] === 21){
+            if ($row['levelCode'] === 21 || $row['levelCode'] === 31){
                 $sql_query2 = "SELECT clubName FROM Club WHERE adminID = '" . $row['userID'] ."';";
                 if (mysqli_query($db, $sql_query2)) {
                 } else {
@@ -40,8 +42,9 @@ include(__DIR__."/../scripts/header.php");
                 while($row = $result2->fetch_array()) {
                     $listOfClubs .= $row['clubName'] . "<br>";
                 }
-                echo "<th>" . $listOfClubs . "</th>";
+                echo "$listOfClubs";
             }
+            echo "</th>";
             echo "</tr>";
         }
         /*
