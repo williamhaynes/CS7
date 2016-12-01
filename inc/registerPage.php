@@ -10,6 +10,7 @@ include ("scripts/header.php");
     <script>
         $(document).ready(function() {
             $('#secondPassword').keyup(checkPasswordMatch());
+            $('#firstPassword').keyup(checkPasswordMatch());
         });
 
         function checkPasswordMatch() {
