@@ -6,7 +6,6 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         ?>
         <main>
             <script>
-                document.onload(checkboxClicked());
                 function checkboxClicked() {
                     if (document.getElementById('website').checked) {
                         document.getElementById('websiteUrl').disabled = false;
@@ -54,7 +53,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 
                     ?>
                 </select>
-                <p><input type="submit" value='Submit'></p>
+                <p><input type="submit" value='Submit' onload="checkboxClicked()"></p>
             </form>
         </main>
         
