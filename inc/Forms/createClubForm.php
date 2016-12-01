@@ -31,7 +31,7 @@ if (isset($_SESSION['username']))
                 <p>Club Name: </p><input type="text" name="clubName" placeholder="Club Name">
                 <p>Activity: </p><input type="text" name="activity" placeholder="Activity">
                 <p>Club Description: </p><textarea name="clubDescription"></textarea>
-                <p>Sessions: </p><textarea name="session"></textarea>
+                <p>Sessions Time: </p><textarea name="sessionTime"></textarea>
                 <p>Contact Name: </p><input type="text" name="contactName" placeholder="Contact Name">
                 <p>Contact Number: </p><input type="text" name="contactNumber" placeholder="Contact Number">
                 <p>Contact Email: </p><input type="text" name="contactEmail" placeholder="Contact Email">
@@ -67,14 +67,27 @@ if (isset($_SESSION['username']))
         $clubName = $_POST["clubName"];
         $activity = $_POST["activity"];
         $clubDescription = $_POST["clubDescription"];
-        $session = $_POST["session"];
+        $sessionTime = $_POST["sessionTime"];
         $contactName = $_POST["contactName"];
         $contactNumber = $_POST["contactNumber"];
         $contactEmail = $_POST["contactEmail"];
-        $website = $_POST["website"];
-        $websiteUrl = $_POST["websiteUrl"];
-        $facebook = $_POST["facebook"];
-        $facebookUrl = $_POST["facebookUrl"];
+        if( $_POST["website"] == 'on') {
+            $website = 1;
+            $websiteUrl = $_POST["websiteUrl"];
+        }
+        else{
+            $website = 0;
+            $websiteUrl = NULL;
+        }
+        if( $_POST["facebook"] == 'on') {
+            $facebook = 1;
+            $facebookUrl = $_POST["websiteUrl"];
+        }
+        else{
+            $facebook = 0;
+            $facebookUrl = NULL;
+        }
+        $genreID = $_POST["genreID"];
         $adminID = $_SESSION["userID"];
 
 
@@ -85,7 +98,8 @@ if (isset($_SESSION['username']))
             $adminID = NULL;
         }
 
-        $sql = "INSERT INTO Club VALUES ('".$clubName."','".$activity."', '".$clubDescription."','".$session."','".$contactName."','".$contactNumber."','".$contactEmail."','".$website."','".$websiteUrl."','".$facebook."','".$facebookUrl."','".$genreID."',".$adminID.")";
+        $sql = "INSERT INTO Club (clubName, activity, clubDescription, sessionTime, contactName, contactNumber, contactEmail, website, websiteUrl, facebook, facebookUrl, genreID, adminID)
+        VALUES ('".$clubName."','".$activity."', '".$clubDescription."','".$session."','".$contactName."','".$contactNumber."','".$contactEmail."',".$website.",'".$websiteUrl."',".$facebook.",'".$facebookUrl."','".$genreID."',".$adminID.")";
         if (mysqli_query($db, $sql)) {
             header("location:../clubsAndSocietiesPage");
         } else {
