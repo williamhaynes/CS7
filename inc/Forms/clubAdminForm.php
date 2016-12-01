@@ -5,7 +5,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         include(__DIR__."/../scripts/header.php");
         include (__DIR__ . "/../scripts/dbconnect.php");
         ?>
-        <main>
+        <main onload="checkboxClicked()">
             <script>
                 function checkboxClicked() {
                     alert("checkboxClicked");
