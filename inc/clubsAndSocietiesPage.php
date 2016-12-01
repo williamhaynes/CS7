@@ -50,9 +50,9 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             $clubID = $row['clubID'];
             $clubName = $row['clubName'];
             $index2 = $row['genreID'];
-            echo "<tr class='hoverableRowsAndColumns'><a href='clubPage/{$clubID}'><th class='hoverableSpecificRowAndColumn'>" . $row['clubName'] . "</th>";
-            echo "<th class='hoverableSpecificRowAndColumn'>" . $genreArray[$index2] . "</th>"; //the name row contains the name of the genre
-            echo "<th class='hoverableSpecificRowAndColumn'>" . $row['clubDescription'] . "</th></a>";
+            echo "<tr class='hoverableRowsAndColumns'><th class='hoverableSpecificRowAndColumn'><a href='clubPage/{$clubID}'>" . $row['clubName'] . "</a></th>";
+            echo "<th class='hoverableSpecificRowAndColumn'><a href='clubPage/{$clubID}'>" . $genreArray[$index2] . "</a></th>"; //the name row contains the name of the genre
+            echo "<th class='hoverableSpecificRowAndColumn'><a href='clubPage/{$clubID}'>" . $row['clubDescription'] . "</a></th>";
             echo "</tr>";
         }
         ?>
