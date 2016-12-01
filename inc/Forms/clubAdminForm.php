@@ -3,6 +3,7 @@ session_start();
 if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31'){
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         include(__DIR__."/../scripts/header.php");
+        include (__DIR__ . "/../scripts/dbconnect.php");
         ?>
         <main>
             <script>
@@ -36,7 +37,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook" id="facebook" <?php if($_SESSION["facebook"]==1){print checked;}?> onclick="checkboxClicked()">
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl" id="facebookUrl" value="<?php if($_SESSION["facebook"]==1){print $_SESSION["facebookUrl"];}?>" >
                 <p>Genre: </p>
-                <select name="genreID" id="genreID" >
+                <select name="genreID" id="genreID">
                     <?
                     //Takes all database information from the Genre TABLE.
                     $sql_query = "SELECT * FROM Genre";
