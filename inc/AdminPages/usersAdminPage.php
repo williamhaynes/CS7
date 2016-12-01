@@ -25,7 +25,7 @@ include(__DIR__."/../scripts/header.php");
         $result = $db->query($sql_query);
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while($row = $result->fetch_array()){
-            echo "<tr><th>" . $row['userName'] . "</th>";
+            echo "<tr class='hoverableRowsAndColumns'><th>" . $row['userName'] . "</th>";
             echo "<th>" . $row['emailAddress'] . "</th>";
             echo "<th>" . $row['displayName'] . "</th>";
             echo "<th>" . translateLevelCode($row['levelCode']) . "</th>";
