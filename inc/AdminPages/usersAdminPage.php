@@ -31,7 +31,9 @@ include(__DIR__."/../scripts/header.php");
             echo "<th>" . translateLevelCode($row['levelCode']) . "</th>";
             echo "<th>";
             //If the user is a club administrator
-            if ($row['levelCode'] === 21 || $row['levelCode'] === 31){
+            if ($row['levelCode'] == 21 || $row['levelCode'] == 31){
+                echo "<p>" . $row['levelCode'] . "</p>";
+                echo "<p>" . $row['userID'] . "</p>";
                 $sql_query2 = "SELECT clubName FROM Club WHERE adminID = '" . $row['userID'] ."';";
                 if (mysqli_query($db, $sql_query2)) {
                 } else {
@@ -39,8 +41,8 @@ include(__DIR__."/../scripts/header.php");
                 }
                 $result2 = $db->query($sql_query2);
                 $listOfClubs = "";
-                while($row = $result2->fetch_array()) {
-                    $listOfClubs .= $row['clubName'] . "<br>";
+                while($row2 = $result2->fetch_array()) {
+                    $listOfClubs .= $row2['clubName'] . "<br>";
                 }
                 echo "$listOfClubs";
             }
