@@ -1,12 +1,3 @@
-<?php
-    include("inc/scripts/header.php");
-?>
-    <main>
-        <p>Oh look, it's the home page</p>
-    </main>
-<?php
-    include("inc/scripts/footer.php");
-?>
 <?
 define('INCLUDE_DIR', dirname(__FILE__) . '/inc/');
 $rules = array(
@@ -32,7 +23,7 @@ $rules = array(
     //
     // Home Page
     //
-    'home' => "/",
+    'homePage' => "/",
     'AdminPages/usersAdminPage' => '/usersAdminPage',
     //
     // Forms Page
