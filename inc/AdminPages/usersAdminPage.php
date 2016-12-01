@@ -15,7 +15,6 @@ if($_SESSION['accessLevel'] == '31') {
                 <th>Level Code</th>
                 <th>Club Name</th>
             </tr>
-
             <?
             include(__DIR__ . "/../scripts/dbconnect.php");
             /*
