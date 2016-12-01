@@ -17,9 +17,9 @@ include ("scripts/header.php");
             var confirmPassword = $('#secondPassword').val();
 
             if (password != confirmPassword){
-                $('body').html("Passwords do not match!");
+                $('#passwordConfirmer').html("Passwords do not match!");
             else {
-                $('body').html("Passwords match.");
+                $('#passwordConfirmer').html("Passwords match.");
             }
         }
     </script>
@@ -29,6 +29,7 @@ include ("scripts/header.php");
         <input type="text" placeholder="Display Name" name="displayName">
         <input type="password" placeholder="Password" id="firstPassword" name="password">
         <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch()" name="confirmPassword">
+        <p id="passwordConfirmer"></p>
         <p><input type="submit" value='Register'></p>
     </form>
 </main>
