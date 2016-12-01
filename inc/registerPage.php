@@ -7,7 +7,21 @@ include ("scripts/header.php");
 
 
 <main>
-    <script src="scripts/checkPasswordMatch.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#secondPassword').keyup(checkPasswordMatch());
+        });
+
+        function checkPasswordMatch() {
+            var password = $('#firstPassword').val();
+            var confirmPassword = $('#secondPassword').val();
+
+            if (password != confirmPassword){
+                $('#body').html("Passwords do not match!");}
+            else{
+                $('#body').html("Passwords match.");}
+        }
+    </script>
     <form action="registerPage" method="post">
         <input type="text" placeholder="User Name" name="username">
         <input type="text" placeholder="Email Address" name="emailAddress">
