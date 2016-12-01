@@ -17,10 +17,10 @@ echo "
                 mapTypeId: 'roadmap'
               });
             
-            // This event listener calls addMarker() when the map is clicked.
-              map.addListener(map, 'click', function(e) {
-                placeMarker(e.latLng, map);
-              });
+                // This event listener calls addMarker() when the map is clicked.
+                google.maps.event.addListener(map, 'click', function(e) {
+                    placeMarker(e.latLng, map);
+                });
             }
               function placeMarker(position, map) {
                 var marker = new google.maps.Marker({
