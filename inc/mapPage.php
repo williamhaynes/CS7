@@ -21,7 +21,7 @@ echo "
     </head>
     <main>
         <body onload='load()'>
-             <div id='map' style='width: 800px; height: auto'></div>
+             <div id='map' style='width: 1000px; height: 600px'></div>
         </body>
     </main>
     ";
