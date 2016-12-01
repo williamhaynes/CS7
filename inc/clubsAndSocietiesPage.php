@@ -40,12 +40,11 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         } else {
             echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
         }
-        $genreArray = array();
         $result2 = $db->query($sql_query2);
         while ($row2 = $result2->fetch_array()){
-            $genreArray = array($row2['genreID'], $row2['name']);
+            echo "<p>" . $row2['genreID'] . "</p>";
+            echo "<p>" . $row2['name'] . "</p>";
         }
-        echo "<p>" . var_dump($array) . "</p>";
 
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while ($row = $result->fetch_array()) {
