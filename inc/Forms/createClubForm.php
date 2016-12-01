@@ -43,10 +43,7 @@ if (isset($_SESSION['username']))
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl" id="facebookUrl" disabled=true>
                 <p>Genre: </p>
                 <select name="genreID" id="genreID" onclick="getGenres()">
-                    <option>No option applies</option>
                     <?
-                        echo '<option value="value"> This is a new value</option>';
-
                         //Takes all database information from the Genre TABLE.
                         $sql_query = "SELECT * FROM Genre";
     
