@@ -1,14 +1,18 @@
 <!-- php file to connect to server -->
 
 <?php
-
-// connect to your Azure server and select database (remember you connection details are all on the azure portal
+/*
+ * Connect to your Azure server and select database
+ * Your connection details are all on the azure portal
+ */
 $db = new mysqli(
-    "eu-cdbr-azure-north-e.cloudapp.net",
-    "b1fa144aa688ff",
+    "eu-cdbr-azure-north-e.cloudapp.net", //Server Name
+    "b1fa144aa688ff", //Username
     "4e96e436",
-    "db_pgo_cs7" );
-
+    "db_pgo_cs7" ); //Database
+/*
+ * If database fails to connect - error message displays
+ */
 if ($db->connect_errno){
     die ('Connection Failed :'.$db->connect_error);
 }
