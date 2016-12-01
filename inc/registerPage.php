@@ -16,13 +16,14 @@ include ("scripts/header.php");
             var password = $('#firstPassword').val();
             var confirmPassword = $('#secondPassword').val();
 
-            if (password != confirmPassword){
+            if (password != confirmPassword) {
                 $('#passwordConfirmer').html("Passwords do not match!");
+            }
             else{
                     $('#passwordConfirmer').html("Passwords match.");
                 }
-            }
         }
+
     </script>
     <form action="registerPage" method="post">
         <input type="text" placeholder="User Name" name="username">
