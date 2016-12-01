@@ -13,7 +13,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         }
 ?>
 <main>
-    <h2>Clubs and Societies</h2>
+    <h2>Clubs and Societies Portlethen</h2>
     <p>Below is a list of all Clubs and Societies</p>
     <table>
         <tr>
@@ -47,6 +47,8 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
 
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while ($row = $result->fetch_array()) {
+            $clubID = $row['clubID'];
+            $clubName = $row['clubName'];
             $index2 = $row['genreID'];
             echo "<tr class='hoverableRowsAndColumns'><a href='clubPage/{$clubID}'><th class='hoverableSpecificRowAndColumn'>" . $row['clubName'] . "</th>";
             echo "<th class='hoverableSpecificRowAndColumn'>" . $genreArray[$index2] . "</th>"; //the name row contains the name of the genre
