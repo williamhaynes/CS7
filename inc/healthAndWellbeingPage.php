@@ -7,7 +7,7 @@ include ("scripts/header.php");
 echo "
 <main>
 <h2>Health and Wellbeing Articles</h2>
-<a href='/Forms/createHealthAndWellbeingForm'> Create New News </a>
+<a href='/createHealthAndWellbeingForm'> Create New News </a>
 <p>Below is a list of all health and wellbeing articles</p>
 <ul>
 ";
