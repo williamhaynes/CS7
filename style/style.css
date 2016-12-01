@@ -13,6 +13,7 @@ body{
 
 /* NAVIGATION BAR*/
 nav ul {
+    font-family: 'Dosis', sans-serif;
     list-style-type: none;
     margin: 0;
     padding: 0;
