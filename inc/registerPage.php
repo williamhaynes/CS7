@@ -26,7 +26,7 @@ include ("scripts/header.php");
                 $('#passwordConfirmer').html("Passwords do not match!");
                 $('#submitRegisterButton').attr("disabled", true);
             }
-            else{
+            else if($('#firstPassword').val() && password == confirmPassword){
                 $('#passwordConfirmer').html("Passwords match!");
                 passwordsMatch = true;
             }
@@ -38,15 +38,15 @@ include ("scripts/header.php");
             var passwords = false;
             var fieldsFilled = false;
 
-            if($('#usersname').val){
+            if($('#usersname').val()){
                 username = true;
                 console.log("username true");
             }
-            if($('#usersEmailAddress').val){
+            if($('#usersEmailAddress').val()){
                 emailAddress = true;
                 console.log("emailaddress true");
             }
-            if($('#usersDisplayName').val){
+            if($('#usersDisplayName').val()){
                 displayName = true;
                 console.log("displayname true");
                 console.log($('#usersDisplayName').val.toString());
