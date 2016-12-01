@@ -58,6 +58,7 @@ nav li a :hover {
 }
 
 #logoutButton{
+    float: right;
     margin-top: 3px;
     background-color: palevioletred;
 }
