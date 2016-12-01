@@ -23,7 +23,13 @@ include ("scripts/footer.php");
 
     include("scripts/dbconnect.php");
 
-    //Variables - NEED TO ADD SECURITY TO THIS BECAUSE ALLOWS SQL INJECTION CURRENTLY
+    /*
+     * Variables for the different values of the user
+     * Username: The username of the user
+     * emailAddress: The email address of the user
+     * displayName: The display name of the user
+     * password; The password of the user
+     */
     $username = $_POST['username'];
     $emailAddress = $_POST['emailAddress'];
     $displayName = $_POST['displayName'];
