@@ -46,7 +46,20 @@ if (isset($_SESSION['username']))
                     <option>No option applies</option>
                     <?
                         echo '<option value="value"> This is a new value</option>';
-                        //echo '<option value="'.$id.'">'.$genreID.'</option>';
+
+                        //Takes all database information from the Genre TABLE.
+                        $sql_query = "SELECT * FROM Genre";
+    
+                        //Process the query
+                        $result = $db->query($sql_query);
+    
+                        // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
+                        while($row = $result->fetch_array()){
+                            $genreID = $row['genreID'];
+                            $name = $row['name'];
+                            echo "<option value='{$genreID}'>$name</option>";
+                        }
+
                     ?>
                 </select>
 
