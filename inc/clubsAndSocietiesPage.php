@@ -14,11 +14,37 @@ echo "
 if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             echo "<a id='createClubFormLink' href='/Forms/createClubForm'>Create Club Form</a>";
         }
-
-echo "
-    <p>Below is a list of all Clubs and Societies</p><ul>
-";
-
+?>
+<main>
+    <h2>Clubs and Societies</h2>
+    <p>Below is a list of all Clubs and Societies</p>
+    <table>
+        <tr>
+            <th>Club Name</th>
+            <th>Genre</th>
+            <th>Club Description</th>
+        </tr>
+        <?
+        include(__DIR__ . "/../scripts/dbconnect.php");
+        //Takes all database information from the Users Table.
+        $sql_query = "SELECT * FROM club;";
+        //Process the query
+        if (mysqli_query($db, $sql_query)) {
+        } else {
+            echo "Error: " . $sql_query . "<br>Error Message:" . mysqli_error($db);
+        }
+        $result = $db->query($sql_query);
+        // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
+        while ($row = $result->fetch_array()) {
+            echo "<tr class='hoverableRowsAndColumns'><th class='hoverableSpecificRowAndColumn'>" . $row['clubName'] . "</th>";
+            echo "<th class='hoverableSpecificRowAndColumn'>" . $row['genreID'] . "</th>";
+            echo "<th class='hoverableSpecificRowAndColumn'>" . $row['clubDescription'] . "</th>";
+            echo "</tr>";
+        }
+        ?>
+    </table>
+</main>
+<?
 /*
  * Using the database take all the information from the Club Table
  * Using an SQL command to pull all the information
