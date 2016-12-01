@@ -78,7 +78,6 @@ while($row = $result->fetch_array()){
     echo "<li><a href='clubPage/{$clubID}'> $clubName </a></li>";
 }
 
-echo "</main>";
+echo "</main>";*/
 include ("scripts/footer.php");
-*/
 ?>
