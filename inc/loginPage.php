@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 //username is the variable, userName is the column in the table
-    /*A function to check the login details
-     *
-     *
+    /*
+     * A function to check the login details
+     * Using the database to check if the details stored are the ones being entered
      */
     function checklogin($username, $password, $db){
         $sql_query = "SELECT * FROM User WHERE userName ='" . $username . "' AND password = '" . $password ."';";
@@ -32,6 +32,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
         return false;
     }
+    /*
+     * A function to check the level code of the user
+     * Using the database to check what level of user is logged in
+     */
     function getLevelCode($username, $db){
         $sql_query = "SELECT levelCode FROM User WHERE userName ='" . $username ."';";
         $result = $db->query($sql_query);
@@ -41,6 +45,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
         return $thisLevelCode;
     }
+    /*
+     * A fuction to get the userID of the user
+     * Using the database to get the userID
+     */
     function getUserID($username, $db){
         $sql_query = "SELECT userID FROM User WHERE userName ='" . $username ."';";
         $result = $db->query($sql_query);
@@ -51,9 +59,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         return $thisUserID;
     }
 
+    /*
+     * If all details match the details stored on the database then print 'success!'
+     * Otherwise print 'wrong password or username'
+     */
     if (checklogin($username, $password, $db)){
         session_start();
-        $_SESSION['username'] = $username;
+        $_SESSION['username'] = $username; 
         $_SESSION['accessLevel'] = getLevelCode($username, $db);
         $_SESSION['userID'] = getUserID($username, $db);
         header("location:../clubsAndSocietiesPage");
@@ -66,9 +78,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 }
 
 ?>
-<!--
-<!DOCTYPE html>
-<html lang="en">
-
-</html>
--->
