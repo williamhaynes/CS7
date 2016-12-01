@@ -19,6 +19,9 @@ include ("scripts/header.php");
             if (password != confirmPassword) {
                 $('#passwordConfirmer').html("Passwords do not match!");
             }
+            else{
+                $('#passwordConfirmer').html("Passwords match!");
+            }
         }
 
     </script>
