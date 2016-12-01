@@ -17,9 +17,12 @@ include ("scripts/header.php");
             var confirmPassword = $('#secondPassword').val();
 
             if (password != confirmPassword){
-                $('#body').html("Passwords do not match!");}
-            else{
-                $('#body').html("Passwords match.");}
+                $('#body').html("Passwords do not match!");
+                print("passwords don't match");}
+            else {
+                $('#body').html("Passwords match.");
+                print("passwords don't match");
+            }
         }
     </script>
     <form action="registerPage" method="post">
