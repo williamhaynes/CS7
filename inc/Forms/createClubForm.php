@@ -57,9 +57,6 @@ if (isset($_SESSION['username']))
 
                     ?>
                 </select>
-
-
-                <p>Club Admin ID: </p><input type="number" name="adminID" value= placeholder="Admin ID">
                 <p><input type="submit" value='Submit'></p>
             </form>
         </main>
