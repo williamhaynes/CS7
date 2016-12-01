@@ -61,7 +61,7 @@ include ("scripts/header.php");
                 console.log("fieldsfilled true");
             }
             if(fieldsFilled == true && passwordsMatch == true){
-                $('#submitRegisterButton').attr("enabled", false);
+                $('#submitRegisterButton').removeAttr("disabled");
                 console.log("enabled registerbutton");
             }
         }
