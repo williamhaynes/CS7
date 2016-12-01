@@ -17,9 +17,9 @@ include ("scripts/header.php");
             var confirmPassword = $('#secondPassword').val();
 
             if (password != confirmPassword){
-                $('#body').html("Passwords do not match!");
+                $('body').html("Passwords do not match!");
             else {
-                $('#body').html("Passwords match.");
+                $('body').html("Passwords match.");
             }
         }
     </script>
