@@ -49,6 +49,7 @@ include ("scripts/header.php");
             if($('#usersDisplayName').val != null){
                 displayName = true;
                 console.log("displayname true");
+                console.log($('#usersDisplayName').val);
             }
             if($('#firstPassword').val() != null){
                 passwords = true;
