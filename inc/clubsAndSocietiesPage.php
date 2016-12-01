@@ -26,7 +26,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         </tr>
         <?
         include(__DIR__ . "/../scripts/dbconnect.php");
-        //Takes all database information from the Users Table.
+        //Takes all database information from the clubs Table.
         $sql_query = "SELECT * FROM club;";
         //Process the query
         if (mysqli_query($db, $sql_query)) {
@@ -37,7 +37,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
         while ($row = $result->fetch_array()) {
             echo "<tr class='hoverableRowsAndColumns'><th class='hoverableSpecificRowAndColumn'>" . $row['clubName'] . "</th>";
-            echo "<th class='hoverableSpecificRowAndColumn'>" . $row['genreID'] . "</th>";
+            echo "<th class='hoverableSpecificRowAndColumn'>" . $row['name'] . "</th>"; //the name row contains the name of the genre
             echo "<th class='hoverableSpecificRowAndColumn'>" . $row['clubDescription'] . "</th>";
             echo "</tr>";
         }
@@ -48,17 +48,17 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
 /*
  * Using the database take all the information from the Club Table
  * Using an SQL command to pull all the information
- */
+
 $sql_query = "SELECT * FROM Club;";
 
 /*
  * Once all information has been pulled process the SQL query
- */
+
 $result = $db->query($sql_query);
 
 /*
  * Iterate through and sort out all the data
- */
+
 while($row = $result->fetch_array()){
     $clubID = $row['clubID'];
     $clubName = $row['clubName'];
@@ -67,5 +67,5 @@ while($row = $result->fetch_array()){
 
 echo "</main>";
 include ("scripts/footer.php");
-
+*/
 ?>
