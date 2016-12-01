@@ -7,12 +7,13 @@ include ("scripts/header.php");
 
 
 <main>
+    <script src="scripts/checkPasswordMatch.js"></script>
     <form action="registerPage" method="post">
         <input type="text" placeholder="User Name" name="username">
         <input type="text" placeholder="Email Address" name="emailAddress">
         <input type="text" placeholder="Display Name" name="displayName">
         <input type="password" placeholder="Password" id="firstPassword" name="password">
-        <input type="password" placeholder="Confirm Password" id="secondPassword" name="confirmPassword">
+        <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch()" name="confirmPassword">
         <p><input type="submit" value='Register'></p>
     </form>
 </main>
