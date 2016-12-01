@@ -19,9 +19,11 @@ include ("scripts/header.php");
 
             if (password != confirmPassword) {
                 $('#passwordConfirmer').html("Passwords do not match!");
+                $('#submitRegisterButton').attr("disabled", true);
             }
             else{
                 $('#passwordConfirmer').html("Passwords match!");
+                $('#submitRegisterButton').attr("enabled", true);
             }
         }
 
@@ -33,7 +35,7 @@ include ("scripts/header.php");
         <input type="password" placeholder="Password" id="firstPassword" onchange="checkPasswordMatch()" name="password">
         <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch()" name="confirmPassword">
         <p id="passwordConfirmer"></p>
-        <p><input type="submit" value='Register'></p>
+        <p><input type="submit" id='submitRegisterButton' value='Register'></p>
     </form>
 </main>
 
