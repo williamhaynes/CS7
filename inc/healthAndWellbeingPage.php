@@ -7,8 +7,12 @@ include ("scripts/header.php");
 echo "
 <main>
 <h2>Health and Wellbeing Articles</h2>
-<a href='/createHealthAndWellbeingForm'> Create New News </a>
-<p>Below is a list of all health and wellbeing articles</p>
+";
+if (isset($_SESSION['username'])) {
+            echo "<a id='createArticleLink' href='/createHealthAndWellbeingForm'> Create Article </a>";
+        }
+echo "
+
 <ul>
 ";
 
