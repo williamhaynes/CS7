@@ -17,6 +17,7 @@ include ("scripts/header.php");
             $('#firstPassword').keyup(checkFields());
         });
 
+        var passwordsMatch = false;
         function checkPasswordMatch() {
             var password = $('#firstPassword').val();
             var confirmPassword = $('#secondPassword').val();
@@ -25,8 +26,9 @@ include ("scripts/header.php");
                 $('#passwordConfirmer').html("Passwords do not match!");
                 $('#submitRegisterButton').attr("disabled", true);
             }
-            else if(checkFields() == true && password == confirmPassword){
+            else{
                 $('#passwordConfirmer').html("Passwords match!");
+                passwordsMatch = true;
             }
         }
         function checkFields(){
@@ -51,7 +53,9 @@ include ("scripts/header.php");
             if(username == true && emailAddress == true && displayName == true && passwords == true){
                 fieldsFilled = true;
             }
-            return fieldsFilled;
+            if(fieldsFilled == true && passwordsMatch == true){
+                $('#submitRegisterButton').attr("enabled", false);
+            }
         }
 
     </script>
