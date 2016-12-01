@@ -23,8 +23,6 @@ if (isset($_SESSION['username']))
                         document.getElementById('facebookUrl').disabled = true;
                     }
                 }
-                }
-
             </script>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
@@ -61,7 +59,7 @@ if (isset($_SESSION['username']))
                 </select>
 
 
-                <p>Club Admin ID: </p><input type="number" name="adminID" value=<?php print $_SESSION["userID"];?> placeholder="Admin ID">
+                <p>Club Admin ID: </p><input type="number" name="adminID" value= placeholder="Admin ID">
                 <p><input type="submit" value='Submit'></p>
             </form>
         </main>
@@ -70,9 +68,17 @@ if (isset($_SESSION['username']))
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
         $clubName = $_POST["clubName"];
+        $activity = $_POST["activity"];
         $clubDescription = $_POST["clubDescription"];
-        $contactInformation = $_POST['contactInformation'];
-        $adminID = $_POST["adminID"];
+        $session = $_POST["session"];
+        $contactName = $_POST["contactName"];
+        $contactNumber = $_POST["contactNumber"];
+        $contactEmail = $_POST["contactEmail"];
+        $website = $_POST["website"];
+        $websiteUrl = $_POST["websiteUrl"];
+        $facebook = $_POST["facebook"];
+        $facebookUrl = $_POST["facebookUrl"];
+        $adminID = $_SESSION["userID"];
 
 
         //IF clubDescription, contactInformation or clubName is blank it will just add a blank to that column
@@ -82,8 +88,7 @@ if (isset($_SESSION['username']))
             $adminID = NULL;
         }
 
-        $sql = "INSERT INTO Club (clubName, clubDescription, contactInformation, adminID)
-        VALUES ('".$clubName."', '".$clubDescription."','".$contactInformation."', ".$adminID.")";
+        $sql = "INSERT INTO Club VALUES ('".$clubName."','".$activity."', '".$clubDescription."','".$session."','".$contactName."','".$contactNumber."','".$contactEmail."','".$website."','".$websiteUrl."','".$facebook."','".$facebookUrl."','".$genreID."',".$adminID.")";
         if (mysqli_query($db, $sql)) {
             header("location:../clubsAndSocietiesPage");
         } else {
