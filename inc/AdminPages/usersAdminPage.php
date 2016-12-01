@@ -45,11 +45,11 @@ if($_SESSION['accessLevel'] == '31') {
             $result = $db->query($sql_query);
             // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
             while ($row = $result->fetch_array()) {
-                echo "<tr class='hoverableRowsAndColumns'><th>" . $row['userName'] . "</th>";
-                echo "<th>" . $row['emailAddress'] . "</th>";
-                echo "<th>" . $row['displayName'] . "</th>";
-                echo "<th>" . translateLevelCode($row['levelCode']) . "</th>";
-                echo "<th>";
+                echo "<tr class='hoverableRowsAndColumns'><th class='hoverableSpecificRowAndColumn'>" . $row['userName'] . "</th>";
+                echo "<th class='hoverableSpecificRowAndColumn'>" . $row['emailAddress'] . "</th>";
+                echo "<th class='hoverableSpecificRowAndColumn'>" . $row['displayName'] . "</th>";
+                echo "<th class='hoverableSpecificRowAndColumn'>" . translateLevelCode($row['levelCode']) . "</th>";
+                echo "<th class='hoverableSpecificRowAndColumn'>";
                 //If the user is a club administrator or site administrator
                 if ($row['levelCode'] == 21 || $row['levelCode'] == 31) {
                     //Generate SQL query to get club name if club admin or site admin

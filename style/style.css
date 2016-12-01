@@ -81,10 +81,9 @@ th, tr {
 }
 
 .hoverableRowsAndColumns:hover {
-
     background-color: lightskyblue;
 }
 
-th:hover{
-   background-color: darkred;
+.hoverableSpecificRowAndColumn{
+    background-color: dodgerblue;
 }
