@@ -6,7 +6,7 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/header.php");
         include (__DIR__ . "/../scripts/dbconnect.php");
         ?>
-        <main>
+        <main onload="checkboxClicked()">
             <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
             <script>
                 function checkboxClicked() {
