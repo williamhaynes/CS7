@@ -80,7 +80,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         $facebook = $_POST['facebook'];
         $facebookUrl = $_POST['facebookUrl'];
         $genreID = $_POST['genreID'];
-        $adminID = $_POST["adminID"];
+        $adminID = $_SESSION["userID"];
 
 
             $sql = "UPDATE Club 
