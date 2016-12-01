@@ -34,12 +34,12 @@ while($row = $result->fetch_array()){
     $itemID = $row['itemID'];
     $title = $row['title'];
     $content = $row['content'];
-    //We should probably add an author
+    $userName = $row['userName'];
     echo "<li><p><h1>$title</h1></p><p>$content</p>";
     if($_SESSION['accessLevel'] == 31) {
        echo "<a href='Forms/healthAndWellbeingForm/{$itemID}'> Edit </a>";
     }
-echo "</li>";
+echo "<p>$userName</p></li>";
 }
 echo "</main>";
 include ("scripts/footer.php");
