@@ -25,7 +25,7 @@ include ("scripts/header.php");
                 $('#passwordConfirmer').html("Passwords do not match!");
                 $('#submitRegisterButton').attr("disabled", true);
             }
-            else{
+            else if(checkFields() == true && password == confirmPassword){
                 $('#passwordConfirmer').html("Passwords match!");
             }
         }
@@ -34,6 +34,7 @@ include ("scripts/header.php");
             var emailAddress = false;
             var displayName = false;
             var passwords = false;
+            var fieldsFilled = false;
 
             if($('#usersname').val != null){
                 username = true;
@@ -44,12 +45,13 @@ include ("scripts/header.php");
             if($('#usersDisplayName').val != null){
                 displayName = true;
             }
-            if($('#firstPassword').val() != null && checkPasswordMatch()){
+            if($('#firstPassword').val() != null){
                 passwords = true;
             }
             if(username == true && emailAddress == true && displayName == true && passwords == true){
-                $('#submitRegisterButton').attr("enabled", false);
+                fieldsFilled = true;
             }
+            return fieldsFilled;
         }
 
     </script>
@@ -60,7 +62,7 @@ include ("scripts/header.php");
         <input type="password" placeholder="Password" id="firstPassword" onchange="checkPasswordMatch()" name="password">
         <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch(); checkFields();" name="confirmPassword">
         <p id="passwordConfirmer"></p>
-        <p><input type="submit" id='submitRegisterButton' value='Register'></p>
+        <p><input type="submit" id='submitRegisterButton' value='Register' disabled></p>
     </form>
 </main>
 
