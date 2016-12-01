@@ -32,11 +32,27 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 <p>Contact Number: </p><input type="text" name="contactNumber" value="<?php print $_SESSION["contactNumber"];?>" placeholder="Contact Number">
                 <p>Contact Email: </p><input type="text" name="contactEmail" value="<?php print $_SESSION["contactEmail"];?>" placeholder="Contact Email">
                 <p>Tick if you have a website: </p><input type="checkbox" name="website" id="website" <?php if($_SESSION["website"]==1){print checked;}?> onclick="checkboxClicked()">
-                <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl" id="websiteUrl" value="<?php if($_SESSION["website"]==1){print $_SESSION["websiteUrl"];}?>" disabled=true>
+                <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl" id="websiteUrl" value="<?php if($_SESSION["website"]==1){print $_SESSION["websiteUrl"];}else{print 'disabled=true';}?>" >
                 <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook" id="facebook" <?php if($_SESSION["facebook"]==1){print checked;}?> onclick="checkboxClicked()">
-                <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl" id="facebookUrl" value="<?php if($_SESSION["facebook"]==1){print $_SESSION["facebookUrl"];}?>" disabled=true>
+                <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl" id="facebookUrl" value="<?php if($_SESSION["facebook"]==1){print $_SESSION["facebookUrl"];}else{print 'disabled=true';}?>" >
                 <p>Genre: </p>
-                <select name="genreID" id="genreID" onclick="getGenres()">
+                <select name="genreID" id="genreID" >
+                    <?
+                    //Takes all database information from the Genre TABLE.
+                    $sql_query = "SELECT * FROM Genre";
+
+                    //Process the query
+                    $result = $db->query($sql_query);
+
+                    // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
+                    while($row = $result->fetch_array()){
+                        $genreID = $row['genreID'];
+                        $name = $row['name'];
+                        echo "<option value='{$genreID}'>$name</option>";
+                    }
+
+                    ?>
+                </select>
                 <p><input type="submit" value='Submit'></p>
             </form>
         </main>
