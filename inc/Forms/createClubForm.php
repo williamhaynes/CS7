@@ -71,10 +71,23 @@ if (isset($_SESSION['username']))
         $contactName = $_POST["contactName"];
         $contactNumber = $_POST["contactNumber"];
         $contactEmail = $_POST["contactEmail"];
-        $website = $_POST["website"];
-        $websiteUrl = $_POST["websiteUrl"];
-        $facebook = $_POST["facebook"];
-        $facebookUrl = $_POST["facebookUrl"];
+        if( $_POST["website"] == 'on') {
+            $website = 1;
+            $websiteUrl = $_POST["websiteUrl"];
+        }
+        else{
+            $website = 0;
+            $websiteUrl = NULL;
+        }
+        if( $_POST["facebook"] == 'on') {
+            $facebook = 1;
+            $facebookUrl = $_POST["websiteUrl"];
+        }
+        else{
+            $facebook = 0;
+            $facebookUrl = NULL;
+        }
+
         $adminID = $_SESSION["userID"];
 
 
