@@ -35,7 +35,7 @@ session_start();
                         echo "<li><a href='/usersAdminPage'>User Admin Page</a></li>";
                     }
                     echo "<li><a href='/userDetailsPage'>My Account</a></li>";
-                    echo "<li><a href='/logoutPage'>Logout</a></li>";
+                    echo "<li id='logoutButton'><a href='/logoutPage'>Logout</a></li>";
                 } else {
                     /*
                      * if there is no cookie found called 'username' then they is no one logged in and the following buttons are displayed
