@@ -56,6 +56,16 @@ nav li a :hover {
     margin-top: 3px;
     background-color: darkslateblue;
 }
+
+#logoutButton{
+    margin-top: 3px;
+    background-color: palevioletred;
+}
+#logoutButton:hover{
+    margin-top: 3px;
+    background-color: darkred;
+}
+
 #logoIMG{
     width: 206px;
     height: 60px;
