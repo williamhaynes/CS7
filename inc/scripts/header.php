@@ -27,25 +27,23 @@ session_start();
                   * My Account: the page that has all the details of the user
                   */
                 if (isset($_SESSION['username'])) {
-                    echo "<li><a href='/logoutPage'>Logout</a></li>";
-                    echo "<li><a href='/userDetailsPage'>My Account</a></li>";
-                    if($_SESSION['accessLevel'] == 31){
+                                        if($_SESSION['accessLevel'] == 31){
                         /*
                          * If the user is logged in and they have an access level of 31 then the following buttons will be displayed
-                         * Club Admin Page: the club admin page displaying information on the club they are in charge of
                          * User Admin Page: the user admin page displaying information on the site
                          */
-                        echo "<li><a href='/userDetailsPage'>Club Admin Page</a></li>";
                         echo "<li><a href='/usersAdminPage'>User Admin Page</a></li>";
                     }
+                    echo "<li><a href='/userDetailsPage'>My Account</a></li>";
+                    echo "<li><a href='/logoutPage'>Logout</a></li>";
                 } else {
                     /*
                      * if there is no cookie found called 'username' then they is no one logged in and the following buttons are displayed
                      * Login: to login to their account
                      * Register: Allow them to register to a club
                      */
-                    echo "<li><a href='/loginPage'>Login</a></li>";
-                    echo "<li><a href='/registerPage'>Register</a></li>";
+                    echo "<li><id='loginButton' a href='/loginPage'>Login</ida></li>";
+                    echo "<li><id='registerButton' a href='/registerPage'>Register</a></li>";
                 }
                 ?>
             </ul>
