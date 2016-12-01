@@ -99,7 +99,7 @@ if (isset($_SESSION['username']))
         }
 
         $sql = "INSERT INTO Club (clubName, activity, clubDescription, sessionTime, contactName, contactNumber, contactEmail, website, websiteUrl, facebook, facebookUrl, genreID, adminID)
-        VALUES ('".$clubName."','".$activity."', '".$clubDescription."','".$session."','".$contactName."','".$contactNumber."','".$contactEmail."','".$website."','".$websiteUrl."','".$facebook."','".$facebookUrl."','".$genreID."',".$adminID.")";
+        VALUES ('".$clubName."','".$activity."', '".$clubDescription."','".$session."','".$contactName."','".$contactNumber."','".$contactEmail."',".$website.",'".$websiteUrl."',".$facebook.",'".$facebookUrl."','".$genreID."',".$adminID.")";
         if (mysqli_query($db, $sql)) {
             header("location:../clubsAndSocietiesPage");
         } else {
