@@ -42,8 +42,8 @@ session_start();
                      * Login: to login to their account
                      * Register: Allow them to register to a club
                      */
-                    echo "<li><a href='/loginPage' id='loginButton'>Login</a></li>";
-                    echo "<li><a href='/registerPage' id='registerButton'>Register</a></li>";
+                    echo "<li id='loginButton'><a href='/loginPage'>Login</a></li>";
+                    echo "<li id='registerButton'><a href='/registerPage'>Register</a></li>";
                 }
                 ?>
             </ul>
