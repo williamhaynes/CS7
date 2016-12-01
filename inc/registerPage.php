@@ -8,7 +8,7 @@ include ("scripts/header.php");
 
 <main>
     <script>
-        $(document).ready(function () {
+        $(document).ready(function() {
             $('#secondPassword').keyup(checkPasswordMatch());
         });
 
