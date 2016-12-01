@@ -1,6 +1,6 @@
-<!-- Canother Comment-->
+<!-- Danother Comment-->
 <?php
-if($_SESSION['accessLevel'] == 31) {
+if($_SESSION['accessLevel'] == '31') {
     include(__DIR__ . "/../scripts/header.php");
     ?>
     <main>
