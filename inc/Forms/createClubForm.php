@@ -38,6 +38,11 @@ if (isset($_SESSION['username']))
                 <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl" id="websiteUrl" disabled=true>
                 <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook" id="facebook" onclick="checkboxClicked()">
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl" id="facebookUrl" disabled=true>
+                <p>Genre: </p><select name="genreID">
+                                    <option>GENRE 1</option>
+                                    <option>GENRE 2</option>
+                                    <option>GENRE 3</option>
+                              </select>
 
 
                 <p>Club Admin ID: </p><input type="number" name="adminID" value=<?php print $_SESSION["userID"];?> placeholder="Admin ID">
