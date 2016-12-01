@@ -6,6 +6,16 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/header.php");
         ?>
         <main>
+            <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
+            <script>
+                function checkboxClicked() {
+                    if (document.getElementById('website').getAttribute('checked') == false) {
+                        document.getElementById('websiteUrl').setAttribute('disabled', 'true');
+                    } else {
+                        document.getElementById('websiteUrl').setAttribute('disabled', 'false');
+                    }
+                }
+            </script>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
             <form action='' method="post">
@@ -17,19 +27,11 @@ if (isset($_SESSION['username']))
                 <p>Contact Name: </p><input type="text" name="contactName" placeholder="Contact Name">
                 <p>Contact Number: </p><input type="text" name="contactNumber" placeholder="Contact Number">
                 <p>Contact Email: </p><input type="text" name="contactEmail" placeholder="Contact Email">
-                <p>Tick if you have a website: </p><input type="checkbox" name="website" id="website">
+                <p>Tick if you have a website: </p><input type="checkbox" name="website" id="website" onclick="checkboxClicked()">
                 <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl" id="websiteUrl">
-                <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook" id="facebook">
+                <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook" id="facebook" onclick="checkboxClicked()">
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl" id="facebookUrl">
-                <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
-                <script>
 
-                    if (document.getElementById('website').getAttribute('checked')==false){
-                        document.getElementById('websiteUrl').setAttribute ('disabled', 'true');
-                    }else{
-                        document.getElementById('websiteUrl').setAttribute ('disabled', 'false');
-                    }
-                </script>
 
                 <p>Club Admin ID: </p><input type="number" name="adminID" value=<?php print $_SESSION["userID"];?> placeholder="Admin ID">
                 <p><input type="submit" value='Submit'></p>
