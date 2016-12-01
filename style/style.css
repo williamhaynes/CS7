@@ -84,3 +84,7 @@ th, tr {
 
     background-color: lightskyblue;
 }
+
+th:hover{
+   background-color: darkred;
+}
