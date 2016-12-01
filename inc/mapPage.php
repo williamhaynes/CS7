@@ -9,8 +9,9 @@ echo "
         <title>Map</title>
         <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE' type='text/JavaScript'></script> 
         <script type='text/JavaScript'>
+        var map;
             function load() {
-              var map = new google.maps.Map(document.getElementById('map'), {
+                map = new google.maps.Map(document.getElementById('map'), {
                 center: new google.maps.LatLng(57.063408, -2.1455154),
                 zoom: 13,
                 mapTypeId: 'roadmap'
