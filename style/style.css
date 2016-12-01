@@ -41,7 +41,12 @@ nav li a :hover {
 
 #loginButton{
     margin-top: 3px;
-    background-color: blue;
+    background-color: lightgreen;
+}
+
+#registerButton{
+    margin-top: 3px;
+    background-color: dodgerblue;
 }
 
 #logoIMG{
