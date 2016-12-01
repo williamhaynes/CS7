@@ -14,6 +14,11 @@ if (isset($_SESSION['username']))
                     } else {
                         document.getElementById('websiteUrl').setAttribute('disabled', 'false');
                     }
+                    if (document.getElementById('facebook').getAttribute('checked') == false) {
+                        document.getElementById('facebookUrl').setAttribute('disabled', 'true');
+                    } else {
+                        document.getElementById('facebookUrl').setAttribute('disabled', 'false');
+                    }
                 }
             </script>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
