@@ -8,7 +8,6 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         <main>
             <script>
                 function checkboxClicked() {
-                    alert("checkboxClicked");
                     if (document.getElementById('website').checked) {
                         document.getElementById('websiteUrl').disabled = false;
                     }
