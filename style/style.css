@@ -40,6 +40,7 @@ nav li a :hover {
 }
 
 #loginButton{
+    width: 186px;
     margin-top: 3px;
     background-color: lightgreen;
 }
@@ -48,6 +49,7 @@ nav li a :hover {
 }
 
 #registerButton{
+    width: 186px;
     margin-top: 3px;
     background-color: dodgerblue;
 }
@@ -58,6 +60,7 @@ nav li a :hover {
 }
 
 #logoutButton{
+    width: 186px;
     float: right;
     margin-top: 3px;
     background-color: palevioletred;
