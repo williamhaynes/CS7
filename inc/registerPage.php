@@ -40,21 +40,28 @@ include ("scripts/header.php");
 
             if($('#usersname').val != null){
                 username = true;
+                console.log("username true");
             }
             if($('#usersEmailAddress').val != null){
                 emailAddress = true;
+                console.log("emailaddress true");
             }
             if($('#usersDisplayName').val != null){
                 displayName = true;
+                console.log("displayname true");
             }
             if($('#firstPassword').val() != null){
                 passwords = true;
+                console.log("firstpassword true");
+                console.log("fieldsfull should be true if passwords match");
             }
             if(username == true && emailAddress == true && displayName == true && passwords == true){
                 fieldsFilled = true;
+                console.log("fieldsfilled true");
             }
             if(fieldsFilled == true && passwordsMatch == true){
                 $('#submitRegisterButton').attr("enabled", false);
+                console.log("enabled registerbutton");
             }
         }
 
