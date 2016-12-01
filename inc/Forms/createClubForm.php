@@ -4,6 +4,7 @@ if (isset($_SESSION['username']))
 {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         include(__DIR__."/../scripts/header.php");
+        include (__DIR__ . "/../scripts/dbconnect.php");
         ?>
         <main>
             <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
@@ -22,6 +23,8 @@ if (isset($_SESSION['username']))
                         document.getElementById('facebookUrl').disabled = true;
                     }
                 }
+                }
+
             </script>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
@@ -38,11 +41,14 @@ if (isset($_SESSION['username']))
                 <p>WebsiteUrl: </p><input type="text" name="websiteUrl" placeholder="websiteUrl" id="websiteUrl" disabled=true>
                 <p>Tick if you have a facebook page: </p><input type="checkbox" name="facebook" id="facebook" onclick="checkboxClicked()">
                 <p>Facebook url: </p><input type="text" name="facebookUrl" placeholder="facebookUrl" id="facebookUrl" disabled=true>
-                <p>Genre: </p><select name="genreID">
-                                    <option>GENRE 1</option>
-                                    <option>GENRE 2</option>
-                                    <option>GENRE 3</option>
-                              </select>
+                <p>Genre: </p>
+                <select name="genreID" id="genreID" onclick="getGenres()">
+                    <option>No option applies</option>
+                    <?
+                        echo '<option value="value"> This is a new value</option>';
+                        //echo '<option value="'.$id.'">'.$genreID.'</option>';
+                    ?>
+                </select>
 
 
                 <p>Club Admin ID: </p><input type="number" name="adminID" value=<?php print $_SESSION["userID"];?> placeholder="Admin ID">
