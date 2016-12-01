@@ -10,9 +10,11 @@ if (isset($_SESSION['username']))
             <script>
                 function checkboxClicked() {
                     if (document.getElementById('website').checked) {
+                        alert("Checked");
                         document.getElementById('websiteUrl').setAttribute('disabled', 'true');
                     }
                     else{
+                        alert("UNChecked");
                         document.getElementById('websiteUrl').setAttribute('disabled', 'false');
                     }
                     if (document.getElementById('facebook').checked) {
