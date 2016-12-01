@@ -6,11 +6,19 @@
     include ("scripts/header.php");
     $clubID = $params['clubID'];
     echo "<main>";
-        //Takes all database information from the Club Table for a chosen club.
+        /*
+         * Access the database information from the Club Table for the chosen club
+         * Using the SQL command to select all the information
+         */
         $sql = "SELECT * FROM club where clubID = '$clubID'";
-        //Process the query
+        /*
+         * Process the result query
+         */
         $result = $db->query($sql);
-        // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
+        /*
+         * Once information has been accessed iterate through the database and present all the data
+         * Show information regarding the club such as clubName, clubDescription etc.
+         */
         while($row = $result->fetch_array())
         {
             $_SESSION['clubID'] = $row['clubID'];
@@ -73,13 +81,20 @@
                     var facebook = $facebook;
                     var websiteUrl = '{$websiteUrl}';
                     var facebookUrl = '{$facebookUrl}';
-                    
+                    /*
+                     * If they have a website show the url and website logo according to what it on their website
+                     * else set logo to certain size
+                     */
                     if (website==1){
                         document.getElementById('websiteUrl').setAttribute ('href', websiteUrl);
                         document.getElementById('websiteLogo').setAttribute('src','http://www.charlenebower.com/wp-content/uploads/2014/11/website-image.jpg');
                     }else{
                         document.getElementById('websiteLogo').setAttribute('style','width:0px;height:0px;')
                     }
+                    /*
+                     * If they have a facebook page then display the url and and logo on the facebook page
+                     * else set logo to certain size
+                     */
                     if (facebook==1){
                         document.getElementById('facebookUrl').setAttribute ('href', facebookUrl);
                         document.getElementById('facebookLogo').setAttribute('src','https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png');
@@ -90,7 +105,10 @@
              </atricle>";
         }
         echo "</main>";
-        //31 is equal to the admin levelcode
+        /*
+         * If the current user is an admin i.e is logged into the page as a admin or has level 31 which is
+         * the access level of an admin user
+         */
         if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
             echo "<a id='clubAdminFormEditLink' href='{$clubID}/clubAdminForm'>Club Admin Form</a>";
         } else {
