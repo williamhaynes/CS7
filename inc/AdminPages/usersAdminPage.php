@@ -1,5 +1,6 @@
 <!-- Danother Comment-->
 <?php
+session_start();
 if($_SESSION['accessLevel'] == '31') {
     include(__DIR__ . "/../scripts/header.php");
     ?>
@@ -78,8 +79,7 @@ if($_SESSION['accessLevel'] == '31') {
     </main>
     <?
     include(__DIR__ . "/../scripts/footer.php");
-}
-else{
+} else{
     //header("location:../404");
 }
 ?>
