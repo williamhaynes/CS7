@@ -16,67 +16,95 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
     <h2>Clubs and Societies of Portlethen Go!</h2>
     <p>Below is a list of all Clubs and Societies</p>
     <table>
-        <tr>
-            <th>Club Name</th>
-            <th>Genre</th>
-            <th>Club Description</th>
-        </tr>
-        <?
-        include(__DIR__ . "/../scripts/dbconnect.php");
-        //Takes all database information from the clubs Table.
-        $sql_query = "SELECT * FROM club;";
-        $sql_query2 = "SELECT * FROM genre";
-        //Process the queries
-        if (mysqli_query($db, $sql_query)) {
-        } else {
-            echo "Error: " . $sql_query . "<br>Error Message:" . mysqli_error($db);
-        }
-        $result = $db->query($sql_query);
-        //Takes all database information from the genre Table.
-        if (mysqli_query($db, $sql_query2)) {
-        } else {
-            echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
-        }
-        $genreArray = array(); //array to store genre ids and names as key -> value pairs
-        $result2 = $db->query($sql_query2);
-        while ($row2 = $result2->fetch_array()){    //iterate through result to create array
-            $index = $row2['genreID'];  //index of array
-            $value = $row2['name'];     //value of array
-            $genreArray[$index] = $value; //array values
-        }
-
-        // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
-        while ($row = $result->fetch_array()) {
-            $clubID = $row['clubID'];
-            $clubName = $row['clubName'];
-            $index2 = $row['genreID'];
-            echo "<tr class='hoverableRowsAndColumns'><th class='hoverableSpecificRowAndColumn' href='clubPage/{$clubID}'>" . $row['clubName'] . "</th>";
-            echo "<th class='hoverableSpecificRowAndColumn'><a href='clubPage/{$clubID}'>" . $genreArray[$index2] . "</a></th>"; //the name row contains the name of the genre
-            echo "<th class='hoverableSpecificRowAndColumn'><a href='clubPage/{$clubID}'>" . $row['clubDescription'] . "</a></th>";
-            echo "</tr>";
-        }
-        ?>
-    </table>
-</main>
-<?
+        <script>
+            function gotoClub() {
+                <?
 /*
- * Using the database take all the information from the Club Table
- * Using an SQL command to pull all the information
-
+* Using the database take all the information from the Club Table
+* Using an SQL command to pull all the information
+*/
 $sql_query = "SELECT * FROM Club;";
 
 /*
- * Once all information has been pulled process the SQL query
-
+* Once all information has been pulled process the SQL query
+*/
 $result = $db->query($sql_query);
 
 /*
- * Iterate through and sort out all the data
-
+* Iterate through and sort out all the data
+ *
+ */
 while($row = $result->fetch_array()){
     $clubID = $row['clubID'];
     $clubName = $row['clubName'];
     echo "<li><a href='clubPage/{$clubID}'> $clubName </a></li>";
+}
+?>
+window.location.href = "http://stackoverflow.com";
+}
+</script>
+<tr>
+<th>Club Name</th>
+<th>Genre</th>
+<th>Club Description</th>
+</tr>
+<?
+include(__DIR__ . "/../scripts/dbconnect.php");
+//Takes all database information from the clubs Table.
+$sql_query = "SELECT * FROM club;";
+$sql_query2 = "SELECT * FROM genre";
+//Process the queries
+if (mysqli_query($db, $sql_query)) {
+} else {
+echo "Error: " . $sql_query . "<br>Error Message:" . mysqli_error($db);
+}
+$result = $db->query($sql_query);
+//Takes all database information from the genre Table.
+if (mysqli_query($db, $sql_query2)) {
+} else {
+echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
+}
+$genreArray = array(); //array to store genre ids and names as key -> value pairs
+$result2 = $db->query($sql_query2);
+while ($row2 = $result2->fetch_array()){    //iterate through result to create array
+$index = $row2['genreID'];  //index of array
+$value = $row2['name'];     //value of array
+$genreArray[$index] = $value; //array values
+}
+
+// Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
+while ($row = $result->fetch_array()) {
+$clubID = $row['clubID'];
+$clubName = $row['clubName'];
+$index2 = $row['genreID'];
+echo "<tr class='hoverableRowsAndColumns' onclick='gotoClub()'><th class='hoverableSpecificRowAndColumn'>" . $row['clubName'] . "</th>";
+echo "<th class='hoverableSpecificRowAndColumn'>" . $genreArray[$index2] . "</th>"; //the name row contains the name of the genre
+echo "<th class='hoverableSpecificRowAndColumn'>>" . $row['clubDescription'] . "</th>";
+echo "</tr>";
+}
+?>
+</table>
+</main>
+<?
+/*
+* Using the database take all the information from the Club Table
+* Using an SQL command to pull all the information
+
+$sql_query = "SELECT * FROM Club;";
+
+/*
+* Once all information has been pulled process the SQL query
+
+$result = $db->query($sql_query);
+
+/*
+* Iterate through and sort out all the data
+
+
+while($row = $result->fetch_array()){
+$clubID = $row['clubID'];
+$clubName = $row['clubName'];
+echo "<li><a href='clubPage/{$clubID}'> $clubName </a></li>";
 }
 
 echo "</main>";*/
