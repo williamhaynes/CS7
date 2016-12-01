@@ -9,31 +9,16 @@ include ("scripts/header.php");
 <main>
     <script>
         $(document).ready(function() {
-            $('#secondPassword').keyup(checkPasswordMatch(1));
-            $('#firstPassword').keyup(checkPasswordMatch(2));
+            $('#secondPassword').keyup(checkPasswordMatch());
         });
 
-        function checkPasswordMatch(checkedParameter) {
-            var password;
-            var confirmPassword;
-
-            if(checkedParameter == 1){
-                password = $('#firstPassword').val();
-                confirmPassword = $('#secondPassword').val();
-            }
-            else{
-                password = $('#secondPassword').val();
-                confirmPassword = $('#firstPassword').val();
-            }
-            password = $('#firstPassword').val();
-            confirmPassword = $('#secondPassword').val();
+        function checkPasswordMatch() {
+            var password = $('#firstPassword').val();
+            var confirmPassword = $('#secondPassword').val();
 
             if (password != confirmPassword) {
                 $('#passwordConfirmer').html("Passwords do not match!");
             }
-            else{
-                    $('#passwordConfirmer').html("Passwords match.");
-                }
         }
 
     </script>
