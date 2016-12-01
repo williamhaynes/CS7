@@ -71,3 +71,17 @@ nav li a :hover {
     width: 206px;
     height: 60px;
 }
+
+
+/*Controls for Tables*/
+th, td {
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: lightskyblue;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
