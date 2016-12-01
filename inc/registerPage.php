@@ -64,6 +64,9 @@ include ("scripts/header.php");
                 $('#submitRegisterButton').removeAttr("disabled");
                 console.log("enabled registerbutton");
             }
+            else{
+                $('#submitRegisterButton').attr("disabled", true);
+            }
         }
 
     </script>
