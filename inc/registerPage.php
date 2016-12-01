@@ -29,25 +29,41 @@ include ("scripts/footer.php");
     $displayName = $_POST['displayName'];
     $password = $_POST['password'];
 
-//username is the variable, userName is the column in the table
+    /*
+     * A function checkUserUnique to make sure each user login is unique
+     * Using a database to check the login details like login and/or emailAddress
+     *
+     * Returns true if unique or false if in database
+     */
     function checkUserUnique($username, $emailAddress, $db){
         $sql_query = "SELECT * FROM User WHERE userName ='" . $username . "' OR emailAddress = '" . $emailAddress ."';";
         $result = $db->query($sql_query);
-        while($row = $result->fetch_array()){ //if in database return false
-            return false;
+        while($row = $result->fetch_array()){ 
+            return false; //in database so returns false
         }
-        return true; //if unique return true
+        return true; //is unique so returns true
     }
 
+    /*
+     * If user is unique then they will be added to the database and add the following values
+     * username: The users username
+     * password: The password the user has created
+     * emailAddress: The email address the user has given
+     * displayName: The display name the user is given
+     * levelCode: The level code the user has
+     * 
+     * After the users details have been added to the database the page will then navigate to the login page
+     */
     if (checkUserUnique($username, $emailAddress, $db)){
-        //if Unique user then add to database
         $sql = "INSERT INTO User (userName, password, emailAddress, displayName, levelCode)
                       VALUES ('". $username ."', '". $password ."', '". $emailAddress ."','" . $displayName ."', '1');";
         $result = $db->query($sql);
-        //and navigate to login page
         header("location:../loginPage");
         print('success!');
     }
+    /*
+     * If the details are already in use then the page will display an error message
+     */
     else{
         header("location:../registerPage");
         print('That username or email address is already in use');
