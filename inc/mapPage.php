@@ -9,19 +9,19 @@ echo "
         <title>Map</title>
         <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE' type='text/JavaScript'></script> 
         <script type='text/JavaScript'>
-        var map;
+        //var map;
             function load() {
-                map = new google.maps.Map(document.getElementById('map'), {
+                var map = new google.maps.Map(document.getElementById('map'), {
                 center: new google.maps.LatLng(57.063408, -2.1455154),
                 zoom: 13,
                 mapTypeId: 'roadmap'
               });
-            }
+            
             // This event listener calls addMarker() when the map is clicked.
-              google.maps.event.addListener(map, 'click', function(e) {
+              map.addListener(map, 'click', function(e) {
                 placeMarker(e.latLng, map);
               });
-            
+            }
               function placeMarker(position, map) {
                 var marker = new google.maps.Marker({
                   position: position,
