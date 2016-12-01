@@ -29,6 +29,7 @@ nav li a {
     display: block;
     color: white;
     text-align: center;
+    width: 206px;
     padding: 14px 16px;
     text-decoration: none;
 }
