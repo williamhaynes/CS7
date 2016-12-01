@@ -5,7 +5,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         include(__DIR__."/../scripts/header.php");
         include (__DIR__ . "/../scripts/dbconnect.php");
         ?>
-        <main onload="checkboxClicked()">
+        <main>
             <script>
                 function checkboxClicked() {
                     alert("checkboxClicked");
@@ -62,7 +62,9 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 <p><input type="submit" value='Submit'></p>
             </form>
         </main>
-        
+        <script>
+            checkboxClicked();
+        </script>
         <?
         include(__DIR__."/../scripts/footer.php");
         
