@@ -8,9 +8,6 @@ overlay to authorise/reject blog posts. As per System Requirements.-->
 <?php
 include ("scripts/dbconnect.php");
 include ("scripts/header.php");
-echo "
-<main>
-<h2>Clubs and Societies</h2>";
 if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             echo "<a id='createClubFormLink' href='/Forms/createClubForm'>Create Club Form</a>";
         }
