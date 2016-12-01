@@ -6,7 +6,7 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/header.php");
         include (__DIR__ . "/../scripts/dbconnect.php");
         ?>
-        <main onload="checkboxClicked()">
+        <main>
             <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
             <script>
                 function checkboxClicked() {
@@ -99,7 +99,7 @@ if (isset($_SESSION['username']))
         }
 
         $sql = "INSERT INTO Club (clubName, activity, clubDescription, sessionTime, contactName, contactNumber, contactEmail, website, websiteUrl, facebook, facebookUrl, genreID, adminID)
-        VALUES ('".$clubName."','".$activity."', '".$clubDescription."','".$session."','".$contactName."','".$contactNumber."','".$contactEmail."',".$website.",'".$websiteUrl."',".$facebook.",'".$facebookUrl."','".$genreID."',".$adminID.")";
+        VALUES ('".$clubName."','".$activity."', '".$clubDescription."','".$sessionTime."','".$contactName."','".$contactNumber."','".$contactEmail."',".$website.",'".$websiteUrl."',".$facebook.",'".$facebookUrl."','".$genreID."',".$adminID.")";
         if (mysqli_query($db, $sql)) {
             header("location:../clubsAndSocietiesPage");
         } else {
