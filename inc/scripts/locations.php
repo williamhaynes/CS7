@@ -2,10 +2,10 @@
 
 // connect to your Azure server and select database (remember you connection details are all on the azure portal
 $db = new mysqli(
-    "hostname",
-    "username",
-    "password",
-    "db_name" );
+    "eu-cdbr-azure-north-e.cloudapp.net",
+    "b1fa144aa688ff",
+    "4e96e436",
+    "db_pgo_cs7" );
 
 // test our connection
 if ($db->connect_errno) {
@@ -38,7 +38,7 @@ while ($row = $result->fetch_array()){
     $newnode->setAttribute("address", $row['address']);
     $newnode->setAttribute("lat", $row['lat']);
     $newnode->setAttribute("lng", $row['lng']);
-    $newnode->setAttribute("type", $row['type']);
+    $newnode->setAttribute("typeID", $row['typeID']);
 }
 
 $result->close();
