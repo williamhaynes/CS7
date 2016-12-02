@@ -66,7 +66,7 @@ if (isset($_SESSION['username'])) {
                                 addMarker(event.latLng, i+1);
                             }
                         });
-                    }
+
                         function addMarker(pos, where) {
                             var marker = new google.maps.Marker({
                                 map: map,
