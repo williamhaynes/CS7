@@ -168,8 +168,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $selectedClub = $_POST["clubName"];
         $sql_query3 = "UPDATE Club SET adminID = null WHERE adminID = '" . $userID . "' AND clubName = '". $selectedClub ."';";
         if (mysqli_query($db, $sql_query3)) {
-            echo "<p>Selected Club: ".$selectedClub."</p>";
-            echo "<p>SQL Query: ".$sql_query3."</p>";
+            //echo "<p>Selected Club: ".$selectedClub."</p>";
+            //echo "<p>SQL Query: ".$sql_query3."</p>";
             header("location: /userDetailsPage/" . $userID);
         } else {
             echo "Error: " . $sql_query3 . "<br>Error Message:" . mysqli_error($db);
@@ -178,11 +178,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     else{//for adding a new club admin
         //Generate SQL query to get club name if club admin or site admin
         $selectedClub = $_POST["clubSelect"];
-        $sql_query5 = "UPDATE Club SET adminID ='".$userID."'WHERE clubName = '". $selectedClub ."';";
+        $sql_query5 = "UPDATE Club SET adminID ='".$userID."' WHERE clubID = '". $selectedClub ."';";
         if (mysqli_query($db, $sql_query5)) {
-            echo "<p>Selected Club: ".$selectedClub."</p>";
-            echo "<p>SQL Query: ".$sql_query5."</p>";
-            //header("location: /userDetailsPage/" . $userID);
+            //echo "<p>Selected Club: ".$selectedClub."</p>";
+            //echo "<p>SQL Query: ".$sql_query5."</p>";
+            header("location: /userDetailsPage/" . $userID);
         } else {
             echo "Error: " . $sql_query5 . "<br>Error Message:" . mysqli_error($db);
         }
