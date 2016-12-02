@@ -55,7 +55,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     $userToUpdate = $_SESSION['username'];
 
-    $sql = "UPDATE User SET userName = '" .$updatedUsername."', password = '".$updatedPassword."', emailAddress = ".$updatedEmailAddress.", displayName = '".$updatedDisplayName."'";
+    $sql = "UPDATE User SET userName = '" .$updatedUsername."', password = '".$updatedPassword."', emailAddress = '".$updatedEmailAddress."', displayName = '".$updatedDisplayName."'";
     if($_SESSION['accessLevel'] == 31) {
         $sql .= ", levelCode = '".$updatedLevelCode."'";
                     }
