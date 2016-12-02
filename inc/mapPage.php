@@ -10,6 +10,7 @@ echo "
         <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE' type='text/JavaScript'></script> 
         <script type='text/JavaScript'>
         var marker;
+        var count = 0;
             function load() {
                 var map = new google.maps.Map(document.getElementById('map'), {
                 center: new google.maps.LatLng(57.063408, -2.1455154),
@@ -19,7 +20,10 @@ echo "
             
                 // This event listener calls addMarker() when the map is clicked.
                 google.maps.event.addListener(map, 'click', function(e) {
-                    placeMarkerOnce(e.latLng, map);
+                    if(count<1){
+                        placeMarkerOnce(e.latLng, map);
+                        count+=1;
+                    }
                 });
             }
               function placeMarkerOnce(position, map) {
