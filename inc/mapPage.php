@@ -15,7 +15,33 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                 zoom: 13,
                 mapTypeId: 'roadmap'
               });
+                function downloadUrl(url,callback) {
+                    var request = window.ActiveXObject ?
+                        new ActiveXObject('Microsoft.XMLHTTP') :
+                        new XMLHttpRequest;
 
+                    request.onreadystatechange = function() {
+                        if (request.readyState == 4) {
+                            callback(request, request.status);
+                        }
+                    };
+
+                    request.open('GET', url, true);
+                    request.send(null);
+                }
+                downloadUrl("locations", function(data) {
+                    var xml = data.responseXML;
+                    var markers = xml.documentElement.getElementsByTagName("marker");
+                    for (var i = 0; i < markers.length; i++) {
+                        var point = new google.maps.LatLng(
+                            parseFloat(markers[i].getAttribute("lat")),
+                            parseFloat(markers[i].getAttribute("lng")));
+                        var marker = new google.maps.Marker({
+                            map: map,
+                            position: point
+                        });
+                    }
+                }
             }
         </script>
         <a href='mapForm'>Link to Map Form</a>
