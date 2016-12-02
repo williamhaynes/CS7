@@ -19,7 +19,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             var input, filter, table, tr, td, i;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
-            table = document.getElementById("userTable");
+            table = document.getElementById("usersTable");
             tr = table.getElementsByTagName("tr");
 
             // Loop through all table rows, and hide those who don't match the search query
