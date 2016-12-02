@@ -8,6 +8,7 @@ an option for expandability and is not a requirement.
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include ("scripts/header.php");
     include("scripts/dbconnect.php");
+    $userID = $params['userID'];
 /*
  * If a user is logged in, according to the session cookie, then select all the data from the database for that user
  * Pull the following information:
@@ -17,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
  * Display Name: The display name of the user
  * Level Code: The level code for the user
  */
-    if (isset($_SESSION['username']) || $_SESSION['accessLevel'] == 31) {
-        $sql_query = "SELECT * FROM User WHERE userName ='" . $_SESSION['username'] ."';";
+    if ($_SESSION['userID'] == $userID || $_SESSION['accessLevel'] == 31) {
+        $sql_query = "SELECT * FROM User WHERE userName ='" . $userID ."';";
         $result = $db->query($sql_query);
         while ($row = $result->fetch_array()) {
             echo "<main>";
