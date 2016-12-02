@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])) {
                     }
                     //If its a route
                     if (document.getElementById('4').selected) {
-                        var markersLatLng=[new google.maps.LatLng(marker.getPosition().lat(), marker.getPosition().lng());];
+                        var markersLatLng=[new google.maps.LatLng(marker.getPosition().lat(), marker.getPosition().lng())];
                          //['{lat: '+marker.getPosition().lat()+', lng: '+marker.getPosition().lat()+'}']
                         var path;
                         google.maps.event.addListener(map, 'click', function(event) {
