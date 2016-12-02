@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $sql = "UPDATE User SET password = '".$updatedPassword."', emailAddress = '".$updatedEmailAddress."', displayName = '".$updatedDisplayName."'";
     if($_SESSION['accessLevel'] == 31) {
         $sql .= ", levelCode = '".$updatedLevelCode."'";
-                    }
+    }
     $sql .= " WHERE userID = '" . $userID ."';";
     //echo "<p>". $sql ."</p>";
     if (mysqli_query($db, $sql)) {
