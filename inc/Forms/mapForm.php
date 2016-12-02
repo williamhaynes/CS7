@@ -1,4 +1,5 @@
 <!--Allows details to be added to an existing map - required by System Requirements.-->
+
 <?php
 include ("scripts/header.php");
 
@@ -32,7 +33,10 @@ echo "
                 map.panTo(position);
               }
               
-              
+              function moveBus( map, marker ) {
+                    marker.setPosition( new google.maps.LatLng( 0, 0 ) );
+                    map.panTo( new google.maps.LatLng( 0, 0 ) );
+                };
         </script>
 
     </head>
