@@ -7,13 +7,8 @@ an option for expandability and is not a requirement.
 -->
 
 <?php
-include ("scripts/header.php");
-include("scripts/dbconnect.php");
-
-echo "
-    <main>
-    <p>userDetailsPage</p>";
-
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    include ("scripts/header.php");
 /*
  * If a user is logged in, according to the session cookie, then select all the data from the database for that user
  * Pull the following information:
@@ -23,18 +18,53 @@ echo "
  * Display Name: The display name of the user
  * Level Code: The level code for the user
  */
-if (isset($_SESSION['username'])) {
-    $sql_query = "SELECT * FROM User WHERE userName ='" . $_SESSION['username'] ."';";
-    $result = $db->query($sql_query);
-    while ($row = $result->fetch_array()) {
-        echo "<p>UserName: " . $row['userName'] . "</p>";
-        echo "<p>Password: " . $row['password'] . "</p>";
-        echo "<p>Email Address: " . $row['emailAddress'] . "</p>";
-        echo "<p>Display Name: " . $row['displayName'] . "</p>";
-        echo "<p>Level Code: " . $row['levelCode'] . "</p>";
+    if (isset($_SESSION['username']) || $_SESSION['accessLevel'] == 31) {
+        $sql_query = "SELECT * FROM User WHERE userName ='" . $_SESSION['username'] ."';";
+        $result = $db->query($sql_query);
+        while ($row = $result->fetch_array()) {
+            echo "<main>";
+            echo "<form action=\"userDetailsPage\" method=\"post\">";
+            echo "<p>UserName:</p>";
+            echo "<input type=\"text\" name=\"username\" value=\"" . $row['userName'] . "\">";
+            echo "<p>Password:</p>";
+            echo "<input type=\"text\" name=\"password\" value=\"" . $row['password'] . "\">";
+            echo "<p>Confirm Password:</p>";
+            echo "<input type=\"text\" name=\"confirmPassword\" placeholder='Confirm Password'>";
+            echo "<p>Email Address:</p>";
+            echo "<input type=\"text\" name=\"emailAddress\" value=\"" . $row['emailAddress'] . "\">";
+            echo "<p>Display Name:</p>";
+            echo "<input type=\"text\" name=\"displayName\" value=\"" . $row['displayName'] . "\">";
+            if($_SESSION['accessLevel'] == 31) {    //If Site Adminstrator give extra controls.
+                echo "<p>Level Code:</p>";
+                echo "<input type=\"text\" name=\"levelCode\" value=\"" . $row['levelCode'] . "\">";
+            }
+            echo "<p><input type=\"submit\" id='updateDetailsButton' value='Update Details' disabled></p>";
+            echo "</form>";
+            echo "</main>";
+        }
+    }
+    include ("scripts/footer.php");
+} elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    include("scripts/dbconnect.php");
+    $updatedUsername = $_POST["username"];
+    $updatedPassword = $_POST["password"];
+    $updatedEmailAddress = $_POST["emailAddress"];
+    $updatedDisplayName = $_POST["displayName"];
+    if($_SESSION['accessLevel'] == 31) {
+        $updatedLevelCode = $_POST["levelCode"];
+    }
+    $userToUpdate = $_SESSION['username'];
+
+    $sql = "UPDATE User SET userName = '" .$updatedUsername."', password = '".$updatedPassword."', emailAddress = ".$updatedEmailAddress.", displayName = '".$updatedDisplayName."'";
+    if($_SESSION['accessLevel'] == 31) {
+        $sql .= ", levelCode = '".$updatedLevelCode."'";
+                    }
+    $sql .= "WHERE userID = '" .$userToUpdate ."';";
+    echo "<p>". $sql ."</p>";
+    if (mysqli_query($db, $sql)) {
+        header("location: /userDetailsPage");
+    } else {
+        echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
     }
 }
-    echo "</main>";
-
-include ("scripts/footer.php");
 ?>
