@@ -73,7 +73,7 @@ if (isset($_SESSION['username'])) {
 
                             area = new google.maps.Polygon({
                                 paths: markersLatLng,
-                                strokeColor: '#78d2ff',
+                                strokeColor: '#aff3ff',
                                 strokeOpacity: 0.8,
                                 strokeWeight: 2,
                                 fillColor: '#aff3ff',
