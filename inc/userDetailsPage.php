@@ -147,11 +147,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         //Generate SQL query to get club name if club admin or site admin
         $selectedClub = $_POST["clubName"];
         $sql_query3 = "UPDATE Club SET adminID = null WHERE adminID = '" . $userID . "' AND clubName = '". $selectedClub ."';";
-        if (mysqli_query($db, $sql_query2)) {
+        if (mysqli_query($db, $sql_query3)) {
         } else {
-            echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
+            echo "Error: " . $sql_query3 . "<br>Error Message:" . mysqli_error($db);
         }
-        $result2 = $db->query($sql_query2);
     }
 }
 ?>
