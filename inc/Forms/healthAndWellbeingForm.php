@@ -46,7 +46,7 @@ if (isset($_SESSION['username']))
         $authorName = $_POST["authorName"];
 
         $sql = "UPDATE healthnews 
-                    SET title = '" .$title."', content = '".$content."', verified = ".$verified.", authorName = '".$authorName."' 
+                    SET title = '" .$title."', content = '".$content."', authorName = '".$authorName."', verified = ".$verified."
                     WHERE itemID = $itemID";
         if (mysqli_query($db, $sql)) {
             header("location: /healthAndWellbeingPage");

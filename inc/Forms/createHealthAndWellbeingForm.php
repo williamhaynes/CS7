@@ -28,7 +28,7 @@ if (isset($_SESSION['username']))
         }else{
             $verified = 0;
         }
-        $sql = "INSERT INTO healthnews (title, content, verified, authorName) VALUES ('" . $articleName . "', '" . $articleText . "', " . $verified . ", '" . $authorName . "')";
+        $sql = "INSERT INTO healthnews (title, content, verified, authorName) VALUES ('" . $articleName . "', '" . $articleText . "', '" . $authorName . "', " . $verified . ")";
         if (mysqli_query($db, $sql)) {
             header("location:../healthAndWellbeingPage");
         } else {
