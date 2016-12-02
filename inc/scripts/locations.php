@@ -1,7 +1,5 @@
 <?php
 
-include ("scripts/header.php");
-
 // connect to your Azure server and select database (remember you connection details are all on the azure portal
 $db = new mysqli(
     "eu-cdbr-azure-north-e.cloudapp.net",
@@ -47,7 +45,5 @@ $result->close();
 $db->close();
 
 echo $dom->saveXML();
-
-include ("scripts/footer.php");
 
 ?>
