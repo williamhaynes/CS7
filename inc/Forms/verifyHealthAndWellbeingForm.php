@@ -27,11 +27,11 @@ if (isset($_SESSION['username']))
                 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
                 <script>tinymce.init({selector: 'textarea'});</script>
                 <form action='' method="post">
-                    <p>Article ID</p><input type="text" name="title" value="<?php print $_SESSION["itemID"];?>" placeholder="Artcile ID" disabled>
-                    <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
+                    <p>Article ID<input type="text" name="title" value="<?php print $_SESSION["itemID"];?>" placeholder="Artcile ID" disabled></p>
+                    <p>Article Name: <input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name"></p>
                     <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
-                    <p>Author: </p> <input type="text" name="authorName" value="<?php print $_SESSION["authorName"];?>" placeholder="Author Name">
-                    <p>Verified: </p> <input type="checkbox" name="verified">
+                    <p>Author: <input type="text" name="authorName" value="<?php print $_SESSION["authorName"];?>" placeholder="Author Name"></p>
+                    <p>Verified: <input type="checkbox" name="verified"></p>
                     <p><input type="submit" value='Submit'></p>
                 </form>
                 </main>
@@ -44,7 +44,7 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
-        $itemID = $_SESSION["itemID"];
+        $itemID = $_POST["itemID"];
         $title = $_POST["title"];
         $content = $_POST["content"];
         if( $_POST["verified"] == 'on') {
