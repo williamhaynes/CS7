@@ -6,7 +6,6 @@ if (isset($_SESSION['username'])) {
         include(__DIR__ . "/../scripts/header.php");
         include(__DIR__ . "/../scripts/dbconnect.php");
         ?>
-        echo "
         <head>
             <title>Map</title>
             <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE'
@@ -39,6 +38,7 @@ if (isset($_SESSION['username'])) {
                         document.getElementById('latbox').value = this.getPosition().lat();
                         document.getElementById('lngbox').value = this.getPosition().lng();
                     });
+
                     // This event listener calls addMarker() when the map is clicked.
                     //google.maps.event.addListener(map, 'click', function(e) {
                     //if(count<1){
@@ -49,9 +49,7 @@ if (isset($_SESSION['username'])) {
                     //);
 
                 }
-
             </script>
-
         </head>
         <main>
             <body onload='load()'>
@@ -77,13 +75,10 @@ if (isset($_SESSION['username'])) {
                         echo "<option value='{$typeID}'>$typeName</option>";
                     }
                     ?>
-                    echo "
                 </select>
                 <p><input type='submit' value='Submit'></p>
             </form>
             </body>
-        </main>
-        ";
         <?
         include("scripts/footer.php");
     }
