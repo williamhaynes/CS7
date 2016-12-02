@@ -51,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             if($_SESSION['accessLevel'] == 31) {    //If Site Adminstrator give extra controls.
                 //Get existing value
                 $currentLevelCode = $row['levelCode'];
+                echo "<p>". $currentLevelCode ."</p>"
                 $contributorValue = "";
                 $nKPAGValue= "";
                 $clubAdminValue = "";
