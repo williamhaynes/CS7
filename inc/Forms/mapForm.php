@@ -9,41 +9,38 @@ echo "
         <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE' type='text/JavaScript'></script> 
         <script type='text/JavaScript'>
         var count = 0;
+        var map;
             function load() {
-                var map = new google.maps.Map(document.getElementById('map'), {
-                center: new google.maps.LatLng(57.063408, -2.1455154),
+                var portlethenLatLng = new google.maps.LatLng(57.063408,-2.1455154);
+                map = new google.maps.Map(document.getElementById('map'), {
+                center: portlethenLatLng,
                 zoom: 13,
                 mapTypeId: 'roadmap'
               });
+                
+                var marker = new google.maps.Marker({
+                   position: portlethenLatLng,
+                   map: map,
+                   title: 'Marker',
+                   draggable: true
+                });
                 
                 //This event listener should update values of text
                 google.maps.event.addListener(marker, 'click', function (event) {
                     document.getElementById(\"latbox\").value = event.latLng.lat();
                     document.getElementById(\"lngbox\").value = event.latLng.lng();
                 });
-                
-                google.maps.event.addListener(marker, 'dragend', function (event) {
-                    document.getElementById(\"latbox\").value = this.getPosition().lat();
-                    document.getElementById(\"lngbox\").value = this.getPosition().lng();
-                });    
+
                 
                 // This event listener calls addMarker() when the map is clicked.
-                google.maps.event.addListener(map, 'click', function(e) {
-                    if(count<1){
-                        placeMarkerOnce(e.latLng, map); 
-                        count+=1;
-                    }
-                });
+                //google.maps.event.addListener(map, 'click', function(e) {
+                    //if(count<1){
+                        
+                            //count+=1;
+                        
+                    //}
+                //);
 
-            
-              function placeMarkerOnce(position, map) {
-                var marker = new google.maps.Marker({
-                  position: position,
-                  map: map,
-                  title: 'Marker',
-                  draggable: true
-                });  
-              }
             }
               
         </script>
