@@ -97,6 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $updatedDisplayName = $_POST["displayName"];
     if($_SESSION['accessLevel'] == 31) {
         $updatedLevelCode = $_POST["userLevelSelect"];
+        echo "<p>".$updatedLevelCode."</p>";
     }
     $userToUpdate = $_SESSION['username'];
 
