@@ -27,13 +27,13 @@ echo "
                 
                 //This event listener should update values of text
                 google.maps.event.addListener(marker, 'click', function (event) {
-                    document.getElementById(\"latbox\").value = event.latLng.lat();
-                    document.getElementById(\"lngbox\").value = event.latLng.lng();
+                    document.getElementById('latbox').value = event.latLng.lat();
+                    document.getElementById('lngbox').value = event.latLng.lng();
                 });
 
                 google.maps.event.addListener(marker, 'dragend', function (event) {
-                    document.getElementById(\"latbox\").value = this.getPosition().lat();
-                    document.getElementById(\"lngbox\").value = this.getPosition().lng();
+                    document.getElementById('latbox').value = this.getPosition().lat();
+                    document.getElementById('lngbox').value = this.getPosition().lng();
                 });
                 // This event listener calls addMarker() when the map is clicked.
                 //google.maps.event.addListener(map, 'click', function(e) {
@@ -52,9 +52,9 @@ echo "
     <main>
         <body onload='load()'>
              <div id='map' style='width: 1000px; height: 600px'></div>
-             <div id=\"latlong\">
-                <p>Latitude: <input size=\"20\" type=\"text\" id=\"latbox\" name=\"lat\" ></p>
-                <p>Longitude: <input size=\"20\" type=\"text\" id=\"lngbox\" name=\"lng\" ></p>
+             <div id='latlong'>
+                <p>Latitude: <input size='20' type='text' id='latbox' name='lat' ></p>
+                <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' ></p>
              </div>
         </body>
     </main>
