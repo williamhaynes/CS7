@@ -39,6 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         //Iterate through the values and create a html form for the user to see
         while ($row = $result->fetch_array()) {
             echo "<main>";
+            echo "<div id=\"modifyDetailsForm\">";
             echo "<form action=\"" . $userID . "\" method=\"post\">";
             echo "<p>UserName:</p>";
             echo "<input type=\"text\" name=\"username\" value=\"" . $row['userName'] . "\" disabled>";
@@ -91,6 +92,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
         echo "<p><input type=\"submit\" name='updateDetailsButton' value='Update Details'></p>";
         echo "</form>";
+        echo "</div>";
         if ($_SESSION['accessLevel'] == 31 || $_SESSION['accessLevel'] == 21) {
             /*
              * This section affects the Club Administration Options of a specific user
@@ -102,6 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
             }
             $result2 = $db->query($sql_query2);
+            echo "<div id='modifyClubAdminFormRemoval'>";
             echo "<p>Club Administrator for:</p>";
             //Iterate through club results and return them
             while ($row2 = $result2->fetch_array()) {
@@ -110,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 echo "<p><input type=\"submit\" name='removeClubAdmin' value='Remove as Club Admin'></p>";
                 echo "</form>";
             }
+            echo "</div>";
             /*
              * Administrator of new Club Form
              */
@@ -120,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 echo "Error: " . $sql_query4 . "<br>Error Message:" . mysqli_error($db);
             }
             $result4 = $db->query($sql_query4);
-
+            echo "<div id='modifyClubAdminFormAddition'>";
             echo "<p>Make Administrator for:</p>";
             echo "<form action=\"".$userID."\" method=\"post\">";
             echo "<select name='clubSelect' size='10'>";
@@ -130,7 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<p><input type=\"submit\" name='addClubAdmin' value='Add as Club Admin'></p>";
             echo "</select>";
             echo "</form>";
-
+            echo "</div>";
             echo "</main>";
         } else {
             header("location: /404");
