@@ -71,7 +71,7 @@ if (isset($_SESSION['username'])) {
                                    coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
                                }
                                else {
-                                   coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '},');
+                                   coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
                                }
                            }
                            alert(coords);
