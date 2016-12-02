@@ -54,7 +54,9 @@ if (($_SESSION['accessLevel'])==31)
             $verified = 0;
         }
         $authorName = $_POST["authorName"];
+        echo "<p>$itemID</p>";
         echo "<p>$title</p>";
+        echo "<p>$verified</p>";
         $sql = "UPDATE healthnews 
                     SET title = '" .$title."', content = '".$content."', authorName = '".$authorName."',verified = ".$verified." 
                     WHERE itemID = '" .$itemID."'";
