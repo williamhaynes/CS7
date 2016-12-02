@@ -59,16 +59,16 @@ if (isset($_SESSION['username'])) {
                         function addMarker(pos, where) {
                             var marker = new google.maps.Marker({map: map, position: pos, draggable: false});
                             markers.push(marker);
-//                            drawPath();
+                            drawPath();
                         }
-//                        function drawPath() {
-//                            markers.length;
-//                            var coords = [];
-//                            for (var i = 0; i < markers.length; i++) {
-//                                coords.push(markers[i].getPosition());
-//                            }
-//                            line.setPath(coords);
-//                        }
+                        function drawPath() {
+                           markers.length;
+                            var coords = [];
+                            //for (var i = 0; i < markers.length; i++) {
+                             //   coords.push(markers[i].getPosition());
+                            //}
+                            line.setPath(markers);
+                        }
                    }
                 }
 
