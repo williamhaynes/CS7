@@ -50,16 +50,21 @@ if (isset($_SESSION['username'])) {
 
                 }
                 function checkType() {
+                    //If statements work
                     //If its a Landmark
                     if (document.getElementById('1').selected) {
-                        alert("You have selected Landmark");
+
                     }
                     //If its a Viewpoint
                     if (document.getElementById('2').selected) {
-                        alert("You have selected Viewpoint");
+
                     }
                     //If its a Area
                     if (document.getElementById('3').selected) {
+
+                    }
+                    //If its a route
+                    if (document.getElementById('4').selected) {
                         var flightPath = new google.maps.Polyline({
                             path: flightPlanCoordinates,
                             geodesic: true,
@@ -68,10 +73,6 @@ if (isset($_SESSION['username'])) {
                             strokeWeight: 2
                         });
                         flightPath.setMap(map);
-                    }
-                    //If its a route
-                    if (document.getElementById('4').selected) {
-                        alert("You have selected Route");
                     }
                 }
             </script>
