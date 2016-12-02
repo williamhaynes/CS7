@@ -30,7 +30,7 @@ if (isset($_SESSION['username']))
                 <form action='' method="post">
                     <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
                     <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
-                    <p>Verified: </p> <input type="text" name="verified" value="<?php print $_SESSION["verified"];?>" placeholder="verified">
+                    <p>Verified: </p> <input type="checkbox" name="verified" checked>
                     <p><input type="submit" value='Submit'></p>
                 </form>
             </main>
@@ -42,7 +42,12 @@ if (isset($_SESSION['username']))
         $itemID = $_SESSION["itemID"];
         $title = $_POST["title"];
         $content = $_POST["content"];
-        $verified = $_POST["verified"];
+        if( $_POST["verified"] == 'on') {
+            $verified = 1;
+        }
+        else{
+            $verified = 0;
+        }
         $authorName = $_POST["authorName"];
 
         $sql = "UPDATE healthnews 
