@@ -16,18 +16,8 @@ if (isset($_SESSION['username'])) {
                 var marker;
                 var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
                 function load() {
-                    map = new google.maps.Map(document.getElementById('map'), {
-                        center: portlethenLatLng,
-                        zoom: 13,
-                        mapTypeId: 'roadmap'
-                    });
-
-                    marker = new google.maps.Marker({
-                        position: portlethenLatLng,
-                        map: map,
-                        title: 'Marker',
-                        draggable: true
-                    });
+                    map = new google.maps.Map(document.getElementById('map'), {center: portlethenLatLng, zoom: 13, mapTypeId: 'roadmap'});
+                    marker = new google.maps.Marker({position: portlethenLatLng, map: map, title: 'Marker', draggable: true});
 
                     //This event listener should update values of text
                     google.maps.event.addListener(marker, 'click', function (event) {
@@ -67,12 +57,7 @@ if (isset($_SESSION['username'])) {
                         });
 
                         function addMarker(pos, where) {
-                            var marker = new google.maps.Marker({
-                                map: map,
-                                position: pos,
-                                draggable: true
-                            });
-
+                            var marker = new google.maps.Marker({map: map, position: pos, draggable: false});
                             markers.push(marker);
 //                            drawPath();
                         }
@@ -84,7 +69,7 @@ if (isset($_SESSION['username'])) {
 //                            }
 //                            line.setPath(coords);
 //                        }
-//                    }
+                   }
                 }
 
             </script>
