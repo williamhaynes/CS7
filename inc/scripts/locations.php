@@ -47,3 +47,6 @@ $db->close();
 echo $dom->saveXML();
 
 ?>
+<p>
+    Hello World
+</p>
