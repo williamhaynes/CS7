@@ -21,6 +21,7 @@ echo "
                 google.maps.event.addListener(map, 'click', function(e) {
                     if(count<1){
                         placeMarkerOnce(e.latLng, map);
+                        
                         count+=1;
                     }
                 });
@@ -31,10 +32,11 @@ echo "
                   map: map,
                   title: 'Marker',
                   draggable: true
+                  document.getElementById('markerCoord').innerHTML = marker;
                 });  
                 map.panTo(position);
               }
-              document.getElementById('markerCoord').innerHTML = marker;
+              
         </script>
 
     </head>
