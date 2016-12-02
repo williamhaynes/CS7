@@ -14,6 +14,9 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
 ?>
 <main>
     <script>
+        /*
+         * Funcion inspired by code from http://www.w3schools.com/howto/howto_js_filter_table.asp
+         */
         function searchByWord() {
             // Declare variables
             var input, filter, table, tr, td, i;
