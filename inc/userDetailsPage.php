@@ -106,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             //Iterate through club results and return them
             while ($row2 = $result2->fetch_array()) {
                 echo "<form action=\"" . $userID . "\" method=\"post\">";
-                echo "<input type=\"text\" name=\"clubName\" value=\"" . $row2['clubName'] . "\" disabled>";
+                echo "<input type=\"text\" name=\"clubName\" value=\"" . $row2['clubName'] . "\" readOnly=\"true\">";
                 echo "<p><input type=\"submit\" id='removeClubAdmin' value='Remove as Club Admin'></p>";
                 echo "</form>";
             }
@@ -150,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if (mysqli_query($db, $sql_query3)) {
             echo "<p>Selected Club: ".$selectedClub."</p>";
             echo "<p>SQL Query: ".$sql_query3."</p>";
-            //header("location: /userDetailsPage/" . $userID);
+            header("location: /userDetailsPage/" . $userID);
         } else {
             echo "Error: " . $sql_query3 . "<br>Error Message:" . mysqli_error($db);
         }
