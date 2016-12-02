@@ -70,8 +70,7 @@ if (isset($_SESSION['username'])) {
 //                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
 //                           }
                             alert(markersLatLng);
-                            var area;
-                            area.setMap(null);
+
                             area = new google.maps.Polygon({
                                 paths: markersLatLng,
                                 strokeColor: '#aff3ff',
@@ -80,7 +79,7 @@ if (isset($_SESSION['username'])) {
                                 fillColor: '#aff3ff',
                                 fillOpacity: 0.35
                             });
-
+                            area.setMap(null);
                             area.setMap(map);
                         }
                     }
