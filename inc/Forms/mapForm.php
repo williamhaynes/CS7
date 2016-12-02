@@ -67,8 +67,12 @@ if (isset($_SESSION['username'])) {
                            markers.length;
                            var coords=[];
                            for (var i = 0; i < markers.length; i++) {
-                                coords.push('{lat: '+markers[i].getPosition().lat()+', lng: '+markers[i].getPosition().lat()+'},');
-
+                               if(i==markers.length-1){
+                                   coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
+                               }
+                               else {
+                                   coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '},');
+                               }
                            }
                            alert(coords);
 
