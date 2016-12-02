@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $result = $db->query($sql_query);
         while ($row = $result->fetch_array()) {
             echo "<main>";
-            echo "<form action=\"userDetailsPage\" method=\"post\">";
+            echo "<form action=\"userDetailsPage/". $userID . "\" method=\"post\">";
             echo "<p>UserName:</p>";
             echo "<input type=\"text\" name=\"username\" value=\"" . $row['userName'] . "\">";
             echo "<p>Password:</p>";
@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $sql .= " WHERE userID = '" . $userToUpdate ."';";
     echo "<p>". $sql ."</p>";
     if (mysqli_query($db, $sql)) {
-        header("location: /userDetailsPage");
+        header("location: userDetailsPage/". $userID);
     } else {
         echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
     }
