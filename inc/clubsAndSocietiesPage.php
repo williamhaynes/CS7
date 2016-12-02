@@ -63,9 +63,9 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
     <table id="usersTable">
         <input type="text" id="searchInput" onkeyup="searchByWord()" placeholder="Search by Keyword..">
         <select id="filterByOptions">
-            <option value="clubname">Club Name</option>
-            <option value="genre">Genre</option>
-            <option value="description">Description</option>
+            <option value="clubname" onchange="searchByWord()">Club Name</option>
+            <option value="genre" onchange="searchByWord()">Genre</option>
+            <option value="description" onchange="searchByWord()">Description</option>
         </select>
         <tr>
             <th>Club Name</th>
