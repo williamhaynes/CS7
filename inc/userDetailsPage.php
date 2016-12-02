@@ -1,11 +1,9 @@
 <!--
 The page will hold details about the current user. They will be allowed to make any changes to their details and to clearly
 see what their access rights are, i.e. club Administrator rights.
-
 Possible ability to expand upon this and allow them to see their pending and verified posts, though this is
 an option for expandability and is not a requirement.
 -->
-
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include ("scripts/header.php");
