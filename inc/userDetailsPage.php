@@ -143,7 +143,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
         }
-    } else { //if user is removing themselves as club admin
+    } elseif (isset($_POST['removeClubAdmin'])){ //if user is removing themselves as club admin
         //Generate SQL query to get club name if club admin or site admin
         $selectedClub = $_POST["clubName"];
         $sql_query3 = "UPDATE Club SET adminID = null WHERE adminID = '" . $userID . "' AND clubName = '". $selectedClub ."';";
@@ -154,6 +154,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         } else {
             echo "Error: " . $sql_query3 . "<br>Error Message:" . mysqli_error($db);
         }
+    }
+    else{//for adding a new club admin
+
     }
 }
 ?>
