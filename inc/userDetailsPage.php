@@ -148,6 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $selectedClub = $_POST["clubName"];
         $sql_query3 = "UPDATE Club SET adminID = null WHERE adminID = '" . $userID . "' AND clubName = '". $selectedClub ."';";
         if (mysqli_query($db, $sql_query3)) {
+            header("location: /userDetailsPage/" . $userID);
         } else {
             echo "Error: " . $sql_query3 . "<br>Error Message:" . mysqli_error($db);
         }
