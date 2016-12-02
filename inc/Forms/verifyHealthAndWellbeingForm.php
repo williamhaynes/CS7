@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-if (isset($_SESSION['username']))
+if (($_SESSION['accessLevel'])==31)
 {
     include (__DIR__ . "/../scripts/dbconnect.php");
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -34,7 +34,7 @@ if (isset($_SESSION['username']))
                     <p>Verified: <input type="checkbox" name="verified"></p>
                     <p><input type="submit" value='Submit'></p>
                 </form>
-                </main>
+            </main>
             <?
         }
         ?>
