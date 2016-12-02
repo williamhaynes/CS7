@@ -131,8 +131,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             while ($row4 = $result4->fetch_array()) {
                 echo "<option value=\"". $row4['clubID'] ."\">".$row4['clubName']."</option>";
             }
-            echo "<p><input type=\"submit\" name='addClubAdmin' value='Add as Club Admin'></p>";
             echo "</select>";
+            echo "<p><input type=\"submit\" name='addClubAdmin' value='Add as Club Admin'></p>";
             echo "</form>";
             echo "</div>";
             echo "</main>";
