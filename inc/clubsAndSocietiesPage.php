@@ -15,13 +15,6 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
 <main>
     <h2>Clubs and Societies of Portlethen Go!</h2>
     <p>Below is a list of all Clubs and Societies</p>
-    <script>
-        $('tr').click( function() {
-            window.location = $(this).find('a').attr('href');
-        }).hover( function() {
-            $(this).toggleClass('hover');
-        });
-    </script>
     <table>
         <tr>
             <th>Club Name</th>
