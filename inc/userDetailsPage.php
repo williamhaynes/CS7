@@ -32,9 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
  * Display Name: The display name of the user
  * Level Code: The level code for the user
  */
-    if ($_SESSION['userID'] == $userID || $_SESSION['accessLevel'] == 31) {
+    if ($_SESSION['userID'] == $userID || $_SESSION['accessLevel'] == 31) {//if session id matches the current user let them see their account, or let the site admin
+        //Select all values from the User table for the current user
         $sql_query = "SELECT * FROM User WHERE userID ='" . $userID ."';";
         $result = $db->query($sql_query);
+        //Iterate through the values and create a html form for the user to see
         while ($row = $result->fetch_array()) {
             echo "<main>";
             echo "<form action=\"". $userID . "\" method=\"post\">";
@@ -48,15 +50,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<input type=\"text\" name=\"emailAddress\" value=\"" . $row['emailAddress'] . "\">";
             echo "<p>Display Name:</p>";
             echo "<input type=\"text\" name=\"displayName\" value=\"" . $row['displayName'] . "\">";
-            if($_SESSION['accessLevel'] == 31) {    //If Site Adminstrator give extra controls.
-                //Get existing value
+            //If Site Adminstrator give extra controls.
+            if($_SESSION['accessLevel'] == 31) {
+                /*
+                 * This section affects the control over the Access Level of an individual user
+                 */
+                //Get existing values
                 $currentLevelCode = $row['levelCode'];
-                echo "<p>". $currentLevelCode ."</p>";
+                //Variables to affect which option is "selected" on page load
                 $contributorValue = "";
                 $nKPAGValue= "";
                 $clubAdminValue = "";
                 $siteAdminValue = "";
-                //set option as existing value
+                //update variables as relevant
                 switch($currentLevelCode){
                     case 1:
                         $contributorValue = "selected=\"selected\"";
@@ -73,15 +79,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     default:
                         //do nothing;
                 }
-
-                //echo "<p>Level Code:</p>";
-                //echo "<input type=\"text\" name=\"levelCode\" value=\"" . translateLevelCode($row['levelCode']) . "\">";
+                //Below is the options of administration as a selectable option list
                 echo "<select name='userLevelSelect'>";
                 echo "<option value=\"1\"". $contributorValue .">Contributor</option>";
                 echo "<option value=\"11\"". $nKPAGValue .">NKPAG</option>";
                 echo "<option value=\"21\"". $clubAdminValue .">Club Administrator</option>";
                 echo "<option value=\"31\"". $siteAdminValue .">Site Administrator</option>";
                 echo "</select>";
+
+                /*
+                 * This section affects the Club Administration Options of a specific user
+                 */
+                    //Generate SQL query to get club name if club admin or site admin
+                    $sql_query2 = "SELECT clubName FROM Club WHERE adminID = '" . $row['userID'] . "';";
+                    if (mysqli_query($db, $sql_query2)) {
+                    } else {
+                        echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
+                    }
+                    $result2 = $db->query($sql_query2);
+
+                    //Iterate through club results and return them
+                    while ($row2 = $result2->fetch_array()) {
+                        echo "<p>". $row2['clubName'] . "</p>";
+                    }
             }
             echo "<p><input type=\"submit\" id='updateDetailsButton' value='Update Details'></p>";
             echo "</form>";
