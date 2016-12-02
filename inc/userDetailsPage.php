@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 echo "<p>Level Code:</p>";
                 echo "<input type=\"text\" name=\"levelCode\" value=\"" . $row['levelCode'] . "\">";
             }
-            echo "<p><input type=\"submit\" id='updateDetailsButton' value='Update Details' disabled></p>";
+            echo "<p><input type=\"submit\" id='updateDetailsButton' value='Update Details'></p>";
             echo "</form>";
             echo "</main>";
         }
