@@ -57,7 +57,7 @@ if (($_SESSION['accessLevel'])==31)
 
         $sql = "UPDATE healthnews 
                     SET title = '" .$title."', content = '".$content."', verified = ".$verified.", authorName = '".$authorName."' 
-                    WHERE itemID = $itemID";
+                    WHERE itemID = '" .$itemID."'";
         if (mysqli_query($db, $sql)) {
             header("location: /healthAndWellbeingPage");
         } else {
