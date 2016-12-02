@@ -20,18 +20,12 @@ echo "
                 // This event listener calls addMarker() when the map is clicked.
                 google.maps.event.addListener(map, 'click', function(e) {
                     if(count<1){
-                        placeMarkerOnce(e.latLng, map);
-                        alert(marker.getPosition());
+                        placeMarkerOnce(e.latLng, map); 
                         count+=1;
                     }
+                    alert(marker.getPosition());
                 });
-                google.maps.event.addListener(marker, 'dragend', function (evt) {
-                    document.getElementById('current').innerHTML = '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(3) + ' Current Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
-                });
-                
-              google.maps.event.addListener(marker, 'dragstart', function (evt) {
-                    document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
-                });
+
             }
               function placeMarkerOnce(position, map) {
                 marker = new google.maps.Marker({
@@ -41,9 +35,7 @@ echo "
                   draggable: true
                 });  
               }
-              
-              map.setCenter(marker.position);
-            marker.setMap(map);
+
               
         </script>
 
