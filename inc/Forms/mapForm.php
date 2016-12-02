@@ -70,7 +70,8 @@ if (isset($_SESSION['username'])) {
 //                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
 //                           }
                             alert(markersLatLng);
-
+                            var area;
+                            area.setMap(null);
                             area = new google.maps.Polygon({
                                 paths: markersLatLng,
                                 strokeColor: '#aff3ff',
