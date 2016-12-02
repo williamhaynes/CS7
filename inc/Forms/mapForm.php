@@ -49,7 +49,7 @@ echo "
     <main>
         <body onload='load()'>
              <div id='map' style='width: 1000px; height: 600px'></div>
-             <p id='current'></p>
+             <p id='current'>Nothing here yet...</p>
         </body>
     </main>
     ";
