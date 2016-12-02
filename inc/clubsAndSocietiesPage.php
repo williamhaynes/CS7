@@ -41,7 +41,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             var input, filter, table, tr, td, i;
             input = document.getElementById("searchInput");
             filter = input.value.toUpperCase();
-            table = document.getElementById("usersTable");
+            table = document.getElementById("clubsTable");
             tr = table.getElementsByTagName("tr");
 
             // Loop through all table rows, and hide those who don't match the search query
@@ -60,7 +60,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
 
     <h2>Clubs and Societies of Portlethen Go!</h2>
     <p>Below is a list of all Clubs and Societies</p>
-    <table id="usersTable">
+    <table id="clubsTable">
         <input type="text" id="searchInput" onkeyup="searchByWord()" placeholder="Search by Keyword..">
         <select id="filterByOptions" onchange="searchByWord()">
             <option value="clubname">Club Name</option>
