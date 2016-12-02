@@ -109,8 +109,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     //echo "<p>". $sql ."</p>";
     if (mysqli_query($db, $sql)) {
-        echo "<p>". $sql ."</p>";
-        //header("location: /userDetailsPage/".$userID);
+        //echo "<p>". $sql ."</p>";
+        header("location: /userDetailsPage/".$userID);
     } else {
         echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
     }
