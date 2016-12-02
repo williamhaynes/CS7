@@ -30,7 +30,8 @@ if (isset($_SESSION['username']))
             <form action='' method="post">
                 <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
                 <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
-                <p>Verified: </p> <input type="text" name="verified" value="<?php print $_SESSION["verified"];?>" placeholder="verified">
+                <p>Author: </p> <input type="text" name="authorName" value="<?php print $_SESSION["authorName"];?>" placeholder="Author Name">
+                <p>Verified: </p> <input type="checkbox" name="verified">
                 <p><input type="submit" value='Submit'></p>
             </form>
         </main>
@@ -39,10 +40,15 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
-        $itemID = $_SESSION["itemID"];
+        $itemID = $_POST["itemID"];
         $title = $_POST["title"];
         $content = $_POST["content"];
-        $verified = $_POST["verified"];
+        if( $_POST["verified"] == 'on') {
+            $verified = 1;
+        }
+        else{
+            $verified = 0;
+        }
         $authorName = $_POST["authorName"];
 
         $sql = "UPDATE healthnews 
