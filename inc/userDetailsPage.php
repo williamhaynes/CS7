@@ -80,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         //do nothing;
                 }
                 //Below is the options of administration as a selectable option list
+                echo "<p>User Level:</p>";
                 echo "<select name='userLevelSelect'>";
                 echo "<option value=\"1\"". $contributorValue .">Contributor</option>";
                 echo "<option value=\"11\"". $nKPAGValue .">NKPAG</option>";
@@ -97,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
                     }
                     $result2 = $db->query($sql_query2);
-
+                    echo "<p>Club Administrator for:</p>";
                     //Iterate through club results and return them
                     while ($row2 = $result2->fetch_array()) {
                         echo "<p>". $row2['clubName'] . "</p>";
