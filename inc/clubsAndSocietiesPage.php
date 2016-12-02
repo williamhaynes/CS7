@@ -13,9 +13,33 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         }
 ?>
 <main>
+    <script>
+        function searchByWord() {
+            // Declare variables
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("searchInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("userTable");
+            tr = table.getElementsByTagName("tr");
+
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+
     <h2>Clubs and Societies of Portlethen Go!</h2>
     <p>Below is a list of all Clubs and Societies</p>
-    <table>
+    <table id="usersTable">
+        <input type="text" id="searchInput" onkeyup="searchByWord()" placeholder="Search by Keyword..">
         <tr>
             <th>Club Name</th>
             <th>Genre</th>
