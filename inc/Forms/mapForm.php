@@ -50,7 +50,8 @@ if (isset($_SESSION['username'])) {
                     }
                     //If its a route
                     if (document.getElementById('4').selected) {
-                        var markers=[marker.getPosition()];
+                        var markers=[lat: marker.getPosition().lat();, lng: marker.getPosition().lat();];
+                        var path;
                         google.maps.event.addListener(map, 'click', function(event) {
                             var markersLengh = markers.length;
                             addMarker(event.latLng, markersLengh+1);
@@ -64,11 +65,19 @@ if (isset($_SESSION['username'])) {
                         function drawPath() {
                            markers.length;
                            alert(markers);
-                            var coords = [];
-                            //for (var i = 0; i < markers.length; i++) {
-                             //   coords.push(markers[i].getPosition());
-                            //}
-                            //line.setPath(markers);
+//                            var coords = [];
+//                            for (var i = 0; i < markers.length; i++) {
+//                                coords.push(markers[i].getPosition());
+//                            }
+//                            path = new google.maps.Polyline({
+//                                path: flightPlanCoordinates,
+//                                geodesic: true,
+//                                strokeColor: '#FF0000',
+//                                strokeOpacity: 1.0,
+//                                strokeWeight: 2
+//                            });
+//
+//                            flightPath.setMap(map);
                         }
                    }
                 }
