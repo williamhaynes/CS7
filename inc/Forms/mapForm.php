@@ -62,7 +62,7 @@ if (isset($_SESSION['username'])) {
                 <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='57.062661319658496'></p>
                 <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='-2.1295508919433814'></p>
                 <p>Type: </p>
-                <select name='typeID' id='typeID'>
+                <select name='typeID' id='typeID'>";
                     <?
                     //Takes all database information from the Genre TABLE.
                     $sql_query = 'SELECT * FROM Type';
@@ -77,8 +77,9 @@ if (isset($_SESSION['username'])) {
                         echo "<option value='{$typeID}'>$typeName</option>";
                     }
                     ?>
+                    echo "
                 </select>
-                <p><input type=\"submit\" value='Submit'></p>
+                <p><input type='submit' value='Submit'></p>
             </form>
             </body>
         </main>
