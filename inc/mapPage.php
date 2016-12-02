@@ -16,34 +16,6 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                 mapTypeId: 'roadmap'
               });
 
-                <?
-                    $sql_query = "SELECT * FROM Location;";
-
-                    //Once all information has been pulled process the SQL query
-                    $result = $db->query($sql_query);
-
-
-                    //Iterate through and sort out all the data
-                     while($row = $result->fetch_array()){
-                         $locationID = $row['locationID'];
-                         $name = $row['name'];
-                         $address = $row['address'];
-                         $lat = $row['lat'];
-                         $lng = $row['lng'];
-                         $typeID = $row['typeID'];
-                         echo "
-                                var marker = new google.maps.LatLng($lat, $lng);
-                                var marker = new google.maps.Marker({
-                                position: portlethenLatLng,
-                                    map: map,
-                                    title: '$name',
-                                    draggable: false
-                                });
-
-                         ";
-                     }
-                 ?>
-
             }
         </script>
         <a href='mapForm'>Link to Map Form</a>
