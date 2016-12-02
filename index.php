@@ -22,7 +22,7 @@ $rules = array(
     'loginPage' => "/loginPage",
     'logoutPage' => "/logoutPage",
     'registerPage' => "/registerPage",
-    'userDetailsPage' => "/userDetailsPage/(?'clubID'[\w\-]+)",
+    'userDetailsPage' => "/userDetailsPage/(?'userID'[\w\-]+)",
     //
     // Home Page
     //
