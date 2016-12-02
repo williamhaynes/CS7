@@ -13,8 +13,14 @@ if (isset($_SESSION['username'])) {
             <script type='text/JavaScript'>
                 var count = 0;
                 var map;
+                var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
+                var flightPlanCoordinates = [
+                    {lat: 37.772, lng: -122.214},
+                    {lat: 21.291, lng: -157.821},
+                    {lat: -18.142, lng: 178.431},
+                    {lat: -27.467, lng: 153.027}
+                ];
                 function load() {
-                    var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
                     map = new google.maps.Map(document.getElementById('map'), {
                         center: portlethenLatLng,
                         zoom: 13,
@@ -40,9 +46,7 @@ if (isset($_SESSION['username'])) {
                     });
 
                     // This event listener calls addMarker() when the map is clicked.
-                    //google.maps.event.addListener(map, 'click', function(e) {
-                    //}
-                    //);
+
 
                 }
                 function checkType() {
@@ -56,7 +60,14 @@ if (isset($_SESSION['username'])) {
                     }
                     //If its a Area
                     if (document.getElementById('3').selected) {
-                        alert("You have selected Area");
+                        var flightPath = new google.maps.Polyline({
+                            path: flightPlanCoordinates,
+                            geodesic: true,
+                            strokeColor: '#FF0000',
+                            strokeOpacity: 1.0,
+                            strokeWeight: 2
+                        });
+                        flightPath.setMap(map);
                     }
                     //If its a route
                     if (document.getElementById('4').selected) {
