@@ -18,6 +18,26 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
          * Funcion inspired by code from http://www.w3schools.com/howto/howto_js_filter_table.asp
          */
         function searchByWord() {
+            //Get Which section to search
+            var searchCriteria;
+            var section;
+            searchCriteria = document.getElementById("filterByOptions").val();
+
+            //switch to determine section
+            switch(searchCriteria) {
+                case clubname:
+                    section = 0;
+                    break;
+                case genre:
+                    section = 1;
+                    break;
+                case description:
+                    section = 2;
+                    break;
+                default:
+                    section = 0; //defaults to club name
+            }
+
             // Declare variables
             var input, filter, table, tr, td, i;
             input = document.getElementById("searchInput");
@@ -43,6 +63,11 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
     <p>Below is a list of all Clubs and Societies</p>
     <table id="usersTable">
         <input type="text" id="searchInput" onkeyup="searchByWord()" placeholder="Search by Keyword..">
+        <select id="filterByOptions">
+            <option value="clubname">Club Name</option>
+            <option value="genre">Genre</option>
+            <option value="description">Description</option>
+        </select>
         <tr>
             <th>Club Name</th>
             <th>Genre</th>
