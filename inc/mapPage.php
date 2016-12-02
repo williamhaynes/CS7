@@ -3,7 +3,7 @@ System Requirements.-->
 
 <?php
 include ("scripts/header.php");
-
+include(__DIR__ . "/../scripts/dbconnect.php");
 ?>
     <head>
         <title>Map</title>
