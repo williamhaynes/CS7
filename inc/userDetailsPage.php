@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             } else {
                 echo "Error: " . $sql_query4 . "<br>Error Message:" . mysqli_error($db);
             }
-            $result2 = $db->query($sql_query4);
+            $result4 = $db->query($sql_query4);
 
             echo "<p>Make Administrator for:</p>";
             echo "<form action=\"".$userID."\" method=\"post\">";
