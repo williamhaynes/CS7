@@ -40,8 +40,10 @@ echo "
                   title: 'Marker',
                   draggable: true
                 });  
-                map.panTo(position);
               }
+              
+              map.setCenter(marker.position);
+            marker.setMap(map);
               
         </script>
 
