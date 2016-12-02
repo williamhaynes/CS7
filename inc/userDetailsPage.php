@@ -99,12 +99,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $userToUpdate = $_SESSION['username'];
 
     //If user is not site Admin apply update to all categories they can reach
-    $sql = "UPDATE User SET password = '".$updatedPassword."', emailAddress = '".$updatedEmailAddress."', displayName = '".$updatedDisplayName. "'WHERE userID = '" . $userID ."';";
+    $sql = "UPDATE User SET password = '".$updatedPassword."', emailAddress = '".$updatedEmailAddress."', displayName = '".$updatedDisplayName. "' WHERE userID = '" . $userID ."';";
 
     //If user is Site Admin then apply update to User Access Level also
     if($_SESSION['accessLevel'] == 31) {
         $updatedLevelCode = $_POST["userLevelSelect"];
-        $sql = "UPDATE User SET password = '".$updatedPassword."', emailAddress = '".$updatedEmailAddress."', displayName = '".$updatedDisplayName."', levelCode = '".$updatedLevelCode."'WHERE userID = '" . $userID ."';";
+        $sql = "UPDATE User SET password = '".$updatedPassword."', emailAddress = '".$updatedEmailAddress."', displayName = '".$updatedDisplayName."', levelCode = '".$updatedLevelCode."' WHERE userID = '" . $userID ."';";
     }
     //echo "<p>". $sql ."</p>";
     if (mysqli_query($db, $sql)) {
