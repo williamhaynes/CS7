@@ -45,6 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     include ("scripts/footer.php");
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $userID = $params['userID'];
     include("scripts/dbconnect.php");
     $updatedUsername = $_POST["username"];
     $updatedPassword = $_POST["password"];
@@ -62,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $sql .= " WHERE userID = '" . $userToUpdate ."';";
     echo "<p>". $sql ."</p>";
     if (mysqli_query($db, $sql)) {
-        header("location: /userDetailsPage/". $userID);
+        header("location: /userDetailsPage/".$userID);
     } else {
         echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
     }
