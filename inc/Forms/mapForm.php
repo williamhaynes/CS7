@@ -46,7 +46,42 @@ if (isset($_SESSION['username'])) {
                     }
                     //If its a Area
                     if (document.getElementById('3').selected) {
+                        var markersLatLng=[];
+                        //['{lat: '+marker.getPosition().lat()+', lng: '+marker.getPosition().lat()+'}']
+                        var path;
+                        google.maps.event.addListener(map, 'click', function(event) {
+                            if(markersLatLng.length==0){
+                                markersLatLng.push(new google.maps.LatLng(marker.getPosition().lat(), marker.getPosition().lng()));
+                            }
+                            addMarker(event.latLng);
+                        });
 
+                        function addMarker(pos) {
+                            var marker = new google.maps.Marker({map: map, position: pos, draggable: false});
+                            var markerLatLng = new google.maps.LatLng(pos.lat(), pos.lng());
+                            markersLatLng.push(markerLatLng);
+                            drawPath();
+                        }
+                        function drawPath() {
+//                           markers.length;
+//                           var coords=[];
+//                           for (var i = 0; i < markers.length; i++) {
+//                               coords.push()
+//                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
+//                           }
+                            alert(markersLatLng);
+
+                            area = new google.maps.Polygon({
+                                paths: markersLatLng,
+                                strokeColor: '#78d2ff',
+                                strokeOpacity: 0.8,
+                                strokeWeight: 2,
+                                fillColor: '#aff3ff',
+                                fillOpacity: 0.35
+                            });
+
+                            area.setMap(map);
+                        }
                     }
                     //If its a route
                     if (document.getElementById('4').selected) {
