@@ -62,9 +62,8 @@ if (isset($_SESSION['username'])) {
                     if (document.getElementById('4').selected) {
                         var markers=[marker.getPosition()];
                         google.maps.event.addListener(map, 'click', function(event) {
-                            for (var i = 0 ; i < markers.length; i++) {
-                                addMarker(event.latLng, i+1);
-                            }
+                            var markersLengh = markers.length;
+                            addMarker(event.latLng, markersLengh+1);
                         });
 
                         function addMarker(pos, where) {
@@ -75,18 +74,19 @@ if (isset($_SESSION['username'])) {
                             });
 
                             markers.push(marker);
-                            drawPath();
+//                            drawPath();
                         }
-                        function drawPath() {
-                            markers.length;
-                            var coords = [];
-                            for (var i = 0; i < markers.length; i++) {
-                                coords.push(markers[i].getPosition());
-                            }
-                            line.setPath(coords);
-                        }
-                    }
+//                        function drawPath() {
+//                            markers.length;
+//                            var coords = [];
+//                            for (var i = 0; i < markers.length; i++) {
+//                                coords.push(markers[i].getPosition());
+//                            }
+//                            line.setPath(coords);
+//                        }
+//                    }
                 }
+
             </script>
         </head>
         <main>
