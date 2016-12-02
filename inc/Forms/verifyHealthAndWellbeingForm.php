@@ -22,20 +22,23 @@ if (isset($_SESSION['username']))
             $_SESSION['verified'] = $verified;
             $authorName = $row['authorName'];
             $_SESSION['authorName'] = $authorName;
+?>
+            <main>
+                <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+                <script>tinymce.init({selector: 'textarea'});</script>
+                <form action='' method="post">
+                    <p>Article ID</p><input type="text" name="title" value="<?php print $_SESSION["itemID"];?>" placeholder="Artcile ID" disabled>
+                    <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
+                    <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
+                    <p>Author: </p> <input type="text" name="authorName" value="<?php print $_SESSION["authorName"];?>" placeholder="Author Name">
+                    <p>Verified: </p> <input type="checkbox" name="verified">
+                    <p><input type="submit" value='Submit'></p>
+                </form>
+                </main>
+            <?
         }
         ?>
-        <main>
-            <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-            <script>tinymce.init({selector: 'textarea'});</script>
-            <form action='' method="post">
 
-                <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
-                <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
-                <p>Author: </p> <input type="text" name="authorName" value="<?php print $_SESSION["authorName"];?>" placeholder="Author Name">
-                <p>Verified: </p> <input type="checkbox" name="verified">
-                <p><input type="submit" value='Submit'></p>
-            </form>
-        </main>
 
         <?
         include(__DIR__."/../scripts/footer.php");
