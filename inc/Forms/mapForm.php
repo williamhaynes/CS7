@@ -50,7 +50,8 @@ if (isset($_SESSION['username'])) {
                     }
                     //If its a route
                     if (document.getElementById('4').selected) {
-                        var markers=['lat: '+marker.getPosition().lat()+', lng: '+marker.getPosition().lat()];
+                        var markers=[marker];
+                         //['{lat: '+marker.getPosition().lat()+', lng: '+marker.getPosition().lat()+'}']
                         var path;
                         google.maps.event.addListener(map, 'click', function(event) {
                             var markersLengh = markers.length;
@@ -64,11 +65,11 @@ if (isset($_SESSION['username'])) {
                         }
                         function drawPath() {
                            markers.length;
-                           alert(markers);
-//                            var coords = [];
-//                            for (var i = 0; i < markers.length; i++) {
-//                                coords.push(markers[i].getPosition());
-//                            }
+                           var coords=[];
+                           for (var i = 0; i < markers.length; i++) {
+                                coords.push('{lat: '+marker[i].getPosition().lat()+', lng: '+marker[i].getPosition().lat()+'},');
+                                alert(coords);
+                           }
 //                            path = new google.maps.Polyline({
 //                                path: flightPlanCoordinates,
 //                                geodesic: true,
