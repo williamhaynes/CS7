@@ -11,10 +11,11 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         <script type='text/JavaScript'>
             function load() {
                 var map = new google.maps.Map(document.getElementById('map'), {
-                center: new google.maps.LatLng(57.063408, -2.1455154),
-                zoom: 13,
-                mapTypeId: 'roadmap'
-              });
+                    center: new google.maps.LatLng(57.063408, -2.1455154),
+                    zoom: 13,
+                    mapTypeId: 'roadmap'
+                });
+            }
                 function downloadUrl(url,callback) {
                     var request = window.ActiveXObject ?
                         new ActiveXObject('Microsoft.XMLHTTP') :
@@ -36,13 +37,10 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                         var point = new google.maps.LatLng(
                             parseFloat(markers[i].getAttribute("lat")),
                             parseFloat(markers[i].getAttribute("lng")));
-                        var marker = new google.maps.Marker({
-                            map: map,
-                            position: point
-                        });
+                        var marker = new google.maps.Marker({map: map, position: point});
                     }
                 }
-            }
+
         </script>
         <a href='mapForm'>Link to Map Form</a>
     </head>
@@ -50,7 +48,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         <body onload='load()'>
              <div id='map' style='width: 1000px; height: 600px'></div>
         <p>
-            Some random text
+            Some random text with more
         </p>
         </body>
     </main>
