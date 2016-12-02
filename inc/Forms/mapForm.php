@@ -19,10 +19,10 @@ echo "
             
                 // This event listener calls addMarker() when the map is clicked.
                 google.maps.event.addListener(map, 'click', function(e) {
-                    if(count<1){
+                    //if(count<1){
                         placeMarkerOnce(e.latLng, map); 
                         count+=1;
-                    }
+                    //}
                     alert(marker.getPosition());
                 });
 
