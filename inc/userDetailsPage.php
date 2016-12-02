@@ -26,9 +26,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<p>UserName:</p>";
             echo "<input type=\"text\" name=\"username\" value=\"" . $row['userName'] . "\">";
             echo "<p>Password:</p>";
-            echo "<input type=\"text\" name=\"password\" value=\"" . $row['password'] . "\">";
+            echo "<input type=\"password\" name=\"password\" value=\"" . $row['password'] . "\">";
             echo "<p>Confirm Password:</p>";
-            echo "<input type=\"text\" name=\"confirmPassword\" placeholder='Confirm Password'>";
+            echo "<input type=\"password\" name=\"confirmPassword\" placeholder='Confirm Password'>";
             echo "<p>Email Address:</p>";
             echo "<input type=\"text\" name=\"emailAddress\" value=\"" . $row['emailAddress'] . "\">";
             echo "<p>Display Name:</p>";
