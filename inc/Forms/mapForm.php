@@ -21,7 +21,7 @@ echo "
                 google.maps.event.addListener(map, 'click', function(e) {
                     if(count<1){
                         placeMarkerOnce(e.latLng, map);
-                        document.getElementById('markerCoord').innerHTML = marker;
+                        alert(marker.getPosition());
                         count+=1;
                     }
                 });
