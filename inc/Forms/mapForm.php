@@ -80,7 +80,7 @@ if (isset($_SESSION['username'])) {
                                 strokeWeight: 2
                             });
 
-                            flightPath.setMap(map);
+                            path.setMap(map);
                         }
                    }
                 }
