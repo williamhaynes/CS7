@@ -29,6 +29,7 @@ echo "
                 marker = new google.maps.Marker({
                   position: position,
                   map: map
+                  draggable: true;
                 });  
                 map.panTo(position);
               }
