@@ -18,9 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
  * Display Name: The display name of the user
  * Level Code: The level code for the user
  */
-    echo "<p>passed in UserID:".$userID."</p>";
-    echo "<p>session UserID:".$_SESSION['userID']."</p>";
-    echo "<p>Access Level:".$_SESSION['accessLevel']."</p>";
     if ($_SESSION['userID'] == $userID || $_SESSION['accessLevel'] == 31) {
         $sql_query = "SELECT * FROM User WHERE userID ='" . $userID ."';";
         $result = $db->query($sql_query);
