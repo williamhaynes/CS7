@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<main>";
             echo "<form action=\"userDetailsPage/". $userID . "\" method=\"post\">";
             echo "<p>UserName:</p>";
-            echo "<input type=\"text\" name=\"username\" value=\"" . $row['userName'] . "\">";
+            echo "<input type=\"text\" name=\"username\" value=\"" . $row['userName'] . "\" disabled>";
             echo "<p>Password:</p>";
             echo "<input type=\"password\" name=\"password\" value=\"" . $row['password'] . "\">";
             echo "<p>Confirm Password:</p>";
