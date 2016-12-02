@@ -56,7 +56,7 @@ if (isset($_SESSION['username'])) {
             <div id='map' style='width: 1000px; height: 600px'></div>
             <form action='' method='post' id='mapForm'>
                 <p>Place Name: <input size='20' type='text' name='name' placeholder='Place Name'></p>
-                <p>Address: <input size='20' type='text' name='name' placeholder='Place Name'></p>
+                <p>Address: <input size='20' type='text' name='address' placeholder='Place Name'></p>
                 <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='57.062661319658496'></p>
                 <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='-2.1295508919433814'></p>
                 <p>Type: </p>
@@ -81,6 +81,25 @@ if (isset($_SESSION['username'])) {
             </body>
         <?
         include("scripts/footer.php");
-    }
+    }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            include (__DIR__ . "/../scripts/dbconnect.php");
+            $name = $_POST["name"];
+            $address = $_POST["address"];
+            $lat = $_POST["lat"];
+            $lng = $_POST["lng"];
+            $typeID = $_POST["typeID"];
+
+            $sql = "INSERT INTO location (name, address, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
+            if (mysqli_query($db, $sql)) {
+                header("location:../mapPage");
+            } else {
+                echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
+            }
+        }
+        //test
+        } else {
+            header("location:404");
+        }
+        ?>
 }
 ?>
