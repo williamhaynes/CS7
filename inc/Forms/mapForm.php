@@ -53,8 +53,8 @@ echo "
         <body onload='load()'>
              <div id='map' style='width: 1000px; height: 600px'></div>
              <div id='latlong'>
-                <p>Latitude: <input size='20' type='text' id='latbox' name='lat' ></p>
-                <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' ></p>
+                <p>Latitude: <input size='20' type='text' id='latbox' name='lat' >57.062661319658496</p>
+                <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' >-2.1295508919433814</p>
              </div>
         </body>
     </main>
