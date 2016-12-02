@@ -41,13 +41,27 @@ if (isset($_SESSION['username'])) {
 
                     // This event listener calls addMarker() when the map is clicked.
                     //google.maps.event.addListener(map, 'click', function(e) {
-                    //if(count<1){
-
-                    //count+=1;
-
                     //}
                     //);
 
+                }
+                function checkType() {
+                    //If its a Landmark
+                    if (document.getElementById('1').selected) {
+                        alert("You have selected Landmark");
+                    }
+                    //If its a Viewpoint
+                    if (document.getElementById('2').selected) {
+                        alert("You have selected Viewpoint");
+                    }
+                    //If its a Area
+                    if (document.getElementById('3').selected) {
+                        alert("You have selected Area");
+                    }
+                    //If its a route
+                    if (document.getElementById('4').selected) {
+                        alert("You have selected Route");
+                    }
                 }
             </script>
         </head>
@@ -59,8 +73,8 @@ if (isset($_SESSION['username'])) {
                 <p>Address: <input size='20' type='text' name='address' placeholder='Place Name'></p>
                 <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='57.062661319658496'></p>
                 <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='-2.1295508919433814'></p>
-                <p>Type: </p>
-                <select name='typeID' id='typeID'>";
+                <p>Type:
+                <select name='typeID' id='typeID' onclick="checkType()">";
                     <?
                     //Takes all database information from the Genre TABLE.
                     $sql_query = 'SELECT * FROM Type';
@@ -72,10 +86,10 @@ if (isset($_SESSION['username'])) {
                     while ($row = $result->fetch_array()) {
                         $typeID = $row['typeID'];
                         $typeName = $row['typeName'];
-                        echo "<option value='{$typeID}'>$typeName</option>";
+                        echo "<option id='{$typeID}' value='{$typeID}'>$typeName</option>";
                     }
                     ?>
-                </select>
+                </select></p>
                 <p><input type='submit' value='Submit'></p>
             </form>
             </body>
