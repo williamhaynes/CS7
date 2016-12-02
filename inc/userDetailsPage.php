@@ -56,6 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 $nKPAGValue= "";
                 $clubAdminValue = "";
                 $siteAdminValue = "";
+                //set option as existing value
                 switch($currentLevelCode){
                     case 1:
                         $contributorValue = "selected=\"selected\"";
@@ -72,8 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                     default:
                         //do nothing;
                 }
-                //set option as existing value
-                echo "<p>Level Code:</p>";
+
+                //echo "<p>Level Code:</p>";
                 //echo "<input type=\"text\" name=\"levelCode\" value=\"" . translateLevelCode($row['levelCode']) . "\">";
                 echo "<select name='userLevelSelect'>";
                 echo "<option value=\"1\"". $contributorValue .">Contributor</option>";
