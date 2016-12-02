@@ -16,7 +16,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
     <h2>Clubs and Societies of Portlethen Go!</h2>
     <p>Below is a list of all Clubs and Societies</p>
     <script>
-        $('th').click( function() {
+        $('tr').click( function() {
             window.location = $(this).find('a').attr('href');
         }).hover( function() {
             $(this).toggleClass('hover');
@@ -57,9 +57,9 @@ while ($row = $result->fetch_array()) {
     $clubID = $row['clubID'];
     $clubName = $row['clubName'];
     $index2 = $row['genreID'];
-echo "<tr class='hoverableRowsAndColumns'><th class='hoverableSpecificRowAndColumn'><a href='clubPage/{$clubID}'>" . $clubName . "</a></th>";
-echo "<th class='hoverableSpecificRowAndColumn'>" . $genreArray[$index2] . "</th>"; //the name row contains the name of the genre
-echo "<th class='hoverableSpecificRowAndColumn'>" . $row['clubDescription'] . "</th>";
+echo "<tr class='hoverableRowsAndColumns'><td class='hoverableSpecificRowAndColumn'><a href='clubPage/{$clubID}'>" . $clubName . "</a></td>";
+echo "<td class='hoverableSpecificRowAndColumn'>" . $genreArray[$index2] . "</td>"; //the name row contains the name of the genre
+echo "<td class='hoverableSpecificRowAndColumn'>" . $row['clubDescription'] . "</td>";
 echo "</tr>";
 }
 ?>
