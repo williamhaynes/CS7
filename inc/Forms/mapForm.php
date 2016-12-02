@@ -34,17 +34,14 @@ echo "
                 });  
                 map.panTo(position);
               }
-              
-//              function moveBus( map, marker ) {
-//                    marker.setPosition( new google.maps.LatLng( 0, 0 ) );
-//                    map.panTo( new google.maps.LatLng( 0, 0 ) );
-//                };
+              document.getElementById('markerCoord').innerHTML = marker;
         </script>
 
     </head>
     <main>
         <body onload='load()'>
              <div id='map' style='width: 1000px; height: 600px'></div>
+             <p id='markerCoord'></p>
         </body>
     </main>
     ";
