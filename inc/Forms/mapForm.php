@@ -8,7 +8,6 @@ echo "
         <title>Map</title>
         <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE' type='text/JavaScript'></script> 
         <script type='text/JavaScript'>
-        var marker;
         var count = 0;
             function load() {
                 var map = new google.maps.Map(document.getElementById('map'), {
@@ -34,12 +33,11 @@ echo "
                         placeMarkerOnce(e.latLng, map); 
                         count+=1;
                     }
-                    alert(marker.getPosition());
                 });
 
             
               function placeMarkerOnce(position, map) {
-                marker = new google.maps.Marker({
+                var marker = new google.maps.Marker({
                   position: position,
                   map: map,
                   title: 'Marker',
