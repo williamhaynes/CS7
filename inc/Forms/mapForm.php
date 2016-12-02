@@ -67,7 +67,7 @@ if (isset($_SESSION['username'])) {
                            markers.length;
                            var coords=[];
                            for (var i = 0; i < markers.length; i++) {
-                                coords.push('{lat: '+marker[i].getPosition().lat()+', lng: '+marker[i].getPosition().lat()+'},');
+                                coords.push('{lat: '+markers[i].getPosition().lat()+', lng: '+markers[i].getPosition().lat()+'},');
                                 alert(coords);
                            }
 //                            path = new google.maps.Polyline({
