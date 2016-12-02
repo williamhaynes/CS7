@@ -127,6 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             while ($row4 = $result4->fetch_array()) {
                 echo "<option value=\"". $row4['clubID'] ."\">".$row4['clubName']."</option>";
             }
+            echo "<p><input type=\"submit\" id='addClubAdmin' value='Add as Club Admin'></p>";
             echo "</select>";
             echo "</form>";
 
@@ -175,7 +176,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         }
     }
     else{//for adding a new club admin
-
+        //Generate SQL query to get club name if club admin or site admin
+        $selectedClub = $_POST["clubSelect"];
+        $sql_query3 = "UPDATE Club SET adminID ='".$userID."'WHERE clubName = '". $selectedClub ."';";
+        if (mysqli_query($db, $sql_query3)) {
+            echo "<p>Selected Club: ".$selectedClub."</p>";
+            echo "<p>SQL Query: ".$sql_query3."</p>";
+            header("location: /userDetailsPage/" . $userID);
+        } else {
+            echo "Error: " . $sql_query3 . "<br>Error Message:" . mysqli_error($db);
+        }
     }
 }
 ?>
