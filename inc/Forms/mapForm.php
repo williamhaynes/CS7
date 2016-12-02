@@ -11,7 +11,7 @@ echo "
         var count = 0;
         var map;
             function load() {
-                var portlethenLatLng = new google.maps.LatLng(57.063408,-2.1455154);
+                var portlethenLatLng = new google.maps.LatLng(57.062661319658496,-2.1295508919433814);
                 map = new google.maps.Map(document.getElementById('map'), {
                 center: portlethenLatLng,
                 zoom: 13,
