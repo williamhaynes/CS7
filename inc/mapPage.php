@@ -4,37 +4,6 @@ System Requirements.-->
 <?php
 include ("scripts/header.php");
 include(__DIR__ . "/../scripts/dbconnect.php");
-
-// Start XML file, create parent node
-$dom = new DOMDocument("1.0");
-$node = $dom->createElement("markers");
-$parnode = $dom->appendChild($node);
-
-// Select all the rows in the markers table
-
-$query = "SELECT * FROM location WHERE 1";
-$result = $db->query($query);
-if (!$result) {
-    die('Nothing in result: ');
-}
-
-header("Content-type: text/xml");
-
-// Iterate through the rows, adding XML nodes for each
-
-while ($row = $result->fetch_array()){
-    // ADD TO XML DOCUMENT NODE
-    $node = $dom->createElement("marker");
-    $newnode = $parnode->appendChild($node);
-    $newnode->setAttribute("name",$row['name']);
-    $newnode->setAttribute("address", $row['address']);
-    $newnode->setAttribute("lat", $row['lat']);
-    $newnode->setAttribute("lng", $row['lng']);
-    $newnode->setAttribute("typeID", $row['typeID']);
-}
-
-echo $dom->saveXML();
-
 ?>
     <head>
         <title>Map</title>
@@ -42,18 +11,45 @@ echo $dom->saveXML();
         <script type='text/JavaScript'>
             function load() {
                 var map = new google.maps.Map(document.getElementById('map'), {
-                center: new google.maps.LatLng(57.063408, -2.1455154),
-                zoom: 13,
-                mapTypeId: 'roadmap'
-              });
-
+                    center: new google.maps.LatLng(57.063408, -2.1455154),
+                    zoom: 13,
+                    mapTypeId: 'roadmap'
+                });
             }
+                function downloadUrl(url,callback) {
+                    var request = window.ActiveXObject ?
+                        new ActiveXObject('Microsoft.XMLHTTP') :
+                        new XMLHttpRequest;
+
+                    request.onreadystatechange = function() {
+                        if (request.readyState == 4) {
+                            callback(request, request.status);
+                        }
+                    };
+
+                    request.open('GET', url, true);
+                    request.send(null);
+                }
+                downloadUrl("../locations", function(data) {
+                    var xml = data.responseXML;
+                    var markers = xml.documentElement.getElementsByTagName("marker");
+                    for (var i = 0; i < markers.length; i++) {
+                        var point = new google.maps.LatLng(
+                            parseFloat(markers[i].getAttribute("lat")),
+                            parseFloat(markers[i].getAttribute("lng")));
+                        var marker = new google.maps.Marker({map: map, position: point});
+                    }
+                });
+
         </script>
         <a href='mapForm'>Link to Map Form</a>
     </head>
     <main>
         <body onload='load()'>
              <div id='map' style='width: 1000px; height: 600px'></div>
+        <p>
+            Some random text with more
+        </p>
         </body>
     </main>
 
