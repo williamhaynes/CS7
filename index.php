@@ -15,6 +15,7 @@ $rules = array(
     'fileUploadPage' => "/fileUploadPage",
     '/scripts/upload' => "/scripts/upload",
     '/Forms/mapForm' => "/mapForm",
+    '/scripts/locations' => "/locations",
     //
     //user auth pages
     //
