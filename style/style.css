@@ -85,5 +85,6 @@ th, tr {
 }
 
 .hoverableSpecificRowAndColumn:hover{
+    cursor: pointer;
     background-color: dodgerblue;
 }

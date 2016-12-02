@@ -15,39 +15,19 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
 <main>
     <h2>Clubs and Societies of Portlethen Go!</h2>
     <p>Below is a list of all Clubs and Societies</p>
+    <script>
+        $('tr').click( function() {
+            window.location = $(this).find('a').attr('href');
+        }).hover( function() {
+            $(this).toggleClass('hover');
+        });
+    </script>
     <table>
-        <script>
-            function gotoClub() {
-                <?
-/*
-* Using the database take all the information from the Club Table
-* Using an SQL command to pull all the information
-*/
-$sql_query = "SELECT * FROM Club;";
-
-/*
-* Once all information has been pulled process the SQL query
-*/
-$result = $db->query($sql_query);
-
-/*
-* Iterate through and sort out all the data
- *
- */
-while($row = $result->fetch_array()){
-    $clubID = $row['clubID'];
-    $clubName = $row['clubName'];
-    echo "<li><a href='clubPage/{$clubID}'> $clubName </a></li>";
-}
-?>
-window.location.href = "http://stackoverflow.com";
-}
-</script>
-<tr>
-<th>Club Name</th>
-<th>Genre</th>
-<th>Club Description</th>
-</tr>
+        <tr>
+            <th>Club Name</th>
+            <th>Genre</th>
+            <th>Club Description</th>
+        </tr>
 <?
 include(__DIR__ . "/../scripts/dbconnect.php");
 //Takes all database information from the clubs Table.
@@ -77,7 +57,7 @@ while ($row = $result->fetch_array()) {
 $clubID = $row['clubID'];
 $clubName = $row['clubName'];
 $index2 = $row['genreID'];
-echo "<tr class='hoverableRowsAndColumns' onclick='gotoClub()'><th class='hoverableSpecificRowAndColumn'>" . $row['clubName'] . "</th>";
+echo "<tr class='hoverableRowsAndColumns'><th class='hoverableSpecificRowAndColumn' <a href='clubPage/{$clubID}'></a>>" . $row['clubName'] . "</th>";
 echo "<th class='hoverableSpecificRowAndColumn'>" . $genreArray[$index2] . "</th>"; //the name row contains the name of the genre
 echo "<th class='hoverableSpecificRowAndColumn'>>" . $row['clubDescription'] . "</th>";
 echo "</tr>";
