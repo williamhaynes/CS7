@@ -28,6 +28,7 @@ if (isset($_SESSION['username']))
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
             <form action='' method="post">
+
                 <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
                 <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
                 <p>Author: </p> <input type="text" name="authorName" value="<?php print $_SESSION["authorName"];?>" placeholder="Author Name">
@@ -40,7 +41,7 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
-        $itemID = $_POST["itemID"];
+        $itemID = $_SESSION["itemID"];
         $title = $_POST["title"];
         $content = $_POST["content"];
         if( $_POST["verified"] == 'on') {
@@ -62,6 +63,6 @@ if (isset($_SESSION['username']))
     }
 //test
 } else {
-    header("location:../login");
+    header("location:404");
 }
 ?>
