@@ -9,8 +9,11 @@ echo "
 <h2>Health and Wellbeing Articles</h2>
 ";
 if (isset($_SESSION['username'])) {
-            echo "<a id='createArticleLink' href='/createHealthAndWellbeingForm'> Create Article </a>";
-        }
+    echo "<a id='createArticleLink' href='/createHealthAndWellbeingForm'> Create Article </a>";
+    if ($_SESSION['accessLevel']==31) {
+        echo "<a id='verifyArticleLink' href='/verifyHealthAndWellbeingForm'> Verify Articles </a>";
+    }
+}
 echo "
 
 <ul>
