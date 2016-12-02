@@ -110,6 +110,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 echo "<p><input type=\"submit\" id='removeClubAdmin' value='Remove as Club Admin'></p>";
                 echo "</form>";
             }
+            /*
+             * Administrator of new Club Form
+             */
+            //Generate SQL query to get all clubs without club admin
+            $sql_query4 = "SELECT * FROM Club WHERE adminID == NULL ;";
+            if (mysqli_query($db, $sql_query4)) {
+            } else {
+                echo "Error: " . $sql_query4 . "<br>Error Message:" . mysqli_error($db);
+            }
+            $result2 = $db->query($sql_query4);
+
+            echo "<p>Make Administrator for:</p>";
+            echo "<form action=\"".$userID."\" method=\"post\">";
+            echo "<select name='clubSelect' size='10'>";
+            while ($row4 = $result4->fetch_array()) {
+                echo "<option value=\"". $row4['clubID'] ."\">".$row4['clubName']."</option>";
+            }
+            echo "</select>";
+            echo "</form>";
 
             echo "</main>";
         } else {
