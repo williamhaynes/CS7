@@ -21,7 +21,7 @@ echo "
                 google.maps.event.addListener(map, 'click', function(e) {
                     if(count<1){
                         placeMarkerOnce(e.latLng, map);
-                        alert(marker.getPosition());
+                        alert(marker.getPosition().toFixed(3));
                         count+=1;
                     }
                 });
@@ -36,13 +36,21 @@ echo "
                 map.panTo(position);
               }
               
+              google.maps.event.addListener(marker, 'dragend', function (evt) {
+                    document.getElementById('current').innerHTML = '<p>Marker dropped: Current Lat: ' + evt.latLng.lat().toFixed(3) + ' Current Lng: ' + evt.latLng.lng().toFixed(3) + '</p>';
+                });
+                
+              google.maps.event.addListener(marker, 'dragstart', function (evt) {
+                    document.getElementById('current').innerHTML = '<p>Currently dragging marker...</p>';
+                });
+              
         </script>
 
     </head>
     <main>
         <body onload='load()'>
              <div id='map' style='width: 1000px; height: 600px'></div>
-             <p id='markerCoord'></p>
+             <p id='current'></p>
         </body>
     </main>
     ";
