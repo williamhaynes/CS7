@@ -90,6 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     }
     include ("scripts/footer.php");
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    session_start();
     $userID = $params['userID'];
     include("scripts/dbconnect.php");
     $updatedUsername = $_POST["username"];
