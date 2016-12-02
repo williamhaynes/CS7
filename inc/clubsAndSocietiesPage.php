@@ -24,13 +24,13 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             searchCriteria = document.getElementById("filterByOptions").value;
             //switch to determine section
             switch(searchCriteria) {
-                case clubname:
+                case "clubname":
                     section = 0;
                     break;
-                case genre:
+                case "genre":
                     section = 1;
                     break;
-                case description:
+                case "description":
                     section = 2;
                     break;
                 default:
