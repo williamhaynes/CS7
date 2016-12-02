@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])) {
                     }
                     //If its a route
                     if (document.getElementById('4').selected) {
-                        var markers=[marker];
+                        var markersLatLng=[new google.maps.LatLng(marker.getPosition().lat(), marker.getPosition().lng());];
                          //['{lat: '+marker.getPosition().lat()+', lng: '+marker.getPosition().lat()+'}']
                         var path;
                         google.maps.event.addListener(map, 'click', function(event) {
@@ -60,24 +60,21 @@ if (isset($_SESSION['username'])) {
 
                         function addMarker(pos, where) {
                             var marker = new google.maps.Marker({map: map, position: pos, draggable: false});
-                            markers.push(marker);
+                            var markerLatLng = new google.maps.LatLng(pos.lat(), pos.lng());
+                            markersLatLng.push(markerLatLng);
                             drawPath();
                         }
                         function drawPath() {
-                           markers.length;
-                           var coords=[];
-                           for (var i = 0; i < markers.length; i++) {
-                               if(i==markers.length-1){
-                                   coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
-                               }
-                               else {
-                                   coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
-                               }
-                           }
-                           alert(coords);
+//                           markers.length;
+//                           var coords=[];
+//                           for (var i = 0; i < markers.length; i++) {
+//                               coords.push()
+//                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
+//                           }
+                           alert(markersLatLng);
 
                             path = new google.maps.Polyline({
-                                path: [coords],
+                                path: markersLatLng,
                                 geodesic: true,
                                 strokeColor: '#FF0000',
                                 strokeOpacity: 1.0,
