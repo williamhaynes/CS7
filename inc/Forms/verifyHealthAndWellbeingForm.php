@@ -54,12 +54,12 @@ if (($_SESSION['accessLevel'])==31)
             $verified = 0;
         }
         $authorName = $_POST["authorName"];
-
+        echo "<p>$title</p>";
         $sql = "UPDATE healthnews 
                     SET title = '" .$title."', content = '".$content."', authorName = '".$authorName."',verified = ".$verified." 
                     WHERE itemID = '" .$itemID."'";
         if (mysqli_query($db, $sql)) {
-            header("location: /healthAndWellbeingPage");
+            //header("location: /healthAndWellbeingPage");
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
         }
