@@ -58,12 +58,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 switch($currentLevelCode){
                     case 1:
                         $contributorValue = "selected=\"selected\"";
+                        break;
                     case 11:
                         $nKPAGValue = "selected=\"selected\"";
+                        break;
                     case 21:
                         $clubAdminValue = "selected=\"selected\"";
+                        break;
                     case 31:
                         $siteAdminValue = "selected=\"selected\"";
+                        break;
                     default:
                         //do nothing;
                 }
