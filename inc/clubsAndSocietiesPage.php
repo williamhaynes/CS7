@@ -59,7 +59,7 @@ while ($row = $result->fetch_array()) {
     $index2 = $row['genreID'];
 echo "<tr class='hoverableRowsAndColumns' <a href='clubPage/{$clubID}'></a><th class='hoverableSpecificRowAndColumn'" . $clubName . "</th>";
 echo "<th class='hoverableSpecificRowAndColumn'>" . $genreArray[$index2] . "</th>"; //the name row contains the name of the genre
-echo "<th class='hoverableSpecificRowAndColumn'>>" . $row['clubDescription'] . "</th>";
+echo "<th class='hoverableSpecificRowAndColumn'>" . $row['clubDescription'] . "</th>";
 echo "</tr>";
 }
 ?>
