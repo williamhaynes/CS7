@@ -63,11 +63,12 @@ if (isset($_SESSION['username'])) {
                         }
                         function drawPath() {
                            markers.length;
+                           alert(markers);
                             var coords = [];
                             //for (var i = 0; i < markers.length; i++) {
                              //   coords.push(markers[i].getPosition());
                             //}
-                            line.setPath(markers);
+                            //line.setPath(markers);
                         }
                    }
                 }
