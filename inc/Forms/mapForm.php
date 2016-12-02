@@ -68,17 +68,19 @@ if (isset($_SESSION['username'])) {
                            var coords=[];
                            for (var i = 0; i < markers.length; i++) {
                                 coords.push('{lat: '+markers[i].getPosition().lat()+', lng: '+markers[i].getPosition().lat()+'},');
-                                alert(coords);
+
                            }
-//                            path = new google.maps.Polyline({
-//                                path: flightPlanCoordinates,
-//                                geodesic: true,
-//                                strokeColor: '#FF0000',
-//                                strokeOpacity: 1.0,
-//                                strokeWeight: 2
-//                            });
-//
-//                            flightPath.setMap(map);
+                           alert(coords);
+
+                            path = new google.maps.Polyline({
+                                path: coords,
+                                geodesic: true,
+                                strokeColor: '#FF0000',
+                                strokeOpacity: 1.0,
+                                strokeWeight: 2
+                            });
+
+                            flightPath.setMap(map);
                         }
                    }
                 }
