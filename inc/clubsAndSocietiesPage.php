@@ -21,8 +21,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             //Get Which section to search
             var searchCriteria;
             var section;
-            searchCriteria = document.getElementById("filterByOptions").val();
-
+            searchCriteria = document.getElementById("filterByOptions").value;
             //switch to determine section
             switch(searchCriteria) {
                 case clubname:
