@@ -30,7 +30,9 @@ if (isset($_SESSION['username']))
                 <form action='' method="post">
                     <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
                     <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
-                    <p>Verified: </p> <input type="checkbox" name="verified" checked>
+                    <?if($_SESSION['accessLevel']==31) {
+                        echo "<p> Verified: </p > <input type = 'checkbox' name = 'verified' checked >";
+                    }?>
                     <p><input type="submit" value='Submit'></p>
                 </form>
             </main>
@@ -42,10 +44,8 @@ if (isset($_SESSION['username']))
         $itemID = $_SESSION["itemID"];
         $title = $_POST["title"];
         $content = $_POST["content"];
-        if( $_POST["verified"] == 'on') {
-            $verified = 1;
-        }
-        else{
+        $verified = 1;
+        if( $_POST["verified"] == 'off') {
             $verified = 0;
         }
         $authorName = $_POST["authorName"];
