@@ -89,7 +89,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 echo "</select>";
             }
         }
-        echo "<p><input type=\"submit\" id='updateDetailsButton' value='Update Details'></p>";
+        echo "<p><input type=\"submit\" name='updateDetailsButton' value='Update Details'></p>";
         echo "</form>";
         if ($_SESSION['accessLevel'] == 31 || $_SESSION['accessLevel'] == 21) {
             /*
@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             while ($row2 = $result2->fetch_array()) {
                 echo "<form action=\"" . $userID . "\" method=\"post\">";
                 echo "<input type=\"text\" name=\"clubName\" value=\"" . $row2['clubName'] . "\" readOnly=\"true\">";
-                echo "<p><input type=\"submit\" id='removeClubAdmin' value='Remove as Club Admin'></p>";
+                echo "<p><input type=\"submit\" name='removeClubAdmin' value='Remove as Club Admin'></p>";
                 echo "</form>";
             }
             /*
@@ -127,7 +127,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             while ($row4 = $result4->fetch_array()) {
                 echo "<option value=\"". $row4['clubID'] ."\">".$row4['clubName']."</option>";
             }
-            echo "<p><input type=\"submit\" id='addClubAdmin' value='Add as Club Admin'></p>";
+            echo "<p><input type=\"submit\" name='addClubAdmin' value='Add as Club Admin'></p>";
             echo "</select>";
             echo "</form>";
 
