@@ -39,7 +39,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                             parseFloat(markers[i].getAttribute("lng")));
                         var marker = new google.maps.Marker({map: map, position: point});
                     }
-                }
+                });
 
         </script>
         <a href='mapForm'>Link to Map Form</a>
