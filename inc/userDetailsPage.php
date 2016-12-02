@@ -7,6 +7,7 @@ an option for expandability and is not a requirement.
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include ("scripts/header.php");
+    include("scripts/dbconnect.php");
 /*
  * If a user is logged in, according to the session cookie, then select all the data from the database for that user
  * Pull the following information:
