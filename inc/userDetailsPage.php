@@ -112,6 +112,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "</main>";
         }
     }
+    else{
+        header("location: /404");
+    }
     include ("scripts/footer.php");
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     session_start();
