@@ -51,61 +51,64 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<p>Display Name:</p>";
             echo "<input type=\"text\" name=\"displayName\" value=\"" . $row['displayName'] . "\">";
             //If Site Adminstrator give extra controls.
-            if($_SESSION['accessLevel'] == 31) {
-                /*
-                 * This section affects the control over the Access Level of an individual user
-                 */
-                //Get existing values
-                $currentLevelCode = $row['levelCode'];
-                //Variables to affect which option is "selected" on page load
-                $contributorValue = "";
-                $nKPAGValue= "";
-                $clubAdminValue = "";
-                $siteAdminValue = "";
-                //update variables as relevant
-                switch($currentLevelCode){
-                    case 1:
-                        $contributorValue = "selected=\"selected\"";
-                        break;
-                    case 11:
-                        $nKPAGValue = "selected=\"selected\"";
-                        break;
-                    case 21:
-                        $clubAdminValue = "selected=\"selected\"";
-                        break;
-                    case 31:
-                        $siteAdminValue = "selected=\"selected\"";
-                        break;
-                    default:
-                        //do nothing;
-                }
-                //Below is the options of administration as a selectable option list
-                echo "<p>User Level:</p>";
-                echo "<select name='userLevelSelect'>";
-                echo "<option value=\"1\"". $contributorValue .">Contributor</option>";
-                echo "<option value=\"11\"". $nKPAGValue .">NKPAG</option>";
-                echo "<option value=\"21\"". $clubAdminValue .">Club Administrator</option>";
-                echo "<option value=\"31\"". $siteAdminValue .">Site Administrator</option>";
-                echo "</select>";
-
+            if($_SESSION['accessLevel'] == 31 || $_SESSION['accessLevel'] == 21) {
                 /*
                  * This section affects the Club Administration Options of a specific user
                  */
-                    //Generate SQL query to get club name if club admin or site admin
-                    $sql_query2 = "SELECT clubName FROM Club WHERE adminID = '" . $row['userID'] . "';";
-                    if (mysqli_query($db, $sql_query2)) {
-                    } else {
-                        echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
+                //Generate SQL query to get club name if club admin or site admin
+                $sql_query2 = "SELECT clubName FROM Club WHERE adminID = '" . $row['userID'] . "';";
+                if (mysqli_query($db, $sql_query2)) {
+                } else {
+                    echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
+                }
+                $result2 = $db->query($sql_query2);
+                echo "<p>Club Administrator for:</p>";
+                //Iterate through club results and return them
+                while ($row2 = $result2->fetch_array()) {
+                    echo "<p>". $row2['clubName'] . "</p>";
+                }
+                if($_SESSION['accessLevel'] == 31) {
+                    /*
+                     * This section affects the control over the Access Level of an individual user
+                     */
+                    //Get existing values
+                    $currentLevelCode = $row['levelCode'];
+                    //Variables to affect which option is "selected" on page load
+                    $contributorValue = "";
+                    $nKPAGValue = "";
+                    $clubAdminValue = "";
+                    $siteAdminValue = "";
+                    //update variables as relevant
+                    switch ($currentLevelCode) {
+                        case 1:
+                            $contributorValue = "selected=\"selected\"";
+                            break;
+                        case 11:
+                            $nKPAGValue = "selected=\"selected\"";
+                            break;
+                        case 21:
+                            $clubAdminValue = "selected=\"selected\"";
+                            break;
+                        case 31:
+                            $siteAdminValue = "selected=\"selected\"";
+                            break;
+                        default:
+                            //do nothing;
                     }
-                    $result2 = $db->query($sql_query2);
-                    echo "<p>Club Administrator for:</p>";
-                    //Iterate through club results and return them
-                    while ($row2 = $result2->fetch_array()) {
-                        echo "<p>". $row2['clubName'] . "</p>";
-                    }
+                    //Below is the options of administration as a selectable option list
+                    echo "<p>User Level:</p>";
+                    echo "<select name='userLevelSelect'>";
+                    echo "<option value=\"1\"" . $contributorValue . ">Contributor</option>";
+                    echo "<option value=\"11\"" . $nKPAGValue . ">NKPAG</option>";
+                    echo "<option value=\"21\"" . $clubAdminValue . ">Club Administrator</option>";
+                    echo "<option value=\"31\"" . $siteAdminValue . ">Site Administrator</option>";
+                    echo "</select>";
+                }
             }
             echo "<p><input type=\"submit\" id='updateDetailsButton' value='Update Details'></p>";
             echo "</form>";
+
+
             echo "</main>";
         }
     }
