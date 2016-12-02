@@ -28,16 +28,17 @@ echo "
               function placeMarkerOnce(position, map) {
                 marker = new google.maps.Marker({
                   position: position,
-                  map: map
-                  draggable: true;
+                  map: map,
+                  title: 'Marker',
+                  draggable: true
                 });  
                 map.panTo(position);
               }
               
-              function moveBus( map, marker ) {
-                    marker.setPosition( new google.maps.LatLng( 0, 0 ) );
-                    map.panTo( new google.maps.LatLng( 0, 0 ) );
-                };
+//              function moveBus( map, marker ) {
+//                    marker.setPosition( new google.maps.LatLng( 0, 0 ) );
+//                    map.panTo( new google.maps.LatLng( 0, 0 ) );
+//                };
         </script>
 
     </head>
