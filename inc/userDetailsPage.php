@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
              * Administrator of new Club Form
              */
             //Generate SQL query to get all clubs without club admin
-            $sql_query4 = "SELECT * FROM Club WHERE adminID == NULL ;";
+            $sql_query4 = "SELECT * FROM Club WHERE adminID IS NULL ;";
             if (mysqli_query($db, $sql_query4)) {
             } else {
                 echo "Error: " . $sql_query4 . "<br>Error Message:" . mysqli_error($db);
