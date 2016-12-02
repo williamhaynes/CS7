@@ -13,13 +13,8 @@ if (isset($_SESSION['username'])) {
             <script type='text/JavaScript'>
                 var count = 0;
                 var map;
+                var marker;
                 var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
-                var flightPlanCoordinates = [
-                    {lat: 37.772, lng: -122.214},
-                    {lat: 21.291, lng: -157.821},
-                    {lat: -18.142, lng: 178.431},
-                    {lat: -27.467, lng: 153.027}
-                ];
                 function load() {
                     map = new google.maps.Map(document.getElementById('map'), {
                         center: portlethenLatLng,
@@ -27,7 +22,7 @@ if (isset($_SESSION['username'])) {
                         mapTypeId: 'roadmap'
                     });
 
-                    var marker = new google.maps.Marker({
+                    marker = new google.maps.Marker({
                         position: portlethenLatLng,
                         map: map,
                         title: 'Marker',
@@ -65,14 +60,31 @@ if (isset($_SESSION['username'])) {
                     }
                     //If its a route
                     if (document.getElementById('4').selected) {
-                        var flightPath = new google.maps.Polyline({
-                            path: flightPlanCoordinates,
-                            geodesic: true,
-                            strokeColor: '#FF0000',
-                            strokeOpacity: 1.0,
-                            strokeWeight: 2
+                        var markers=[marker.getPosition()];
+                        google.maps.event.addListener(map, 'click', function(event) {
+                            for (var i = 0 ; i < markers.length; i++) {
+                                addMarker(event.latLng, i+1);
+                            }
                         });
-                        flightPath.setMap(map);
+                    }
+                        function addMarker(pos, where) {
+                            var marker = new google.maps.Marker({
+                                map: map,
+                                position: pos,
+                                draggable: true
+                            });
+
+                            markers.push(marker);
+                            drawPath();
+                        }
+                        function drawPath() {
+                            markers.length;
+                            var coords = [];
+                            for (var i = 0; i < markers.length; i++) {
+                                coords.push(markers[i].getPosition());
+                            }
+                            line.setPath(coords);
+                        }
                     }
                 }
             </script>
