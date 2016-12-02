@@ -5,9 +5,67 @@ if($_SESSION['accessLevel'] == '31') {
     include(__DIR__ . "/../scripts/header.php");
     ?>
     <main>
+        <script>
+            /*
+             * Funcion inspired by code from http://www.w3schools.com/howto/howto_js_filter_table.asp
+             */
+            function searchUser() {
+                //Get Which section to search
+                var searchCriteria;
+                var section;
+                searchCriteria = document.getElementById("filterByOptions").value;
+                //switch to determine section
+                switch(searchCriteria) {
+                    case "username":
+                        section = 0;
+                        break;
+                    case "emailAddress":
+                        section = 1;
+                        break;
+                    case "displayName":
+                        section = 2;
+                        break;
+                    case "levelCode":
+                        section = 3;
+                        break;
+                    case "clubName":
+                        section = 4;
+                        break;
+                    default:
+                        section = 0; //defaults to username
+                }
+
+                // Declare variables
+                var input, filter, table, tr, td, i;
+                input = document.getElementById("searchInput");
+                filter = input.value.toUpperCase();
+                table = document.getElementById("usersTable");
+                tr = table.getElementsByTagName("tr");
+
+                // Loop through all table rows, and hide those who don't match the search query
+                for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[section];
+                    if (td) {
+                        if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                            tr[i].style.display = "";
+                        } else {
+                            tr[i].style.display = "none";
+                        }
+                    }
+                }
+            }
+        </script>
         <h2>Users Admin Page</h2>
         <p>To modify a user select them on the table below and change the relevant value</p>
-        <table>
+        <table id="usersTable">
+            <input type="text" id="searchInput" onkeyup="searchUser()" placeholder="Search by Keyword..">
+            <select id="filterByOptions" onchange="searchUser()">
+                <option value="username">Username</option>
+                <option value="emailAddress">Email Address</option>
+                <option value="displayName">Display Name</option>
+                <option value="levelCode">Level Code</option>
+                <option value="clubName">Club Name</option>
+            </select>
             <tr>
                 <th>Username</th>
                 <th>Email Address</th>
