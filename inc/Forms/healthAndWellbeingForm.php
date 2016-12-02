@@ -1,8 +1,7 @@
 
 <?php
 session_start();
-if (isset($_SESSION['username']))
-{
+if($_SESSION['accessLevel']==31) {
     include (__DIR__ . "/../scripts/dbconnect.php");
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         include(__DIR__."/../scripts/header.php");
@@ -30,9 +29,7 @@ if (isset($_SESSION['username']))
                 <form action='' method="post">
                     <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
                     <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
-                    <?if($_SESSION['accessLevel']==31) {
-                        echo "<p> Verified: </p > <input type = 'checkbox' name = 'verified' checked >";
-                    }?>
+                    <p> Verified: </p > <input type = 'checkbox' name = 'verified' checked >
                     <p><input type="submit" value='Submit'></p>
                 </form>
             </main>
