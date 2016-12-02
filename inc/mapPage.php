@@ -49,6 +49,9 @@ include(__DIR__ . "/../scripts/dbconnect.php");
     <main>
         <body onload='load()'>
              <div id='map' style='width: 1000px; height: 600px'></div>
+        <p>
+            Some random text
+        </p>
         </body>
     </main>
 
