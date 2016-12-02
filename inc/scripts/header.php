@@ -33,7 +33,7 @@ session_start();
                          */
                         echo "<li><a href='/usersAdminPage'>User Admin Page</a></li>";
                     }
-                    echo "<li><a href='/userDetailsPage/{$userID}'>My Account</a></li>";
+                    echo "<li><a href='/userDetailsPage/". $_SESSION['userID'] ."'>My Account</a></li>";
                     echo "<li id='logoutButton'><a href='/logoutPage'>Logout</a></li>";
                 } else {
                     /*
