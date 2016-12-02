@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     echo "<p>session UserID:".$_SESSION['userID']."</p>";
     echo "<p>Access Level:".$_SESSION['accessLevel']."</p>";
     if ($_SESSION['userID'] == $userID || $_SESSION['accessLevel'] == 31) {
-        $sql_query = "SELECT * FROM User WHERE userName ='" . $userID ."';";
+        $sql_query = "SELECT * FROM User WHERE userID ='" . $userID ."';";
         $result = $db->query($sql_query);
         while ($row = $result->fetch_array()) {
             echo "<main>";
