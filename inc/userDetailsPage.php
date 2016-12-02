@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $result = $db->query($sql_query);
         while ($row = $result->fetch_array()) {
             echo "<main>";
-            echo "<form action=\"userDetailsPage/". $userID . "\" method=\"post\">";
+            echo "<form action=\"". $userID . "\" method=\"post\">";
             echo "<p>UserName:</p>";
             echo "<input type=\"text\" name=\"username\" value=\"" . $row['userName'] . "\" disabled>";
             echo "<p>Password:</p>";
