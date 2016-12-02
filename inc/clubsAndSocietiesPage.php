@@ -62,10 +62,10 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
     <p>Below is a list of all Clubs and Societies</p>
     <table id="usersTable">
         <input type="text" id="searchInput" onkeyup="searchByWord()" placeholder="Search by Keyword..">
-        <select id="filterByOptions">
-            <option value="clubname" onchange="searchByWord()">Club Name</option>
-            <option value="genre" onchange="searchByWord()">Genre</option>
-            <option value="description" onchange="searchByWord()">Description</option>
+        <select id="filterByOptions" onchange="searchByWord()">
+            <option value="clubname">Club Name</option>
+            <option value="genre">Genre</option>
+            <option value="description">Description</option>
         </select>
         <tr>
             <th>Club Name</th>
