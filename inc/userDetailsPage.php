@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if($_SESSION['accessLevel'] == 31) {
         $sql .= ", levelCode = '".$updatedLevelCode."'";
                     }
-    $sql .= "WHERE userID = '" .$userToUpdate ."';";
+    $sql .= " WHERE userID = '" . $userToUpdate ."';";
     echo "<p>". $sql ."</p>";
     if (mysqli_query($db, $sql)) {
         header("location: /userDetailsPage");
