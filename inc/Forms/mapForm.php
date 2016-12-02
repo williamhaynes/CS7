@@ -54,11 +54,10 @@ if (isset($_SESSION['username'])) {
                          //['{lat: '+marker.getPosition().lat()+', lng: '+marker.getPosition().lat()+'}']
                         var path;
                         google.maps.event.addListener(map, 'click', function(event) {
-                            var markersLengh = markers.length;
-                            addMarker(event.latLng, markersLengh+1);
+                            addMarker(event.latLng);
                         });
 
-                        function addMarker(pos, where) {
+                        function addMarker(pos) {
                             var marker = new google.maps.Marker({map: map, position: pos, draggable: false});
                             var markerLatLng = new google.maps.LatLng(pos.lat(), pos.lng());
                             markersLatLng.push(markerLatLng);
