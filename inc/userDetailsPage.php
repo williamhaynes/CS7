@@ -9,6 +9,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     include ("scripts/header.php");
     include("scripts/dbconnect.php");
     $userID = $params['userID'];
+    function translateLevelCode($levelCode){
+        switch ($levelCode) {
+            case 1:
+                return "Contributor";
+            case 11:
+                return "NKPAG";
+            case 21:
+                return "Club Administrator";
+            case 31:
+                return "Site Administrator";
+            default:
+                return "Unknown User";
+        }
+    }
 /*
  * If a user is logged in, according to the session cookie, then select all the data from the database for that user
  * Pull the following information:
@@ -35,8 +49,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<p>Display Name:</p>";
             echo "<input type=\"text\" name=\"displayName\" value=\"" . $row['displayName'] . "\">";
             if($_SESSION['accessLevel'] == 31) {    //If Site Adminstrator give extra controls.
+                //Get existing value
+                $currentLevelCode = $row['levelCode'];
+                $contributorValue = "";
+                $nKPAGValue= "";
+                $clubAdminValue = "";
+                $siteAdminValue = "";
+                switch($currentLevelCode){
+                    case 1:
+                        $contributorValue = "selected=\"selected\"";
+                    case 11:
+                        $nKPAGValue = "selected=\"selected\"";
+                    case 21:
+                        $clubAdminValue = "selected=\"selected\"";
+                    case 31:
+                        $siteAdminValue = "selected=\"selected\"";
+                    default:
+                        //do nothing;
+                }
+                //set option as existing value
                 echo "<p>Level Code:</p>";
-                echo "<input type=\"text\" name=\"levelCode\" value=\"" . $row['levelCode'] . "\">";
+                //echo "<input type=\"text\" name=\"levelCode\" value=\"" . translateLevelCode($row['levelCode']) . "\">";
+                echo "<select name='userLevelSelect'>";
+                echo "<option value=\"1\"". $contributorValue .">Contributor</option>";
+                echo "<option value=\"11\"". $nKPAGValue .">NKPAG</option>";
+                echo "<option value=\"21\"". $clubAdminValue .">Club Administrator</option>";
+                echo "<option value=\"31\"". $siteAdminValue .">Site Administrator</option>";
+                echo "</select>";
             }
             echo "<p><input type=\"submit\" id='updateDetailsButton' value='Update Details'></p>";
             echo "</form>";
@@ -52,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $updatedEmailAddress = $_POST["emailAddress"];
     $updatedDisplayName = $_POST["displayName"];
     if($_SESSION['accessLevel'] == 31) {
-        $updatedLevelCode = $_POST["levelCode"];
+        $updatedLevelCode = $_POST["userLevelSelect"];
     }
     $userToUpdate = $_SESSION['username'];
 
