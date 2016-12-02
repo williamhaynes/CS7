@@ -14,6 +14,7 @@ $rules = array(
     '/Forms/createHealthAndWellbeingForm' => "/createHealthAndWellbeingForm",
     'fileUploadPage' => "/fileUploadPage",
     '/scripts/upload' => "/scripts/upload",
+    '/Forms/mapForm' => "/mapForm",
     //
     //user auth pages
     //
@@ -32,7 +33,6 @@ $rules = array(
     //'/Forms/clubAdminForm' => "/Forms/clubAdminForm",
     '/Forms/eventsForm' => "/Forms/eventsForm",
     //'/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
-    '/Forms/mapForm' => "/Forms/mapForm",
     '/Forms/createClubForm' => "/Forms/createClubForm",
 
 
