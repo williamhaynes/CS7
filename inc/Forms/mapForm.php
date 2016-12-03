@@ -183,8 +183,8 @@ if (isset($_SESSION['username'])) {
                     while($row = $result->fetch_array()){
                         $resultLocationID = $row['locationID'];
                     }
-                    echo "alert($resultLocationID);";
-                    //$sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES ('" . $markerArray . "', '" . $locationID . "')";
+                    echo "$resultLocationID";
+                    $sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES ('" . $markerArray . "', '" . $resultLocationID . "')";
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
                 }
