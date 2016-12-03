@@ -117,7 +117,7 @@ if (isset($_SESSION['username'])) {
                            for(i=0;i<markersLatLng.length;i++){
                                string+=markersLatLng[i].latitude+', '+markersLatLng[i].longitude;
                            }
-                            document.getElementById('markerArraay').value = string;
+                            document.getElementById('markerArray').value = string;
 
                             path = new google.maps.Polyline({
                                 path: markersLatLng,
