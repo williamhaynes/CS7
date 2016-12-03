@@ -49,6 +49,7 @@ if (isset($_SESSION['username'])) {
                         var markersLatLng=[];
                         //['{lat: '+marker.getPosition().lat()+', lng: '+marker.getPosition().lat()+'}']
                         var path;
+                        var area =  new google.maps.Polygon({});
                         google.maps.event.addListener(map, 'click', function(event) {
                             if(markersLatLng.length==0){
                                 markersLatLng.push(new google.maps.LatLng(marker.getPosition().lat(), marker.getPosition().lng()));
@@ -70,16 +71,16 @@ if (isset($_SESSION['username'])) {
 //                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
 //                           }
                             alert(markersLatLng);
-
+                            area.setMap(null);
                             area = new google.maps.Polygon({
                                 paths: markersLatLng,
-                                strokeColor: '#aff3ff',
+                                strokeColor: '#FF0000',
                                 strokeOpacity: 0.8,
                                 strokeWeight: 2,
                                 fillColor: '#aff3ff',
                                 fillOpacity: 0.35
                             });
-                            area.setMap(null);
+
                             area.setMap(map);
                         }
                     }
