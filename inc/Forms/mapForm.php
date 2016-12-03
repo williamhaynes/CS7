@@ -183,7 +183,7 @@ if (isset($_SESSION['username'])) {
                     while($row = $result->fetch_array()){
                         $resultLocationID = $row['locationID'];
                     }
-                    $sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES ('" . $markerArray . "', '" . $resultLocationID . "')";
+                    $sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES (geomfromtext('linestring($markerArray)'), '" . $resultLocationID . "')";
                     if (mysqli_query($db, $sql2)) {
 
                     }
