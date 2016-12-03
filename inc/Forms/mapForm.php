@@ -113,9 +113,11 @@ if (isset($_SESSION['username'])) {
 //                           }
                            alert(markersLatLng);
                            var string="";
-                           alert(markersLatLng.length)
+                           //alert(markersLatLng.length)
                            for(i=0;i<markersLatLng.length;i++){
-                               string+=markersLatLng[i].latitude+', '+markersLatLng[i].longitude;
+                               alert(markersLatLng[i]);
+                               alert(markersLatLng[i].toString());
+                               string+=markersLatLng[i].toString();
                            }
                             document.getElementById('markerArray').value = string;
 
