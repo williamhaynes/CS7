@@ -183,7 +183,6 @@ if (isset($_SESSION['username'])) {
                     while($row = $result->fetch_array()){
                         $resultLocationID = $row['locationID'];
                     }
-                    echo "$resultLocationID";
                     $sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES ('" . $markerArray . "', '" . $resultLocationID . "')";
                     if (mysqli_query($db, $sql2)) {
 
