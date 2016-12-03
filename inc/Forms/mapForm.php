@@ -112,7 +112,8 @@ if (isset($_SESSION['username'])) {
 //                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
 //                           }
                            alert(markersLatLng);
-                           var string;
+                           var string="";
+                           alert(markersLatLng.length)
                            for(i=0;i<markersLatLng.length;i++){
                                string+=markersLatLng[i].latitude+', '+markersLatLng[i].longitude;
                            }
