@@ -112,7 +112,11 @@ if (isset($_SESSION['username'])) {
 //                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
 //                           }
                            alert(markersLatLng);
-                            //document.getElementById('markerArraay').value = markersLatLng;
+                           var string;
+                           for(i=0;i<markersLatLng.length;i++){
+                               string+=markersLatLng[i].getPosition().lat()+', '+markersLatLng[i].getPosition().lng()
+                           }
+                            document.getElementById('markerArraay').value = string;
 
                             path = new google.maps.Polyline({
                                 path: markersLatLng,
