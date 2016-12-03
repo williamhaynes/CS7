@@ -38,14 +38,15 @@ if (isset($_SESSION['username'])) {
                     //If statements work
                     //If its a Landmark
                     if (document.getElementById('1').selected) {
-
+                        load();
                     }
                     //If its a Viewpoint
                     if (document.getElementById('2').selected) {
-
+                        load();
                     }
                     //If its a Area
                     if (document.getElementById('3').selected) {
+                        load();
                         var markersLatLng=[];
                         //['{lat: '+marker.getPosition().lat()+', lng: '+marker.getPosition().lat()+'}']
                         var path;
@@ -86,6 +87,7 @@ if (isset($_SESSION['username'])) {
                     }
                     //If its a route
                     if (document.getElementById('4').selected) {
+                        load();
                         var markersLatLng=[];
                          //['{lat: '+marker.getPosition().lat()+', lng: '+marker.getPosition().lat()+'}']
                         var path;
