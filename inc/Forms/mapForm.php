@@ -112,6 +112,7 @@ if (isset($_SESSION['username'])) {
 //                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
 //                           }
                            alert(markersLatLng);
+                            document.getElementById('markerArraay').value = markersLatLng;
 
                             path = new google.maps.Polyline({
                                 path: markersLatLng,
@@ -136,6 +137,7 @@ if (isset($_SESSION['username'])) {
                 <p>Address: <input size='20' type='text' name='address' placeholder='Place Name'></p>
                 <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='57.062661319658496'></p>
                 <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='-2.1295508919433814'></p>
+                <p>Array of Markers: <input size='20' type='text' id='markerArray' name='markerArray'></p>
                 <p>Type:
                 <select name='typeID' id='typeID' onclick="checkType()">";
                     <?
@@ -165,12 +167,23 @@ if (isset($_SESSION['username'])) {
             $lat = $_POST["lat"];
             $lng = $_POST["lng"];
             $typeID = $_POST["typeID"];
+            $markerArray = $_POST["markerArray"];
+            //IF TYPEID = ROUTE
+            if ($typeID==4){
+                echo "<p>$markerArray</p>";
+            }
+            //IF TYPEID = AREA
+            elseif ($typeID==3){
 
-            $sql = "INSERT INTO location (name, address, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
-            if (mysqli_query($db, $sql)) {
-                header("location:../mapPage");
-            } else {
-                echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
+            }
+            //IF TYPEID = LANDMARK OR VIEWPOINT
+            else {
+                $sql = "INSERT INTO location (name, address, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
+                if (mysqli_query($db, $sql)) {
+                    header("location:../mapPage");
+                } else {
+                    echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
+                }
             }
         }
         //test
