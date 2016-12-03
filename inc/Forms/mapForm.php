@@ -114,7 +114,7 @@ if (isset($_SESSION['username'])) {
                            alert(markersLatLng);
                            var string;
                            for(i=0;i<markersLatLng.length;i++){
-                               string+=markersLatLng[i].lat()+', '+markersLatLng[i].lng();
+                               string+=markersLatLng[i].latitude+', '+markersLatLng[i].longitude;
                            }
                             document.getElementById('markerArraay').value = string;
 
