@@ -115,9 +115,8 @@ if (isset($_SESSION['username'])) {
                            var string="";
                            //alert(markersLatLng.length)
                            for(i=0;i<markersLatLng.length;i++){
-                               alert(markersLatLng[i]);
-                               alert(markersLatLng[i].toString());
-                               string+=markersLatLng[i].toString();
+                               //alert(markersLatLng[i].toString());
+                               string+=markersLatLng[i].toString()+', ';
                            }
                             document.getElementById('markerArray').value = string;
 
