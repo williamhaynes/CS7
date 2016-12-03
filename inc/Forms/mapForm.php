@@ -176,7 +176,15 @@ if (isset($_SESSION['username'])) {
             $markerArray = $_POST["markerArray"];
             //IF TYPEID = ROUTE
             if ($typeID==4){
-                echo "<p>$markerArray</p>";
+                $sql = "INSERT INTO location (name, address, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
+                if (mysqli_query($db, $sql)) {
+                    $sqlGetLocationID = "SELECT locationID FROM location WHERE name ='" . $name . "' AND address = '" . $address ."'";
+                    $resultLocationID = $db->query($sql_query);
+                    echo "<p>$resultLocationID</p>";
+                    //$sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES ('" . $markerArray . "', '" . $locationID . "')";
+                } else {
+                    echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
+                }
             }
             //IF TYPEID = AREA
             elseif ($typeID==3){
