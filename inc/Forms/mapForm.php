@@ -111,7 +111,7 @@ if (isset($_SESSION['username'])) {
 //                               coords.push()
 //                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
 //                           }
-                           alert(markersLatLng);
+                           //alert(markersLatLng);
                            var string="";
                            //alert(markersLatLng.length)
                            for(i=0;i<markersLatLng.length;i++){
@@ -183,7 +183,7 @@ if (isset($_SESSION['username'])) {
                     while($row = $result->fetch_array()){
                         $resultLocationID = $row['locationID'];
                     }
-                    $sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES (geomfromtext('linestring($markerArray)'), '" . $resultLocationID . "')";
+                    $sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES ((GeomFromText('LineString($markerArray)')), '" . $resultLocationID . "')";
                     if (mysqli_query($db, $sql2)) {
 
                     }
