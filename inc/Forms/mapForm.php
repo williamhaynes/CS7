@@ -80,6 +80,7 @@ if (isset($_SESSION['username'])) {
                                 strokeWeight: 2,
                                 fillColor: '#aff3ff',
                                 fillOpacity: 0.35
+                                clickable: false;
                             });
 
                             area.setMap(map);
