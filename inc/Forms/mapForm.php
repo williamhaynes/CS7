@@ -180,7 +180,7 @@ if (isset($_SESSION['username'])) {
                 if (mysqli_query($db, $sql)) {
                     $sqlGetLocationID = "SELECT locationID FROM location WHERE name ='" . $name . "' AND address = '" . $address ."'";
                     $resultLocationID = $db->query($sqlGetLocationID);
-                    echo "<p>$resultLocationID</p>";
+                    echo "alert($resultLocationID);";
                     //$sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES ('" . $markerArray . "', '" . $locationID . "')";
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
