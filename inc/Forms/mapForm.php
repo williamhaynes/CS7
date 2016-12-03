@@ -185,6 +185,12 @@ if (isset($_SESSION['username'])) {
                     }
                     echo "$resultLocationID";
                     $sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES ('" . $markerArray . "', '" . $resultLocationID . "')";
+                    if (mysqli_query($db, $sql2)) {
+
+                    }
+                    else {
+                        echo "Error: " . $sql2 . "<br>Error Message:" . mysqli_error($db);
+                    }
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
                 }
