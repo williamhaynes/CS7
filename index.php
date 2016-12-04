@@ -17,6 +17,7 @@ $rules = array(
     'Forms/mapForm' => "/mapForm",
     'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm",
     'scripts/commentBox' => "/commentBox",
+    'scripts/commentToDatabase' => "/commentToDatabase",
     //'/scripts/locations' => "/locations",
     //
     //user auth pages
