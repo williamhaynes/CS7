@@ -17,9 +17,9 @@ if (isset($_SESSION['userID'])) {
 
         $sql = "INSERT INTO comment (comment,userID) VALUES ('" . $comment . "', '" . $userID . "')";
         if (mysqli_query($db, $sql)) {
-            header("location:../healthAndWellbeingPage");
+            echo"<p>Comment Successful!</p>";
         } else {
-            echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
+            echo "<p>Comment unsuccessful please try again.</p>";
         }
     }
 }else{
