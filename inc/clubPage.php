@@ -21,6 +21,7 @@
          */
         while($row = $result->fetch_array())
         {
+            $clubID = $row['clubID'];
             $_SESSION['clubID'] = $row['clubID'];
 
             $clubName = $row['clubName'];
