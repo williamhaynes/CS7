@@ -5,7 +5,18 @@
     include ("scripts/dbconnect.php");
     include ("scripts/header.php");
     $clubID = $params['clubID'];
-    echo "<main>";
+    echo "<main>
+
+        <!-- Trying to add a facebookfeed -->
+                <div id=\"fb-root\"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = \"//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.8\";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+";
         /*
          * Access the database information from the Club Table for the chosen club
          * Using the SQL command to select all the information
@@ -77,6 +88,7 @@
                  <p id='contactEmail'>Email: $contactEmail</p>
                  <a id='websiteUrl'><img id='websiteLogo' src='' alt='' style='width:50px;height:50px;'></a>
                  <a id='facebookUrl'><img id='facebookLogo' src='' alt='' style='width:50px;height:50px;'></a>
+                 <div id='facebookFeed'></div>
                  <script>
                     var website = $website;
                     var facebook = $facebook;
@@ -99,6 +111,7 @@
                     if (facebook==1){
                         document.getElementById('facebookUrl').setAttribute ('href', facebookUrl);
                         document.getElementById('facebookLogo').setAttribute('src','https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png');
+                        document.getElementById('facebookFeed').innerHTML('<div class=\"fb-page\" data-href=\"https://www.facebook.com/tarlandtrails/\" data-tabs=\"timeline\" data-small-header=\"true\" data-adapt-container-width=\"true\" data-hide-cover=\"true\" data-show-facepile=\"true\"><blockquote cite=\"https://www.facebook.com/tarlandtrails/\" class=\"fb-xfbml-parse-ignore\"><a href=\"https://www.facebook.com/tarlandtrails/\">Tarland Trails</a></blockquote></div>')
                     }else{
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
