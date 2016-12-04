@@ -5,7 +5,7 @@ session_start();
 include(__DIR__ . "/../scripts/dbconnect.php");
 if (isset($_SESSION['userID'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        echo date('l jS \of F Y h:i:s A');
+        echo date("Y-m-d H:i:s");                   // 2001-03-10 17:16:18 (the MySQL DATETIME format)
         ?>
 
         <p>Tell us what you think!</p>
