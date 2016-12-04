@@ -9,13 +9,14 @@ $rules = array(
     'healthAndWellbeingPage' => "/healthAndWellbeingPage",
     'mapPage' => "/mapPage",
     'clubPage' => "/clubPage/(?'clubID'[\w\-]+)",
-    '/Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
-    '/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
-    '/Forms/createHealthAndWellbeingForm' => "/createHealthAndWellbeingForm",
+    'Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
+    'Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
+    'Forms/createHealthAndWellbeingForm' => "/createHealthAndWellbeingForm",
     'fileUploadPage' => "/fileUploadPage",
-    '/scripts/upload' => "/scripts/upload",
-    '/Forms/mapForm' => "/mapForm",
-    '/Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm",
+    'scripts/upload' => "/scripts/upload",
+    'Forms/mapForm' => "/mapForm",
+    'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm",
+    'scripts/commentBox' => "/commentBox",
     //'/scripts/locations' => "/locations",
     //
     //user auth pages
@@ -33,9 +34,9 @@ $rules = array(
     // Forms Page
     //
     //'/Forms/clubAdminForm' => "/Forms/clubAdminForm",
-    '/Forms/eventsForm' => "/Forms/eventsForm",
+    'Forms/eventsForm' => "/Forms/eventsForm",
     //'/Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm",
-    '/Forms/createClubForm' => "/Forms/createClubForm",
+    'Forms/createClubForm' => "/Forms/createClubForm",
 
 
 );
