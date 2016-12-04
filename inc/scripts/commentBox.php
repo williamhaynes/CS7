@@ -5,6 +5,7 @@ session_start();
 include(__DIR__ . "/../scripts/dbconnect.php");
 if (isset($_SESSION['userID'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        echo date('l jS \of F Y h:i:s A');
         ?>
 
         <p>Tell us what you think!</p>
