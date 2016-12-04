@@ -101,8 +101,9 @@
                     }else{
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
-                 </script>
-             </atricle>";
+                 </script>";
+            include ("commentBox");
+        echo "</atricle>";
         }
         echo "</main>";
         /*
