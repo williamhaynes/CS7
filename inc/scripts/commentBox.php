@@ -5,7 +5,7 @@ if (isset($_SESSION['userID'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         ?>
         <p>Tell us what you think!</p>
-        <form method="post">
+        <form action='' method="post">
             <textarea name="comment" id="comment" placeholder="Say something!"></textarea>
             <p><input type="submit" value='Submit Comment'></p>
         </form>
