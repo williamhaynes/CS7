@@ -17,4 +17,5 @@ if (isset($_SESSION['username'])) {
     }
 }else{
     //If not logged in don't show comment box
+    echo"<p>Login to comment</p>";
 } ?>
