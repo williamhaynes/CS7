@@ -102,7 +102,7 @@
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
                  </script>";
-            include ("commentBox");
+            include ("scripts/commentBox.php");
         echo "</atricle>";
         }
         echo "</main>";
