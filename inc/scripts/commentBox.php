@@ -8,7 +8,7 @@ if (isset($_SESSION['username'])) {
         <p>Tell us what you think!</p>
         <form method="post">
             <textarea name="comment" id="comment" placeholder="Say something!"></textarea>
-            <p><?$username?></p>
+            <p><? $username ?></p>
             <p><input type="submit" value='Submit Comment'></p>
         </form>
         <?
