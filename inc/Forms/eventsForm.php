@@ -10,45 +10,35 @@ include ("../scripts/header.php");
 </head>
 
 <body>
-
-    <form action="" method="post">
-        <input type="text" placeholder="Date" name="date">
-        <input type="text" placeholder="Event Description" name="eventDescription">
-        <input type="text" placeholder="Duration" name="duration">
-        <input type="submit" value='Go Go Go!'>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({selector: 'textarea'});</script>
+    <form action="eventsForm.php" method="post">
+        <input type="text" placeholder="Event Name" name="eventName">
+        <input type="text" placeholder="Start Date" name="eventStartDate">
+        <input type="text" placeholder="End Date" name="eventEndDate">
+        <textarea name="eventDescription"></textarea>
+        <input type="submit" value='Create Event'>
     </form>
 
 </body>
 </html>
 <?php
-/**
- * Created by PhpStorm.
- * User: hype_
- * Date: 07/11/2016
- * Time: 12:27
- */
 
 include ("../scripts/footer.php");
 //include database
 include ("../scripts/dbconnect.php");
 
 //variables
-
-$clubCalanderID = $_GET["this.clubID"];
-$date = $_POST["date"];
+$clubID = $params['clubID'];
+$eventName = $_POST["eventName"];
+$eventStartDate = $_POST["eventStartDate"];
+$eventEndDate = $_POST["eventEndDate"];
 $eventDescription = $_POST["eventDescription"];
-$duration = $_POST["duration"];
 
-//Get session details
-$clubIDSession = $_SESSION[clubID_session];
-
-$sql = "INSERT INTO /*TABLENAME*/ (/*tablenames*/) VALUES (/*'$nameOfVariable'*/)";
-
-
+$sql = "INSERT INTO clubcalender (clubID, eventName, eventStartDate, eventEndDate, eventDescription) VALUES ('" . $clubID . "', '" . $eventName . "', '" . $eventStartDate . "', '" . $eventEndDate . "', '".$eventDescription."');";
 if (mysqli_query($db, $sql)) {
+    header("location:/clubPage/$clubID");
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($db);
+    echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
 }
-
-header("location:viewusers.php");
 ?>
