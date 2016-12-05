@@ -27,6 +27,7 @@ include("dbconnect.php");
     $result = $db->query($sql_query);                               //Process relevant query
     while($row = $result->fetch_array()) {                           //Iterate through Query Results
         //if all clubs
+        echo"<p>Club Name is".$row['clubName']."</p>";
         if ($currentURL == "/clubsAndSocietiesPage") {
             //Implement table row
             echo "<tr>";
