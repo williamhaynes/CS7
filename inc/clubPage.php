@@ -7,7 +7,9 @@
     $clubID = $params['clubID'];
     echo "<p>".$currentURL."</p>";
     echo "<p>clubPage/" . $clubID."</p>";
-    echo "<main>
+    echo "<main>";
+echo "<p>".include ("scripts/calendar.php")."</p>";
+    echo "
 <!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
         <script>(function(d, s, id) {

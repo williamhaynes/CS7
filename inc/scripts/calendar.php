@@ -21,7 +21,7 @@ include("dbconnect.php");
         echo "<th>Club</th>";
         echo "</tr>";
     }
-    elseif ($currentURL == "clubPage/" . $clubID){                                                          //Call by specific club
+    elseif ($currentURL == "/clubPage/" . $clubID){                                                          //Call by specific club
         $sql_query = "SELECT * FROM clubcalender INNER JOIN club ON club.clubID=clubcalender.clubID;";     //Get specific Events
         echo "<table id=\"allEventsCalendar\">";
         echo "<tr>";
