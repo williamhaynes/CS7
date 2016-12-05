@@ -29,7 +29,7 @@ if(isset($_POST['btn-upload']))
         ?>
         <script>
             alert('successfully uploaded');
-            window.location.href='/../fileUploadPage.php?success';
+            //window.location.href='/../fileUploadPage.php?success';
         </script>
         <?php
     }
@@ -38,7 +38,7 @@ if(isset($_POST['btn-upload']))
         ?>
         <script>
             alert('error while uploading file');
-            window.location.href='/../404';
+            //window.location.href='/../404';
         </script>
         <?php
     }
