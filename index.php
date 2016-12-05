@@ -51,9 +51,9 @@ $uri = urldecode($uri);
 
 //echo $_SERVER['REQUEST_URI'];
 foreach ($rules as $action => $rule) {
-    //echo $uri;
+    echo $uri;
     $ext = substr( $uri , -3 );
-   //echo $ext;
+   echo $ext;
     if($ext != 'php'){
        header('location:'+$uri);
     }
