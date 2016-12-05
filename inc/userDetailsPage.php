@@ -136,8 +136,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "</form>";
             echo "</div>";
             echo "</main>";
-        } else {
-            header("location: /404");
         }
         include("scripts/footer.php");
     }
