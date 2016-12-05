@@ -12,10 +12,10 @@ include("dbconnect.php");
     //Get the current URL
     $currentURL = $_SERVER['REQUEST_URI'];
     $sql_query;                                                     //Initialize query
-    if(true){            //If page making call P&S page
+    if($currentURL == "/clubsAndSocietiesPage"){            //If page making call P&S page
         $sql_query = "SELECT * FROM clubCalender;";                //Get all events
     }
-    else {                                                          //Call by specific club
+    elseif ($currentURL == "clubPage/" . $clubID){                                                          //Call by specific club
         $sql_query = "SELECT * FROM clubCalendar INNER JOIN club ON = 'clubCalendar". $clubID."'='club'". $clubID. ";";     //Get specific Events
     }
 
