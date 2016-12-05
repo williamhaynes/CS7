@@ -5,9 +5,9 @@
     include ("scripts/dbconnect.php");
     include ("scripts/header.php");
     $clubID = $params['clubID'];
-    echo "<main>";
     include ("scripts/calendar.php");
-    echo"<!-- Trying to add a facebookfeed -->
+    echo "<main>
+<!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
