@@ -21,6 +21,7 @@ include("dbconnect.php");
     while($row = $result->fetch_array()){                           //Iterate through Query Results
         //if all clubs
             //Echo club name
+        echo "<tr>". $row['clubName'] ."</tr>";
             //Echo event name
             //Echo event date
         //if specific club
