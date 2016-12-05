@@ -6,7 +6,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $currentUrl = $_POST["currentUrl"];
     $clubID = $_SESSION['clubID'];
     $userID = $_SESSION["userID"];
-    echo "<script> alert($clubID); </script>";
     $sql = "INSERT INTO comment (comment,clubID,userID) VALUES ('" . $comment . "','" . $clubID . "', '" . $userID . "')";
     if (mysqli_query($db, $sql)) {
         header("location:/../$currentUrl");
