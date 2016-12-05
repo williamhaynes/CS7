@@ -1,17 +1,7 @@
 <?php
 include_once 'dbconfig.php';
 ?>
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title>File Uploading With PHP and MySql</title>
-        <link rel="stylesheet" href="style.css" type="text/css" />
-    </head>
-    <body>
-        <div id="header">
-            <label>File Uploading With PHP and MySql</label>
-        </div>
-        <div id="body">
+<main>
             <form action="/../uploadClubMedia" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" />
                 <input type="hidden" name="userID" value=<?php print $userID;?> />
@@ -38,6 +28,4 @@ include_once 'dbconfig.php';
                 <?php
             }
             ?>
-        </div>
-    </body>
-</html>
+</main>
