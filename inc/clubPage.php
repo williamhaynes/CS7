@@ -5,7 +5,7 @@
     include ("scripts/dbconnect.php");
     include ("scripts/header.php");
     $clubID = $params['clubID'];
-    include ("scripts/calendar.php");
+    //include ("scripts/calendar.php");
     echo "<main>
 <!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
