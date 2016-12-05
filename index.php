@@ -32,6 +32,7 @@ $rules = array(
     //
     'homePage' => "/",
     'AdminPages/usersAdminPage' => '/usersAdminPage',
+    'AdminPages/healthAndWellBeingAdminPage' => '/healthAndWellBeingAdminPage',
     //
     // Forms Page
     //
