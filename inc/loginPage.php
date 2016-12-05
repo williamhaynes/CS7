@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     ?>
     <main>
         <form action="loginPage" method="post">
-            <input type="text" placeholder="User Name" name="username">
+            <input type="text" placeholder="User Name/Email Address" name="username">
             <input type="password" placeholder="Password" name="password">
             <p><input type="submit" value='Login'></p>
         </form>
@@ -25,7 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
      * Using the database to check if the details stored are the ones being entered
      */
     function checklogin($username, $password, $db){
-        $sql_query = "SELECT * FROM User WHERE userName ='" . $username . "' AND password = '" . $password ."';";
+        $sql_query = "SELECT * FROM User WHERE userName ='" . $username . "' OR emailAddress = '". $username ."' AND password = '" . $password ."';";
         $result = $db->query($sql_query);
         while($row = $result->fetch_array()){
             return true;
