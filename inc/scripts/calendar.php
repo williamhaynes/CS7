@@ -23,11 +23,11 @@ include("dbconnect.php");
     }
     elseif ($currentURL == "/clubPage/" . $clubID){                                                          //Call by specific club
         $sql_query = "SELECT * FROM clubcalender INNER JOIN club ON club.clubID=clubcalender.clubID;";     //Get specific Events
-        echo "<table id=\"allEventsCalendar\">";
+        echo "<table id=\"specificClubCalendar\">";
         echo "<tr>";
         echo "<th>Date</th>";
         echo "<th>Event Name</th>";
-        echo "<th>Club</th>";
+        echo "<th>Event Description</th>";
         echo "</tr>";
     }
     $result = $db->query($sql_query);                               //Process relevant query
