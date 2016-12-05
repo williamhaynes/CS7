@@ -119,7 +119,7 @@
                     }
                  </script>";
             include ("scripts/commentBox.php");
-            include ("/../fileUploadPageClubMedia");
+            include ("scripts/fileUploadPageClubMedia.php");
 
             /*
              * Pulls database information from the 'Comment Table'
