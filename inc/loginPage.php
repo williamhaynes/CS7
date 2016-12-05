@@ -6,8 +6,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     ?>
     <main>
         <form action="loginPage" method="post">
-            <input type="text" placeholder="User Name/Email Address" name="username">
-            <input type="password" placeholder="Password" name="password">
+            <input type="text" placeholder="User Name  or Email Address" name="username">
+            <p><input type="password" placeholder="Password" name="password"></p>
             <p><input type="submit" value='Login'></p>
         </form>
     </main>
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
      * Using the database to get the userID
      */
     function getUserID($username, $db){
-        $sql_query = "SELECT userID FROM User WHERE userName ='" . $username ."';";
+        $sql_query = "SELECT userID FROM User WHERE userName ='" . $username ."' OR emailAddress='". $username ."';";
         $result = $db->query($sql_query);
         $thisUserID = 0;
         while($row = $result->fetch_array()){
