@@ -33,7 +33,7 @@ include("dbconnect.php");
             //Echo club name
             echo "<td>" . $row['clubName'] . "</td>";
             //Echo event name
-            echo "<td>" . $row['eventName'] . "</tr>";
+            echo "<td>" . $row['eventName'] . "</td>";
             //Echo event date
             echo "<td>" . $row['eventStartDate'] . "</td>";
             //End table row
