@@ -57,7 +57,7 @@ foreach ($rules as $action => $rule) {
     if($ext != 'php'){
        header('location:'+$uri);
     }
-    else if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
+    elseif (preg_match('~^' . $rule . '$~i', $uri, $params)) {
         include(INCLUDE_DIR . $action . '.php'/*.$params*/);
         exit();
     }
