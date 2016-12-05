@@ -16,7 +16,7 @@ if (isset($_SESSION['userID'])) {
         
         <script>
             var url = document.URL;
-            alert($SERVER[REQUESTURI]);
+            alert('Alert:'+$SERVER[REQUESTURI];);
             document.getElementById('currentUrl').setAttribute('value', url);
         </script>
         <?
