@@ -32,10 +32,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
  * Display Name: The display name of the user
  * Level Code: The level code for the user
  */
-    if ($_SESSION['userID'] == $userID || $_SESSION['accessLevel'] == 31) {//if session id matches the current user let them see their account, or let the site admin
+    if ($_SESSION['userID'] == $userID || $_SESSION['accessLevel'] == 31) { //if session id matches the current user let them see their account, or let the site admin see it
         //Select all values from the User table for the current user
         $sql_query = "SELECT * FROM User WHERE userID ='" . $userID . "';";
         $result = $db->query($sql_query);
+
         //Iterate through the values and create a html form for the user to see
         while ($row = $result->fetch_array()) {
             echo "<main>";
@@ -51,18 +52,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             echo "<input type=\"text\" name=\"emailAddress\" value=\"" . $row['emailAddress'] . "\">";
             echo "<p>Display Name:</p>";
             echo "<input type=\"text\" name=\"displayName\" value=\"" . $row['displayName'] . "\">";
-            //If Site Adminstrator or club Admin let see club details
+
+            //If Site Administrator or club Administrator let see club details
             if ($_SESSION['accessLevel'] == 31) {
                 /*
                  * This section affects the control over the Access Level of an individual user
                  */
                 //Get existing values
                 $currentLevelCode = $row['levelCode'];
+
                 //Variables to affect which option is "selected" on page load
                 $contributorValue = "";
                 $nKPAGValue = "";
                 $clubAdminValue = "";
                 $siteAdminValue = "";
+
                 //update variables as relevant
                 switch ($currentLevelCode) {
                     case 1:
@@ -78,8 +82,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                         $siteAdminValue = "selected=\"selected\"";
                         break;
                     default:
-                        //do nothing;
+                        //if default do nothing
                 }
+
                 //Below is the options of administration as a selectable option list
                 echo "<p>User Level:</p>";
                 echo "<select name='userLevelSelect'>";
@@ -93,12 +98,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         echo "<p><input type=\"submit\" name='updateDetailsButton' value='Update Details'></p>";
         echo "</form>";
         echo "</div>";
+        /*
+         * If current user has an access level of 31 or 21 i.e. Site Administrator or Club Administrator
+         */
         if ($_SESSION['accessLevel'] == 31 || $_SESSION['accessLevel'] == 21) {
             /*
-             * This section affects the Club Administration Options of a specific user
+             * This section affects the Club Administration options of a specific user
              */
             //Generate SQL query to get club name if club admin or site admin
             $sql_query2 = "SELECT clubName FROM Club WHERE adminID = '" . $userID . "';";
+
             if (mysqli_query($db, $sql_query2)) {
             } else {
                 echo "Error: " . $sql_query2 . "<br>Error Message:" . mysqli_error($db);
@@ -106,6 +115,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $result2 = $db->query($sql_query2);
             echo "<div id='modifyClubAdminFormRemoval'>";
             echo "<p>Club Administrator for:</p>";
+
             //Iterate through club results and return them
             while ($row2 = $result2->fetch_array()) {
                 echo "<form action=\"" . $userID . "\" method=\"post\">";
@@ -150,10 +160,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $updatedEmailAddress = $_POST["emailAddress"];
         $updatedDisplayName = $_POST["displayName"];
         $userToUpdate = $_SESSION['username'];
+
         //If user is Site Admin then apply update to User Access Level also
         if ($_SESSION['accessLevel'] == 31) {
             $updatedLevelCode = $_POST["userLevelSelect"];
             $sql = "UPDATE User SET password = '" . $updatedPassword . "', emailAddress = '" . $updatedEmailAddress . "', displayName = '" . $updatedDisplayName . "', levelCode = '" . $updatedLevelCode . "' WHERE userID = '" . $userID . "';";
+
             //If user set to a level lower than club administrator, strip them of their clubs
             if($updatedLevelCode == 11 || $updatedLevelCode == 1){
                 //Check to see if they're a club admin and remove them.
