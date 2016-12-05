@@ -157,7 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             //If user set to a level lower than club administrator, strip them of their clubs
             if($updatedLevelCode == 11 || $updatedLevelCode == 1){
                 //Check to see if they're a club admin and remove them.
-                $sql_query6 = "UPDATE Club SET adminID = null WHERE adminID = '" . $userID . "' AND clubName = '". $selectedClub ."';";
+                $sql_query6 = "UPDATE Club SET adminID = null WHERE adminID = '" . $userID . "';";
                 if (mysqli_query($db, $sql_query6)) {
                     //echo "<p>Selected Club: ".$selectedClub."</p>";
                     //echo "<p>SQL Query: ".$sql_query3."</p>";
