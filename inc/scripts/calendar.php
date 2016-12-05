@@ -47,7 +47,7 @@ include("dbconnect.php");
             //End table row
             echo "</tr>";
         }
-        elseif ($currentURL == "clubPage/" . $clubID){//if specific club
+        elseif ($currentURL == "/clubPage/" . $clubID){//if specific club
             //Implement table row
             echo "<tr>";
                 //Echo event name
