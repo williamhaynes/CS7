@@ -52,6 +52,8 @@ $uri = urldecode($uri);
 //echo $_SERVER['REQUEST_URI'];
 foreach ($rules as $action => $rule) {
     echo $uri;
+    $ext = substr( $uri , $uri.length - 3 );
+    echo $ext;
     if($uri.contains('location.php')){
        header('location:__DIR__ . "/../scripts/location.php"');
     }
