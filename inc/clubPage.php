@@ -5,7 +5,6 @@
     include ("scripts/dbconnect.php");
     include ("scripts/header.php");
     $clubID = $params['clubID'];
-    //include ("scripts/calendar.php");
     echo "<main>
 <!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
@@ -148,6 +147,7 @@
 
         echo "</article>";
         }
+        echo "<p>" . include ("scripts/calendar.php") . "</p>";
         echo "</main>";
         /*
          * If the current user is an admin i.e is logged into the page as a admin or has level 31 which is
