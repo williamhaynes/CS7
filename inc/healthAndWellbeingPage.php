@@ -44,6 +44,12 @@ while($row = $result->fetch_array()){
         echo "<a href='Forms/healthAndWellbeingForm/{$itemID}'> Edit </a>";
     }
 }
+echo "
+<a class='twitter-timeline'
+  href=\"https://twitter.com/{portyacad}\">
+
+</a>";
+
 echo "</main>";
 include ("scripts/footer.php");
 
