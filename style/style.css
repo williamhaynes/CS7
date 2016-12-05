@@ -81,12 +81,6 @@ nav li a :hover {
 
 
 /*Controls for Tables*/
-td, tr, th {
-    border-bottom: 1px solid #ddd;
-    padding: 15px;
-    text-align: left;
-    background-color: #dddddd;
-}
 
 .hoverableRowsAndColumns:hover {
     background-color: lightskyblue;
@@ -96,3 +90,10 @@ td, tr, th {
     cursor: pointer;
     background-color: dodgerblue;
 }
+td, tr, th {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    background-color: #dddddd;
+}
+
