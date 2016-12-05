@@ -10,7 +10,6 @@ if (isset($_SESSION['userID'])) {
         <p>Tell us what you think!</p>
         <form action='./commentToDatabase' method="post">
             <textarea name="comment" id="comment" placeholder="Say something!"></textarea>
-            <p> This is code code code code i love code code code hagiohgadsdofashidfhafhhdafsiohoifdahafdshadsfpiihadsfohpoiadfshioad</p>
             <p><input type="submit" value='Submit Comment'></p>
         </form>
         <?
