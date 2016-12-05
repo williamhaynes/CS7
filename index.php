@@ -51,13 +51,7 @@ $uri = urldecode($uri);
 
 //echo $_SERVER['REQUEST_URI'];
 foreach ($rules as $action => $rule) {
-    echo $uri;
-    $ext = substr( $uri , -3 );
-   echo $ext;
-    if($ext != 'jpg'){
-       header('location:'+$uri);
-    }
-    elseif (preg_match('~^' . $rule . '$~i', $uri, $params)) {
+    if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
         include(INCLUDE_DIR . $action . '.php'/*.$params*/);
         exit();
     }
