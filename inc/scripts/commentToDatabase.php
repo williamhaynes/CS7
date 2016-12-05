@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "<script> alert($currentUrl); </script>";
     $sql = "INSERT INTO comment (comment,userID) VALUES ('" . $comment . "', '" . $userID . "')";
     if (mysqli_query($db, $sql)) {
-        echo "<p>Comment Successful!</p>";
+        header("location:/../$currentUrl");
     }
 }else {
 echo "<p>Comment unsuccessful please try again.</p>";
