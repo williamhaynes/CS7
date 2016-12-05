@@ -46,7 +46,7 @@ while($row = $result->fetch_array()){
 }
 echo "
 <a class='twitter-timeline'
-  href=\"https://twitter.com/{portyacad}\">
+  href=\"https://twitter.com/portyacad\">
 
 </a>";
 
