@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-//username is the variable, userName is the column in the table
+
     /*
      * A function to check the login details
      * Using the database to check if the details stored are the ones being entered
@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         print('success!');
     }
     else{
-        echo "<p>Wrong Username or Password</p>";
+        echo "<p>Wrong Username or Password</p>"; //error message to display if wrong username or password
         header("location:loginPage");
         print('wrong password or username');
     }
