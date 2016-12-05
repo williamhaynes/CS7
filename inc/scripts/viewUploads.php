@@ -23,7 +23,7 @@ include_once 'dbconfig.php';
             <td>View</td>
         </tr>
         <?php
-        $sql="SELECT * FROM tbl_uploads";
+        $sql="SELECT * FROM clubmedia";
         $result = $db->query($sql);
         while($row = $result->fetch_array())
         {
@@ -33,6 +33,7 @@ include_once 'dbconfig.php';
                 <td><?php echo $row['type'] ?></td>
                 <td><?php echo $row['size'] ?></td>
                 <td><a href="/../uploads/<?php echo $row['file'] ?>" target="_blank">view file</a></td>
+                <td><?php echo $row['userID'] ?></td>
             </tr>
             <?php
         }

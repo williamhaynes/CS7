@@ -12,8 +12,9 @@ include_once 'dbconfig.php';
             <label>File Uploading With PHP and MySql</label>
         </div>
         <div id="body">
-            <form action="/../upload" method="post" enctype="multipart/form-data">
+            <form action="/../uploadClubMedia" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" />
+                <input type="hidden" name="userID" value=<?php print $userID;?> />
                 <button type="submit" name="btn-upload">upload</button>
             </form>
             <br /><br />

@@ -21,7 +21,7 @@ if(isset($_POST['btn-upload']))
 
     if(move_uploaded_file($file_loc,$folder.$final_file))
     {
-        $sql="INSERT INTO tbl_uploads(file,type,size) VALUES('$final_file','$file_type','$new_size')";
+        $sql="INSERT INTO clubmedia(file,type,size,userID) VALUES('$final_file','$file_type','$new_size','$userID')";
         if (mysqli_query($db, $sql)) {
         } else {
             echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
@@ -29,7 +29,7 @@ if(isset($_POST['btn-upload']))
         ?>
         <script>
             alert('successfully uploaded');
-            //window.location.href='index.php?success';
+            window.location.href='/../fileUploadPage.php?success';
         </script>
         <?php
     }

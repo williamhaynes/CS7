@@ -16,9 +16,9 @@ $rules = array(
     'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm",
     'scripts/commentBox' => "/commentBox",
     'scripts/commentToDatabase' => "/commentToDatabase",
-    '/fileUploadPage' => "/fileUploadPage",
-    'scripts/upload' => "/upload",
-    'scripts/viewUpload' => "/viewUpload",
+    '/fileUploadPageClubMedia' => "/fileUploadPageClubMedia",
+    'scripts/uploadClubMedia' => "/uploadClubMedia",
+    'scripts/viewUploads' => "/viewUploads",
     //'/scripts/locations' => "/locations",
     //
     //user auth pages
