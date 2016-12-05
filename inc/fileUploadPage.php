@@ -12,7 +12,7 @@ include_once 'dbconfig.php';
     <label>File Uploading With PHP and MySql</label>
 </div>
 <div id="body">
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="/../upload" method="post" enctype="multipart/form-data">
         <input type="file" name="file" />
         <button type="submit" name="btn-upload">upload</button>
     </form>
@@ -21,7 +21,7 @@ include_once 'dbconfig.php';
     if(isset($_GET['success']))
     {
         ?>
-        <label>File Uploaded Successfully...  <a href="view.php">click here to view file.</a></label>
+        <label>File Uploaded Successfully...  <a href="/../viewUploads">click here to view file.</a></label>
         <?php
     }
     else if(isset($_GET['fail']))

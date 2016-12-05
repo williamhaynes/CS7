@@ -14,7 +14,7 @@ include_once 'dbconfig.php';
 <div id="body">
     <table width="80%" border="1">
         <tr>
-            <th colspan="4">your uploads...<label><a href="index.php">upload new files...</a></label></th>
+            <th colspan="4">your uploads...<label><a href="/../index.php">upload new files...</a></label></th>
         </tr>
         <tr>
             <td>File Name</td>
@@ -32,7 +32,7 @@ include_once 'dbconfig.php';
                 <td><?php echo $row['file'] ?></td>
                 <td><?php echo $row['type'] ?></td>
                 <td><?php echo $row['size'] ?></td>
-                <td><a href="uploads/<?php echo $row['file'] ?>" target="_blank">view file</a></td>
+                <td><a href="/../uploads/<?php echo $row['file'] ?>" target="_blank">view file</a></td>
             </tr>
             <?php
         }

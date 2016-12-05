@@ -38,7 +38,7 @@ if(isset($_POST['btn-upload']))
         ?>
         <script>
             alert('error while uploading file');
-            window.location.href='index.php?fail';
+            window.location.href='/../404';
         </script>
         <?php
     }
