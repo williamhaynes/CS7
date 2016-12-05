@@ -141,7 +141,7 @@
                 while($row = $result2->fetch_array()){
                     $displayName = $row['displayName'];
                 }
-                echo "<li><p>$comment</p><p>User ID: $userID</p><p>Commenter: $displayName</p></li>";
+                echo "<li><p>$comment</p><p>Commenter: $displayName</p></li>";
             }
 
         echo "</article>";
