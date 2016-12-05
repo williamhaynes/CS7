@@ -6,7 +6,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
 if (isset($_SESSION['userID'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $afterSlashUrl = $_SERVER['REQUESTURI'];
-        echo "<p>$afterSlashUrl</p>";
+        echo "<script>alert($afterSlashUrl);</script>";
         ?>
 
         <p xmlns="http://www.w3.org/1999/html">Tell us what you think!</p>
