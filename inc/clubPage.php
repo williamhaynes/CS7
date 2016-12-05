@@ -78,7 +78,7 @@
             //www logo http://www.charlenebower.com/wp-content/uploads/2014/11/website-image.jpg
 
             echo "
-            <atricle>
+            <article>
                  <h2 id='clubName'>{$clubName}</h2>
                  <p id='activity'>{$activity}</p>
                  <p id='clubDescription'>{$clubDescription}</p>
@@ -119,7 +119,39 @@
                     }
                  </script>";
             include ("scripts/commentBox.php");
-        echo "</atricle>";
+
+            /*
+             * Pulls database information from the 'Comment Table'
+             */
+            $sql_query = "SELECT * FROM comment WHERE clubID = '$clubID';";
+
+
+
+            /*
+             * Processes the SQL Query
+             */
+            $result = $db->query($sql_query);
+
+
+
+            /*
+             * Iterate through the table and output the data
+             */
+            while($row = $result->fetch_array()){
+                $comment = $row['comment'];
+                $userID = $row['userID'];
+                $sql_query2 = "SELECT displayName FROM User WHERE userID = '$userID';";
+                $result2 = $db->query($sql_query2);
+                while($row = $result->fetch_array()){
+                    $displayName = $row['displayName'];
+                }
+                echo "<li><p>$comment</p><p>Commenter: $displayName</p></li>";
+                if($_SESSION['accessLevel'] == 31) {
+                    echo "<a href='Forms/healthAndWellbeingForm/{$itemID}'> Edit </a>";
+                }
+            }
+
+        echo "</article>";
         }
         echo "</main>";
         /*
