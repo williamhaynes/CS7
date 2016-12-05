@@ -1,7 +1,7 @@
 <?php
 include_once 'dbconfig.php';
 ?>
-<main>
+
             <form action="/../uploadClubMedia" method="post" enctype="multipart/form-data">
                 <input type="file" name="file" />
                 <input type="hidden" name="userID" value=<?php print $userID;?> />
@@ -28,4 +28,3 @@ include_once 'dbconfig.php';
                 <?php
             }
             ?>
-</main>
