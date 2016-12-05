@@ -11,7 +11,7 @@ session_start(); //start the session
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 </head>
-<body style="background-image:url(w3s.png)">
+<body style="background-image:url(../../style/background.jpg)">
     <header>
         <nav id="navBar">
             <ul id="header">
