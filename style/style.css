@@ -7,7 +7,7 @@ footer {
 
 /* BACKGROUND */
 body{
-    background: url("images/background.jpg");
+    background: url("/images/background.jpg");
     /*background-color: #FFFFFF;*/
 }
 
