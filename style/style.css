@@ -3,7 +3,9 @@
 footer {
     background-color: #a1a1a1;
     padding: 5px 0 5px 10px;
-    z-index: 3;
+    z-index: 3;]
+    height: 52px;
+    width: 100%;
     position: fixed;
     bottom: 0px;
     left: 0px;
