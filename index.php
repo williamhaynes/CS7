@@ -54,7 +54,7 @@ foreach ($rules as $action => $rule) {
     echo $uri;
     $ext = substr( $uri , -3 );
    echo $ext;
-    if($ext != 'php'){
+    if($ext != 'age'){
        header('location:'+$uri);
     }
     elseif (preg_match('~^' . $rule . '$~i', $uri, $params)) {
