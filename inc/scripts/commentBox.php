@@ -5,7 +5,7 @@ session_start();
 include(__DIR__ . "/../scripts/dbconnect.php");
 if (isset($_SESSION['userID'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $afterSlashUrl = $_SERVER['REQUESTURI'];
+        $afterSlashUrl = $_SERVER['REQUEST_URI'];
         echo "<script>alert($afterSlashUrl);</script>";
         ?>
 
