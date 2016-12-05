@@ -113,7 +113,7 @@
                         document.getElementById('facebookLogo').setAttribute('src','https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png');
                         /*Adding a facebook feed
                          */
-                        document.getElementById('facebookFeed').innerHTML = ('<div class=\"fb-page\" data-href=\"https://www.facebook.com/tarlandtrails/\" data-tabs=\"timeline\" data-small-header=\"false\" data-adapt-container-width=\"true\" data-hide-cover=\"false\" data-show-facepile=\"true\"><blockquote cite=\"https://www.facebook.com/tarlandtrails/\" class=\"fb-xfbml-parse-ignore\"><a href=\"https://www.facebook.com/tarlandtrails/\">Tarland Trails</a></blockquote></div>');
+                        document.getElementById('facebookFeed').innerHTML = ('<div class=\"fb-page\" data-href=\"$facebookUrl\" data-tabs=\"timeline\" data-small-header=\"false\" data-adapt-container-width=\"true\" data-hide-cover=\"false\" data-show-facepile=\"true\"><blockquote cite=\"https://www.facebook.com/tarlandtrails/\" class=\"fb-xfbml-parse-ignore\"><a href=\"https://www.facebook.com/tarlandtrails/\">Tarland Trails</a></blockquote></div>');
                     }else{
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
