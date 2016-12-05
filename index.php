@@ -56,10 +56,8 @@ foreach ($rules as $action => $rule) {
    echo $ext;
     if($ext != 'jpg'){
        header('location:'+$uri);
-        ?><script>alert('Im here');</script><?
     }
     elseif (preg_match('~^' . $rule . '$~i', $uri, $params)) {
-        ?><script>alert('Im elsewhere');</script><?
         include(INCLUDE_DIR . $action . '.php'/*.$params*/);
         exit();
     }
