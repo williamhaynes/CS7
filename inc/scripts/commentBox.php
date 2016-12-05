@@ -16,7 +16,7 @@ if (isset($_SESSION['userID'])) {
         </form>
         
         <script>
-            var url = <? $afterSlashUrl ?>;
+            var url = <?php Print($afterSlashUrl); ?>
             document.getElementById('currentUrl').setAttribute('value', url);
         </script>
         <?
