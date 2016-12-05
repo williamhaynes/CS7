@@ -1,6 +1,6 @@
-<!--page header - hyperlinks for all pages go here-->
+<!--Header on each web page, all hyperlinks for all pages also go here -->
 <?php
-session_start();
+session_start(); //start the session
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,9 +37,9 @@ session_start();
                     echo "<li id='logoutButton'><a href='/logoutPage'>Logout</a></li>";
                 } else {
                     /*
-                     * if there is no cookie found called 'username' then they is no one logged in and the following buttons are displayed
+                     * if there is no cookie found called 'username' there is no one logged in and the following buttons are displayed
                      * Login: to login to their account
-                     * Register: Allow them to register to a club
+                     * Register: Allow them to register
                      */
                     echo "<li id='loginButton'><a href='/loginPage'>Login</a></li>";
                     echo "<li id='registerButton'><a href='/registerPage'>Register</a></li>";

@@ -11,7 +11,7 @@ include("dbconnect.php");
     $clubID = $_SESSION['clubID'];                                  //get required session cookie
     $sql_query;                                                     //Initialize query
     if(true){            //If page making call P&S page
-        $sql_query = "SELECT * FROM Club Calander;";                //Get all events
+        $sql_query = "SELECT * FROM Club Calender;";                //Get all events
     }
     else {                                                          //Call by specific club
         $sql_query = "SELECT * FROM Club Calendar WHERE = '". $clubID."';";     //Get specific Events
@@ -20,6 +20,7 @@ include("dbconnect.php");
     $result = $db->query($sql_query);                               //Process relevant query
     while($row = $result->fetch_array()){                           //Iterate through Query Results
         //if all clubs
+            //Echo club name
             //Echo event name
             //Echo event date
         //if specific club
