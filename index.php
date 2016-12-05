@@ -23,7 +23,7 @@ $rules = array(
     //
     //user auth pages
     //
-    'loginPage.php' => "/loginPage",
+    'loginPage' => "/loginPage.php",
     'logoutPage' => "/logoutPage",
     'registerPage' => "/registerPage",
     'userDetailsPage' => "/userDetailsPage/(?'userID'[\w\-]+)",
@@ -58,7 +58,7 @@ foreach ($rules as $action => $rule) {
        header('location:'+$uri);
     }
     elseif (preg_match('~^' . $rule . '$~i', $uri, $params)) {
-        include(INCLUDE_DIR . $action . ''/*.$params*/);
+        include(INCLUDE_DIR . $action . '.php'/*.$params*/);
         exit();
     }
 }
