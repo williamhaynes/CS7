@@ -38,8 +38,5 @@ include_once 'dbconfig.php';
     }
     ?>
 </div>
-<div id="footer">
-    <label>By <a href="http://cleartuts.blogspot.com">cleartuts.blogspot.com</a></label>
-</div>
 </body>
 </html>
