@@ -1,10 +1,7 @@
+<!--Page to register a user to the website, by adding users to the database -->
+
+
 <?php
-/**
- * Created by PhpStorm.
- * User: hype_
- * Date: 21/11/2016
- * Time: 14:12
- */
 
 include("dbconnect.php");
 //Access the posted variables
@@ -13,6 +10,7 @@ $emailAddress = $_POST['emailAddress'];
 $displayName = $_POST['displayName'];
 $password = $_POST['password'];
 
+//deprecated
 
 /*
 //check if user already in database*/
