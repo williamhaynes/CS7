@@ -51,11 +51,7 @@ $uri = urldecode($uri);
 
 //echo $_SERVER['REQUEST_URI'];
 foreach ($rules as $action => $rule) {
-    echo $uri;
-    if($uri.contains('location.php')){
-       header('location:__DIR__ . "/../scripts/location.php"');
-    }
-    else if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
+    if (preg_match('~^' . $rule . '$~i', $uri, $params)) {
         include(INCLUDE_DIR . $action . '.php'/*.$params*/);
         exit();
     }
