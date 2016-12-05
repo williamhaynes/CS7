@@ -118,7 +118,6 @@
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
                  </script>";
-            include ("scripts/calendar.php");
             include ("scripts/commentBox.php");
             include ("scripts/fileUploadPageClubMedia.php");
 
