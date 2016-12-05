@@ -154,6 +154,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         if ($_SESSION['accessLevel'] == 31) {
             $updatedLevelCode = $_POST["userLevelSelect"];
             $sql = "UPDATE User SET password = '" . $updatedPassword . "', emailAddress = '" . $updatedEmailAddress . "', displayName = '" . $updatedDisplayName . "', levelCode = '" . $updatedLevelCode . "' WHERE userID = '" . $userID . "';";
+            //If user set to a level lower than club administrator, strip them of their clubs
+            if($updatedLevelCode == 11 || $updatedLevelCode == 1){
+                //Check to see if they're a club admin and remove them.
+                $sql_query6 = "UPDATE Club SET adminID = null WHERE adminID = '" . $userID . "' AND clubName = '". $selectedClub ."';";
+                if (mysqli_query($db, $sql_query6)) {
+                    //echo "<p>Selected Club: ".$selectedClub."</p>";
+                    //echo "<p>SQL Query: ".$sql_query3."</p>";
+                    header("location: /userDetailsPage/" . $userID);
+                } else {
+                    echo "Error: " . $sql_query6 . "<br>Error Message:" . mysqli_error($db);
+                }
+            }
         } //If user is not site Admin apply update to all categories they can reach
         else {
             $sql = "UPDATE User SET password = '" . $updatedPassword . "', emailAddress = '" . $updatedEmailAddress . "', displayName = '" . $updatedDisplayName . "' WHERE userID = '" . $userID . "';";
