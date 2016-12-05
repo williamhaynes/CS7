@@ -5,8 +5,8 @@
     include ("scripts/dbconnect.php");
     include ("scripts/header.php");
     $clubID = $params['clubID'];
-    echo "<p>".$currentURL."</p>";
-    echo "<p>clubPage/" . $clubID."</p>";
+    //echo "<p>".$currentURL."</p>";
+    //echo "<p>clubPage/" . $clubID."</p>";
     echo "<main>";
     include ("scripts/calendar.php");
     echo "
