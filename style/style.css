@@ -1,9 +1,9 @@
 /* FOOTER */
 
 footer {
-    background-color: #111;
+    background-color: #333;
     padding: 5px 0 5px 10px;
-    z-index: 3;]
+    z-index: 3;
     height: 32px;
     width: 100%;
     position: fixed;
@@ -11,7 +11,7 @@ footer {
     left: 0px;
     color: white;
     margin-bottom: 0px;
-    border-top: solid 10px black;
+    border-top: solid 1px black;
     border-bottom: solid 1px white;
 }
 
