@@ -118,6 +118,7 @@
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
                  </script>";
+            include ("scripts/calendar.php");
             include ("scripts/commentBox.php");
             include ("scripts/fileUploadPageClubMedia.php");
 
@@ -147,7 +148,6 @@
 
         echo "</article>";
         }
-        echo "<p>" . include ("scripts/calendar.php") . "</p>";
         echo "</main>";
         /*
          * If the current user is an admin i.e is logged into the page as a admin or has level 31 which is
