@@ -5,6 +5,7 @@
     include ("scripts/dbconnect.php");
     include ("scripts/header.php");
     $clubID = $params['clubID'];
+    echo "<p>".$currentURL."</p>";
     echo "<main>
 <!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
