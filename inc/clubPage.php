@@ -6,8 +6,8 @@
     include ("scripts/header.php");
     $clubID = $params['clubID'];
     echo "<main>";
-    echo "include (\"scripts/calendar.php\")
-        <!-- Trying to add a facebookfeed -->
+    include ("scripts/calendar.php");
+    echo"<!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
         <script>(function(d, s, id) {
           var js, fjs = d.getElementsByTagName(s)[0];
