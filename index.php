@@ -56,7 +56,11 @@ foreach ($rules as $action => $rule) {
         exit();
     }
 }
-
+$currentURL = $_SERVER['REQUEST_URI'];
+$ender = substr($currentURL, -3);
+if($ender == 'jpg'){
+    header("location: $currentURL");
+}
 // nothing is found so handle the 404 error
 include(INCLUDE_DIR . '404.php');
 ?>
