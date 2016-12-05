@@ -32,6 +32,7 @@ session_start(); //start the session
                          * User Admin Page: the user admin page displaying information on the site
                          */
                         echo "<li><a href='/usersAdminPage'>User Admin Page</a></li>";
+                        echo "<li><a href='/healthAndWellBeingAdminPage'>Article Admin Page</a></li>";
                     }
                     echo "<li><a href='/userDetailsPage/". $_SESSION['userID'] ."'>My Account</a></li>";
                     echo "<li id='logoutButton'><a href='/logoutPage'>Logout</a></li>";
