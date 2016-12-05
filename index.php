@@ -56,6 +56,7 @@ foreach ($rules as $action => $rule) {
    echo $ext;
     if($ext != 'age'||$ext != 'orm'){
        header('location:'+$uri);
+        ?><script>alert(Im here);</script><?
     }
     elseif (preg_match('~^' . $rule . '$~i', $uri, $params)) {
         include(INCLUDE_DIR . $action . '.php'/*.$params*/);
