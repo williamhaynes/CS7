@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
      * Using the database to check what level of user is logged in
      */
     function getLevelCode($username, $db){
-        $sql_query = "SELECT levelCode FROM User WHERE userName ='" . $username ."';";
+        $sql_query = "SELECT levelCode FROM User WHERE userName ='" . $username ."' OR emailAddress='". $username ."';";
         $result = $db->query($sql_query);
         $thisLevelCode = 0;
         while($row = $result->fetch_array()){
