@@ -19,15 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
-
-    $username = $_GET['username'];
-    $username = stripslashes($username);
-    $username = mysqli_real_escape_string($username);
-
-    $password = $_GET['password'];
-    $password = stripslashes($password);
-    $password = mysqli_real_escape_string($password);
-
+    
 
     /*
      * A function to check the login details
