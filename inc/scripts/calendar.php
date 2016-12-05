@@ -31,11 +31,11 @@ include("dbconnect.php");
             //Implement table row
             echo "<tr>";
             //Echo club name
-            echo "<td>" . $row['clubName'] . "</td>";
+            echo "<td>" . $row['eventStartDate'] . "</td>";
             //Echo event name
             echo "<td>" . $row['eventName'] . "</td>";
             //Echo event date
-            echo "<td>" . $row['eventStartDate'] . "</td>";
+            echo "<td>" . $row['clubName'] . "</td>";
             //End table row
             echo "</tr>";
         }
@@ -43,9 +43,9 @@ include("dbconnect.php");
             //Implement table row
             echo "<tr>";
                 //Echo event name
-            echo "<td>". $row['eventName'] . "</td>";
-                //Echo event date
             echo "<td>". $row['eventStartDate'] . "</td>";
+                //Echo event date
+            echo "<td>". $row['eventName'] . "</td>";
                 //Echo event Description
             echo "<td>". $row['eventDescription'] . "</td>";
             //End table row
