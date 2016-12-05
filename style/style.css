@@ -52,7 +52,6 @@ nav li a :hover {
 }
 
 #loginButton{
-    margin-top: 3px;
     background-color: lightgreen;
 }
 #loginButton:hover{
@@ -60,22 +59,18 @@ nav li a :hover {
 }
 
 #registerButton{
-    margin-top: 3px;
     background-color: dodgerblue;
 }
 
 #registerButton:hover{
-    margin-top: 3px;
     background-color: darkslateblue;
 }
 
 #logoutButton{
     font-size: 100%;
-    margin-top: 3px;
     background-color: palevioletred;
 }
 #logoutButton:hover{
-    margin-top: 3px;
     background-color: darkred;
 }
 
