@@ -13,7 +13,7 @@ include("dbconnect.php");
     $currentURL = $_SERVER['REQUEST_URI'];
     $sql_query;                                                     //Initialize query
     if($currentURL == "/clubsAndSocietiesPage"){            //If page making call P&S page
-        $sql_query = "SELECT * FROM clubCalender;";                //Get all events
+        $sql_query = "SELECT * FROM clubcalender;";                //Get all events
         echo "<table id=\"allEventsCalendar\">";
         echo "<tr>";
         echo "<th>Date</th>";
@@ -22,7 +22,7 @@ include("dbconnect.php");
         echo "</tr>";
     }
     elseif ($currentURL == "clubPage/" . $clubID){                                                          //Call by specific club
-        $sql_query = "SELECT * FROM clubCalendar INNER JOIN club ON = 'clubCalendar". $clubID."'='club'". $clubID. ";";     //Get specific Events
+        $sql_query = "SELECT * FROM clubcalendar INNER JOIN club ON = 'clubCalendar". $clubID."'='club'". $clubID. ";";     //Get specific Events
     }
     $result = $db->query($sql_query);                               //Process relevant query
     while($row = $result->fetch_array()) {                           //Iterate through Query Results
