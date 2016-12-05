@@ -23,7 +23,7 @@ $rules = array(
     //
     //user auth pages
     //
-    'loginPage' => "/loginPage.php",
+    'loginPage' => "/loginPage",
     'logoutPage' => "/logoutPage",
     'registerPage' => "/registerPage",
     'userDetailsPage' => "/userDetailsPage/(?'userID'[\w\-]+)",
