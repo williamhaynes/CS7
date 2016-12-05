@@ -54,7 +54,7 @@ foreach ($rules as $action => $rule) {
     echo $uri;
     $ext = substr( $uri , -3 );
    echo $ext;
-    if($ext != 'age'){
+    if($ext != 'jpg'){
        header('location:'+$uri);
         ?><script>alert('Im here');</script><?
     }
