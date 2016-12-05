@@ -6,7 +6,6 @@
     include ("scripts/header.php");
     $clubID = $params['clubID'];
     echo "<main>
-
         <!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
         <script>(function(d, s, id) {
@@ -79,6 +78,7 @@
 
             echo "
             <article>
+                <p>{$_SERVER['REQUEST_URI']}</p>
                  <h2 id='clubName'>{$clubName}</h2>
                  <p id='activity'>{$activity}</p>
                  <p id='clubDescription'>{$clubDescription}</p>
