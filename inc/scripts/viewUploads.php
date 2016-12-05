@@ -15,7 +15,7 @@ include_once 'dbconfig.php';
     <p>View Uploads</p>
     <table width="80%" border="1">
         <tr>
-            <th colspan="4">your uploads...<label><a href="/../fileUploadPageClubMedia">upload new files...</a></label></th>
+            <th colspan="4">your uploads...<label><a href="/../scripts/fileUploadPageClubMedia.php">upload new files...</a></label></th>
         </tr>
         <tr>
             <td>File Name</td>
