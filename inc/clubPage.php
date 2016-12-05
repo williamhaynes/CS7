@@ -8,7 +8,7 @@
     echo "<p>".$currentURL."</p>";
     echo "<p>clubPage/" . $clubID."</p>";
     echo "<main>";
-echo "<p>".include ("scripts/calendar.php")."</p>";
+    include ("scripts/calendar.php");
     echo "
 <!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
