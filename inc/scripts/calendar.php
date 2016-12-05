@@ -9,12 +9,14 @@
 include("dbconnect.php");
     session_start();                                                //Allow access to session cookies
     $clubID = $_SESSION['clubID'];                                  //get required session cookie
+    //Get the current URL
+    $currentURL = $_SERVER['REQUEST_URI'];
     $sql_query;                                                     //Initialize query
     if(true){            //If page making call P&S page
-        $sql_query = "SELECT * FROM Club Calender;";                //Get all events
+        $sql_query = "SELECT * FROM clubCalender;";                //Get all events
     }
     else {                                                          //Call by specific club
-        $sql_query = "SELECT * FROM Club Calendar WHERE = '". $clubID."';";     //Get specific Events
+        $sql_query = "SELECT * FROM clubCalendar INNER JOIN club ON = 'clubCalendar". $clubID."'='club'". $clubID. ";";     //Get specific Events
     }
 
     $result = $db->query($sql_query);                               //Process relevant query
@@ -23,11 +25,16 @@ include("dbconnect.php");
             //Echo club name
         echo "<tr>". $row['clubName'] ."</tr>";
             //Echo event name
+        echo "<tr>". $row['eventName'] . "</tr>";
             //Echo event date
+        echo "<tr>". $row['eventStartDate'] . "</tr>";
         //if specific club
             //Echo event name
+        echo "<tr>". $row['eventName'] . "</tr>";
             //Echo event date
+        echo "<tr>". $row['eventStartDate'] . "</tr>";
             //Echo event Description
+        echo "<tr>". $row['eventDescription'] . "</tr>";
     }
 
 
