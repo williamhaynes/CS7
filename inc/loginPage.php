@@ -59,6 +59,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         return $thisUserID;
     }
 
+    function getDisplayName($username, $db){
+        $sql_query = "SELECT displayName FROM User WHERE userName ='" . $username ."' OR emailAddress='". $username ."';";
+        $result = $db->query($sql_query);
+        $thisDisplayName = "";
+        while($row = $result->fetch_array()){
+            $thisDisplayName = $row['displayName'];
+        }
+        return $thisDisplayName;
+    }
     /*
      * If all details match the details stored on the database then print 'success!'
      * Otherwise print 'wrong password or username'
@@ -68,6 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         $_SESSION['username'] = $username; 
         $_SESSION['accessLevel'] = getLevelCode($username, $db);
         $_SESSION['userID'] = getUserID($username, $db);
+        $_SESSION['displayName'] = getDisplayName($username, $db);
         header("location:../clubsAndSocietiesPage");
         print('success!');
     }
