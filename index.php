@@ -12,12 +12,13 @@ $rules = array(
     'Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
     'Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
     'Forms/createHealthAndWellbeingForm' => "/createHealthAndWellbeingForm",
-    'fileUploadPage' => "/fileUploadPage",
-    'scripts/upload' => "/scripts/upload",
     'Forms/mapForm' => "/mapForm",
     'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm",
     'scripts/commentBox' => "/commentBox",
     'scripts/commentToDatabase' => "/commentToDatabase",
+    '/fileUploadPageClubMedia' => "/fileUploadPageClubMedia",
+    'scripts/uploadClubMedia' => "/uploadClubMedia",
+    'scripts/viewUploads' => "/viewUploads",
     //'/scripts/locations' => "/locations",
     //
     //user auth pages

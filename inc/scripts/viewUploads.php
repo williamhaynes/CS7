@@ -12,6 +12,7 @@ include_once 'dbconfig.php';
     <label>File Uploading With PHP and MySql</label>
 </div>
 <div id="body">
+    <p>View Uploads</p>
     <table width="80%" border="1">
         <tr>
             <th colspan="4">your uploads...<label><a href="/../index.php">upload new files...</a></label></th>
@@ -23,7 +24,7 @@ include_once 'dbconfig.php';
             <td>View</td>
         </tr>
         <?php
-        $sql="SELECT * FROM tbl_uploads";
+        $sql="SELECT * FROM clubmedia";
         $result = $db->query($sql);
         while($row = $result->fetch_array())
         {
@@ -33,6 +34,7 @@ include_once 'dbconfig.php';
                 <td><?php echo $row['type'] ?></td>
                 <td><?php echo $row['size'] ?></td>
                 <td><a href="/../uploads/<?php echo $row['file'] ?>" target="_blank">view file</a></td>
+                <td><?php echo $row['userID'] ?></td>
             </tr>
             <?php
         }
