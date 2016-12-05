@@ -5,6 +5,8 @@ session_start();
 include(__DIR__ . "/../scripts/dbconnect.php");
 if (isset($_SESSION['userID'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        $afterSlashUrl = $_SERVER[REQUESTURI];
+        echo "<p>$afterSlashUrl</p>";
         ?>
 
         <p xmlns="http://www.w3.org/1999/html">Tell us what you think!</p>
@@ -16,7 +18,6 @@ if (isset($_SESSION['userID'])) {
         
         <script>
             var url = document.URL;
-            alert('Alert:'+$SERVER[REQUESTURI];);
             document.getElementById('currentUrl').setAttribute('value', url);
         </script>
         <?
