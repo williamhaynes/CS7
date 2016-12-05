@@ -12,30 +12,47 @@ include("dbconnect.php");
     //Get the current URL
     $currentURL = $_SERVER['REQUEST_URI'];
     $sql_query;                                                     //Initialize query
-    if(true){            //If page making call P&S page
-        $sql_query = "SELECT * FROM clubCalender;";                //Get all events
+    if($currentURL == "/clubsAndSocietiesPage"){            //If page making call P&S page
+        $sql_query = "SELECT * FROM clubcalender;";                //Get all events
+        echo "<table id=\"allEventsCalendar\">";
+        echo "<tr>";
+        echo "<th>Date</th>";
+        echo "<th>Event Name</th>";
+        echo "<th>Club</th>";
+        echo "</tr>";
     }
-    else {                                                          //Call by specific club
-        $sql_query = "SELECT * FROM clubCalendar INNER JOIN club ON = 'clubCalendar". $clubID."'='club'". $clubID. ";";     //Get specific Events
+    elseif ($currentURL == "clubPage/" . $clubID){                                                          //Call by specific club
+        $sql_query = "SELECT * FROM clubcalendar INNER JOIN club ON = 'clubCalendar". $clubID."'='club'". $clubID. ";";     //Get specific Events
     }
-
     $result = $db->query($sql_query);                               //Process relevant query
-    while($row = $result->fetch_array()){                           //Iterate through Query Results
+    while($row = $result->fetch_array()) {                           //Iterate through Query Results
         //if all clubs
+        if ($currentURL == "/clubsAndSocietiesPage") {
+            //Implement table row
+            echo "<tr>";
             //Echo club name
-        echo "<tr>". $row['clubName'] ."</tr>";
+            echo "<td>" . $row['clubName'] . "</td>";
             //Echo event name
-        echo "<tr>". $row['eventName'] . "</tr>";
+            echo "<td>" . $row['eventName'] . "</tr>";
             //Echo event date
-        echo "<tr>". $row['eventStartDate'] . "</tr>";
-        //if specific club
-            //Echo event name
-        echo "<tr>". $row['eventName'] . "</tr>";
-            //Echo event date
-        echo "<tr>". $row['eventStartDate'] . "</tr>";
-            //Echo event Description
-        echo "<tr>". $row['eventDescription'] . "</tr>";
+            echo "<td>" . $row['eventStartDate'] . "</td>";
+            //End table row
+            echo "</tr>";
+        }
+        elseif ($currentURL == "clubPage" . $clubID){//if specific club
+            //Implement table row
+            echo "<tr>";
+                //Echo event name
+            echo "<td>". $row['eventName'] . "</td>";
+                //Echo event date
+            echo "<td>". $row['eventStartDate'] . "</td>";
+                //Echo event Description
+            echo "<td>". $row['eventDescription'] . "</td>";
+            //End table row
+            echo "</tr>";
+        }
     }
+    echo "</table>";
 
 
 
