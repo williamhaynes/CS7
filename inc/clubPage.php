@@ -113,8 +113,8 @@
                         document.getElementById('facebookLogo').setAttribute('src','https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png');
                         /*Adding a facebook feed
                          */
-                         alert($facebookUrl);
-                        document.getElementById('facebookFeed').innerHTML('<div class='fb-page' data-href='facebookUrl' data-tabs='timeline' data-small-header='true' data-adapt-container-width='true' data-hide-cover='true' data-show-facepile='true'><blockquote cite='facebookUrl' class='fb-xfbml-parse-ignore'><a href='facebookUrl'>'clubName'</a></blockquote></div>');
+                         alert(facebookUrl);
+                        document.getElementById('facebookFeed').innerHTML('<div class='fb-page' data-href= facebookUrl data-tabs='timeline' data-small-header='true' data-adapt-container-width='true' data-hide-cover='true' data-show-facepile='true'><blockquote cite=facebookUrl class='fb-xfbml-parse-ignore'><a href=facebookUrl>'clubName'</a></blockquote></div>');
                     }else{
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
