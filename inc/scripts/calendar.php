@@ -13,7 +13,7 @@ include("dbconnect.php");
     $currentURL = $_SERVER['REQUEST_URI'];
     $sql_query;                                                     //Initialize query
     if($currentURL == "/clubsAndSocietiesPage"){            //If page making call P&S page
-        $sql_query = "SELECT * FROM clubcalender;";                //Get all events
+        $sql_query = "SELECT * FROM clubcalender INNER JOIN club ON clubcalendar.clubID = club.clubID;";                //Get all events
         echo "<table id=\"allEventsCalendar\">";
         echo "<tr>";
         echo "<th>Date</th>";
