@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $comment = $_POST["comment"];
     $comment = $_POST["currentUrl"];
     $userID = $_SESSION["userID"];
-    echo "<script> alert($userID); </script>";
+    echo "<script> alert($currentUrl); </script>";
     $sql = "INSERT INTO comment (comment,userID) VALUES ('" . $comment . "', '" . $userID . "')";
     if (mysqli_query($db, $sql)) {
         echo "<p>Comment Successful!</p>";
