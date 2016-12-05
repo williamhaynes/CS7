@@ -12,6 +12,7 @@ include_once 'dbconfig.php';
     <label>File Uploading With PHP and MySql</label>
 </div>
 <div id="body">
+    <p>View Uploads</p>
     <table width="80%" border="1">
         <tr>
             <th colspan="4">your uploads...<label><a href="/../index.php">upload new files...</a></label></th>
