@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     $username = $_POST['username'];
     $password = $_POST['password'];
+    
 
     /*
      * A function to check the login details
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         return $thisLevelCode;
     }
     /*
-     * A fuction to get the userID of the user
+     * A function to get the userID of the user
      * Using the database to get the userID
      */
     function getUserID($username, $db){
