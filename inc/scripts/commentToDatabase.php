@@ -8,7 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userID = $_SESSION["userID"];
     $sql = "INSERT INTO comment (comment,clubID,userID) VALUES ('" . $comment . "','" . $clubID . "', '" . $userID . "')";
     if (mysqli_query($db, $sql)) {
-        header("location:/../$currentUrl");
+        echo"<p>$currentUrl</p>";
+        //header("location:/../$currentUrl");
     }else{
         echo "<p>ERROR</p>";
     }
