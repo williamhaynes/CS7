@@ -4,11 +4,8 @@
 session_start();
 include(__DIR__ . "/../scripts/dbconnect.php");
 if (isset($_SESSION['userID'])) {
-    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        $afterSlashUrl = $_SERVER['REQUEST_URI'];
-        $userID = $_SESSION['userID'];
-        ?>
 
+?>
         <form action="/../uploadClubMedia" method="post" enctype="multipart/form-data">
             <input type="file" name="file" />
             <input type="hidden" name="userID" value=<?php print $userID;?> />
@@ -36,7 +33,7 @@ if (isset($_SESSION['userID'])) {
         }
         ?>
         <?
-    }
+
 }else{
     //If not logged in don't show comment box
     echo"<p>Login to comment</p>";
