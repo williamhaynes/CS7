@@ -1,6 +1,5 @@
 <!--Page to register a user to the website, by adding users to the database -->
 
-
 <?php
 
 include("dbconnect.php");
