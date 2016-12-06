@@ -41,7 +41,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         script.innerHTML = eqfeed_callback(
             {"markers": [
                 {
-                    "locationID":"201"
+                    "locationID":"201",
                     "geometry":{"type":"Point","coordinates":[57.052299579818296,-2.169376331396506]},
                     "name":"Road",
                     "address":"Road",
