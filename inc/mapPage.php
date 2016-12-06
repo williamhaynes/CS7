@@ -38,7 +38,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         //script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
 
         var script = document.createElement('script');
-        script.innerHTML = eqfeed_callback( +
+        script.innerHTML = eqfeed_callback(
             {"markers": [
                 {
                     "point":new GLatLng(40.266044,-74.718479),
@@ -70,8 +70,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                     "capacity":"2 to 4 pints",
                     "tv":""
                 },
-            ] }
-            +);
+            ] });
 
         document.getElementsByTagName('head')[0].appendChild(script);
     }
