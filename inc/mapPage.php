@@ -6,6 +6,7 @@ include ("scripts/header.php");
 include(__DIR__ . "/../scripts/dbconnect.php");
 ?>
 <head>
+    <link rel="stylesheet" type="text/css" href="/style/mapStyle.css">
     <style>
         /* Always set the map height explicitly to define the size of the div
          * element that contains the map. */
