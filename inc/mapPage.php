@@ -63,7 +63,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
     window.eqfeed_callback = function(results) {
         //alert(results.markers.length);
         alert(results.markers[0].name);
-        alert(results.markers[0].description);
+
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
             var latLng = new google.maps.LatLng(coords[0],coords[1]);
@@ -72,8 +72,8 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                 map: map
             });
             alert(i);
-
-            var text = results.marker[i].description;
+            alert(results.markers[0].description);
+            var text = (results.marker[i].description);
             alert(text);
 
             var infowindow = new google.maps.InfoWindow({
