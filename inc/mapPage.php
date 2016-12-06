@@ -176,7 +176,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                         '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
                         '</div>' +
                         '<div class="iw-bottom-gradient"></div>' +
-                        '</div>';);
+                        '</div>');
                     infowindow.open(map, this);
                 });
             }
