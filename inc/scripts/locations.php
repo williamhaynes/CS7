@@ -1,16 +1,6 @@
 <?php
 
-// connect to your Azure server and select database (remember you connection details are all on the azure portal
-$db = new mysqli(
-    "eu-cdbr-azure-north-e.cloudapp.net",
-    "b1fa144aa688ff",
-    "4e96e436",
-    "db_pgo_cs7" );
-
-// test our connection
-if ($db->connect_errno) {
-    die ('Connection Failed :'.$db->connect_error );
-}
+include ("../scripts/dbconnect.php");
 
 // Start XML file, create parent node
 
@@ -34,6 +24,7 @@ while ($row = $result->fetch_array()){
     // ADD TO XML DOCUMENT NODE
     $node = $dom->createElement("marker");
     $newnode = $parnode->appendChild($node);
+    $newnode->setAttribute("locationID",$row['locationID']);
     $newnode->setAttribute("name",$row['name']);
     $newnode->setAttribute("address", $row['address']);
     $newnode->setAttribute("lat", $row['lat']);
