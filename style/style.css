@@ -131,6 +131,6 @@ tr{
     border-radius: 5px;
 }
 
-#loginPageTextBox{
+.loginPageTextBox{
     width: 200px;
 }
