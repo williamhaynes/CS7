@@ -33,6 +33,7 @@ include ("scripts/dbconnect.php");
     var arrayOfViewpoints = [];
     var arrayOfAreas = [];
     var arrayOfRoutes = [];
+    var arrayOfPolylines = [];
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
         map = new google.maps.Map(document.getElementById('map'), {
@@ -271,15 +272,15 @@ include ("scripts/dbconnect.php");
                         routeLatLng.push(new google.maps.LatLng(routeArray[i],routeArray[i+1]));
                     }
 
-                    path = new google.maps.Polyline({
+                    arrayOfPolylines.push(new google.maps.Polyline({
                         path: routeLatLng,
                         geodesic: true,
                         strokeColor: '#ff4d46',
                         strokeOpacity: 1.0,
                         strokeWeight: 2
-                    });
+                    }));
 
-                    path.setMap(map);
+                    arrayOfPolylines[arrayOfPolylines.length-1].setMap(map);
                 });
             }
         }
