@@ -264,7 +264,21 @@ include ("scripts/dbconnect.php");
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
                     var routeArray = this.array.split(',');
-                    alert(routeArray);
+                    alert(routeArray.length);
+                    var routeLatLng = [];
+                    for(i=0;i<routeArray.length/2;i=i+2){
+                        routeLatLng.push(new google.maps.LatLng(routeArray[i],routeArray[i+1]));
+                    }
+
+                    path = new google.maps.Polyline({
+                        path: routeLatLng,
+                        geodesic: true,
+                        strokeColor: '#ff4d46',
+                        strokeOpacity: 1.0,
+                        strokeWeight: 2
+                    });
+
+                    path.setMap(map);
                 });
             }
         }

@@ -124,7 +124,7 @@ if (isset($_SESSION['username'])) {
                             path = new google.maps.Polyline({
                                 path: markersLatLng,
                                 geodesic: true,
-                                strokeColor: '#999999',
+                                strokeColor: '#ff4d46',
                                 strokeOpacity: 1.0,
                                 strokeWeight: 2
                             });
