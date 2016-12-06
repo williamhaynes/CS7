@@ -1,5 +1,7 @@
 <?php
 
+// Include dbconnect
+
 include ("../scripts/dbconnect.php");
 
 // Start XML file, create parent node
