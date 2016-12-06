@@ -103,10 +103,10 @@ include ("scripts/header.php");
                         '<div class="iw-outsidecontent">'+
                         '<div class="iw-content">' +
                         '<div class="iw-subTitle">Description</div>' +
-                        '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                        '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
                         this.description+
                         '<div class="iw-subTitle">Address</div>' +
-                        '<p>'+this.address+'</p>'+
+                        this.address+
                         '</div>' +
                         '</div>' +
                         '</div>');
