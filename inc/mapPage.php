@@ -3,7 +3,7 @@ System Requirements.-->
 
 <?php
 include ("scripts/header.php");
-include(__DIR__ . "/../scripts/dbconnect.php");
+
 ?>
 <head>
     <link rel="stylesheet" type="text/css" href="/style/mapStyle.css">
@@ -45,6 +45,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         script.innerHTML = eqfeed_callback(
             {"markers": [
                 <?
+                include(__DIR__ . "/../scripts/dbconnect.php");
                 //Takes all database information from the Genre TABLE.
                 $sql_queryLandmarks = 'SELECT * FROM location WHERE typeID=1';
 
