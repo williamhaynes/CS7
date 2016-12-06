@@ -2,13 +2,6 @@
 <?php
 include ("../scripts/header.php");
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Events Form</title>
-</head>
-
 <body>
 <p>Oh my my my my my my</p>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
@@ -22,10 +15,10 @@ include ("../scripts/header.php");
     </form>
 
 </body>
-</html>
 <?php
 
 include ("../scripts/footer.php");
+/*
 //include database
 include ("../scripts/dbconnect.php");
 
@@ -41,5 +34,5 @@ if (mysqli_query($db, $sql)) {
     header("location:/clubPage/$clubID");
 } else {
     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
-}
+}*/
 ?>
