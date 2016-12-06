@@ -24,6 +24,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
 <div id="map"></div>
 <script>
     var map;
+    var arrayOfMarkers = [];
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
         map = new google.maps.Map(document.getElementById('map'), {
@@ -74,7 +75,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
             var latLng = new google.maps.LatLng(coords[0],coords[1]);
-            var "results.markers[i].locationID" = new google.maps.Marker({
+            arrayOfMarkers[i] = new google.maps.Marker({
                 position: latLng,
                 map: map
             });
@@ -83,7 +84,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                content:  text
             });
             marker.addListener('click', function(){
-                infowindow.open(map, "results.markers[i].locationID");
+                infowindow.open(map, arrayOfMarkers[i]);
             });
         }
     }
