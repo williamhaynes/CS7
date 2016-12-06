@@ -81,7 +81,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                content:  text
             });
             marker.addListener('click', function(){
-                infowindow.open(map, arrayOfMarkers[i]);
+                infowindow.open(map, arrayOfMarkers.pop());
             });
         }
     }
