@@ -79,7 +79,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
             //Trying to add a info window
             var infowindow = new google.maps.InfoWindow({
                 content: "loading...",
-                maxWidth: 350;
+                maxWidth: 350
             });
 
             // *
