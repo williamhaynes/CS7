@@ -8,9 +8,9 @@ if($_SESSION['accessLevel'] == '31') {
     include(__DIR__ . "/../scripts/header.php");
     function translateVerified($verified){
         switch ($verified) {
-            case 0:
-                return "False";
             case 1:
+                return "False";
+            case 0:
                 return "True";
             default:
                 return "False";
