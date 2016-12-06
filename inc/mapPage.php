@@ -62,7 +62,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
     // set of coordinates.
     window.eqfeed_callback = function(results) {
         //alert(results.markers.length);
-        alert(results.markers[0].name);
+
 
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
