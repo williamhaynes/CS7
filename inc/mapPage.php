@@ -29,7 +29,10 @@ include ("scripts/dbconnect.php");
 <div id="map"></div>
 <script>
     var map;
-    var arrayOfMarkers = [];
+    var arrayOfLandmarks = [];
+    var arrayOfViewpoints = [];
+    var arrayOfAreas = [];
+    var arrayOfRoutes = [];
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
         map = new google.maps.Map(document.getElementById('map'), {
@@ -79,7 +82,7 @@ include ("scripts/dbconnect.php");
                         //"markerImage":"images/red.png",
                     },
                 <?}?>
-                    ],"area":[
+                    ],"areas":[
                 <?
                 $sql_queryAreas = 'SELECT * FROM location WHERE typeID = 3';
                 $resultAreas = $db->query($sql_queryAreas);
@@ -93,7 +96,7 @@ include ("scripts/dbconnect.php");
                         //"markerImage":"images/red.png",
                     },
                 <?}?>
-                    ],"route":[
+                    ],"routes":[
                 <?
                 $sql_queryRoutes = 'SELECT * FROM location WHERE typeID = 4';
                 $resultRoutes = $db->query($sql_queryRoutes);
@@ -133,10 +136,12 @@ include ("scripts/dbconnect.php");
                 infowindow.close();
             });
 
+
+            //Adding landmarks to map
             for (var i = 0; i < results.landmarks.length; i++) {
                 var coords = results.landmarks[i].geometry.coordinates;
                 var latLng = new google.maps.LatLng(coords[0],coords[1]);
-                arrayOfMarkers.push(new google.maps.Marker({
+                arrayOfLandmarks.push(new google.maps.Marker({
                     position: latLng,
                     map: map,
                     title: results.landmarks[i].name,
@@ -144,7 +149,7 @@ include ("scripts/dbconnect.php");
                     address: results.landmarks[i].address
                 }));
 
-                arrayOfMarkers[i].addListener('click', function(){
+                arrayOfLandmarks[i].addListener('click', function(){
                     infowindow.setContent( '<div id="iw-container">' +
                         '<div class="iw-title">'+this.title+'</div>' +
                             '<div class="iw-outsidecontent">'+
@@ -156,6 +161,96 @@ include ("scripts/dbconnect.php");
                                     this.address+
                                 '</div>' +
                             '</div>' +
+                        '</div>');
+                    //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
+                    infowindow.open(map, this);
+                });
+            }
+
+            //Adding viewpoints to map
+            for (var i = 0; i < results.viewpoints.length; i++) {
+                var coords = results.viewpoints[i].geometry.coordinates;
+                var latLng = new google.maps.LatLng(coords[0],coords[1]);
+                arrayOfViewpoints.push(new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    title: results.viewpoints[i].name,
+                    description: results.viewpoints[i].description,
+                    address: results.viewpoints[i].address
+                }));
+
+                arrayOfViewpoints[i].addListener('click', function(){
+                    infowindow.setContent( '<div id="iw-container">' +
+                        '<div class="iw-title">'+this.title+'</div>' +
+                        '<div class="iw-outsidecontent">'+
+                        '<div class="iw-content">' +
+                        '<div class="iw-subTitle">Description</div>' +
+                        '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                        this.description+
+                        '<div class="iw-subTitle">Address</div>' +
+                        this.address+
+                        '</div>' +
+                        '</div>' +
+                        '</div>');
+                    //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
+                    infowindow.open(map, this);
+                });
+            }
+
+            //Adding areas to map
+            for (var i = 0; i < results.areas.length; i++) {
+                var coords = results.areas[i].geometry.coordinates;
+                var latLng = new google.maps.LatLng(coords[0],coords[1]);
+                arrayOfAreas.push(new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    title: results.areas[i].name,
+                    description: results.areas[i].description,
+                    address: results.areas[i].address
+                }));
+
+                arrayOfAreas[i].addListener('click', function(){
+                    infowindow.setContent( '<div id="iw-container">' +
+                        '<div class="iw-title">'+this.title+'</div>' +
+                        '<div class="iw-outsidecontent">'+
+                        '<div class="iw-content">' +
+                        '<div class="iw-subTitle">Description</div>' +
+                        '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                        this.description+
+                        '<div class="iw-subTitle">Address</div>' +
+                        this.address+
+                        '</div>' +
+                        '</div>' +
+                        '</div>');
+                    //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
+                    infowindow.open(map, this);
+                });
+            }
+
+            //Adding routes to map
+            for (var i = 0; i < results.routes.length; i++) {
+                var coords = results.routes[i].geometry.coordinates;
+                var latLng = new google.maps.LatLng(coords[0],coords[1]);
+                arrayOfRoutes.push(new google.maps.Marker({
+                    position: latLng,
+                    map: map,
+                    title: results.routes[i].name,
+                    description: results.routes[i].description,
+                    address: results.routes[i].address
+                }));
+
+                arrayOfRoutes[i].addListener('click', function(){
+                    infowindow.setContent( '<div id="iw-container">' +
+                        '<div class="iw-title">'+this.title+'</div>' +
+                        '<div class="iw-outsidecontent">'+
+                        '<div class="iw-content">' +
+                        '<div class="iw-subTitle">Description</div>' +
+                        '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                        this.description+
+                        '<div class="iw-subTitle">Address</div>' +
+                        this.address+
+                        '</div>' +
+                        '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
