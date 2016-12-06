@@ -9,6 +9,10 @@
     //echo "<p>clubPage/" . $clubID."</p>";
     echo "<main>";
     include ("scripts/calendar.php");
+    if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
+        echo "<a id='addEventLink' href='{$clubID}/eventsForm'>Add Event</a>";
+    } else {
+    }
     echo "
 <!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
