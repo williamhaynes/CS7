@@ -24,6 +24,37 @@ include(__DIR__ . "/../scripts/dbconnect.php");
 <body>
 <div id="map"></div>
 <script>
+
+
+    // Create a <script> tag and set the USGS URL as the source.
+    //var script = document.createElement('script');
+    // This example uses a local copy of the GeoJSON stored at
+    // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+    //script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+
+    var script = document.createElement('script');
+    script.innerHTML = eqfeed_callback(
+        {"markers": [
+            {
+                "locationID":"201",
+                "geometry":{"type":"Point","coordinates":[57.052299579818296,-2.169376331396506]},
+                "name":"Road",
+                "address":"Road",
+                "description":"<p>Road</p>"
+                //"markerImage":"images/red.png",
+            },
+            {
+                "locationID":"301",
+                "geometry":{"type":"Point","coordinates":[57.062299579818400,-2.569376331396506]},
+                "name":"Street",
+                "address":"Street",
+                "description":"<p>Street</p>"
+                //"markerImage":"images/red.png",
+            },
+        ] });
+
+    document.getElementsByTagName('head')[0].appendChild(script);
+
     var map;
     var arrayOfMarkers = [];
     function initMap() {
@@ -37,34 +68,6 @@ include(__DIR__ . "/../scripts/dbconnect.php");
 
 
 
-        // Create a <script> tag and set the USGS URL as the source.
-        //var script = document.createElement('script');
-        // This example uses a local copy of the GeoJSON stored at
-        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-        //script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
-
-        var script = document.createElement('script');
-        script.innerHTML = eqfeed_callback(
-            {"markers": [
-                {
-                    "locationID":"201",
-                    "geometry":{"type":"Point","coordinates":[57.052299579818296,-2.169376331396506]},
-                    "name":"Road",
-                    "address":"Road",
-                    "description":"<p>Road</p>"
-                    //"markerImage":"images/red.png",
-                },
-                {
-                    "locationID":"301",
-                    "geometry":{"type":"Point","coordinates":[57.062299579818400,-2.569376331396506]},
-                    "name":"Street",
-                    "address":"Street",
-                    "description":"<p>Street</p>"
-                    //"markerImage":"images/red.png",
-                },
-            ] });
-
-        document.getElementsByTagName('head')[0].appendChild(script);
 
 
 
