@@ -263,8 +263,8 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
-                    $routeArray = explode(',', this.array);
-                    print($routeArray);
+                    var routeArray = this.array.split(',');
+                    alert(routeArray);
                 });
             }
         }
