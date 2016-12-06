@@ -59,7 +59,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
     window.eqfeed_callback = function(results) {
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
-            var latLng = new google.maps.LatLng(coords[1],coords[0]);
+            var latLng = new google.maps.LatLng(coords[0],coords[1]);
             var marker = new google.maps.Marker({
                 position: latLng,
                 map: map
