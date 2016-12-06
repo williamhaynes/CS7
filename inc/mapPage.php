@@ -110,6 +110,7 @@ include ("scripts/dbconnect.php");
                         "description": "<?php print $row['description'];?>",
                     <?
                         $sql_querySpecificRoute = 'SELECT * FROM route WHERE locationID = $row[\'locationID\']';
+                        echo "$sql_querySpecificRoute";
                         $resultSpecificRoute = $db->query($sql_querySpecificRoute);
                         while ($rowRoute = $resultSpecificRoute->fetch_array()) {
                     ?>
