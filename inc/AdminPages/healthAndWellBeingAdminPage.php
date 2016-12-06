@@ -6,6 +6,16 @@ session_start();
 if($_SESSION['accessLevel'] == '31') {
     //Include Header
     include(__DIR__ . "/../scripts/header.php");
+    function translateVerified($verified){
+        switch ($verified) {
+            case 0:
+                return "False";
+            case 1:
+                return "True";
+            default:
+                return "False";
+        }
+    }
     ?>
     <main>
         <script>
@@ -86,7 +96,7 @@ if($_SESSION['accessLevel'] == '31') {
                 echo "<tr class='hoverableRowsAndColumns' onclick=\"location.href='" . "healthAndWellbeingForm/{$itemID}'\"><td class='hoverableSpecificRowAndColumn'>" . $row['itemID'] . "</td>";
                 echo "<td class='hoverableSpecificRowAndColumn'>" . $row['title'] . "</td>";
                 echo "<td class='hoverableSpecificRowAndColumn'>" . $row['content'] . "</td>";
-                echo "<td class='hoverableSpecificRowAndColumn'>" . $row['verified'] . "</td>";
+                echo "<td class='hoverableSpecificRowAndColumn'>" . translateVerified($row['verified']) . "</td>";
                 echo "<td class='hoverableSpecificRowAndColumn'>". $row['authorName']."</td>";
                 echo "</tr>";
             }
