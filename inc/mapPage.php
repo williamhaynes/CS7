@@ -101,17 +101,17 @@ include ("scripts/header.php");
                 arrayOfMarkers[i].addListener('click', function(){
                     infowindow.setContent( '<div id="iw-container">' +
                         '<div class="iw-title">'+this.title+'</div>' +
-                        '<div class="iw-outsidecontent">'+
-                        '<div class="iw-content">' +
-                        '<div class="iw-subTitle">Description</div>' +
-                        '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                        this.description+
-                        '<div class="iw-subTitle">Address</div>' +
-                        this.address+
-                        '</div>' +
-                        '</div>' +
+                            '<div class="iw-outsidecontent">'+
+                                '<div class="iw-content">' +
+                                    '<div class="iw-subTitle">Description</div>' +
+                                    '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                                    this.description+
+                                    '<div class="iw-subTitle">Address</div>' +
+                                    this.address+
+                                '</div>' +
+                            '</div>' +
                         '</div>');
-                    $("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
+                    //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
                 });
             }
