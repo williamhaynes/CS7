@@ -4,7 +4,6 @@ when the latest events are for each club and society.-->
 
 <!--Allows user to view all verified health and wellbeing blog posts as per system requirements. Site Admin will have
 overlay to authorise/reject blog posts. As per System Requirements.-->
-
 <?php
 include ("scripts/dbconnect.php");
 include ("scripts/header.php");
@@ -58,7 +57,6 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             }
         }
     </script>
-
     <h2>Clubs and Societies of Portlethen Go!</h2>
     <p>Below is a list of all Clubs and Societies</p>
     <table id="clubsTable">
