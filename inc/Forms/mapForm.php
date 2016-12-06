@@ -141,7 +141,8 @@ if (isset($_SESSION['username'])) {
             <div id='map' style='width: 1000px; height: 600px'></div>
             <form action='' method='post' id='mapForm'>
                 <p>Place Name: <input size='20' type='text' name='name' placeholder='Place Name'></p>
-                <p>Address: <input size='20' type='text' name='address' placeholder='Place Name'></p>
+                <p>Address: <input size='20' type='text' name='address' placeholder='Address'></p>
+                <p>Description: <input size='20' type='text' name='description' placeholder='Description'></p>
                 <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='57.062661319658496'></p>
                 <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='-2.1295508919433814'></p>
                 <p>latlngString: <input size='20' type='text' id='latlngString' name='latlngString'></p>
@@ -171,13 +172,14 @@ if (isset($_SESSION['username'])) {
             include (__DIR__ . "/../scripts/dbconnect.php");
             $name = $_POST["name"];
             $address = $_POST["address"];
+            $description = $_POST["description"];
             $lat = $_POST["lat"];
             $lng = $_POST["lng"];
             $typeID = $_POST["typeID"];
             $latlngString = $_POST["latlngString"];
             //IF TYPEID = ROUTE
             if ($typeID==4){
-                $sql = "INSERT INTO location (name, address, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
+                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
                 if (mysqli_query($db, $sql)) {
                     $sqlGetLocationID = "SELECT locationID FROM location WHERE name ='" . $name . "' AND address = '" . $address ."'";
                     $result = $db->query($sqlGetLocationID);
