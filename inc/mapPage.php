@@ -75,13 +75,18 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
             var latLng = new google.maps.LatLng(coords[0],coords[1]);
-            arrayOfMarkers.push(new google.maps.Marker({position: latLng, map: map}));
-            var text = (results.markers[i].description);
+            arrayOfMarkers.push(new google.maps.Marker({
+                position: latLng,
+                map: map,
+                title: results.markers[i].name,
+                description: results.markers[i].description
+            }));
+            var text = "Loading...";
             var infowindow = new google.maps.InfoWindow({
                content:  text
             });
             arrayOfMarkers[i].addListener('click', function(){
-                infowindow.open(map, arrayOfMarkers[i]);
+                infowindow.open(map, this);
             });
         }
     }
