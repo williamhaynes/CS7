@@ -31,6 +31,7 @@ if($_SESSION['accessLevel']==31) {
                     <p>Content: </p> <textarea name="content"> <?php print $row['content'];?></textarea>
                     <p>Author: <input type="text" name="authorName" value="<?php print $row['authorName'];?>" placeholder="Author Name"></p>
                     <p>Verified: <input type="checkbox" name="verified"></p>
+                    <?php echo "<p>". $row['verified'] ."</p>"?>
                     <p><input type="submit" value='Submit'></p>
                 </form>
             </main>
