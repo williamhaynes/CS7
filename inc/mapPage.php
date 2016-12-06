@@ -46,9 +46,8 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                     "geometry":{"type":"Point","coordinates":[57.052299579818296,-2.169376331396506]},
                     "name":"Road",
                     "address":"Road",
+                    "description":"<p>Road</p>"
                     //"markerImage":"images/red.png",
-                    //"information": "Linux users group meets second Wednesday of each month.",
-                    "description":"<p>Road</p>",
                 },
             ] });
 
