@@ -34,10 +34,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         });
 
 
-        //Trying to add a info window
-        var infowindow = new google.maps.InfoWindow({
-            content: "loading..."
-        });
+
 
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
@@ -77,6 +74,11 @@ include(__DIR__ . "/../scripts/dbconnect.php");
     // set of coordinates.
     window.eqfeed_callback = function(results) {
         //alert(results.markers.length);
+
+        //Trying to add a info window
+        var infowindow = new google.maps.InfoWindow({
+            content: "loading..."
+        });
 
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
