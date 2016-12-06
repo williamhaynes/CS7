@@ -23,7 +23,12 @@ body{
     padding-bottom: 34px;
 }
 
-
+/*Landing Page Text*/
+#homePageText{
+    font-family: 'Dosis', sans-serif;
+    font-size: 300%;
+    text-align: center;
+}
 /* NAVIGATION BAR*/
 nav ul {
     font-family: 'Dosis', sans-serif;

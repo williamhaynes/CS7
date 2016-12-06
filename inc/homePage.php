@@ -2,7 +2,7 @@
 include("inc/scripts/header.php");
 ?>
     <main>
-        <p>HOME PAGE</p>
+        <p id="homePageText">Portlethen Go</p>
     </main>
 <?php
 include("inc/scripts/footer.php");
