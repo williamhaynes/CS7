@@ -102,7 +102,7 @@ while ($row = $result->fetch_array()) {
     $clubID = $row['clubID'];
     $clubName = $row['clubName'];
     $index2 = $row['genreID'];
-echo "<tr class='hoverableRowsAndColumns' onclick=\"location.href='" . "clubPage/{$clubID}'\"><td class='hoverableSpecificRowAndColumn'>" . $clubName . "</td>";
+echo "<tr class='hoverableRowsAndColumns' onclick=\"location.href='" . "/clubPage/{$clubID}'\"><td class='hoverableSpecificRowAndColumn'>" . $clubName . "</td>";
 echo "<td class='hoverableSpecificRowAndColumn'>" . $genreArray[$index2] . "</td>"; //the name row contains the name of the genre
 echo "<td class='hoverableSpecificRowAndColumn'>" . $row['clubDescription'] . "</td>";
 echo "</tr>";
