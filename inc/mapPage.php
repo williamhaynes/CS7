@@ -113,7 +113,7 @@ include ("scripts/dbconnect.php");
                         $resultSpecificRoute = $db->query($sql_querySpecificRoute);
                         while ($rowRoute = $resultSpecificRoute->fetch_array()) {
                     ?>
-                        "array": "<?php print $row['array'];?>"
+                        "array": "<?php print $rowRoute['array'];?>"
                         //"markerImage":"images/red.png",
                     },
                 <?}
