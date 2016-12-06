@@ -12,7 +12,7 @@ $parnode = $dom->appendChild($node);
 
 // Select all the rows in the markers table
 
-$query = "SELECT * FROM location WHERE 1";
+$query = "SELECT * FROM location";
 $result = $db->query($query);
 if (!$result) {
     die('Nothing in result: ');
