@@ -43,27 +43,28 @@ include(__DIR__ . "/../scripts/dbconnect.php");
 
         var script = document.createElement('script');
         script.innerHTML = eqfeed_callback(
-            {
-                "markers": [
-                    {
-                        "locationID": "201",
-                        "geometry": {"type": "Point", "coordinates": [57.052299579818296, -2.169376331396506]},
-                        "name": "Road",
-                        "address": "Road",
-                        "description": "<p>Road</p>"
-                        //"markerImage":"images/red.png",
-                    },
-                    {
-                        "locationID": "301",
-                        "geometry": {"type": "Point", "coordinates": [57.062299579818400, -2.569376331396506]},
-                        "name": "Street",
-                        "address": "Street",
-                        "description": "<p>Street</p>"
-                        //"markerImage":"images/red.png",
-                    },
-                ]
-            });
+            {"markers": [
+                <?
+                //Takes all database information from the Genre TABLE.
+                $sql_queryLandmarks = 'SELECT * FROM location WHERE typeID=1';
 
+                //Process the query
+                $resultLandmarks = $db->query($sql_queryLandmarks);
+
+                // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
+                while ($row = $resultLandmarks->fetch_array()) {
+                ?>
+                    {
+                        "locationID": "<?php print $row['locationID'];?>",
+                        "geometry": {"type": "Landmark", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
+                        "name": "<?php print $row['name'];?>",
+                        "address": "<?php print $row['address'];?>",
+                        "description": "<?php print $row['description'];?>"
+                        //"markerImage":"images/red.png",
+                    },
+                <?}?>
+            ]
+            });
         document.getElementsByTagName('head')[0].appendChild(script);
     }
 
