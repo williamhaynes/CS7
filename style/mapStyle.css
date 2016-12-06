@@ -37,6 +37,7 @@
     max-height: 140px;
     overflow-y: auto;
     overflow-x: hidden!important;
+    overflow: scroll;
     direction:rtl;
     unicode-bidi:bidi-override;
 }
