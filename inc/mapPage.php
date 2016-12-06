@@ -43,7 +43,7 @@ include ("scripts/header.php");
 
         var script = document.createElement('script');
         script.innerHTML = eqfeed_callback(
-            {"markers": [
+            {"landmarks": [
                 <?
                 include ("scripts/dbconnect.php");
                 //Takes all database information from the Genre TABLE.
@@ -52,21 +52,59 @@ include ("scripts/header.php");
                 $resultLandmarks = $db->query($sql_queryLandmarks);
                 // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
                 while ($row = $resultLandmarks->fetch_array()) {
-
-                ?>
+                    if ($row['typeID']==1){
+                    ?>
+                        {
+                            "locationID": "<?php print $row['locationID'];?>",
+                            "geometry": {"type": "Landmark", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
+                            "name": "<?php print $row['name'];?>",
+                            "address": "<?php print $row['address'];?>",
+                            "description": "<?php print $row['description'];?>"
+                            //"markerImage":"images/red.png",
+                        },
+                    <?}?>
+                    ],"viewpoints":[
+                        <?if ($row['typeID']==2){
+                    ?>
                     {
                         "locationID": "<?php print $row['locationID'];?>",
-                        "geometry": {"type": "Landmark", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
+                        "geometry": {"type": "Viewpoint", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
                         "name": "<?php print $row['name'];?>",
                         "address": "<?php print $row['address'];?>",
                         "description": "<?php print $row['description'];?>"
                         //"markerImage":"images/red.png",
                     },
-                <?}?>
-            ]
+                    <?}?>
+                    ],"area":[
+                    <?if ($row['typeID']==3){
+                    ?>
+                    {
+                        "locationID": "<?php print $row['locationID'];?>",
+                        "geometry": {"type": "Area", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
+                        "name": "<?php print $row['name'];?>",
+                        "address": "<?php print $row['address'];?>",
+                        "description": "<?php print $row['description'];?>"
+                        //"markerImage":"images/red.png",
+                    },
+                    <?}?>
+                    ],"route":[
+                    <?if ($row['typeID']==4){
+                    ?>
+                    {
+                        "locationID": "<?php print $row['locationID'];?>",
+                        "geometry": {"type": "Route", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
+                        "name": "<?php print $row['name'];?>",
+                        "address": "<?php print $row['address'];?>",
+                        "description": "<?php print $row['description'];?>"
+                        //"markerImage":"images/red.png",
+                    },
+                    <?}
+                }?>
+                ]
             });
         document.getElementsByTagName('head')[0].appendChild(script);
     }
+
 
 
 
@@ -87,15 +125,15 @@ include ("scripts/header.php");
                 infowindow.close();
             });
 
-            for (var i = 0; i < results.markers.length; i++) {
-                var coords = results.markers[i].geometry.coordinates;
+            for (var i = 0; i < results.landmarks.length; i++) {
+                var coords = results.landmarks[i].geometry.coordinates;
                 var latLng = new google.maps.LatLng(coords[0],coords[1]);
                 arrayOfMarkers.push(new google.maps.Marker({
                     position: latLng,
                     map: map,
-                    title: results.markers[i].name,
-                    description: results.markers[i].description,
-                    address: results.markers[i].address
+                    title: results.landmarks[i].name,
+                    description: results.landmarks[i].description,
+                    address: results.landmarks[i].address
                 }));
 
                 arrayOfMarkers[i].addListener('click', function(){
@@ -126,5 +164,3 @@ include ("scripts/header.php");
 
 include ("scripts/footer.php");
 ?>
-
-
