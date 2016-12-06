@@ -47,7 +47,7 @@ include ("scripts/header.php");
                 <?
                 include ("scripts/dbconnect.php");
                 //Takes all database information from the Genre TABLE.
-                $sql_queryLandmarks = 'SELECT * FROM location';
+                $sql_queryLandmarks = 'SELECT * FROM location WHERE typeID = 1';
                 //Process the query
                 $resultLandmarks = $db->query($sql_queryLandmarks);
                 // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
