@@ -22,6 +22,10 @@ include ("scripts/dbconnect.php");
     </style>
 </head>
 <body>
+<? if($_SESSION['accessLevel'] == 31||$_SESSION['accessLevel'] == 11){
+    echo "<a href='/mapForm'>Map Form</a>";
+}?>
+
 <div id="map"></div>
 <script>
     var map;
@@ -165,9 +169,7 @@ include ("scripts/dbconnect.php");
 </script>
 
 <!-- Below this line doesn't have anything to do with map-->
-<? if($_SESSION['accessLevel'] == 31||$_SESSION['accessLevel'] == 11){
-    echo "<a href='/mapForm'>Map Form</a>";
-}?>
+
 </body>
 <?
 
