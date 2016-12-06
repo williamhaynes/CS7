@@ -65,15 +65,16 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
             var latLng = new google.maps.LatLng(coords[0],coords[1]);
-            var result.marker[i].locationID = new google.maps.Marker({
+
+            results.marker[i].locationID = new google.maps.Marker({
                 position: latLng,
                 map: map
             });
             var infowindow = new google.maps.InfoWindow({
-               content:  result.marker[i].description
+               content:  results.marker[i].description
             });
-            result.marker[i].locationID.addListener('click', function(){
-                infowindow.open(map, result.marker[i].locationID);
+            results.marker[i].locationID.addListener('click', function(){
+                infowindow.open(map, results.marker[i].locationID);
             });
         }
     }
