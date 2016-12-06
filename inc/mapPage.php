@@ -114,9 +114,7 @@ include ("scripts/dbconnect.php");
                         $resultSpecificRoute = $db->query($sql_querySpecificRoute);
                         while ($rowRoute = $resultSpecificRoute->fetch_array()) {
                     ?>
-                        var tempArray = ("<?php print $rowRoute['array']?>");
-                        tempArray.split(",");
-                        "array": tempArray
+                        "array": "<?php print $rowRoute['array'];?>"
                         //"markerImage":"images/red.png",
                     },
                 <?}
@@ -265,6 +263,8 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
+                    $routeArray = explode(',', this.array);
+                    print($routeArray);
                 });
             }
         }
