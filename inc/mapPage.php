@@ -163,6 +163,11 @@ include ("scripts/dbconnect.php");
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE&callback=initMap">
 </script>
+
+<!-- Below this line doesn't have anything to do with map-->
+<? if($_SESSION['accessLevel'] == 31||$_SESSION['accessLevel'] == 11){
+    echo "<a href='/mapForm'>Map Form</a>";
+}?>
 </body>
 <?
 
