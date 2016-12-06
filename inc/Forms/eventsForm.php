@@ -10,6 +10,7 @@ include ("../scripts/header.php");
 </head>
 
 <body>
+<p>Oh my my my my my my</p>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
     <script>tinymce.init({selector: 'textarea'});</script>
     <form action="eventsForm.php" method="post">
