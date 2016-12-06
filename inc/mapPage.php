@@ -64,6 +64,9 @@ include(__DIR__ . "/../scripts/dbconnect.php");
     }
 
     //Trying to add a info window
+    var infowindow = new google.maps.InfoWindow({
+        content: "loading..."
+    });
 
 
 
@@ -78,14 +81,12 @@ include(__DIR__ . "/../scripts/dbconnect.php");
             arrayOfMarkers.push(new google.maps.Marker({
                 position: latLng,
                 map: map,
-                title: results.markers[i].name
+                title: results.markers[i].name,
+                description: results.markers[i].description
             }));
 
-            var infowindow = new google.maps.InfoWindow({
-               content:  results.markers[i].description
-            });
-
             arrayOfMarkers[i].addListener('click', function(){
+                infowindow.setContent(this.description);
                 infowindow.open(map, this);
             });
         }
