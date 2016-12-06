@@ -143,6 +143,7 @@ include ("scripts/dbconnect.php");
             // Event that closes the Info Window with a click on the map
             google.maps.event.addListener(map, 'click', function() {
                 infowindow.close();
+                arrayOfPolylines[0].setVisible(false);
             });
 
 
@@ -280,7 +281,7 @@ include ("scripts/dbconnect.php");
                         strokeWeight: 2
                     }));
 
-                    arrayOfPolylines[arrayOfPolylines.length-1].setMap(map);
+                    arrayOfPolylines[0].setMap(map);
                 });
             }
         }
