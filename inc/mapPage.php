@@ -68,7 +68,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                 position: latLng,
                 map: map
             });
-            var text = results.marker[i].description.getElementsByTagName('p')[0].innerHTML;
+            var text = results.marker[i].description.getElementsByTagName('p').innerHTML;
             alert(text);
             var infowindow = new google.maps.InfoWindow({
                content:  text
