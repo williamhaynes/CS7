@@ -10,10 +10,11 @@ $rules = array(
     'mapPage' => "/mapPage",
     'clubPage' => "/clubPage/(?'clubID'[\w\-]+)",
     'Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
-    'Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
+    'Forms/healthAndWellbeingForm' => "/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
     'Forms/createHealthAndWellbeingForm' => "/createHealthAndWellbeingForm",
     'Forms/mapForm' => "/mapForm",
-    'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm",
+    'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm/",
+    //verifyHealthAndWellbeingForm/{$itemID}
     'scripts/commentBox' => "/commentBox",
     'scripts/commentToDatabase' => "/commentToDatabase",
     '/fileUploadPageClubMedia' => "/fileUploadPageClubMedia",

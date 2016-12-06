@@ -83,7 +83,7 @@ if($_SESSION['accessLevel'] == '31') {
             // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
             while ($row = $result->fetch_array()) {
                 $itemID = $row['itemID'];
-                echo "<tr class='hoverableRowsAndColumns' onclick=\"location.href='" . "verifyHealthAndWellbeingForm/{$itemID}'\"><td class='hoverableSpecificRowAndColumn'>" . $row['itemID'] . "</td>";
+                echo "<tr class='hoverableRowsAndColumns' onclick=\"location.href='" . "healthAndWellbeingForm/{$itemID}'\"><td class='hoverableSpecificRowAndColumn'>" . $row['itemID'] . "</td>";
                 echo "<td class='hoverableSpecificRowAndColumn'>" . $row['title'] . "</td>";
                 echo "<td class='hoverableSpecificRowAndColumn'>" . $row['content'] . "</td>";
                 echo "<td class='hoverableSpecificRowAndColumn'>" . $row['verified'] . "</td>";
