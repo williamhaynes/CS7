@@ -30,8 +30,9 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                     request.open('GET', url, true);
                     request.send(null);
                 }
-                downloadUrl("__DIR__ . /../scripts/locations.php", function(data) {
+                downloadUrl("/scripts/locations.php", function(data) {
                     var xml = data.responseXML;
+                    alert(xml);
                     var markers = xml.documentElement.getElementsByTagName("marker");
                     for (var i = 0; i < markers.length; i++) {
                         var point = new google.maps.LatLng(
@@ -48,7 +49,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         <body onload='load()'>
              <div id='map' style='width: 1000px; height: 600px'></div>
         <p>
-            Some random text with more
+            Some random text
         </p>
         </body>
     </main>
