@@ -19,16 +19,6 @@ if($_SESSION['accessLevel']==31) {
             $result = $db->query($sql);
             // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
             while($row = $result->fetch_array()) {
-                //This code is creating unneccessary calls to database and creating duplicate variables - could be cleaned up.
-                $title = $row['title'];
-                $_SESSION['title'] = $title;
-                $content = $row['content'];
-                $_SESSION['content'] = $content;
-                $verified = $row['verified'];
-                $_SESSION['verified'] = $verified;
-                $authorName = $row['authorName'];
-                $_SESSION['authorName'] = $authorName;
-            }
             ?>
         <!-- Creates form which allows Health and Wellbeing article to be manipulated/edited -->
             <main>
@@ -45,7 +35,7 @@ if($_SESSION['accessLevel']==31) {
                 </form>
             </main>
 
-                <?
+                <?}
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
