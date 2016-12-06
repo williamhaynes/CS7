@@ -13,7 +13,7 @@
 
 }
 #iw-container {
-
+    min-width: 500px;
 }
 #iw-container .iw-title {
     font-family: 'Open Sans Condensed', sans-serif;
