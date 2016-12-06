@@ -49,6 +49,14 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                     "description":"<p>Road</p>"
                     //"markerImage":"images/red.png",
                 },
+                {
+                    "locationID":"301",
+                    "geometry":{"type":"Point","coordinates":[57.052299579818400,-2.169376331396506]},
+                    "name":"Street",
+                    "address":"Street",
+                    "description":"<p>Street</p>"
+                    //"markerImage":"images/red.png",
+                },
             ] });
 
         document.getElementsByTagName('head')[0].appendChild(script);
@@ -62,8 +70,6 @@ include(__DIR__ . "/../scripts/dbconnect.php");
     // set of coordinates.
     window.eqfeed_callback = function(results) {
         //alert(results.markers.length);
-        var ""'coord'+'map'" = hi;
-        alert(coordmap);
 
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
