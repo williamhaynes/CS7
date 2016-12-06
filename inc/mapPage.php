@@ -74,7 +74,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
             var latLng = new google.maps.LatLng(coords[0],coords[1]);
-            var marker = new google.maps.Marker({
+            var results.markers[i].locationID = new google.maps.Marker({
                 position: latLng,
                 map: map
             });
@@ -83,7 +83,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                content:  text
             });
             marker.addListener('click', function(){
-                infowindow.open(map, marker);
+                infowindow.open(map, results.markers[i].locationID);
             });
         }
     }
