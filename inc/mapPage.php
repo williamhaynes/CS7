@@ -107,10 +107,17 @@ include ("scripts/dbconnect.php");
                         "geometry": {"type": "Route", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
                         "name": "<?php print $row['name'];?>",
                         "address": "<?php print $row['address'];?>",
-                        "description": "<?php print $row['description'];?>"
+                        "description": "<?php print $row['description'];?>",
+                    <?
+                        $sql_querySpecificRoute = 'SELECT * FROM route WHERE locationID = $row[\'locationID\']';
+                        $resultSpecificRoute = $db->query($sql_querySpecificRoute);
+                        while ($rowRoute = $resultSpecificRoute->fetch_array()) {
+                    ?>
+                        "array": "<?php print $row['array'];?>"
                         //"markerImage":"images/red.png",
                     },
-                <?}?>
+                <?}
+                }?>
                 ]
             });
         document.getElementsByTagName('head')[0].appendChild(script);
@@ -236,7 +243,8 @@ include ("scripts/dbconnect.php");
                     map: map,
                     title: results.routes[i].name,
                     description: results.routes[i].description,
-                    address: results.routes[i].address
+                    address: results.routes[i].address,
+                    array: results.routes[i].array
                 }));
 
                 arrayOfRoutes[i].addListener('click', function(){
