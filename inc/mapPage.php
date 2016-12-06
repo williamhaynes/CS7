@@ -61,6 +61,8 @@ include(__DIR__ . "/../scripts/dbconnect.php");
     // Loop through the results array and place a marker for each
     // set of coordinates.
     window.eqfeed_callback = function(results) {
+        alert(results.markers.length);
+        alert(results.markers[0]);
         for (var i = 0; i < results.markers.length; i++) {
             var coords = results.markers[i].geometry.coordinates;
             var latLng = new google.maps.LatLng(coords[0],coords[1]);
