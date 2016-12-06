@@ -13,6 +13,7 @@
 
 }
 #iw-container {
+    /* Controls width of info window */
     min-width: 400px;
 }
 #iw-container .iw-title {
@@ -35,6 +36,7 @@
     font-weight: 400;
     margin-right: 1px;
     padding: 0px 5px 20px 5px;
+    /* Controls height of infowindow */
     max-height: 250px;
     text-align: left;
     overflow-y: auto;
