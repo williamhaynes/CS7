@@ -7,8 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     <main>
         <div id="divForLoginPage">
             <form action="loginPage" method="post">
-                <input type="text" placeholder="User Name or Email Address" name="username" id="loginPageUsernameTextBox">
-                <p><input type="password" placeholder="Password" name="password" id="loginPagePasswordTextBox"></p>
+                <input type="text" placeholder="User Name or Email Address" name="username" class="loginPageTextBox">
+                <p><input type="password" placeholder="Password" name="password" class="loginPageTextBox"></p>
                 <p><input type="submit" value='Login'></p>
             </form>
             <p>Not a member? Why not <a href='/registerPage'>register?</a></p>
