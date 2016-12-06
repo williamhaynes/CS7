@@ -35,19 +35,13 @@ if($_SESSION['accessLevel']==31) {
                 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
                 <script>tinymce.init({selector: 'textarea'});</script>
                 <form action='' method="post">
-                    <p>Article Name: </p><input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name">
+
+                    <p>Article ID: <input type="text" name="itemID" value="<?php print $row['itemID'];;?>" placeholder="Article ID" readonly></p>
+                    <p>Article Name: <input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name"></p>
                     <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
-                    <?php
-                    //If user is a site administrator (authorised to verify articles)
-                    if($_SESSION['accessLevel']==31){
-                        echo "<p> Verified: </p > <input type = 'checkbox' name = 'verified' checked >";
-                    }
-                    ?>
+                    <p>Author: <input type="text" name="authorName" value="<?php print $_SESSION["authorName"];?>" placeholder="Author Name"></p>
+                    <p>Verified: <input type="checkbox" name="verified"></p>
                     <p><input type="submit" value='Submit'></p>
-                    <?php if($_SESSION['accessLevel']==21 || $_SESSION['accessLevel']==11 || $_SESSION['accessLevel']==1){
-                    echo "<p>Your article will not post until authorised by an Administrator</p>";
-                    }
-                    ?>
                 </form>
             </main>
 
@@ -59,7 +53,11 @@ if($_SESSION['accessLevel']==31) {
         $title = $_POST["title"];
         $content = $_POST["content"];
         $verified = 1;
-        if( $_POST["verified"] == 'off') {
+        //Check verified status
+        if( $_POST["verified"] == 'on') {
+            $verified = 1;
+        }
+        else{
             $verified = 0;
         }
         $authorName = $_POST["authorName"];
