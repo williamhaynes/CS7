@@ -32,17 +32,53 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         });
 
         // Create a <script> tag and set the USGS URL as the source.
-        var script = document.createElement('script');
+        //var script = document.createElement('script');
         // This example uses a local copy of the GeoJSON stored at
         // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
-        script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+        //script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+
+        var script = document.createElement('script');
+        script.innerHTML = eqfeed_callback(
+            {"markers": [
+                {
+                    "geometry":{"type":"Point","coordinates":[126.3832,5.9775,111.16]},
+                    "homeTeam":"Lawrence Library",
+                    "awayTeam":"LUGip",
+                    "markerImage":"images/red.png",
+                    "information": "Linux users group meets second Wednesday of each month.",
+                    "fixture":"Wednesday 7pm",
+                    "capacity":"",
+                    "previousScore":""
+                },
+                {
+                    "geometry":{"type":"Point","coordinates":[126.3832,5.9775,111.16]},
+                    "homeTeam":"Hamilton Library",
+                    "awayTeam":"LUGip HW SIG",
+                    "markerImage":"images/white.png",
+                    "information": "Linux users can meet the first Tuesday of the month to work out harward and configuration issues.",
+                    "fixture":"Tuesday 7pm",
+                    "capacity":"",
+                    "tv":""
+                },
+                {
+                    "geometry":{"type":"Point","coordinates":[126.3832,5.9775,111.16]},
+                    "homeTeam":"Applebees",
+                    "awayTeam":"After LUPip Mtg Spot",
+                    "markerImage":"images/newcastle.png",
+                    "information": "Some of us go there after the main LUGip meeting, drink brews, and talk.",
+                    "fixture":"Wednesday whenever",
+                    "capacity":"2 to 4 pints",
+                    "tv":""
+                },
+            ] });
+
         document.getElementsByTagName('head')[0].appendChild(script);
     }
 
     // Loop through the results array and place a marker for each
     // set of coordinates.
     window.eqfeed_callback = function(results) {
-        for (var i = 0; i < results.features.length; i++) {
+        for (var i = 0; i < results.markers.length; i++) {
             var coords = results.features[i].geometry.coordinates;
             var latLng = new google.maps.LatLng(coords[1],coords[0]);
             var marker = new google.maps.Marker({
