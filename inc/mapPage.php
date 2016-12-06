@@ -78,13 +78,13 @@ include(__DIR__ . "/../scripts/dbconnect.php");
             arrayOfMarkers.push(new google.maps.Marker({
                 position: latLng,
                 map: map,
-                title: results.markers[i].name,
-                description: results.markers[i].description
+                title: results.markers[i].name
             }));
-            var text = "Loading...";
+
             var infowindow = new google.maps.InfoWindow({
-               content:  text
+               content:  results.markers[i].description
             });
+
             arrayOfMarkers[i].addListener('click', function(){
                 infowindow.open(map, this);
             });
