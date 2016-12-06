@@ -113,7 +113,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                 });
             }
         }
-    }
+
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE&callback=initMap">
