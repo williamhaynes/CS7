@@ -99,6 +99,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                 arrayOfMarkers[i].addListener('click', function(){
                     infowindow.setContent( '<div id="iw-container">' +
                         '<div class="iw-title">'+this.title+'</div>' +
+                        '<div class="iw-outsidecontent">'+
                         '<div class="iw-content">' +
                         '<div class="iw-subTitle">Description</div>' +
                         '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
@@ -106,6 +107,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                         '<div class="iw-subTitle">Contacts</div>' +
                         '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
                         '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
+                        '</div>' +
                         '</div>' +
                         '<div class="iw-bottom-gradient"></div>' +
                         '</div>');
