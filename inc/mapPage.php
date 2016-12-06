@@ -51,7 +51,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                 },
                 {
                     "locationID":"301",
-                    "geometry":{"type":"Point","coordinates":[57.052299579818400,-2.169376331396506]},
+                    "geometry":{"type":"Point","coordinates":[57.062299579818400,-2.569376331396506]},
                     "name":"Street",
                     "address":"Street",
                     "description":"<p>Street</p>"
