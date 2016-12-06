@@ -46,13 +46,10 @@ include ("scripts/header.php");
             {"landmarks": [
                 <?
                 include ("scripts/dbconnect.php");
-                //Takes all database information from the Genre TABLE.
+
                 $sql_queryLandmarks = 'SELECT * FROM location WHERE typeID = 1';
-                //Process the query
                 $resultLandmarks = $db->query($sql_queryLandmarks);
-                // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
                 while ($row = $resultLandmarks->fetch_array()) {
-                    if ($row['typeID']==1){
                     ?>
                         {
                             "locationID": "<?php print $row['locationID'];?>",
@@ -63,9 +60,12 @@ include ("scripts/header.php");
                             //"markerImage":"images/red.png",
                         },
                     <?}?>
-                    ],"viewpoints":[
-                        <?if ($row['typeID']==2){
-                    ?>
+            ],"viewpoints":[
+                <?
+                $sql_queryViewpoints = 'SELECT * FROM location WHERE typeID = 2';
+                $resultViewpoints = $db->query($sql_queryViewpoints);
+                while ($row = $resultViewpoints->fetch_array()) {
+                ?>
                     {
                         "locationID": "<?php print $row['locationID'];?>",
                         "geometry": {"type": "Viewpoint", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
@@ -74,11 +74,13 @@ include ("scripts/header.php");
                         "description": "<?php print $row['description'];?>"
                         //"markerImage":"images/red.png",
                     },
-                    <?}?>
+                <?}?>
                     ],"area":[
-                    <?if ($row['typeID']==3){
-                    ?>
-                    {
+                <?
+                $sql_queryAreas = 'SELECT * FROM location WHERE typeID = 3';
+                $resultAreas = $db->query($sql_queryAreas);
+                while ($row = $resultAreas->fetch_array()) {
+                ?>                    {
                         "locationID": "<?php print $row['locationID'];?>",
                         "geometry": {"type": "Area", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
                         "name": "<?php print $row['name'];?>",
@@ -86,11 +88,14 @@ include ("scripts/header.php");
                         "description": "<?php print $row['description'];?>"
                         //"markerImage":"images/red.png",
                     },
-                    <?}?>
+                <?}?>
                     ],"route":[
-                    <?if ($row['typeID']==4){
-                    ?>
-                    {
+                <?
+                $sql_queryRoutes = 'SELECT * FROM location WHERE typeID = 4';
+                $resultRoutes = $db->query($sql_queryRoutes);
+                while ($row = $resultRoutes->fetch_array()) {
+                ?>
+                {
                         "locationID": "<?php print $row['locationID'];?>",
                         "geometry": {"type": "Route", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
                         "name": "<?php print $row['name'];?>",
@@ -98,8 +103,7 @@ include ("scripts/header.php");
                         "description": "<?php print $row['description'];?>"
                         //"markerImage":"images/red.png",
                     },
-                    <?}
-                }?>
+                <?}?>
                 ]
             });
         document.getElementsByTagName('head')[0].appendChild(script);
