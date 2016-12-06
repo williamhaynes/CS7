@@ -105,9 +105,8 @@ include ("scripts/header.php");
                         '<div class="iw-subTitle">Description</div>' +
                         '<img src="http://maps.marnoto.com/en/5wayscustomizeinfowindow/images/vistalegre.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
                         this.description+
-                        '<div class="iw-subTitle">Contacts</div>' +
-                        '<p>VISTA ALEGRE ATLANTIS, SA<br>3830-292 Ílhavo - Portugal<br>'+
-                        '<br>Phone. +351 234 320 600<br>e-mail: geral@vaa.pt<br>www: www.myvistaalegre.com</p>'+
+                        '<div class="iw-subTitle">Address</div>' +
+                        '<p>'+this.address+'</p>'+
                         '</div>' +
                         '</div>' +
                         '</div>');
