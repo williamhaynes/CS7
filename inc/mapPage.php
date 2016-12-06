@@ -35,8 +35,6 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         });
 
 
-
-
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
         // This example uses a local copy of the GeoJSON stored at
@@ -45,27 +43,29 @@ include(__DIR__ . "/../scripts/dbconnect.php");
 
         var script = document.createElement('script');
         script.innerHTML = eqfeed_callback(
-            {"markers": [
-                {
-                    "locationID":"201",
-                    "geometry":{"type":"Point","coordinates":[57.052299579818296,-2.169376331396506]},
-                    "name":"Road",
-                    "address":"Road",
-                    "description":"<p>Road</p>"
-                    //"markerImage":"images/red.png",
-                },
-                {
-                    "locationID":"301",
-                    "geometry":{"type":"Point","coordinates":[57.062299579818400,-2.569376331396506]},
-                    "name":"Street",
-                    "address":"Street",
-                    "description":"<p>Street</p>"
-                    //"markerImage":"images/red.png",
-                },
-            ] });
+            {
+                "markers": [
+                    {
+                        "locationID": "201",
+                        "geometry": {"type": "Point", "coordinates": [57.052299579818296, -2.169376331396506]},
+                        "name": "Road",
+                        "address": "Road",
+                        "description": "<p>Road</p>"
+                        //"markerImage":"images/red.png",
+                    },
+                    {
+                        "locationID": "301",
+                        "geometry": {"type": "Point", "coordinates": [57.062299579818400, -2.569376331396506]},
+                        "name": "Street",
+                        "address": "Street",
+                        "description": "<p>Street</p>"
+                        //"markerImage":"images/red.png",
+                    },
+                ]
+            });
 
         document.getElementsByTagName('head')[0].appendChild(script);
-
+    }
 
 
 
@@ -113,7 +113,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                 });
             }
         }
-    }
+
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE&callback=initMap">
