@@ -33,6 +33,12 @@ include(__DIR__ . "/../scripts/dbconnect.php");
             center: portlethenLatLng
         });
 
+
+        //Trying to add a info window
+        var infowindow = new google.maps.InfoWindow({
+            content: "loading..."
+        });
+
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
         // This example uses a local copy of the GeoJSON stored at
@@ -63,10 +69,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         document.getElementsByTagName('head')[0].appendChild(script);
     }
 
-    //Trying to add a info window
-    var infowindow = new google.maps.InfoWindow({
-        content: "loading..."
-    });
+
 
 
 
