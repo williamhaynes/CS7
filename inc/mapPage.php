@@ -94,7 +94,8 @@ include ("scripts/header.php");
                     position: latLng,
                     map: map,
                     title: results.markers[i].name,
-                    description: results.markers[i].description
+                    description: results.markers[i].description,
+                    address: results.markers[i].address
                 }));
 
                 arrayOfMarkers[i].addListener('click', function(){
