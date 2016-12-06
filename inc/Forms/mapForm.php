@@ -139,10 +139,12 @@ if (isset($_SESSION['username'])) {
         <main>
             <body onload='load()'>
             <div id='map' style='width: 1000px; height: 600px'></div>
+            <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+            <script>tinymce.init({selector: 'textarea'});</script>
             <form action='' method='post' id='mapForm'>
                 <p>Place Name: <input size='20' type='text' name='name' placeholder='Place Name'></p>
                 <p>Address: <input size='20' type='text' name='address' placeholder='Address'></p>
-                <p>Description: <input size='20' type='text' name='description' placeholder='Description'></p>
+                <p>Description: <textarea name="description" id="description"></textarea></p>
                 <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='57.062661319658496'></p>
                 <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='-2.1295508919433814'></p>
                 <p>latlngString: <input size='20' type='text' id='latlngString' name='latlngString'></p>
@@ -178,7 +180,7 @@ if (isset($_SESSION['username'])) {
             $typeID = $_POST["typeID"];
             $latlngString = $_POST["latlngString"];
             //IF TYPEID = ROUTE
-            if ($typeID==4){
+            if ($typeID==4||$typeID==3){
                 $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
                 if (mysqli_query($db, $sql)) {
                     $sqlGetLocationID = "SELECT locationID FROM location WHERE name ='" . $name . "' AND address = '" . $address ."'";
@@ -188,7 +190,7 @@ if (isset($_SESSION['username'])) {
                     }
                     $sql2 = "INSERT INTO route (array, locationID) VALUES ( '" . $latlngString . "', '" . $resultLocationID . "')";
                     if (mysqli_query($db, $sql2)) {
-
+                        header("location:../mapPage");
                     }
                     else {
                         echo "Error: " . $sql2 . "<br>Error Message:" . mysqli_error($db);
@@ -197,13 +199,9 @@ if (isset($_SESSION['username'])) {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
                 }
             }
-            //IF TYPEID = AREA
-            elseif ($typeID==3){
-
-            }
             //IF TYPEID = LANDMARK OR VIEWPOINT
             else {
-                $sql = "INSERT INTO location (name, address, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
+                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
                 if (mysqli_query($db, $sql)) {
                     header("location:../mapPage");
                 } else {

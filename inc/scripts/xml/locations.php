@@ -2,7 +2,7 @@
 
 // Include dbconnect
 
-include ("/dbconnect.php");
+include ("../dbconnect.php");
 
 // Start XML file, create parent node
 
@@ -29,6 +29,7 @@ while ($row = $result->fetch_array()){
     $newnode->setAttribute("locationID",$row['locationID']);
     $newnode->setAttribute("name",$row['name']);
     $newnode->setAttribute("address", $row['address']);
+    $newnode->setAttribute("description", $row['description']);
     $newnode->setAttribute("lat", $row['lat']);
     $newnode->setAttribute("lng", $row['lng']);
     $newnode->setAttribute("typeID", $row['typeID']);
