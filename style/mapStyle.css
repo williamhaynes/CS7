@@ -10,7 +10,6 @@
     max-width: none !important;
 }
 .gm-style-iw {
-    width: 350px !important;
     top: 15px !important;
     left: 0px !important;
     background-color: #fff;
@@ -52,7 +51,6 @@
 }
 .iw-bottom-gradient {
     position: absolute;
-    width: 326px;
     height: 25px;
     bottom: 10px;
     right: 18px;
