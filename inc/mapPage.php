@@ -3,7 +3,7 @@ System Requirements.-->
 
 <?php
 include ("scripts/header.php");
-
+include ("scripts/dbconnect.php");
 ?>
 <head>
     <link rel="stylesheet" type="text/css" href="/style/mapStyle.css">
@@ -45,7 +45,7 @@ include ("scripts/header.php");
         script.innerHTML = eqfeed_callback(
             {"landmarks": [
                 <?
-                include ("scripts/dbconnect.php");
+
 
                 $sql_queryLandmarks = 'SELECT * FROM location WHERE typeID = 1';
                 $resultLandmarks = $db->query($sql_queryLandmarks);
