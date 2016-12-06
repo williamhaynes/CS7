@@ -41,7 +41,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         script.innerHTML = eqfeed_callback(
             {"markers": [
                 {
-                    "point":new GLatLng(40.266044,-74.718479),
+                    "geometry":{"type":"Point","coordinates":[126.3832,5.9775,111.16]},
                     "homeTeam":"Lawrence Library",
                     "awayTeam":"LUGip",
                     "markerImage":"images/red.png",
@@ -51,7 +51,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                     "previousScore":""
                 },
                 {
-                    "point":new GLatLng(40.211600,-74.695702),
+                    "geometry":{"type":"Point","coordinates":[126.3832,5.9775,111.16]},
                     "homeTeam":"Hamilton Library",
                     "awayTeam":"LUGip HW SIG",
                     "markerImage":"images/white.png",
@@ -61,7 +61,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                     "tv":""
                 },
                 {
-                    "point":new GLatLng(40.294535,-74.682012),
+                    "geometry":{"type":"Point","coordinates":[126.3832,5.9775,111.16]},
                     "homeTeam":"Applebees",
                     "awayTeam":"After LUPip Mtg Spot",
                     "markerImage":"images/newcastle.png",
