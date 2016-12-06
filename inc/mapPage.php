@@ -45,13 +45,11 @@ include ("scripts/header.php");
         script.innerHTML = eqfeed_callback(
             {"markers": [
                 <?
-                include(__DIR__ . "/../scripts/dbconnect.php");
+                include ("scripts/dbconnect.php");
                 //Takes all database information from the Genre TABLE.
                 $sql_queryLandmarks = 'SELECT * FROM location';
-                echo "alert(HELLOHELLO);";
                 //Process the query
                 $resultLandmarks = $db->query($sql_queryLandmarks);
-                echo "alert(HELLO);";
                 // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
                 while ($row = $resultLandmarks->fetch_array()) {
 
