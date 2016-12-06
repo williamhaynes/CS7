@@ -36,10 +36,10 @@ if($_SESSION['accessLevel']==31) {
                 <script>tinymce.init({selector: 'textarea'});</script>
                 <form action='' method="post">
 
-                    <p>Article ID: <input type="text" name="itemID" value="<?php print $row['itemID'];;?>" placeholder="Article ID" readonly></p>
-                    <p>Article Name: <input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name"></p>
-                    <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
-                    <p>Author: <input type="text" name="authorName" value="<?php print $_SESSION["authorName"];?>" placeholder="Author Name"></p>
+                    <p>Article ID: <input type="text" name="itemID" value="<?php print $row['itemID'];?>" placeholder="Article ID" readonly></p>
+                    <p>Article Name: <input type="text" name="title" value="<?php print $row['title'];?>" placeholder="Article Name"></p>
+                    <p>Content: </p> <textarea name="content"> <?php print $row['content'];?></textarea>
+                    <p>Author: <input type="text" name="authorName" value="<?php print $row['authorName'];?>" placeholder="Author Name"></p>
                     <p>Verified: <input type="checkbox" name="verified"></p>
                     <p><input type="submit" value='Submit'></p>
                 </form>
