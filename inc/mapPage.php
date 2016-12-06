@@ -48,10 +48,8 @@ include ("scripts/header.php");
                 include(__DIR__ . "/../scripts/dbconnect.php");
                 //Takes all database information from the Genre TABLE.
                 $sql_queryLandmarks = 'SELECT * FROM location';
-                echo "<script>HELLOHELLO</script>;";
                 //Process the query
                 $resultLandmarks = $db->query($sql_queryLandmarks);
-                echo "<script>HELLO</script>;";
                 // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
                 while ($row = $resultLandmarks->fetch_array()) {
 
