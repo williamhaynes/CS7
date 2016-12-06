@@ -5,56 +5,57 @@ System Requirements.-->
 include ("scripts/header.php");
 include(__DIR__ . "/../scripts/dbconnect.php");
 ?>
-    <head>
-        <title>Map</title>
-        <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDEU8Mfp0WPoXcqq8gJdbUTogp-6yDzXcE' type='text/JavaScript'></script> 
-        <script type='text/JavaScript'>
-            function load() {
-                var map = new google.maps.Map(document.getElementById('map'), {
-                    center: new google.maps.LatLng(57.063408, -2.1455154),
-                    zoom: 13,
-                    mapTypeId: 'roadmap'
-                });
-            }
-                function downloadUrl(url,callback) {
-                    var request = window.ActiveXObject ?
-                        new ActiveXObject('Microsoft.XMLHTTP') :
-                        new XMLHttpRequest;
+<head>
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+            height: 100%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+    var map;
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 2,
+            center: new google.maps.LatLng(2.8,-187.3),
+            mapTypeId: 'terrain'
+        });
 
-                    request.onreadystatechange = function() {
-                        if (request.readyState == 4) {
-                            callback(request, request.status);
-                        }
-                    };
+        // Create a <script> tag and set the USGS URL as the source.
+        var script = document.createElement('script');
+        // This example uses a local copy of the GeoJSON stored at
+        // http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojsonp
+        script.src = 'https://developers.google.com/maps/documentation/javascript/examples/json/earthquake_GeoJSONP.js';
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
 
-                    request.open('GET', url, true);
-                    request.send(null);
-                }
-                downloadUrl(<?php echo "\"".__DIR__."/scripts/xml/locations.php\"";?>, function(data) {
-                    var xml = data.responseXML;
-                    alert(xml);
-                    var markers = xml.documentElement.getElementsByTagName("marker");
-                    for (var i = 0; i < markers.length; i++) {
-                        var point = new google.maps.LatLng(
-                            parseFloat(markers[i].getAttribute("lat")),
-                            parseFloat(markers[i].getAttribute("lng")));
-                        var marker = new google.maps.Marker({map: map, position: point});
-                    }
-                });
-
-        </script>
-        <a href='mapForm'>Link to Map Form</a>
-    </head>
-    <main>
-        <body onload='load()'>
-             <div id='map' style='width: 1000px; height: 600px'></div>
-        <p>
-            Some random text
-        </p>
-        </body>
-    </main>
-
-
+    // Loop through the results array and place a marker for each
+    // set of coordinates.
+    window.eqfeed_callback = function(results) {
+        for (var i = 0; i < results.features.length; i++) {
+            var coords = results.features[i].geometry.coordinates;
+            var latLng = new google.maps.LatLng(coords[1],coords[0]);
+            var marker = new google.maps.Marker({
+                position: latLng,
+                map: map
+            });
+        }
+    }
+</script>
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap">
+</script>
+</body>
 <?
 
 include ("scripts/footer.php");
