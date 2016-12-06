@@ -8,7 +8,7 @@
  */
 include("dbconnect.php");
     session_start();                                                //Allow access to session cookies
-    $clubID = $_SESSION['clubID'];                                  //get required session cookie
+    $clubID = $params['clubID'];                               //get required session cookie
     //Get the current URL
     $currentURL = $_SERVER['REQUEST_URI'];
     $sql_query;                                                     //Initialize query
