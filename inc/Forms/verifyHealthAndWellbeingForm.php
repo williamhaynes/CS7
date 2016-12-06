@@ -28,7 +28,7 @@ if (($_SESSION['accessLevel'])==31)
                 <script>tinymce.init({selector: 'textarea'});</script>
                 <form action='' method="post">
                     <!-- CANNOT DISABLE ARTICLE ID or it wont pass through POST -->
-                    <p>Article ID: <input type="text" name="itemID" value="<?php print $row['itemID'];;?>" placeholder="Artcile ID" readonly></p>
+                    <p>Article ID: <input type="text" name="itemID" value="<?php print $row['itemID'];;?>" placeholder="Article ID" readonly></p>
                     <p>Article Name: <input type="text" name="title" value="<?php print $_SESSION["title"];?>" placeholder="Article Name"></p>
                     <p>Content: </p> <textarea name="content"> <?php print $_SESSION["content"];?></textarea>
                     <p>Author: <input type="text" name="authorName" value="<?php print $_SESSION["authorName"];?>" placeholder="Author Name"></p>

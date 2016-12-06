@@ -10,10 +10,11 @@ $rules = array(
     'mapPage' => "/mapPage",
     'clubPage' => "/clubPage/(?'clubID'[\w\-]+)",
     'Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
-    'Forms/healthAndWellbeingForm' => "/Forms/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
+    'Forms/healthAndWellbeingForm' => "/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
     'Forms/createHealthAndWellbeingForm' => "/createHealthAndWellbeingForm",
     'Forms/mapForm' => "/mapForm",
-    'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm",
+    'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm/",
+    //verifyHealthAndWellbeingForm/{$itemID}
     'scripts/commentBox' => "/commentBox",
     'scripts/commentToDatabase' => "/commentToDatabase",
     '/fileUploadPageClubMedia' => "/fileUploadPageClubMedia",
@@ -32,6 +33,8 @@ $rules = array(
     //
     'homePage' => "/",
     'AdminPages/usersAdminPage' => '/usersAdminPage',
+    'AdminPages/healthAndWellBeingAdminPage' => '/healthAndWellBeingAdminPage',
+    'verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm/(?'itemID'[\w\-]+)",
     //
     // Forms Page
     //
@@ -56,7 +59,6 @@ foreach ($rules as $action => $rule) {
         exit();
     }
 }
-
 // nothing is found so handle the 404 error
 include(INCLUDE_DIR . '404.php');
 ?>

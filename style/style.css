@@ -1,13 +1,26 @@
 /* FOOTER */
 
 footer {
-    background-color: #a1a1a1;
+    background-color: #333;
     padding: 5px 0 5px 10px;
+    z-index: 3;
+    height: 32px;
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    color: white;
+    margin-bottom: 0px;
+    border-top: solid 1px black;
+    border-bottom: solid 1px white;
 }
 
 /* BACKGROUND */
 body{
-    background-color: #FFFFFF;
+    background-image: url(background.jpg);
+    background-size: cover;
+    //background-color: #FFFFFF;
+    padding-bottom: 34px;
 }
 
 
@@ -19,10 +32,10 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
 }
 nav li {
     float: left;
+    background-color: #333;
 }
 
 nav li a {
@@ -40,7 +53,6 @@ nav li a :hover {
 }
 
 #loginButton{
-    margin-top: 3px;
     background-color: lightgreen;
 }
 #loginButton:hover{
@@ -48,22 +60,18 @@ nav li a :hover {
 }
 
 #registerButton{
-    margin-top: 3px;
     background-color: dodgerblue;
 }
 
 #registerButton:hover{
-    margin-top: 3px;
     background-color: darkslateblue;
 }
 
 #logoutButton{
     font-size: 100%;
-    margin-top: 3px;
     background-color: palevioletred;
 }
 #logoutButton:hover{
-    margin-top: 3px;
     background-color: darkred;
 }
 
@@ -74,11 +82,6 @@ nav li a :hover {
 
 
 /*Controls for Tables*/
-td, tr, th {
-    border-bottom: 1px solid #ddd;
-    padding: 15px;
-    text-align: left;
-}
 
 .hoverableRowsAndColumns:hover {
     background-color: lightskyblue;
@@ -87,4 +90,18 @@ td, tr, th {
 .hoverableSpecificRowAndColumn:hover{
     cursor: pointer;
     background-color: dodgerblue;
+}
+td, tr, th {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+    //background-color: #dddddd;
+}
+
+th{
+    background-color: lightsteelblue;
+}
+
+tr{
+    background-color: aliceblue;
 }

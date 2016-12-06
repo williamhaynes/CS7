@@ -11,7 +11,7 @@ session_start(); //start the session
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
 </head>
-<body>
+<body style="background-image:url(../../style/background.jpg)">
     <header>
         <nav id="navBar">
             <ul id="header">
@@ -32,6 +32,7 @@ session_start(); //start the session
                          * User Admin Page: the user admin page displaying information on the site
                          */
                         echo "<li><a href='/usersAdminPage'>User Admin Page</a></li>";
+                        echo "<li><a href='/healthAndWellBeingAdminPage'>Article Admin Page</a></li>";
                     }
                     echo "<li><a href='/userDetailsPage/". $_SESSION['userID'] ."'>My Account</a></li>";
                     echo "<li id='logoutButton'><a href='/logoutPage'>Logout</a></li>";
