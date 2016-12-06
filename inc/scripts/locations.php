@@ -2,7 +2,7 @@
 
 // Include dbconnect
 
-include ("../scripts/dbconnect.php");
+include ("/dbconnect.php");
 
 // Start XML file, create parent node
 
