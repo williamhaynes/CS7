@@ -117,9 +117,9 @@ if (isset($_SESSION['username'])) {
                            //alert(markersLatLng.length)
                            for(i=0;i<markersLatLng.length;i++){
                                //alert(markersLatLng[i].toString());
-                               string+=markersLatLng[i].lat()+' '+markersLatLng[i].lng()+',';
+                               string+=markersLatLng[i].lat()+','+markersLatLng[i].lng()+',';
                            }
-                            document.getElementById('markerArray').value = string;
+                            document.getElementById('latlngString').value = string;
 
                             path = new google.maps.Polyline({
                                 path: markersLatLng,
@@ -144,7 +144,7 @@ if (isset($_SESSION['username'])) {
                 <p>Address: <input size='20' type='text' name='address' placeholder='Place Name'></p>
                 <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='57.062661319658496'></p>
                 <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='-2.1295508919433814'></p>
-                <p>Array of Markers: <input size='20' type='text' id='markerArray' name='markerArray'></p>
+                <p>latlngString: <input size='20' type='text' id='latlngString' name='latlngString'></p>
                 <p>Type:
                 <select name='typeID' id='typeID' onclick="checkType()">";
                     <?
@@ -174,7 +174,7 @@ if (isset($_SESSION['username'])) {
             $lat = $_POST["lat"];
             $lng = $_POST["lng"];
             $typeID = $_POST["typeID"];
-            $markerArray = $_POST["markerArray"];
+            $latlngString = $_POST["latlngString"];
             //IF TYPEID = ROUTE
             if ($typeID==4){
                 $sql = "INSERT INTO location (name, address, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
@@ -184,7 +184,7 @@ if (isset($_SESSION['username'])) {
                     while($row = $result->fetch_array()){
                         $resultLocationID = $row['locationID'];
                     }
-                    $sql2 = "INSERT INTO route (polygonRoute, locationID) VALUES ((GeomFromText('LineString($markerArray)')), '" . $resultLocationID . "')";
+                    $sql2 = "INSERT INTO route (array, locationID) VALUES ( '" . $latlngString . "', '" . $resultLocationID . "')";
                     if (mysqli_query($db, $sql2)) {
 
                     }
