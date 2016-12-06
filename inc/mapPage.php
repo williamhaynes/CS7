@@ -80,8 +80,8 @@ include(__DIR__ . "/../scripts/dbconnect.php");
             var infowindow = new google.maps.InfoWindow({
                content:  text
             });
-            marker.addListener('click', function(){
-                infowindow.open(map, arrayOfMarkers.pop());
+            arrayOfMarkers[i].addListener('click', function(){
+                infowindow.open(map, marker);
             });
         }
     }
