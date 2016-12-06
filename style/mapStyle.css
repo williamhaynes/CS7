@@ -52,13 +52,3 @@
     font-weight: 700;
     padding: 5px 0;
 }
-.iw-bottom-gradient {
-    position: absolute;
-    height: 25px;
-    bottom: 10px;
-    right: 18px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-    background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
-}
