@@ -30,7 +30,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                     request.open('GET', url, true);
                     request.send(null);
                 }
-                downloadUrl("/../scripts/locations.php", function(data) {
+                downloadUrl("/scripts/locations.php", function(data) {
                     var xml = data.responseXML;
                     alert(xml);
                     var markers = xml.documentElement.getElementsByTagName("marker");
