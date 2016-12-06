@@ -262,6 +262,7 @@ include ("scripts/dbconnect.php");
                         '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
+                    //random comment to hopefully make azure update
                     infowindow.open(map, this);
                     var routeArray = this.array.split(',');
                     alert(routeArray.length);
