@@ -30,7 +30,13 @@ if($_SESSION['accessLevel']==31) {
                     <p>Article Name: <input type="text" name="title" value="<?php print $row['title'];?>" placeholder="Article Name"></p>
                     <p>Content: </p> <textarea name="content"> <?php print $row['content'];?></textarea>
                     <p>Author: <input type="text" name="authorName" value="<?php print $row['authorName'];?>" placeholder="Author Name"></p>
-                    <p>Verified: <input type="checkbox" name="verified"></p>
+                    <p>Verified: <input type="checkbox" name="verified"
+                            <?php
+                            if($row['verified']==1){
+                                echo "checked";
+                            }
+                            ?>
+                        ></p>
                     <?php echo "<p>". $row['verified'] ."</p>"?>
                     <p><input type="submit" value='Submit'></p>
                 </form>
