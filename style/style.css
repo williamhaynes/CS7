@@ -73,7 +73,6 @@ nav li a :hover {
 }
 
 #logoutButton{
-    font-size: 100%;
     background-color: palevioletred;
 }
 #logoutButton:hover{
@@ -83,6 +82,8 @@ nav li a :hover {
 #logoIMG{
     width: 206px;
     height: 60px;
+    padding: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 0px;
 }
 
 
@@ -109,4 +110,22 @@ th{
 
 tr{
     background-color: aliceblue;
+}
+
+/*
+*   Login Page Div Controls
+*/
+
+#divForLoginPage{
+    width: 400px;
+    height: 285px;
+    /*Deals with positioning element in centre*/
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /*END OF POSITIONING ELEMENT IN CENTRE*/
+    background-color: aliceblue;
+    border: solid black 3px;
 }
