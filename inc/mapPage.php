@@ -111,6 +111,7 @@ include(__DIR__ . "/../scripts/dbconnect.php");
                         '</div>' +
                         '<div class="iw-bottom-gradient"></div>' +
                         '</div>');
+                    $( "<div class='iw-outsidecontent'></div>" ).wrap( "<div class='iw-content'></div>" );
                     infowindow.open(map, this);
                 });
             }
