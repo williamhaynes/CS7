@@ -41,34 +41,13 @@ include(__DIR__ . "/../scripts/dbconnect.php");
         script.innerHTML = eqfeed_callback(
             {"markers": [
                 {
-                    "geometry":{"type":"Point","coordinates":[126.3832,5.9775,111.16]},
-                    "homeTeam":"Lawrence Library",
-                    "awayTeam":"LUGip",
-                    "markerImage":"images/red.png",
-                    "information": "Linux users group meets second Wednesday of each month.",
-                    "fixture":"Wednesday 7pm",
-                    "capacity":"",
-                    "previousScore":""
-                },
-                {
-                    "geometry":{"type":"Point","coordinates":[126.3832,5.9775,111.16]},
-                    "homeTeam":"Hamilton Library",
-                    "awayTeam":"LUGip HW SIG",
-                    "markerImage":"images/white.png",
-                    "information": "Linux users can meet the first Tuesday of the month to work out harward and configuration issues.",
-                    "fixture":"Tuesday 7pm",
-                    "capacity":"",
-                    "tv":""
-                },
-                {
-                    "geometry":{"type":"Point","coordinates":[126.3832,5.9775,111.16]},
-                    "homeTeam":"Applebees",
-                    "awayTeam":"After LUPip Mtg Spot",
-                    "markerImage":"images/newcastle.png",
-                    "information": "Some of us go there after the main LUGip meeting, drink brews, and talk.",
-                    "fixture":"Wednesday whenever",
-                    "capacity":"2 to 4 pints",
-                    "tv":""
+                    "locationID":"201"
+                    "geometry":{"type":"Point","coordinates":[57.052299579818296,-2.169376331396506]},
+                    "name":"Road",
+                    "address":"Road",
+                    //"markerImage":"images/red.png",
+                    //"information": "Linux users group meets second Wednesday of each month.",
+                    "description":"<p>Road</p>",
                 },
             ] });
 
