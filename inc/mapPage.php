@@ -265,8 +265,8 @@ include ("scripts/dbconnect.php");
                     //random comment to hopefully make azure update
                     infowindow.open(map, this);
                     var routeArray = this.array.split(',');
-                    alert(routeArray.length);
                     var routeLatLng = [];
+                    alert(routeLatLng);
                     for(i=0;i<routeArray.length/2;i=i+2){
                         routeLatLng.push(new google.maps.LatLng(routeArray[i],routeArray[i+1]));
                     }
