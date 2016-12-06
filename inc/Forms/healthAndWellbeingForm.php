@@ -6,6 +6,16 @@ session_start();
 if($_SESSION['accessLevel']==31) {
     //Access database script
     include (__DIR__ . "/../scripts/dbconnect.php");
+    function translateVerified($verified){
+        switch ($verified) {
+            case 0:
+                return "False";
+            case 1:
+                return "True";
+            default:
+                return "False";
+        }
+    }
     //If GET request from server
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         //Include Header
