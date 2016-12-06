@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 <p><input type="password" placeholder="Password" name="password"></p>
                 <p><input type="submit" value='Login'></p>
             </form>
-            <p>Not a member? Why not<a href='/registerPage'>register?</a></p>
+            <p>Not a member? Why not <a href='/registerPage'>register?</a></p>
         </div>
     </main>
     <?
