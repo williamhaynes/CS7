@@ -20,6 +20,7 @@ body{
     background-image: url(background.jpg);
     background-size: cover;
     //background-color: #FFFFFF;
+    padding-bottom: 32px;
 }
 
 
