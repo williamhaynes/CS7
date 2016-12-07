@@ -281,7 +281,7 @@ include ("scripts/dbconnect.php");
                         strokeWeight: 2
                     }));
 
-                    arrayOfPolylines[0].setMap(map);
+                    arrayOfPolylines[arrayOfPolylines.length-1].setMap(map);
                 });
             }
         }
