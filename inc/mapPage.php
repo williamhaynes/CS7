@@ -174,6 +174,7 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
+                    arrayOfPolylines[arrayOfPolylines.length-1].setVisible(false);
                 });
             }
 
@@ -204,6 +205,7 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
+                    arrayOfPolylines[arrayOfPolylines.length-1].setVisible(false);
                 });
             }
 
@@ -234,6 +236,7 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
+                    arrayOfPolylines[arrayOfPolylines.length-1].setVisible(false);
                 });
             }
 
@@ -279,8 +282,12 @@ include ("scripts/dbconnect.php");
                         strokeOpacity: 1.0,
                         strokeWeight: 2
                     }));
-
-                    arrayOfPolylines[arrayOfPolylines.length-1].setMap(map);
+                    if(arrayOfPolylines[arrayOfPolylines.length]==1) {
+                        arrayOfPolylines[arrayOfPolylines.length - 1].setMap(map);
+                    }else{
+                        arrayOfPolylines[arrayOfPolylines.length-2].setVisible(false);
+                        arrayOfPolylines[arrayOfPolylines.length - 1].setMap(map);
+                    }
                 });
             }
         }
