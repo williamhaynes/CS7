@@ -143,7 +143,9 @@ include ("scripts/dbconnect.php");
             // Event that closes the Info Window with a click on the map
             google.maps.event.addListener(map, 'click', function() {
                 infowindow.close();
-                arrayOfPolylines[arrayOfPolylines.length-1].setVisible(false);
+                if(arrayOfPolylines.length>0) {
+                    arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
+                }
             });
 
 
@@ -174,7 +176,9 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
-                    arrayOfPolylines[arrayOfPolylines.length-1].setVisible(false);
+                    if(arrayOfPolylines.length>0) {
+                        arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
+                    }
                 });
             }
 
@@ -205,7 +209,9 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
-                    arrayOfPolylines[arrayOfPolylines.length-1].setVisible(false);
+                    if(arrayOfPolylines.length>0) {
+                        arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
+                    }
                 });
             }
 
@@ -236,7 +242,9 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
-                    arrayOfPolylines[arrayOfPolylines.length-1].setVisible(false);
+                    if(arrayOfPolylines.length>0) {
+                        arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
+                    }
                 });
             }
 
