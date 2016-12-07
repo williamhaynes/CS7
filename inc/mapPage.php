@@ -288,6 +288,7 @@ include ("scripts/dbconnect.php");
                         arrayOfPolylines[arrayOfPolylines.length-2].setVisible(false);
                         arrayOfPolylines[arrayOfPolylines.length - 1].setMap(map);
                     }
+
                 });
             }
         }
