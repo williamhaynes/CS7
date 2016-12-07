@@ -143,7 +143,7 @@ include ("scripts/dbconnect.php");
             // Event that closes the Info Window with a click on the map
             google.maps.event.addListener(map, 'click', function() {
                 infowindow.close();
-                arrayOfPolylines[0].setVisible(false);
+                arrayOfPolylines[arrayOfPolylines.length-1].setVisible(false);
             });
 
 
