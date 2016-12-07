@@ -282,6 +282,7 @@ include ("scripts/dbconnect.php");
                         strokeOpacity: 1.0,
                         strokeWeight: 2
                     }));
+                        alert(arrayOfPolylines.length);
                         arrayOfPolylines[arrayOfPolylines.length - 1].setMap(map);
                 });
             }
