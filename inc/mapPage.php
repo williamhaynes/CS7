@@ -159,7 +159,7 @@ include ("scripts/dbconnect.php");
                     title: results.landmarks[i].name,
                     description: results.landmarks[i].description,
                     address: results.landmarks[i].address,
-                    icon: 'landmark.png'
+                    icon: '../style/landmark.png'
                 }));
 
                 arrayOfLandmarks[i].addListener('click', function(){
