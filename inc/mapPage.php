@@ -158,7 +158,8 @@ include ("scripts/dbconnect.php");
                     map: map,
                     title: results.landmarks[i].name,
                     description: results.landmarks[i].description,
-                    address: results.landmarks[i].address
+                    address: results.landmarks[i].address,
+                    icon: 'landmark.png'
                 }));
 
                 arrayOfLandmarks[i].addListener('click', function(){
