@@ -192,7 +192,8 @@ include ("scripts/dbconnect.php");
                     map: map,
                     title: results.viewpoints[i].name,
                     description: results.viewpoints[i].description,
-                    address: results.viewpoints[i].address
+                    address: results.viewpoints[i].address,
+                    icon: '../style/viewpoint.png'
                 }));
 
                 arrayOfViewpoints[i].addListener('click', function(){
@@ -225,7 +226,8 @@ include ("scripts/dbconnect.php");
                     map: map,
                     title: results.areas[i].name,
                     description: results.areas[i].description,
-                    address: results.areas[i].address
+                    address: results.areas[i].address,
+                    icon: '../style/area.png'
                 }));
 
                 arrayOfAreas[i].addListener('click', function(){
@@ -259,7 +261,8 @@ include ("scripts/dbconnect.php");
                     title: results.routes[i].name,
                     description: results.routes[i].description,
                     address: results.routes[i].address,
-                    array: results.routes[i].array
+                    array: results.routes[i].array,
+                    icon: '../style/route.png'
                 }));
 
                 arrayOfRoutes[i].addListener('click', function(){
