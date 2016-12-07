@@ -268,7 +268,6 @@ include ("scripts/dbconnect.php");
                     infowindow.open(map, this);
                     var routeArray = this.array.split(',');
                     var routeLatLng = [];
-                    alert(routeLatLng);
                     for(i=0;i<routeArray.length/2;i=i+2){
                         routeLatLng.push(new google.maps.LatLng(routeArray[i],routeArray[i+1]));
                     }
