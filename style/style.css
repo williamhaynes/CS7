@@ -187,12 +187,6 @@ tr{
     overflow-x: hidden;
 }
 
-#calendar{
-    max-height: 300px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
 #clubDetails{
     width: 420px;
     /*position: absolute;
@@ -232,6 +226,26 @@ tr{
     padding: 10px;
 }
 
+/*
+* Calendar Specific Controls
+*/
+
+#calendar{
+    width: 100%;
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#allEventsCalendar{
+    /*Deals with positioning element in centre*/
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /*END OF POSITIONING ELEMENT IN CENTRE*/
+
+}
 /*
 * Clubs & Societies Page
 */
