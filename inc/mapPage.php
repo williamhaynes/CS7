@@ -344,9 +344,10 @@ include ("scripts/dbconnect.php");
         }
 
     function legendCheck() {
-        alert(arrayOfLandmarks.length);
-        for (var i = 0; i < arrayOfLandmarks.length; i++) {
-            arrayOfLandmarks[i].setVisible(false);
+        if (document.getElementById('landmarkCheckbox').checked){
+            for (var i = 0; i < arrayOfLandmarks.length; i++) {
+                arrayOfLandmarks[i].setVisible(false);
+            }
         }
     }
 
