@@ -6,14 +6,16 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/header.php");
         ?>
         <main>
+            <div id="divForCreateHealthAndWellbeing">
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
             <form action='' method="post">
-                <h2>Create New News</h2>
+                <h2 class="pageHeaderText">Create New Health & Wellbeing Article</h2>
                 <input type="text" name="articleName" placeholder="Article Name">
                 <textarea name="articleText"></textarea>
                 <input type="submit">
             </form>
+            </div>
         </main>
         <?
         include(__DIR__."/../scripts/footer.php");
