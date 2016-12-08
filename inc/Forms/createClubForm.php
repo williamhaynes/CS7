@@ -8,6 +8,7 @@ if (isset($_SESSION['username']))
         ?>
         <main>
             <!-- JAVASCRIPT TO BLANK OUT INPUTS IF TICKBOXS ARENT TICKED -->
+            <div id="divForCreateClubForm">
             <script>
                 function checkboxClicked() {
                     if (document.getElementById('website').checked) {
@@ -59,6 +60,7 @@ if (isset($_SESSION['username']))
                 </select>
                 <p><input type="submit" value='Submit'></p>
             </form>
+            </div>
         </main>
         <?
         include(__DIR__."/../scripts/footer.php");
