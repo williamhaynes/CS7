@@ -35,6 +35,8 @@ include ("scripts/dbconnect.php");
     var arrayOfAreas = [];
     var arrayOfRoutes = [];
     var arrayOfPolylines = [];
+    var directionsService = new google.maps.DirectionsService;
+    var directionsDisplay = new google.maps.DirectionsRenderer;
 
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
@@ -178,8 +180,7 @@ include ("scripts/dbconnect.php");
         // Loop through the results array and place a marker for each
         // set of coordinates.
         window.eqfeed_callback = function(results) {
-            var directionsService = new google.maps.DirectionsService;
-            var directionsDisplay = new google.maps.DirectionsRenderer;
+
 
 
             //Trying to add a info window
