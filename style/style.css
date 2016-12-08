@@ -392,6 +392,7 @@ tr{
     font-family: 'Dosis', sans-serif;
     text-align: center;
     margin: 0 auto;
+    margin-top: 5px;
 }
 #modifyClubAdminFormRemoval{
     padding-top: 5px;
@@ -402,6 +403,7 @@ tr{
     font-family: 'Dosis', sans-serif;
     text-align: center;
     margin: 0 auto;
+    margin-top: 5px;
 }
 #modifyClubAdminFormAddition{
     padding-top: 5px;
@@ -412,4 +414,5 @@ tr{
     font-family: 'Dosis', sans-serif;
     text-align: center;
     margin: 0 auto;
+    margin-top: 5px;
 }
