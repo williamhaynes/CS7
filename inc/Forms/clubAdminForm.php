@@ -6,6 +6,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         include (__DIR__ . "/../scripts/dbconnect.php");
         ?>
         <main>
+            <div id="divForClubAdminForm">
             <script>
                 function checkboxClicked() {
                     if (document.getElementById('website').checked) {
@@ -63,7 +64,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 ?>
                 <p><input type="submit" value='Submit'></p>
             </form>
-
+            </div>
         </main>
         <script>
             checkboxClicked();
