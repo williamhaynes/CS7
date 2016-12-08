@@ -89,7 +89,7 @@ include ("scripts/dbconnect.php");
         directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'
             +'<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" value="" readonly><input type="hidden" id ="firstPointLatLng"></p>'
             +'<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" value="" readonly><input type="hidden" id ="secondPointLatLng"></p>'
-            +'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"><input type="button" value="Reset" id ="reset" style="display: none" onclick="resetRoute()"></p>';
+            +'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"><input type="button" value="Reset" id ="resetRoute" style="display: none" onclick="resetRoute()"></p>';
 
         legend.appendChild(directions);
 
