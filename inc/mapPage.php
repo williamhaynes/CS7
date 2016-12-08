@@ -348,7 +348,7 @@ include ("scripts/dbconnect.php");
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(true);
             }
-        }else if(document.getElementById('landmarkCheckbox').checked == false){
+        }if(document.getElementById('landmarkCheckbox').checked == false){
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(false);
             }
@@ -357,7 +357,7 @@ include ("scripts/dbconnect.php");
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(true);
             }
-        }else if(document.getElementById('viewpointCheckbox').checked == false){
+        }if(document.getElementById('viewpointCheckbox').checked == false){
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(false);
             }
@@ -366,7 +366,7 @@ include ("scripts/dbconnect.php");
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(true);
             }
-        }else if(document.getElementById('areaCheckbox').checked == false){
+        }if(document.getElementById('areaCheckbox').checked == false){
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(false);
             }
@@ -375,7 +375,7 @@ include ("scripts/dbconnect.php");
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(true);
             }
-        }else if(document.getElementById('routeCheckbox').checked == false){
+        }if(document.getElementById('routeCheckbox').checked == false){
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(false);
             }
