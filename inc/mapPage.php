@@ -447,6 +447,8 @@ include ("scripts/dbconnect.php");
 
         alert(startString);
 
+        startString.replace("(","");
+
         var startArray = startString.split(",");
         alert(startArray[0]);
 
