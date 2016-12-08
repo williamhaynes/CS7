@@ -23,7 +23,7 @@ include ("scripts/dbconnect.php");
 </head>
 <body>
 <? if($_SESSION['accessLevel'] == 31||$_SESSION['accessLevel'] == 11){
-    echo "<a href='/mapForm'>Map Form</a>";
+    echo "<a href='/mapForm' class='button'>Map Form</a>";
 }?>
 
 <div id="map"></div>
