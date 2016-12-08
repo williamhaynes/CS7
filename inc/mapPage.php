@@ -269,6 +269,8 @@ include ("scripts/dbconnect.php");
                     if(arrayOfPolylines.length>0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
+                    //Adding to arrayOfClickedPoints
+                    arrayOfClickedPoints.push(this.position);
                 });
             }
 
@@ -303,6 +305,8 @@ include ("scripts/dbconnect.php");
                     if(arrayOfPolylines.length>0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
+                    //Adding to arrayOfClickedPoints
+                    arrayOfClickedPoints.push(this.position);
                 });
             }
 
@@ -341,7 +345,8 @@ include ("scripts/dbconnect.php");
                     for(i=0;i<routeArray.length/2;i=i+2){
                         routeLatLng.push(new google.maps.LatLng(routeArray[i],routeArray[i+1]));
                     }
-
+                    //Adding to arrayOfClickedPoints
+                    arrayOfClickedPoints.push(this.position);
                     arrayOfPolylines.push(new google.maps.Polyline({
                         path: routeLatLng,
                         geodesic: true,
