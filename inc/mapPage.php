@@ -87,7 +87,12 @@ include ("scripts/dbconnect.php");
 
         var directions = document.createElement('div');
         directions.id = directions;
-        directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'+'<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" readonly></p>'+'<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" readonly></p>'+'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"></p>';
+
+        directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'
+            +'<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" readonly></p>'
+            +'<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" readonly></p>'
+            +'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"></p>';
+
         legend.appendChild(directions);
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
@@ -235,6 +240,8 @@ include ("scripts/dbconnect.php");
                     }
                     //Adding to arrayOfClickedPoints
                     arrayOfClickedPoints.push(this.position);
+                    //Trying to add point to route
+                    addPointToRoute(this.title);
                 });
             }
 
@@ -347,6 +354,8 @@ include ("scripts/dbconnect.php");
                     }
                     //Adding to arrayOfClickedPoints
                     arrayOfClickedPoints.push(this.position);
+
+
                     arrayOfPolylines.push(new google.maps.Polyline({
                         path: routeLatLng,
                         geodesic: true,
@@ -415,9 +424,20 @@ include ("scripts/dbconnect.php");
         }
     }
 
+    function addPointToRoute(point) {
+        if (document.getElementById('directionsCheckbox').checked){
+            if(document.getElementById('firstPoint').getAttribute(value)==""){
+                document.getElementById('firstPoint').setAttribute(value, point);
+            }else if(document.getElementById('secondPoint').getAttribute(value)==""){
+                document.getElementById('secondPoint').setAttribute(value, point);
+            }
+        }else{
+        }
+    }
+
     function calcRoute() {
-        var start = arrayOfClickedPoints[arrayOfClickedPoints.length-2];
-        var end = arrayOfClickedPoints[arrayOfClickedPoints.length-1];
+        var start = document.getElementById('firstPointLatLng').getAttribute(value);
+        var end = document.getElementById('secondPointLatLng').getAttribute(value);
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
