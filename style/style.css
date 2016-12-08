@@ -231,11 +231,10 @@ tr{
 */
 
 #calendar{
+    width: 100%;
     max-height: 300px;
     overflow-y: scroll;
     overflow-x: hidden;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
 }
 
 /*
