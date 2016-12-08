@@ -75,7 +75,7 @@ include ("scripts/dbconnect.php");
         }
 
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
-    }
+    
 
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
