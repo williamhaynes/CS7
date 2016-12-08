@@ -194,9 +194,10 @@ tr{
 
 #clubDetails{
     width: 420px;
-    position: absolute;
+    /*position: absolute;
     top: 10px;
-    left: 10%;
+    left: 10%;*/
+    float: left;
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
@@ -204,9 +205,10 @@ tr{
 
 #facebookFeed{
     width: 300px;
-    position: absolute;
+    /*position: absolute;
     top: 10px;
-    right: 10%;
+    right: 10%;*/
+    float: right;
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
