@@ -69,6 +69,7 @@
     vertical-align: middle;
 }
 
+/*
 #wrapper {
     position: relative;
 }
@@ -77,7 +78,7 @@
 }
 
 
-/*CSS TO DO WITH Driving Directions
+CSS TO DO WITH Driving Directions
 #directions-panel {
     font-family: 'Roboto','sans-serif';
     line-height: 30px;
