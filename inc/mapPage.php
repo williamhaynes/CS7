@@ -434,6 +434,8 @@ include ("scripts/dbconnect.php");
     function resetRoute() {
         document.getElementById('firstPoint').value='';
         document.getElementById('secondPoint').value='';
+        document.getElementById('firstPointLatLng').value='';
+        document.getElementById('secondPointLatLng').value='';
         directionsDisplay.setMap(null);
     }
 
