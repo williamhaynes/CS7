@@ -27,6 +27,7 @@ include ("scripts/dbconnect.php");
 }?>
 
 <div id="map"></div>
+<div id="legend"><h3>Legend</h3></div>
 <script>
     var map;
     var arrayOfLandmarks = [];
@@ -42,6 +43,39 @@ include ("scripts/dbconnect.php");
             center: portlethenLatLng
         });
 
+
+        var icons = {
+            landmark: {
+                name: 'Landmark',
+                icon: '../style/landmark.png'
+            },
+            viewpoint: {
+                name: 'Viewpoint',
+                icon: '../style/viewpoint.png'
+            },
+            area: {
+                name: 'Area',
+                icon: '../style/area.png'
+            },
+            route: {
+                name: 'Route',
+                icon: '../style/route.png'
+            }
+        };
+
+        //Creating the legend
+        var legend = document.getElementById('legend');
+        for (var key in icons) {
+            var type = icons[key];
+            var name = type.name;
+            var icon = type.icon;
+            var div = document.createElement('div');
+            div.innerHTML = '<img src="' + icon + '"> ' + name;
+            legend.appendChild(div);
+        }
+
+        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+    }
 
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
