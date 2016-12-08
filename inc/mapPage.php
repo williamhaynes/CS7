@@ -73,9 +73,9 @@ include ("scripts/dbconnect.php");
             var type = icons[key];
             var name = type.name;
             var icon = type.icon;
-            var checkbox = type.id;
+            var checkboxID = type.id;
             var div = document.createElement('div');
-            div.innerHTML = '<img src="' + icon + '"> ' + name + '<input type="checkbox" id = checkboxID onclick="legendCheck()" checked>';
+            div.innerHTML = '<img src="' + icon + '"> ' + name + '<input type="checkbox" id ='+checkboxID+' onclick="legendCheck()" checked = true>';
             legend.appendChild(div);
         }
 
