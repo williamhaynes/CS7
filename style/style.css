@@ -351,17 +351,6 @@ tr{
     border: solid #333 5px;
     border-radius: 15px;
     margin-top: 205px;
-
-    width: 800px;
-    height: 920px;
-    /*Deals with positioning element in centre*/
-    position: absolute;
-    top: 46%;
-    left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    /*END OF POSITIONING ELEMENT IN CENTRE*/
-    overflow-y: scroll;
 }
 #usersTable{
     margin: 0 auto;
