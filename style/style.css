@@ -37,7 +37,6 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    width: 100%; /*This might really break things, check*/
 }
 nav li {
     float: left;
