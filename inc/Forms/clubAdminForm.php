@@ -69,7 +69,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             checkboxClicked();
         </script>
         <?
-        include (__DIR__."/../scripts/fileUploadPageClubMedia.php");
+        //include (__DIR__."/../scripts/fileUploadPageClubMedia.php");
         include(__DIR__."/../scripts/footer.php");
         
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
