@@ -89,7 +89,7 @@ include ("scripts/dbconnect.php");
         directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'
             +'<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" value="" readonly><input type="hidden" id ="firstPointLatLng"></p>'
             +'<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" value="" readonly><input type="hidden" id ="secondPointLatLng"></p>'
-            +'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"></p>';
+            +'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"><input type="button" value="Reset" id ="reset" style="display: none" onclick="resetRoute()"></p>';
 
         legend.appendChild(directions);
 
@@ -422,11 +422,19 @@ include ("scripts/dbconnect.php");
             document.getElementById('firstPoint').style.display='';
             document.getElementById('secondPoint').style.display='';
             document.getElementById('calcRoute').style.display='';
+            document.getElementById('resetRoute').style.display='';
         }else{
             document.getElementById('firstPoint').style.display='none';
             document.getElementById('secondPoint').style.display='none';
             document.getElementById('calcRoute').style.display='none';
+            document.getElementById('resetRoute').style.display='none';
         }
+    }
+
+    function resetRoute() {
+        document.getElementById('firstPoint').value='';
+        document.getElementById('secondPoint').value='';
+        directionsDisplay.setMap(null);
     }
 
     function addPointToRoute(name, point) {
