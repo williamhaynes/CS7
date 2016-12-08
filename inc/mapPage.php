@@ -449,15 +449,13 @@ include ("scripts/dbconnect.php");
         var startArray = startString.split(",");
         var endArray = endString.split(",");
 
-        alert(startArray[0]);
-        alert(startArray[1]);
 
-        var start =  new google.maps.LatLng(startString[0], startString[1]);
-        var end =  new google.maps.LatLng(endString[0], endString[1]);
-        /*var bounds = new google.maps.LatLngBounds();
+        var start =  new google.maps.LatLng(startArray[0], startArray[1]);
+        var end =  new google.maps.LatLng(endArray[0], endArray[1]);
+        var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
-        map.fitBounds(bounds);*/
+        map.fitBounds(bounds);
         var request = {
             origin: start,
             destination: end,
