@@ -37,6 +37,7 @@ include ("scripts/dbconnect.php");
     var arrayOfPolylines = [];
     var directionsService;
     var directionsDisplay;
+    var arrayOfClickedPoints = [];
 
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
@@ -46,6 +47,8 @@ include ("scripts/dbconnect.php");
             center: portlethenLatLng
         });
 
+        arrayOfClickedPoints.push(portlethenLatLng);
+        arrayOfClickedPoints.push(portlethenLatLng);
 
         var icons = {
             landmark: {
@@ -230,6 +233,8 @@ include ("scripts/dbconnect.php");
                     if(arrayOfPolylines.length>0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
+                    //Adding to arrayOfClickedPoints
+                    arrayOfClickedPoints.push(this.position);
                 });
             }
 
@@ -394,9 +399,8 @@ include ("scripts/dbconnect.php");
     }
 
     function calcRoute() {
-        var start = new google.maps.LatLng(37.334818, -121.884886);
-        //var end = new google.maps.LatLng(38.334818, -181.884886);
-        var end = new google.maps.LatLng(37.441883, -122.143019);
+        var start = arrayOfClickedPoints[arrayOfClickedPoints.length-2];
+        var end = arrayOfClickedPoints[arrayOfClickedPoints.length-1];
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
