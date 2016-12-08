@@ -38,7 +38,6 @@ if($_SESSION['accessLevel']==31) {
                             }
                             ?>
                         ></p>
-                    <?php echo "<p>". $row['verified'] ."</p>"?>
                     <p><input type="submit" value='Submit'></p>
                 </form>
                 </div>
