@@ -14,9 +14,9 @@ if (isset($_SESSION['username'])) {
                 <p>Event Name:</p>
                 <p><input type="text" placeholder="Event Name" name="eventName"></p>
                 <p>Event Start Date</p>
-                <p><input type="text" placeholder="Start Date" name="eventStartDate"></p>
+                <p><input type="date" placeholder="Start Date" name="eventStartDate"></p>
                 <p>Event Description</p>
-                <p><input type="text" placeholder="End Date" name="eventEndDate"></p>
+                <p><input type="date" placeholder="End Date" name="eventEndDate"></p>
                 <textarea name="eventDescription"></textarea>
                 <input type="submit" value='Create Event'>
             </form>
