@@ -26,6 +26,7 @@ include ("scripts/dbconnect.php");
 
 <div id="map"></div>
 <div id="legend"><h3>Legend</h3></div>
+<div id="directions-panel"></div>
 <script>
     var map;
     var arrayOfLandmarks = [];
@@ -473,6 +474,7 @@ include ("scripts/dbconnect.php");
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
                 directionsDisplay.setMap(map);
+                directionsDisplay.setPanel(document.getElementById('directions-panel'));
             } else {
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
