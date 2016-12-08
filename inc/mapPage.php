@@ -451,11 +451,12 @@ include ("scripts/dbconnect.php");
         alert(startString);
 
         var startArray = startString.split(",");
+        var endArray = startString.split(",");
         alert(startArray[0]);
         alert(startArray[1]);
 
         var start =  new google.maps.LatLng(startArray[0]+')','('+startArray[1]);
-        var end =  new google.maps.LatLng(endString);
+        var end =  new google.maps.LatLng(endArray[0]+')','('+endArray[1]);
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
