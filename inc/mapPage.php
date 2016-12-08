@@ -100,8 +100,6 @@ include ("scripts/dbconnect.php");
 
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(mapFormButton);
 
-        var directionsPanel = document.getElementById('direction-panel');
-        map.controls[google.maps.ControlPosition.RIGHT_TOP].push(directionsPanel);
 
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
@@ -478,7 +476,9 @@ include ("scripts/dbconnect.php");
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
                 directionsDisplay.setMap(map);
-                directionsDisplay.setPanel(document.getElementById('directions-panel'));
+                var directionsPanel = document.getElementById('direction-panel');
+                directionsDisplay.setPanel(directionsPanel);
+                map.controls[google.maps.ControlPosition.RIGHT_TOP].push(directionsPanel);
             } else {
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
