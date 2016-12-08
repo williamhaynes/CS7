@@ -11,7 +11,9 @@ if (isset($_SESSION['username']))
             <script>tinymce.init({selector: 'textarea'});</script>
             <form action='' method="post">
                 <h2 class="pageHeaderText">Create New Health & Wellbeing Article</h2>
+                <p>Article Title:</p>
                 <input type="text" name="articleName" placeholder="Article Name">
+                <p>Article Content:</p>
                 <textarea name="articleText"></textarea>
                 <input type="submit">
             </form>

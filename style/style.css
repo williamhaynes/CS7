@@ -424,8 +424,9 @@ tr{
 */
 
 #divForCreateHealthAndWellbeing{
+    margin-top: 15px;
     width: 750px;
-    height: 340px;
+    height: 430px;
     /*Deals with positioning element in centre*/
     position: absolute;
     top: 46%;
@@ -437,4 +438,5 @@ tr{
     border: solid #333 5px;
     border-radius: 15px;
     font-family: 'Dosis', sans-serif;
+    text-align: center;
 }
