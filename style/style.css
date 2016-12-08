@@ -183,6 +183,7 @@ tr{
     height: 600px;
     min-width: 740px;
     position: relative;
+    overflow: scroll;
 }
 
 #calendar{
@@ -214,6 +215,7 @@ tr{
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
+    padding: 10px;
 }
 
 #clubPageCommentsBox{
@@ -226,4 +228,5 @@ tr{
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
+    padding: 10px;
 }
