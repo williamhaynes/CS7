@@ -348,7 +348,7 @@ include ("scripts/dbconnect.php");
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(true);
             }
-        }if(!document.getElementById('landmarkCheckbox').checked){
+        }else if(!document.getElementById('landmarkCheckbox').checked){
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(false);
             }
