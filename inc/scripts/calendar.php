@@ -31,6 +31,7 @@ include("dbconnect.php");
         echo "<th>Event Name</th>";
         echo "<th>Event Description</th>";
         echo "</tr>";
+        echo "<tbody>";
     }
     $result = $db->query($sql_query);                               //Process relevant query
     while($row = $result->fetch_array()) {                           //Iterate through Query Results
@@ -62,6 +63,7 @@ include("dbconnect.php");
             echo "</tr>";
         }
     }
+    echo "</tbody>";
     echo "</table>";
         if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
             echo "<a id='createEventLink' href='/eventsForm' class='button'> Add Event </a>";
