@@ -57,6 +57,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             }
         }
     </script>
+    <div id="clubsAndSocietiesPageSearchBox">
     <h2>Clubs and Societies of Portlethen Go!</h2>
     <p>Below is a list of all Clubs and Societies</p>
     <table id="clubsTable">
@@ -66,6 +67,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             <option value="genre">Genre</option>
             <option value="description">Description</option>
         </select>
+    </div>
         <tr>
             <th>Club Name</th>
             <th>Genre</th>

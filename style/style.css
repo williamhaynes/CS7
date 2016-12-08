@@ -231,3 +231,16 @@ tr{
     border-radius: 15px;
     padding: 10px;
 }
+
+/*
+* Clubs & Societies Page
+*/
+
+#clubsAndSocietiesPageSearchBox{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+}
