@@ -19,7 +19,7 @@ body{
     background-image: url(background.jpg);
     background-size: cover;
     //background-color: #FFFFFF;
-    padding-bottom: 100px;
+    margin-bottom: 100px;
 }
 
 /*Landing Page Text*/
