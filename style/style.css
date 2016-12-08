@@ -179,10 +179,6 @@ tr{
  * Club Page Specific Controls
  */
 
-#specificClubCalendar{
-    max-height: 300px;
-}
-
 #divForClubPageDetails{
     width: 600px;
     height: 410px;
@@ -202,6 +198,7 @@ tr{
  * Clubs and Societies page Controls
  */
 
-#allEventsCalendar{
+#calendar{
     max-height: 300px;
+    overflow: scroll;
 }
