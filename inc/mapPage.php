@@ -35,7 +35,6 @@ include ("scripts/dbconnect.php");
     var arrayOfPolylines = [];
     var directionsService;
     var directionsDisplay;
-    var arrayOfClickedPoints = [];
 
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
@@ -44,9 +43,6 @@ include ("scripts/dbconnect.php");
             mapTypeId: 'roadmap',
             center: portlethenLatLng
         });
-
-        arrayOfClickedPoints.push(portlethenLatLng);
-        arrayOfClickedPoints.push(portlethenLatLng);
 
         var icons = {
             landmark: {
@@ -243,8 +239,6 @@ include ("scripts/dbconnect.php");
                     if(arrayOfPolylines.length>0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
-                    //Adding to arrayOfClickedPoints
-                    arrayOfClickedPoints.push(this.position);
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
                 });
@@ -260,7 +254,8 @@ include ("scripts/dbconnect.php");
                     title: results.viewpoints[i].name,
                     description: results.viewpoints[i].description,
                     address: results.viewpoints[i].address,
-                    icon: '../style/viewpoint.png'
+                    icon: '../style/viewpoint.png',
+                    latlngCoords: coords
                 }));
 
                 arrayOfViewpoints[i].addListener('click', function(){
@@ -281,8 +276,8 @@ include ("scripts/dbconnect.php");
                     if(arrayOfPolylines.length>0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
-                    //Adding to arrayOfClickedPoints
-                    arrayOfClickedPoints.push(this.position);
+                    //Trying to add point to route
+                    addPointToRoute(this.title, this.latlngCoords);
                 });
             }
 
@@ -296,7 +291,8 @@ include ("scripts/dbconnect.php");
                     title: results.areas[i].name,
                     description: results.areas[i].description,
                     address: results.areas[i].address,
-                    icon: '../style/area.png'
+                    icon: '../style/area.png',
+                    latlngCoords: coords
                 }));
 
                 arrayOfAreas[i].addListener('click', function(){
@@ -317,8 +313,8 @@ include ("scripts/dbconnect.php");
                     if(arrayOfPolylines.length>0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
-                    //Adding to arrayOfClickedPoints
-                    arrayOfClickedPoints.push(this.position);
+                    //Trying to add point to route
+                    addPointToRoute(this.title, this.latlngCoords);
                 });
             }
 
@@ -333,7 +329,8 @@ include ("scripts/dbconnect.php");
                     description: results.routes[i].description,
                     address: results.routes[i].address,
                     array: results.routes[i].array,
-                    icon: '../style/route.png'
+                    icon: '../style/route.png',
+                    latlngCoords: coords
                 }));
 
                 arrayOfRoutes[i].addListener('click', function(){
@@ -357,9 +354,9 @@ include ("scripts/dbconnect.php");
                     for(i=0;i<routeArray.length/2;i=i+2){
                         routeLatLng.push(new google.maps.LatLng(routeArray[i],routeArray[i+1]));
                     }
-                    //Adding to arrayOfClickedPoints
-                    arrayOfClickedPoints.push(this.position);
 
+                    //Trying to add point to route
+                    addPointToRoute(this.title, this.latlngCoords);
 
                     arrayOfPolylines.push(new google.maps.Polyline({
                         path: routeLatLng,
