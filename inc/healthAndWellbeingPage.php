@@ -4,21 +4,16 @@ overlay to authorise/reject blog posts. As per System Requirements.-->
 <?php
 include ("scripts/dbconnect.php");
 include ("scripts/header.php");
-echo "
-<main>
-<h2>Health & Wellbeing</h2>
-<div id='divForHealthNews'>
-";
+echo "<main>
+      <h2>Health & Wellbeing</h2>
+      <div id='divForHealthNews'>";
 if (isset($_SESSION['username'])) {
     echo "<a id='createArticleLink' href='/createHealthAndWellbeingForm' class='button'> Create Article </a>";
     if ($_SESSION['accessLevel']==31) {
-        echo "<a id='verifyArticleLink' href='/healthAndWellbeingForm' class='button> Verify Articles </a>";
+        echo "<a id='verifyArticleLink' href='/healthAndWellbeingForm' class='button'> Verify Articles </a>";
     }
 }
-echo "
-
-<ul>
-";
+echo "<ul>";
 
 /*
  * Pulls database information from the 'Health News Table' if it has been verified
