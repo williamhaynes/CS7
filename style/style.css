@@ -19,7 +19,7 @@ body{
     background-image: url(background.jpg);
     background-size: cover;
     //background-color: #FFFFFF;
-    margin-bottom: 100px;
+    margin-bottom: 36px;
 }
 
 /*Landing Page Text*/
@@ -180,10 +180,11 @@ tr{
 
 #divForClubPageDetails{
     width: 100%;
-    height: 600px;
+    height: 800px;
     min-width: 740px;
     position: relative;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 #calendar{
