@@ -24,6 +24,7 @@ if (isset($_SESSION['username'])) {
         <?
         include(__DIR__ . "/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        include(__DIR__ . "/../scripts/dbconnect.php");
         //variables
         $clubID = $_SESSION['clubID'];
         $eventName = $_POST["eventName"];
