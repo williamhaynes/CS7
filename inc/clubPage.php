@@ -89,7 +89,7 @@
             } else {
             }
             echo "
-            <articleid=\"divForClubPageDetails\">
+            <article id=\"divForClubPageDetails\">
                  <h2 id='clubName'>{$clubName}</h2>
                  <p id='activity'>{$activity}</p>
                  <p>Description:</p>
