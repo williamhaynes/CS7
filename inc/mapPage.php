@@ -77,6 +77,7 @@ include ("scripts/dbconnect.php");
             checkbox.type = 'checkbox';
             checkbox.id = type.id;
             checkbox.checked = true;
+            checkbox.onclick = "legendCheck()";
             var div = document.createElement('div');
 
             div.innerHTML = '<img src="' + icon + '"> ' + name;
@@ -347,6 +348,19 @@ include ("scripts/dbconnect.php");
                 });
             }
         }
+
+    function legendCheck() {
+        if(document.getElementById("landmarkCheckbox").checked = false){
+            for(var i=0;i<arrayOfLandmarks.length;i++){
+                arrayOfLandmarks[i].setVisible(false);
+            }
+        }
+        if(document.getElementById("landmarkCheckbox").checked = true){
+            for(var i=0;i<arrayOfLandmarks.length;i++){
+                arrayOfLandmarks[i].setVisible(true);
+            }
+        }
+    }
 
 </script>
 <script async defer
