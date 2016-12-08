@@ -183,8 +183,7 @@ tr{
     width: 100%;
     height: 600px;
     min-width: 740px;
-    /*Deals with positioning element in centre*/
-    /*END OF POSITIONING ELEMENT IN CENTRE*/
+    position: relative;
 }
 
 #calendar{
