@@ -346,12 +346,13 @@ include ("scripts/dbconnect.php");
     function legendCheck() {
         if(document.getElementById("landmarkCheckbox").checked = false){
             for(var i=0;i<arrayOfLandmarks.length;i++){
-                arrayOfLandmarks[i].setVisible(false);
+                arrayOfLandmarks[i].setVisible(visible:false);
+
             }
         }
         if(document.getElementById("landmarkCheckbox").checked = true){
             for(var i=0;i<arrayOfLandmarks.length;i++){
-                arrayOfLandmarks[i].setVisible(true);
+                arrayOfLandmarks[i].setVisible(visible:true);
             }
         }
     }
