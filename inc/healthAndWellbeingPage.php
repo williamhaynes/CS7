@@ -9,9 +9,6 @@ echo "<main>
       <div id='divForHealthNews'>";
 if (isset($_SESSION['username'])) {
     echo "<a id='createArticleLink' href='/createHealthAndWellbeingForm' class='button'> Create Article </a>";
-    if ($_SESSION['accessLevel']==31) {
-        echo "<a id='verifyArticleLink' href='/healthAndWellbeingForm' class='button'> Verify Articles </a>";
-    }
 }
 echo "<ul>";
 
