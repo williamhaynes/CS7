@@ -479,9 +479,9 @@ include ("scripts/dbconnect.php");
                 directionsDisplay.setMap(map);
                 var directionsPanel = document.getElementById('direction-panel');
                 var directionDiv = document.createElement('div');
-                directionDiv.innerHTML = directionsDisplay;
+                directionDiv.setPanel(directionsPanel);
                 directionsPanel.appendChild(directionDiv);
-                //directionsDisplay.setPanel(directionsPanel);
+                //directionsDisplay
                 map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(directionsPanel);
             } else {
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
