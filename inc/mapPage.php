@@ -344,8 +344,9 @@ include ("scripts/dbconnect.php");
         }
 
     function legendCheck() {
-            for(var i=0;i<arrayOfLandmarks.length;i++){
-                arrayOfLandmarks[i].setVisible(true);
+        for (var i = 0; i < arrayOfLandmarks.length; i++) {
+            arrayOfLandmarks[i].setVisible(true);
+        }
     }
 
 </script>
