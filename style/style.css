@@ -25,6 +25,7 @@ body{
     background-size: cover;
     //background-color: #FFFFFF;
     margin-bottom: 48px;
+    z-index: 5;
 }
 
 /*Landing Page Text*/
