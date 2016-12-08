@@ -6,7 +6,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     ?>
     <main>
         <div id="divForLoginPage">
-            <h2 id="loginPageHeaderText">User Login</h2>
+            <h2 class="pageHeaderText">User Login</h2>
             <form action="loginPage" method="post">
                 <input type="text" placeholder="User Name or Email Address" name="username" class="loginPageTextBox">
                 <p><input type="password" placeholder="Password" name="password" class="loginPageTextBox"></p>
