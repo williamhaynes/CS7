@@ -442,9 +442,9 @@ tr{
 }
 
 #divForHealthAndWellBeingForm{
-    margin-top: 115px;
+    margin-top: 95px;
     width: 750px;
-    height: 600px;
+    height: 500px;
     /*Deals with positioning element in centre*/
     position: absolute;
     top: 46%;
