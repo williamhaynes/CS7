@@ -34,6 +34,7 @@ include ("scripts/dbconnect.php");
     var arrayOfAreas = [];
     var arrayOfRoutes = [];
     var arrayOfPolylines = [];
+    var arrayOfPolygons =[];
     var directionsService;
     var directionsDisplay;
 
@@ -209,9 +210,9 @@ include ("scripts/dbconnect.php");
             });
 
             // Event that closes the Info Window with a click on the map
-            google.maps.event.addListener(map, 'click', function() {
+            google.maps.event.addListener(map, 'click', function () {
                 infowindow.close();
-                if(arrayOfPolylines.length>0) {
+                if (arrayOfPolylines.length > 0) {
                     arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                 }
             });
@@ -220,7 +221,7 @@ include ("scripts/dbconnect.php");
             //Adding landmarks to map
             for (var i = 0; i < results.landmarks.length; i++) {
                 var coords = results.landmarks[i].geometry.coordinates;
-                var latLng = new google.maps.LatLng(coords[0],coords[1]);
+                var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfLandmarks.push(new google.maps.Marker({
                     position: latLng,
                     map: map,
@@ -231,22 +232,22 @@ include ("scripts/dbconnect.php");
                     latlngCoords: coords
                 }));
 
-                arrayOfLandmarks[i].addListener('click', function(){
-                    infowindow.setContent( '<div id="iw-container">' +
-                        '<div class="iw-title">'+this.title+'</div>' +
-                            '<div class="iw-outsidecontent">'+
-                                '<div class="iw-content">' +
-                                    '<div class="iw-subTitle">Description</div>' +
-                                    '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                                    this.description+
-                                    '<div class="iw-subTitle">Address</div>' +
-                                    this.address+
-                                '</div>' +
-                            '</div>' +
+                arrayOfLandmarks[i].addListener('click', function () {
+                    infowindow.setContent('<div id="iw-container">' +
+                        '<div class="iw-title">' + this.title + '</div>' +
+                        '<div class="iw-outsidecontent">' +
+                        '<div class="iw-content">' +
+                        '<div class="iw-subTitle">Description</div>' +
+                        '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
+                        this.description +
+                        '<div class="iw-subTitle">Address</div>' +
+                        this.address +
+                        '</div>' +
+                        '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
-                    if(arrayOfPolylines.length>0) {
+                    if (arrayOfPolylines.length > 0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
                     //Trying to add point to route
@@ -257,7 +258,7 @@ include ("scripts/dbconnect.php");
             //Adding viewpoints to map
             for (var i = 0; i < results.viewpoints.length; i++) {
                 var coords = results.viewpoints[i].geometry.coordinates;
-                var latLng = new google.maps.LatLng(coords[0],coords[1]);
+                var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfViewpoints.push(new google.maps.Marker({
                     position: latLng,
                     map: map,
@@ -268,22 +269,22 @@ include ("scripts/dbconnect.php");
                     latlngCoords: coords
                 }));
 
-                arrayOfViewpoints[i].addListener('click', function(){
-                    infowindow.setContent( '<div id="iw-container">' +
-                        '<div class="iw-title">'+this.title+'</div>' +
-                        '<div class="iw-outsidecontent">'+
+                arrayOfViewpoints[i].addListener('click', function () {
+                    infowindow.setContent('<div id="iw-container">' +
+                        '<div class="iw-title">' + this.title + '</div>' +
+                        '<div class="iw-outsidecontent">' +
                         '<div class="iw-content">' +
                         '<div class="iw-subTitle">Description</div>' +
                         '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                        this.description+
+                        this.description +
                         '<div class="iw-subTitle">Address</div>' +
-                        this.address+
+                        this.address +
                         '</div>' +
                         '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
-                    if(arrayOfPolylines.length>0) {
+                    if (arrayOfPolylines.length > 0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
                     //Trying to add point to route
@@ -294,7 +295,7 @@ include ("scripts/dbconnect.php");
             //Adding areas to map
             for (var i = 0; i < results.areas.length; i++) {
                 var coords = results.areas[i].geometry.coordinates;
-                var latLng = new google.maps.LatLng(coords[0],coords[1]);
+                var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfAreas.push(new google.maps.Marker({
                     position: latLng,
                     map: map,
@@ -306,28 +307,51 @@ include ("scripts/dbconnect.php");
                     latlngCoords: coords
                 }));
 
-                arrayOfAreas[i].addListener('click', function(){
-                    infowindow.setContent( '<div id="iw-container">' +
-                        '<div class="iw-title">'+this.title+'</div>' +
-                        '<div class="iw-outsidecontent">'+
+                arrayOfAreas[i].addListener('click', function () {
+                    infowindow.setContent('<div id="iw-container">' +
+                        '<div class="iw-title">' + this.title + '</div>' +
+                        '<div class="iw-outsidecontent">' +
                         '<div class="iw-content">' +
                         '<div class="iw-subTitle">Description</div>' +
                         '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                        this.description+
+                        this.description +
                         '<div class="iw-subTitle">Address</div>' +
-                        this.address+
+                        this.address +
                         '</div>' +
                         '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
-                    if(arrayOfPolylines.length>0) {
+                    var areaArray = this.array.split(',');
+                    var areaLatLng = [];
+                    for (i = 0; i < areaArray.length / 2; i = i + 2) {
+                        areaLatLng.push(new google.maps.LatLng(areaArrayArray[i], areaArrayArray[i + 1]));
+                    }
+
+
+                    arrayOfPolygons.push(new google.maps.Polygon({
+                        path: areaLatLng,
+                        strokeColor: '#FF0000',
+                        strokeOpacity: 0.8,
+                        strokeWeight: 2,
+                        fillColor: '#aff3ff',
+                        fillOpacity: 0.35,
+                        clickable: false
+                    }));
+                    if (arrayOfPolygons.length < 2) {
+                        arrayOfPolygons[arrayOfPolygons.length - 1].setMap(map);
+                    } else {
+                        arrayOfPolygons[arrayOfPolygons.length - 2].setVisible(false);
+                        arrayOfPolygons[arrayOfPolygons.length - 1].setMap(map);
+                    }
+                    if (arrayOfPolylines.length > 0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
                 });
             }
+
 
             //Adding routes to map
             for (var i = 0; i < results.routes.length; i++) {
