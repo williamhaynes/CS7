@@ -36,7 +36,7 @@ include ("scripts/dbconnect.php");
     var arrayOfPolylines = [];
     var directionsService;
     var directionsDisplay;
-    var directionsPanel;
+
 
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
@@ -477,8 +477,11 @@ include ("scripts/dbconnect.php");
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
                 directionsDisplay.setMap(map);
-                directionsPanel = document.getElementById('direction-panel');
-                directionsDisplay.setPanel(directionsPanel);
+                var directionsPanel = document.getElementById('direction-panel');
+                var directionDiv = document.createElement('div');
+                directionDiv.innerHTML = directionsDisplay;
+                directionsPanel.appendChild(directionDiv);
+                //directionsDisplay.setPanel(directionsPanel);
                 map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(directionsPanel);
             } else {
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
