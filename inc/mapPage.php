@@ -445,17 +445,8 @@ include ("scripts/dbconnect.php");
         var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
 
-
-        startString.replace(/[{()}]/g, '');
-        alert(startString);
-
-        var startArray = startString.split(",");
-        var endArray = endString.split(",");
-        alert(startArray[0]);
-        alert(startArray[1]);
-
-        var start =  new google.maps.LatLng(startArray[0]+')','('+startArray[1]);
-        var end =  new google.maps.LatLng(endArray[0]+')','('+endArray[1]);
+        var start =  new google.maps.LatLng(startString);
+        var end =  new google.maps.LatLng(endString);
         /*var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
