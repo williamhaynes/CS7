@@ -243,7 +243,9 @@ tr{
     /*END OF POSITIONING ELEMENT IN CENTRE*/
 }
 #createEventLink{
-    margin-left: 49%;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 /*
