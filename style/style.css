@@ -197,6 +197,7 @@ tr{
     /*position: absolute;
     top: 10px;
     left: 10%;*/
+    padding: 10px;
     margin-left: 10%;
     float: left;
     background-color: aliceblue;

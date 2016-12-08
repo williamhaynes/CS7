@@ -60,11 +60,13 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 </select>
                 <p><input type="submit" value='Submit'></p>
             </form>
+
         </main>
         <script>
             checkboxClicked();
         </script>
         <?
+        include (__DIR__."/../scripts/fileUploadPageClubMedia.php");
         include(__DIR__."/../scripts/footer.php");
         
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
