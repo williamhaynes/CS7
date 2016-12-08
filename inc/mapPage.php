@@ -35,8 +35,8 @@ include ("scripts/dbconnect.php");
     var arrayOfAreas = [];
     var arrayOfRoutes = [];
     var arrayOfPolylines = [];
-    var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer;
+    var directionsService;
+    var directionsDisplay;
 
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
@@ -170,6 +170,8 @@ include ("scripts/dbconnect.php");
                 ]
             });
         document.getElementsByTagName('head')[0].appendChild(script);
+        var directionsService = new google.maps.DirectionsService;
+        directionsDisplay = new google.maps.DirectionsRenderer;
     }
 
 
