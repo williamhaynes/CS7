@@ -81,7 +81,7 @@ include ("scripts/dbconnect.php");
 
         var directions = document.createElement('div');
         directions.id = directions;
-        directions.innerHTML = 'Directions '+'<input type="checkbox" id ="directionsCheckbox" onclick="legendCheck()" checked>';
+        directions.innerHTML = 'Directions '+'<input type="checkbox" id ="directionsCheckbox" onclick="calcRoute()">';
         legend.appendChild(directions);
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
@@ -386,6 +386,28 @@ include ("scripts/dbconnect.php");
             }
         }
     }
+
+    function calcRoute() {
+        var start = new google.maps.LatLng(37.334818, -121.884886);
+        //var end = new google.maps.LatLng(38.334818, -181.884886);
+        var end = new google.maps.LatLng(37.441883, -122.143019);
+        var bounds = new google.maps.LatLngBounds();
+        bounds.extend(start);
+        bounds.extend(end);
+        map.fitBounds(bounds);
+        var request = {
+            origin: start,
+            destination: end,
+            travelMode: google.maps.TravelMode.DRIVING
+        };
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+                directionsDisplay.setMap(map);
+            } else {
+                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+            }
+        });
 
 </script>
 <script async defer
