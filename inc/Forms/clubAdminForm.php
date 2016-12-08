@@ -58,6 +58,9 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 
                     ?>
                 </select>
+                <?php
+                    include(__DIR__ . "/../scripts/uploadImage.php");
+                ?>
                 <p><input type="submit" value='Submit'></p>
             </form>
 
