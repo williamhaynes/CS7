@@ -185,9 +185,6 @@ tr{
     min-width: 740px;
     /*Deals with positioning element in centre*/
     /*END OF POSITIONING ELEMENT IN CENTRE*/
-    background-color: aliceblue;
-    border: solid #333 5px;
-    border-radius: 15px;
 }
 
 #calendar{
@@ -199,11 +196,19 @@ tr{
 #clubDetails{
     width: 420px;
     position: absolute;
+    top: 10px;
     left: 10%;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
 }
 
 #facebookFeed{
     width: 300px;
     position: absolute;
+    top: 10px;
     right: 10%;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
 }
