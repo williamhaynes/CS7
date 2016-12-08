@@ -407,7 +407,8 @@ include ("scripts/dbconnect.php");
             } else {
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
-        });
+        };
+    }
 
 </script>
 <script async defer
