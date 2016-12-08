@@ -35,9 +35,12 @@ while($row = $result->fetch_array()){
     $content = $row['content'];
     $authorName = $row['authorName'];
     echo "<li id='healthNewsArticle'><p><h1 id='healthNewsTitle'>$title</h1></p><p id='healthNewsContent'>$content</p>";
-    echo "<p id='healthNewsAuthor'>Author: $authorName</p></li>";
+    echo "<p id='healthNewsAuthor'>Author: $authorName</p>";
     if($_SESSION['accessLevel'] == 31) {
-        echo "<a href='Forms/healthAndWellbeingForm/{$itemID}'> Edit </a>";
+        echo "<a href='Forms/healthAndWellbeingForm/{$itemID}' class='button' id='healthNewsEditButton'> Edit </a></li>";
+    }
+    else{
+        echo "</li>";
     }
 }
 echo "</div>";
