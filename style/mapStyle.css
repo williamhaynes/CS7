@@ -69,15 +69,12 @@
     vertical-align: middle;
 }
 
-/*
-#wrapper {
-    position: relative;
-}
+
 #directions-panel{
     position: absolute; top: 10px; left: 10px; z-index: 99;
 }
 
-
+/*
 CSS TO DO WITH Driving Directions
 #directions-panel {
     font-family: 'Roboto','sans-serif';
