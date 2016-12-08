@@ -242,13 +242,8 @@ tr{
     margin: 0 auto;
     /*END OF POSITIONING ELEMENT IN CENTRE*/
 }
-#specificClubCalendar{
-    margin-top: 12px;
-}
 #createEventLink{
-    position: absolute;
-    top: 50px;
-    left: 10px;
+    float: right;
 }
 
 /*
