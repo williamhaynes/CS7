@@ -74,8 +74,8 @@ include ("scripts/dbconnect.php");
             legend.appendChild(div);
         }
 
-        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
-    
+        map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
+
 
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
