@@ -186,8 +186,8 @@ tr{
     position: absolute;
     top: 46%;
     left: 50%;
-    -webkit-transform: translate(-15%, -30%);
-    transform: translate(-15%, -30%);
+    -webkit-transform: translate(-30%, -15%);
+    transform: translate(-30%, -15%);
     /*END OF POSITIONING ELEMENT IN CENTRE*/
     background-color: aliceblue;
     border: solid #333 5px;
