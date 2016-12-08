@@ -87,7 +87,7 @@ include ("scripts/dbconnect.php");
 
         var directions = document.createElement('div');
         directions.id = directions;
-        directions.innerHTML = 'Directions '+'<input type="checkbox" id ="directionsCheckbox" onclick="calcRoute()">';
+        directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'+'<p><input type="text" id ="firstPoint" readonly></p>'+'<p><input type="text" id ="secondPoint" readonly></p>'+'<p><input type="button" id ="calcRoute" onclick="calcRoute()"></p>';
         legend.appendChild(directions);
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
