@@ -71,7 +71,14 @@ if (isset($_SESSION['username'])) {
 //                               coords.push()
 //                              coords.push('{lat: ' + markers[i].getPosition().lat() + ', lng: ' + markers[i].getPosition().lat() + '}');
 //                           }
-                            alert(markersLatLng);
+                            //alert(markersLatLng);
+                            var string="";
+                            //alert(markersLatLng.length)
+                            for(i=0;i<markersLatLng.length;i++){
+                                //alert(markersLatLng[i].toString());
+                                string+=markersLatLng[i].lat()+','+markersLatLng[i].lng()+',';
+                            }
+                            document.getElementById('latlngString').value = string;
                             area.setMap(null);
                             area = new google.maps.Polygon({
                                 paths: markersLatLng,
@@ -180,7 +187,7 @@ if (isset($_SESSION['username'])) {
             $typeID = $_POST["typeID"];
             $latlngString = $_POST["latlngString"];
             //IF TYPEID = ROUTE
-            if ($typeID==4||$typeID==3){
+            if ($typeID==4){
                 $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
                 if (mysqli_query($db, $sql)) {
                     $sqlGetLocationID = "SELECT locationID FROM location WHERE name ='" . $name . "' AND address = '" . $address ."'";
@@ -189,6 +196,26 @@ if (isset($_SESSION['username'])) {
                         $resultLocationID = $row['locationID'];
                     }
                     $sql2 = "INSERT INTO route (array, locationID) VALUES ( '" . $latlngString . "', '" . $resultLocationID . "')";
+                    if (mysqli_query($db, $sql2)) {
+                        header("location:../mapPage");
+                    }
+                    else {
+                        echo "Error: " . $sql2 . "<br>Error Message:" . mysqli_error($db);
+                    }
+                } else {
+                    echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
+                }
+            }
+            //IF TYPEID = AREA
+            elseif($typeID==3){
+                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
+                if (mysqli_query($db, $sql)) {
+                    $sqlGetLocationID = "SELECT locationID FROM location WHERE name ='" . $name . "' AND address = '" . $address ."'";
+                    $result = $db->query($sqlGetLocationID);
+                    while($row = $result->fetch_array()){
+                        $resultLocationID = $row['locationID'];
+                    }
+                    $sql2 = "INSERT INTO area (array, locationID) VALUES ( '" . $latlngString . "', '" . $resultLocationID . "')";
                     if (mysqli_query($db, $sql2)) {
                         header("location:../mapPage");
                     }
