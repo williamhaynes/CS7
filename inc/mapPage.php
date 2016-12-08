@@ -92,12 +92,16 @@ include ("scripts/dbconnect.php");
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
 
+        //Adding edit button to map
         var mapFormButton = document.createElement('div');
         <? if($_SESSION['accessLevel'] == 31||$_SESSION['accessLevel'] == 11){?>
             mapFormButton.innerHTML="<a href='/mapForm' class='button'>Map Form</a>";
         <?}?>
 
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(mapFormButton);
+
+        var directionsPanel = document.getElementById('direction-panel');
+        map.controls[google.maps.ControlPosition.RIGHT_TOP].push(directionsPanel);
 
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
