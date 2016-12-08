@@ -446,11 +446,11 @@ include ("scripts/dbconnect.php");
         var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
 
-        startString.split(",");
-        endString.split(",");
-        alert(startString);
-        alert(startString[0]);
-        alert(startString[1]);
+        var startArray = startString.split(",");
+        var endArray = endString.split(",");
+
+        alert(startArray[0]);
+        alert(startArray[1]);
 
         var start =  new google.maps.LatLng(startString[0], startString[1]);
         var end =  new google.maps.LatLng(endString[0], endString[1]);
