@@ -57,11 +57,13 @@ include ("scripts/header.php");
     <div id="clubsAndSocietiesPageSearchBox">
     <h2>Clubs and Societies of Go Portlethen</h2>
     <p>Below is a list of all Clubs and Societies</p>
-        <?php/*
+        <?php
+        session_start();
+        /*
         * If user is administrator or has been allocated as a club administrator, can form new clubs
         */
         if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
-        echo "<a id='createClubFormLink' href='/Forms/createClubForm' class='button'>Create New Club</a>";
+            echo "<a id='createClubFormLink' href='/Forms/createClubForm' class='button'>Create Club Form</a>";
         }
         ?>
     <table id="clubsTable">
