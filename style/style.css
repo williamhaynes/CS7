@@ -132,8 +132,8 @@ tr{
     transform: translate(-50%, -50%);
     /*END OF POSITIONING ELEMENT IN CENTRE*/
     background-color: aliceblue;
-    border: solid black 5px;
-    border-radius: 5px;
+    border: solid #333 5px;
+    border-radius: 15px;
 }
 /* This class controls the size of text boxes on the login page */
 .loginAndRegisterPageTextBox{
@@ -167,8 +167,8 @@ tr{
     transform: translate(-50%, -50%);
     /*END OF POSITIONING ELEMENT IN CENTRE*/
     background-color: aliceblue;
-    border: solid black 5px;
-    border-radius: 5px;
+    border: solid #333 5px;
+    border-radius: 15px;
 }
 
 #submitRegisterButton{
@@ -186,10 +186,10 @@ tr{
     position: absolute;
     top: 46%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -25%);
+    transform: translate(-50%, -25%);
     /*END OF POSITIONING ELEMENT IN CENTRE*/
     background-color: aliceblue;
-    border: solid black 5px;
-    border-radius: 5px;
+    border: solid #333 5px;
+    border-radius: 15px;
 }
