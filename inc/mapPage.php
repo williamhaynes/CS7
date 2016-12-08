@@ -431,7 +431,7 @@ include ("scripts/dbconnect.php");
     function addPointToRoute(name, point) {
         if (document.getElementById('directionsCheckbox').checked){
             if(!document.getElementById('firstPoint').value){
-                document.getElementById('firstPoint').value=point;
+                document.getElementById('firstPoint').value=name;
                 document.getElementById('firstPointLatLng').value=point;
             }else if(!document.getElementById('secondPoint').value){
                 document.getElementById('secondPoint').value=name;
@@ -443,11 +443,10 @@ include ("scripts/dbconnect.php");
 
     function calcRoute() {
         var startString = document.getElementById('firstPointLatLng').value;
-        startString.replace('(','');
-        startString.replace(')','');
-        document.getElementById('secondPoint').value=startString;
-        var start =  new google.maps.LatLng(startCoord);
-        var end =  new google.maps.LatLng(document.getElementById('secondPointLatLng').value);
+        var endString = document.getElementById('secondPointLatLng').value;
+
+        var start =  new google.maps.LatLng(startString);
+        var end =  new google.maps.LatLng(endString);
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
