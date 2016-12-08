@@ -23,10 +23,11 @@ include ("scripts/dbconnect.php");
 </head>
 <body>
 
-
-<div id="map"></div>
-<div id="legend"><h3>Legend</h3></div>
-<div id="directions-panel"></div>
+<div id="wrapper">
+    <div id="map"></div>
+    <div id="legend"><h3>Legend</h3></div>
+    <div id="directions-panel"></div>
+</div>
 <script>
     var map;
     var arrayOfLandmarks = [];
@@ -36,7 +37,6 @@ include ("scripts/dbconnect.php");
     var arrayOfPolylines = [];
     var directionsService;
     var directionsDisplay;
-
 
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
@@ -477,12 +477,7 @@ include ("scripts/dbconnect.php");
             if (status == google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
                 directionsDisplay.setMap(map);
-                var directionsPanel = document.getElementById('direction-panel');
-                var directionDiv = document.createElement('div');
-                directionDiv.setPanel(directionsPanel);
-                directionsPanel.appendChild(directionDiv);
-                //directionsDisplay
-                map.controls[google.maps.ControlPosition.RIGHT_CENTER].push(directionsPanel);
+                directionsDisplay.setPanel(document.getElementById('directions-panel'));
             } else {
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
