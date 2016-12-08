@@ -63,7 +63,7 @@ include ("scripts/header.php");
         * If user is administrator or has been allocated as a club administrator, can form new clubs
         */
         if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
-            echo "<a id='createClubFormLink' href='/Forms/createClubForm' class='button'>Create Club Form</a>";
+            echo "<a id='createClubFormLink' href='/Forms/createClubForm' class='button'>Create New Club</a>";
         }
         ?>
     <table id="clubsTable">
