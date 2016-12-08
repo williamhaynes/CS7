@@ -29,7 +29,7 @@ if($_SESSION['accessLevel']==31) {
                     <h2 class="pageHeaderText">Edit Health & Wellbeing Article</h2>
                     <p>Article ID: <input type="text" name="itemID" value="<?php print $row['itemID'];?>" placeholder="Article ID" readonly></p>
                     <p>Article Name: <input type="text" name="title" value="<?php print $row['title'];?>" placeholder="Article Name"></p>
-                    <p>Content: </p> <textarea name="content"> <?php print $row['content'];?></textarea>
+                    <textarea name="content"> <?php print $row['content'];?></textarea>
                     <p>Author: <input type="text" name="authorName" value="<?php print $row['authorName'];?>" placeholder="Author Name"></p>
                     <p>Verified: <input type="checkbox" name="verified"
                             <?php
@@ -38,7 +38,6 @@ if($_SESSION['accessLevel']==31) {
                             }
                             ?>
                         ></p>
-                    <?php echo "<p>". $row['verified'] ."</p>"?>
                     <p><input type="submit" value='Submit'></p>
                 </form>
                 </div>
