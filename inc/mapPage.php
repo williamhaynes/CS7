@@ -64,7 +64,7 @@ include ("scripts/dbconnect.php");
             // Browser doesn't support Geolocation
             handleLocationError(false, currentPosInfoWindow, map.getCenter());
         }
-    }
+
 
     function handleLocationError(browserHasGeolocation, currentPosInfoWindow, pos) {
         currentPosInfoWindow.setPosition(pos);
