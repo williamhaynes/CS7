@@ -5,6 +5,7 @@ overlay to authorise/reject blog posts. As per System Requirements.-->
 include ("scripts/dbconnect.php");
 include ("scripts/header.php");
 echo "<main>
+      <div id=healthAndWellbeingPadding>
       <h2>Health & Wellbeing</h2>
       <div id='divForHealthNews'>";
 if (isset($_SESSION['username'])) {
@@ -45,6 +46,7 @@ while($row = $result->fetch_array()){
 }
 echo "</div>";
 echo "<div id='divForTwitterFeed'><a class=\"twitter-timeline\" href=\"https://twitter.com/portyacad\">Tweets by portyacad</a> <script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script></div>";
+echo "</div>";
 echo "</main>";
 include ("scripts/footer.php");
 
