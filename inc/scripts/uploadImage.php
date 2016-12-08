@@ -26,8 +26,7 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $uploadOk = 1;
 //Holds the file extension of the file
     $imageFileType = pathinfo($target_file, PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-    if (isset($_POST["submit"])) {
+// Check if image file is a actual image or fake image{
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if ($check !== false) {
             echo "File is an image - " . $check["mime"] . ".";
@@ -36,7 +35,6 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo "File is not an image.";
             $uploadOk = 0;
         }
-    }
 // Check if file already exists
     if (file_exists($target_file)) {
         echo "Sorry, file already exists.";
