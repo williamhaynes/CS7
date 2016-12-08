@@ -170,7 +170,7 @@ include ("scripts/dbconnect.php");
                 ]
             });
         document.getElementsByTagName('head')[0].appendChild(script);
-        var directionsService = new google.maps.DirectionsService;
+        directionsService = new google.maps.DirectionsService;
         directionsDisplay = new google.maps.DirectionsRenderer;
     }
 
