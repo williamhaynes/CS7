@@ -14,7 +14,7 @@ $rules = array(
     'Forms/createHealthAndWellbeingForm' => "/createHealthAndWellbeingForm",
     'Forms/mapForm' => "/mapForm",
     'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm/",
-    'Forms/eventsForm' => "/eventsForm",
+    '/Forms/eventsForm' => "/eventsForm",
     //verifyHealthAndWellbeingForm/{$itemID}
     'scripts/commentBox' => "/commentBox",
     'scripts/commentToDatabase' => "/commentToDatabase",
