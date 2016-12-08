@@ -443,7 +443,8 @@ include ("scripts/dbconnect.php");
 
     function calcRoute() {
         var startString = document.getElementById('firstPointLatLng').value;
-        startString.substring(1);
+        startString.replace('(','');
+        startString.replace(')','');
         document.getElementById('secondPoint').value=startString;
         var start =  new google.maps.LatLng(startCoord);
         var end =  new google.maps.LatLng(document.getElementById('secondPointLatLng').value);
