@@ -428,6 +428,7 @@ include ("scripts/dbconnect.php");
             document.getElementById('secondPoint').style.display='none';
             document.getElementById('calcRoute').style.display='none';
             document.getElementById('resetRoute').style.display='none';
+            directionsDisplay.setMap(null);
         }
     }
 
