@@ -151,7 +151,14 @@ include ("scripts/dbconnect.php");
                         "geometry": {"type": "Area", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
                         "name": "<?php print $row['name'];?>",
                         "address": "<?php print $row['address'];?>",
-                        "description": "<?php print $row['description'];?>"
+                        "description": "<?php print $row['description'];?>",
+                    <?
+                    $locationID = $row['locationID'];
+                    $sql_querySpecificRoute = "SELECT * FROM area WHERE locationID = $locationID";
+                    $resultSpecificRoute = $db->query($sql_querySpecificRoute);
+                    while ($rowRoute = $resultSpecificRoute->fetch_array()) {
+                    ?>
+                    "array": "<?php print $rowRoute['array'];?>"
                         //"markerImage":"images/red.png",
                     },
                 <?}?>
@@ -294,6 +301,7 @@ include ("scripts/dbconnect.php");
                     title: results.areas[i].name,
                     description: results.areas[i].description,
                     address: results.areas[i].address,
+                    array: results.areas[i].array,
                     icon: '../style/area.png',
                     latlngCoords: coords
                 }));
