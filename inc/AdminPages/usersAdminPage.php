@@ -55,7 +55,8 @@ if($_SESSION['accessLevel'] == '31') {
                 }
             }
         </script>
-        <h2>Users Admin Page</h2>
+        <div id="divForUsersAdminPage">
+        <h2 class='pageHeaderText'>Users Admin Page</h2>
         <p>To modify a user select them on the table below and change the relevant value</p>
         <table id="usersTable">
             <input type="text" id="searchInput" onkeyup="searchUser()" placeholder="Search by Keyword..">
@@ -132,6 +133,7 @@ if($_SESSION['accessLevel'] == '31') {
             }
             ?>
         </table>
+        </div>
     </main>
     <?
     include(__DIR__ . "/../scripts/footer.php");
