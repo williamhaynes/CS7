@@ -242,4 +242,5 @@ tr{
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
+    text-align: center;
 }

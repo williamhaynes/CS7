@@ -58,7 +58,7 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
         }
     </script>
     <div id="clubsAndSocietiesPageSearchBox">
-    <h2>Clubs and Societies of Portlethen Go!</h2>
+    <h2>Clubs and Societies of Go Portlethen</h2>
     <p>Below is a list of all Clubs and Societies</p>
     <table id="clubsTable">
         <input type="text" id="searchInput" onkeyup="searchByWord()" placeholder="Search by Keyword..">
