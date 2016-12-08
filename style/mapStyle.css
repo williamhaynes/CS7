@@ -1,4 +1,9 @@
 /**********************************************************************MAP STYLE ***************************************************************************/
+    /* Always set the map height explicitly to define the size of the div
+     * element that contains the map. */
+#map {
+    height: 90%;
+}
 
 #map-canvas {
     margin: 0;
@@ -71,7 +76,10 @@
 
 
 #directions-panel{
-    position: absolute; top: 10px; left: 10px; z-index: 99;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 99;
 }
 
 /*
