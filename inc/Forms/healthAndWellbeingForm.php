@@ -24,8 +24,9 @@ if($_SESSION['accessLevel']==31) {
             <main>
                 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
                 <script>tinymce.init({selector: 'textarea'});</script>
+                <div id="divForHealthAndWellBeingForm">
                 <form action='' method="post">
-
+                    <h2 class="pageHeaderText">Edit Health & Wellbeing Article</h2>
                     <p>Article ID: <input type="text" name="itemID" value="<?php print $row['itemID'];?>" placeholder="Article ID" readonly></p>
                     <p>Article Name: <input type="text" name="title" value="<?php print $row['title'];?>" placeholder="Article Name"></p>
                     <p>Content: </p> <textarea name="content"> <?php print $row['content'];?></textarea>
@@ -40,6 +41,7 @@ if($_SESSION['accessLevel']==31) {
                     <?php echo "<p>". $row['verified'] ."</p>"?>
                     <p><input type="submit" value='Submit'></p>
                 </form>
+                </div>
             </main>
 
                 <?}

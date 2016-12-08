@@ -440,3 +440,21 @@ tr{
     font-family: 'Dosis', sans-serif;
     text-align: center;
 }
+
+#divForHealthAndWellBeingForm{
+    margin-top: 85px;
+    width: 750px;
+    height: 510px;
+    /*Deals with positioning element in centre*/
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /*END OF POSITIONING ELEMENT IN CENTRE*/
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
