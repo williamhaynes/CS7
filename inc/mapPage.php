@@ -344,7 +344,6 @@ include ("scripts/dbconnect.php");
         }
 
     function legendCheck() {
-        setMapOnAll(null);
         if(document.getElementById("landmarkCheckbox").checked = false){
             for(var i=0;i<arrayOfLandmarks.length;i++){
                 arrayOfLandmarks[i].setVisible(false);
