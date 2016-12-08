@@ -336,3 +336,14 @@ tr{
 #verifyArticleLink{
     margin:3px;
 }
+
+/*
+* UsersAdminPage
+*/
+
+#divForUsersAdminPage{}
+
+/*
+* ArticleAdminPage
+*/
+#divForArticleAdminPage{}

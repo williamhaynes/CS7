@@ -65,7 +65,8 @@ if($_SESSION['accessLevel'] == '31') {
                 }
             }
         </script>
-        <h2>Health & Wellbeing Article Administration Page</h2>
+        <div id="divForArticleAdminPage">
+        <h2 class='pageHeaderText'>Health & Wellbeing Article Administration Page</h2>
         <p>To alter an article select it from the below table</p>
         <table id="healthAndWellbeingTable">
             <input type="text" id="searchInput" onkeyup="searchArticle()" placeholder="Search by Keyword..">
@@ -102,6 +103,7 @@ if($_SESSION['accessLevel'] == '31') {
             }
             ?>
         </table>
+        </div>
     </main>
     <?
     include(__DIR__ . "/../scripts/footer.php");
