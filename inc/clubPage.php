@@ -100,7 +100,6 @@
                  <p id='contactEmail'>Email: $contactEmail</p>
                  <a id='websiteUrl'><img id='websiteLogo' src='' alt='' style='width:50px;height:50px;'></a>
                  <a id='facebookUrl'><img id='facebookLogo' src='' alt='' style='width:50px;height:50px;'></a>
-                 <div id='facebookFeed'></div>
                  <script>
                     var website = $website;
                     var facebook = $facebook;
@@ -130,6 +129,8 @@
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
                  </script>";
+            echo "</article>";
+            echo "<div id='facebookFeed'></div>";
             include ("scripts/commentBox.php");
             include ("scripts/fileUploadPageClubMedia.php");
 
@@ -157,7 +158,7 @@
                 echo "<li><p>$comment</p><p>Name: $displayName</p></li>";
             }
 
-        echo "</article>";
+
         }
         echo "</main>";
 
