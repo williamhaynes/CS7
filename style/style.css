@@ -1,3 +1,8 @@
+/* HEADER */
+header{
+
+}
+
 /* FOOTER */
 
 footer {
@@ -79,14 +84,14 @@ nav li a :hover {
 }
 
 #logoIMG{
-    width: 206px;
+    width: 238px;
     height: 58px;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
 
 #logo{
-    width: 206px;
+    width: 238px;
     height: 58px;
 }
 
