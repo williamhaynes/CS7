@@ -90,13 +90,13 @@ include ("scripts/header.php");
         </script>
         <h2 class="pageHeaderText">Register</h2>
         <form action="registerPage" method="post">
-            <p><input type="text" placeholder="User Name" id="usersname" onchange="checkFields()" name="username"></p>
-            <p><input type="text" placeholder="Email Address" id="usersEmailAddress" onchange="checkFields()" name="emailAddress"></p>
-            <p><input type="text" placeholder="Display Name" id="usersDisplayName" onchange="checkFields()" name="displayName"></p>
-            <p><input type="password" placeholder="Password" id="firstPassword" onchange="checkPasswordMatch()" name="password"></p>
-            <p><input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch(); checkFields();" name="confirmPassword"></p>
+            <p><input type="text" placeholder="User Name" id="usersname" onchange="checkFields()" name="username" class="loginAndRegisterPageTextBox"></p>
+            <p><input type="text" placeholder="Email Address" id="usersEmailAddress" onchange="checkFields()" name="emailAddress" class="loginAndRegisterPageTextBox"></p>
+            <p><input type="text" placeholder="Display Name" id="usersDisplayName" onchange="checkFields()" name="displayName" class="loginAndRegisterPageTextBox"></p>
+            <p><input type="password" placeholder="Password" id="firstPassword" onchange="checkPasswordMatch()" name="password" class="loginAndRegisterPageTextBox"></p>
+            <p><input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch(); checkFields();" name="confirmPassword" class="loginAndRegisterPageTextBox"></p>
             <p id="passwordConfirmer"></p>
-            <p><input type="submit" id='submitRegisterButton' value='Register' disabled></p>
+            <p><input type="submit" id='submitRegisterButton' value='Register' class="loginAndRegisterPageLoginButton" disabled></p>
             <p id="whyNotRegisterText">Already a member? Why not <a href='/loginPage'>login?</a></p>
         </form>
     </div>

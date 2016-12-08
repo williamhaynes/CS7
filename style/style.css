@@ -136,7 +136,7 @@ tr{
     border-radius: 5px;
 }
 /* This class controls the size of text boxes on the login page */
-.loginPageTextBox{
+.loginAndRegisterPageTextBox{
     width: 200px;
     margin-left: 100px;
 }
