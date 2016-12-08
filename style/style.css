@@ -120,7 +120,7 @@ tr{
 /*
 *   Login Page Div Controls
 */
-
+/*this div id controls the bounding box for the login details*/
 #divForLoginPage{
     width: 400px;
     height: 285px;
@@ -135,7 +135,8 @@ tr{
     border: solid black 5px;
     border-radius: 5px;
 }
-
+/* This class controls the size of text boxes on the login page */
 .loginPageTextBox{
     width: 200px;
+    padding-left: 100px;
 }
