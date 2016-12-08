@@ -330,3 +330,9 @@ tr{
 #healthNewsTitle{}
 #healthNewsContent{}
 #healthNewsAuthor{}
+#createArticleLink{
+    margin:3px;
+}
+#verifyArticleLink{
+    margin:3px;
+}
