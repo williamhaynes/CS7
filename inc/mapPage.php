@@ -452,10 +452,7 @@ include ("scripts/dbconnect.php");
 
         var start =  new google.maps.LatLng(startArray[0], startArray[1]);
         var end =  new google.maps.LatLng(endArray[0], endArray[1]);
-        var bounds = new google.maps.LatLngBounds();
-        bounds.extend(start);
-        bounds.extend(end);
-        map.fitBounds(bounds);
+ 
         var request = {
             origin: start,
             destination: end,
