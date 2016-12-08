@@ -299,3 +299,20 @@ tr{
     border-top-color: #1b435e;
     background: #1b435e;
 }
+
+/*
+*   Health News Section
+*/
+#divForHealthNews{
+    width: 60%;
+    height: 1000px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#healthNewsArticle{
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
+#healthNewsTitle{}
+#healthNewsContent{}
+#healthNewsAuthor{}

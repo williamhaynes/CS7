@@ -7,6 +7,7 @@ include ("scripts/header.php");
 echo "
 <main>
 <h2>Health & Wellbeing</h2>
+<div id='divForHealthNews'>
 ";
 if (isset($_SESSION['username'])) {
     echo "<a id='createArticleLink' href='/createHealthAndWellbeingForm' class='button'> Create Article </a>";
@@ -45,7 +46,7 @@ while($row = $result->fetch_array()){
     }
 }
 echo "<a class=\"twitter-timeline\" href=\"https://twitter.com/portyacad\">Tweets by portyacad</a> <script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>";
-
+echo "</div>";
 echo "</main>";
 include ("scripts/footer.php");
 
