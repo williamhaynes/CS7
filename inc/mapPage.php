@@ -444,7 +444,7 @@ include ("scripts/dbconnect.php");
     function calcRoute() {
         var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
-
+/*
 
 
         startString.replace(/[{()}]/g, '');
@@ -473,7 +473,7 @@ include ("scripts/dbconnect.php");
             } else {
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
-        });
+        });*/
     }
 
 </script>
