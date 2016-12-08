@@ -446,12 +446,11 @@ include ("scripts/dbconnect.php");
         var endString = document.getElementById('secondPointLatLng').value;
 
 
-
         startString.replace(/[{()}]/g, '');
         alert(startString);
 
         var startArray = startString.split(",");
-        var endArray = startString.split(",");
+        var endArray = endString.split(",");
         alert(startArray[0]);
         alert(startArray[1]);
 
@@ -473,7 +472,7 @@ include ("scripts/dbconnect.php");
             } else {
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
-        });*/
+        });
     }
 
 </script>
