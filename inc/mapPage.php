@@ -344,38 +344,11 @@ include ("scripts/dbconnect.php");
         }
 
     function legendCheck() {
-        if (document.getElementById('landmarkCheckbox').checked == true){
+        if (document.getElementById('landmarkCheckbox').checked){
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(true);
             }
-        }if(document.getElementById('landmarkCheckbox').checked == false){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(false);
-            }
-        }
-        if (document.getElementById('viewpointCheckbox').checked == true){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(true);
-            }
-        }if(document.getElementById('viewpointCheckbox').checked == false){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(false);
-            }
-        }
-        if (document.getElementById('areaCheckbox').checked == true){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(true);
-            }
-        }if(document.getElementById('areaCheckbox').checked == false){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(false);
-            }
-        }
-        if (document.getElementById('routeCheckbox').checked == true){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(true);
-            }
-        }if(document.getElementById('routeCheckbox').checked == false){
+        }else if(!document.getElementById('landmarkCheckbox').checked){
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(false);
             }
