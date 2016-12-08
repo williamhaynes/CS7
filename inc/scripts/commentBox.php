@@ -14,37 +14,39 @@ if (isset($_SESSION['userID'])) {
                 <input type="hidden" id='currentUrl' name="currentUrl" value="">
                 <p><input type="submit" value='Submit Comment'></p>
             </form>
+            <?php
+
+
+            /*
+             * Pulls database information from the 'Comment Table'
+             */
+            $sql_query = "SELECT * FROM comment WHERE clubID = '$clubID';";
+
+            /*
+             * Processes the SQL Query
+             */
+            $result = $db->query($sql_query);
+
+            /*
+             * Iterate through the table and output the data
+             */
+            while($row = $result->fetch_array()){
+                $comment = $row['comment'];
+                $userID = $row['userID'];
+                $sql_query2 = "SELECT displayName FROM User WHERE userID = '$userID';";
+                $result2 = $db->query($sql_query2);
+                while($row = $result2->fetch_array()){
+                    $displayName = $row['displayName'];
+                }
+                echo "<li><p>$comment</p><p>Name: $displayName</p></li>";
+            }
+            ?>
         </div>
         <script>
             var url = "<?php Print($afterSlashUrl); ?>";
             document.getElementById('currentUrl').setAttribute('value', url);
         </script>
         <?
-
-
-        /*
-         * Pulls database information from the 'Comment Table'
-         */
-        $sql_query = "SELECT * FROM comment WHERE clubID = '$clubID';";
-
-        /*
-         * Processes the SQL Query
-         */
-        $result = $db->query($sql_query);
-
-        /*
-         * Iterate through the table and output the data
-         */
-        while($row = $result->fetch_array()){
-            $comment = $row['comment'];
-            $userID = $row['userID'];
-            $sql_query2 = "SELECT displayName FROM User WHERE userID = '$userID';";
-            $result2 = $db->query($sql_query2);
-            while($row = $result2->fetch_array()){
-                $displayName = $row['displayName'];
-            }
-            echo "<li><p>$comment</p><p>Name: $displayName</p></li>";
-        }
     }
 }else{
     //If not logged in don't show comment box
