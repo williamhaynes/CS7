@@ -47,19 +47,23 @@ include ("scripts/dbconnect.php");
         var icons = {
             landmark: {
                 name: 'Landmark',
-                icon: '../style/landmark.png'
+                icon: '../style/landmark.png',
+                id: 'landmarkCheckbox'
             },
             viewpoint: {
                 name: 'Viewpoint',
-                icon: '../style/viewpoint.png'
+                icon: '../style/viewpoint.png',
+                id: 'viewpointCheckbox'
             },
             area: {
                 name: 'Area',
-                icon: '../style/area.png'
+                icon: '../style/area.png',
+                id: 'areaCheckbox'
             },
             route: {
                 name: 'Route',
-                icon: '../style/route.png'
+                icon: '../style/route.png',
+                id: 'routeCheckbox'
             }
         };
 
@@ -71,7 +75,7 @@ include ("scripts/dbconnect.php");
             var icon = type.icon;
             var checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
-            checkbox.id = '2';
+            checkbox.id = type.id;
             var div = document.createElement('div');
             div.innerHTML = '<img src="' + icon + '"> ' + name + checkbox;
             legend.appendChild(div);
