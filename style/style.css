@@ -384,6 +384,7 @@ tr{
 * User Details CSS
 */
 #modifyDetailsForm {
+    padding-top: 5px;
     width: 400px;
     background-color: aliceblue;
     border: solid #333 5px;
@@ -392,6 +393,7 @@ tr{
     text-align: center;
 }
 #modifyClubAdminFormRemoval{
+    padding-top: 5px;
     width: 400px;
     background-color: aliceblue;
     border: solid #333 5px;
@@ -400,6 +402,7 @@ tr{
     text-align: center;
 }
 #modifyClubAdminFormAddition{
+    padding-top: 5px;
     width: 400px;
     background-color: aliceblue;
     border: solid #333 5px;
