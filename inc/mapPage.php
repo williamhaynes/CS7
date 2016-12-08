@@ -446,6 +446,8 @@ include ("scripts/dbconnect.php");
         var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
 
+        startString.split(",");
+        endString.split(",");
         alert(startString);
         alert(startString[0]);
         alert(startString[1]);
