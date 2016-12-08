@@ -460,9 +460,9 @@ tr{
 }
 
 #divForEventsForm{
-    margin-top: 75px;
+    margin-top: 55px;
     width: 750px;
-    height: 630px;
+    height: 580px;
     /*Deals with positioning element in centre*/
     position: absolute;
     top: 46%;
