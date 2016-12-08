@@ -10,7 +10,7 @@ if (isset($_SESSION['username'])) {
             <h2>Add Event to Calendar</h2>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
-            <form action="eventsForm.php" method="post">
+            <form action="eventsForm" method="post">
                 <p>Event Name:</p>
                 <p><input type="text" placeholder="Event Name" name="eventName"></p>
                 <p>Event Start Date</p>
