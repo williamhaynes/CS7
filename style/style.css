@@ -307,16 +307,21 @@ tr{
 
 }
 #divForTwitterFeed{
-    width: 300px;
+    width: 30%;
     height: 600px;
+    overflow-y: scroll;
 }
 #healthNewsArticle{
+    text-decoration: none;
     font-family: 'Dosis', sans-serif;
     text-align: center;
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
     text-align: center;
+    width: 60%;
+    min-width: 480px;
+    float:left;
 }
 #healthNewsTitle{}
 #healthNewsContent{}
