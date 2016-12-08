@@ -431,7 +431,7 @@ include ("scripts/dbconnect.php");
     function addPointToRoute(name, point) {
         if (document.getElementById('directionsCheckbox').checked){
             if(!document.getElementById('firstPoint').value){
-                document.getElementById('firstPoint').value=name;
+                document.getElementById('firstPoint').value=point;
                 document.getElementById('firstPointLatLng').value=point;
             }else if(!document.getElementById('secondPoint').value){
                 document.getElementById('secondPoint').value=name;
