@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
                 <p><input type="password" placeholder="Password" name="password" class="loginAndRegisterPageTextBox"></p>
                 <p><input type="submit" id="loginPageLoginButton" value='Login'></p>
             </form>
-            <p id="whyNotRegisterText">Not a member? Why not <a href='/registerPage'>register?</a></p>
+            <p class="whyNotRegisterText">Not a member? Why not <a href='/registerPage'>register?</a></p>
         </div>
     </main>
     <?
