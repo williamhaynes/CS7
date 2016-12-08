@@ -230,7 +230,7 @@ tr{
 * Calendar Specific Controls
 */
 
-#calendar{
+#calendar tbody{
     width: 100%;
     max-height: 300px;
     overflow-y: scroll;
@@ -238,8 +238,7 @@ tr{
 }
 #allEventsCalendar{
     /*Deals with positioning element in centre*/
-    padding-left: 20%;
-    float: left;
+    margin: 0 auto;
     /*END OF POSITIONING ELEMENT IN CENTRE*/
 
 }
