@@ -181,13 +181,13 @@ tr{
 
 #divForClubPageDetails{
     width: 600px;
-    height: 820px;
+    height: 410px;
     /*Deals with positioning element in centre*/
     position: absolute;
     top: 46%;
     left: 50%;
-    -webkit-transform: translate(-80%, -25%);
-    transform: translate(-80%, -25%);
+    -webkit-transform: translate(-82%, -25%);
+    transform: translate(-82%, -25%);
     /*END OF POSITIONING ELEMENT IN CENTRE*/
     background-color: aliceblue;
     border: solid #333 5px;
