@@ -23,11 +23,10 @@ include ("scripts/dbconnect.php");
 </head>
 <body>
 
-<div id="wrapper">
     <div id="map"></div>
     <div id="legend"><h3>Legend</h3></div>
     <div id="directions-panel"></div>
-</div>
+
 <script>
     var map;
     var arrayOfLandmarks = [];
