@@ -138,5 +138,5 @@ tr{
 /* This class controls the size of text boxes on the login page */
 .loginPageTextBox{
     width: 200px;
-    padding-left: 100px;
+    margin-left: 100px;
 }
