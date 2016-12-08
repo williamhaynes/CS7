@@ -426,9 +426,9 @@ include ("scripts/dbconnect.php");
 
     function addPointToRoute(point) {
         if (document.getElementById('directionsCheckbox').checked){
-            if(document.getElementById('firstPoint').getAttribute(value)==""){
+            if(document.getElementById('firstPoint').getAttribute(value)==''){
                 document.getElementById('firstPoint').setAttribute(value, point);
-            }else if(document.getElementById('secondPoint').getAttribute(value)==""){
+            }else if(document.getElementById('secondPoint').getAttribute(value)==''){
                 document.getElementById('secondPoint').setAttribute(value, point);
             }
         }else{
