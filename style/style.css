@@ -209,8 +209,8 @@ tr{
     /*position: absolute;
     top: 10px;
     right: 10%;*/
-    margin-right: 10%;
-    float: right;
+    margin-left: 10%;
+    float: left;
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
@@ -221,6 +221,7 @@ tr{
     /*position: absolute;
     top: 10px;
     left: 10%;*/
+    margin-left: 10%;
     float: left;
     background-color: aliceblue;
     border: solid #333 5px;
