@@ -187,12 +187,6 @@ tr{
     overflow-x: hidden;
 }
 
-#calendar{
-    max-height: 300px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-}
-
 #clubDetails{
     width: 420px;
     /*position: absolute;
@@ -230,6 +224,18 @@ tr{
     border: solid #333 5px;
     border-radius: 15px;
     padding: 10px;
+}
+
+/*
+* Calendar Specific Controls
+*/
+
+#calendar{
+    max-height: 300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 
 /*
