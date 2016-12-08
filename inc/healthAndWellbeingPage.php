@@ -6,12 +6,12 @@ include ("scripts/dbconnect.php");
 include ("scripts/header.php");
 echo "
 <main>
-<h2>Health and Wellbeing Articles</h2>
+<h2>Health & Wellbeing</h2>
 ";
 if (isset($_SESSION['username'])) {
-    echo "<a id='createArticleLink' href='/createHealthAndWellbeingForm'> Create Article </a>";
+    echo "<a id='createArticleLink' href='/createHealthAndWellbeingForm' class='button'> Create Article </a>";
     if ($_SESSION['accessLevel']==31) {
-        echo "<a id='verifyArticleLink' href='/healthAndWellbeingForm'> Verify Articles </a>";
+        echo "<a id='verifyArticleLink' href='/healthAndWellbeingForm' class='button> Verify Articles </a>";
     }
 }
 echo "
@@ -38,8 +38,8 @@ while($row = $result->fetch_array()){
     $title = $row['title'];
     $content = $row['content'];
     $authorName = $row['authorName'];
-    echo "<li><p><h1>$title</h1></p><p>$content</p>";
-    echo "<p>Author: $authorName</p></li>";
+    echo "<li id='healthNewsArticle'><p><h1 id='healthNewsTitle'>$title</h1></p><p id='healthNewsContent'>$content</p>";
+    echo "<p id='healthNewsAuthor'>Author: $authorName</p></li>";
     if($_SESSION['accessLevel'] == 31) {
         echo "<a href='Forms/healthAndWellbeingForm/{$itemID}'> Edit </a>";
     }

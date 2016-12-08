@@ -21,7 +21,7 @@ if (isset($_SESSION['username']))
         include (__DIR__ . "/../scripts/dbconnect.php");
         $articleName = $_POST["articleName"];
         $articleText = $_POST["articleText"];
-        $authorName = $_SESSION["username"];
+        $authorName = $_SESSION["displayName"];
         //If admin the verified value should be 1 and not 0
         if($_SESSION['accessLevel'] == '31'){
             $verified = 1;
