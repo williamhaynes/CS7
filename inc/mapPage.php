@@ -87,8 +87,8 @@ include ("scripts/dbconnect.php");
         directions.id = directions;
 
         directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'
-            +'<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" value="" readonly></p>'
-            +'<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" value="" readonly></p>'
+            +'<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" value="" readonly><input type="hidden" id ="firstPointLatLng"></p>'
+            +'<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" value="" readonly><input type="hidden" id ="secondPointLatLng"></p>'
             +'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"></p>';
 
         legend.appendChild(directions);
@@ -245,7 +245,7 @@ include ("scripts/dbconnect.php");
                     //Adding to arrayOfClickedPoints
                     arrayOfClickedPoints.push(this.position);
                     //Trying to add point to route
-                    addPointToRoute(this.title);
+                    addPointToRoute(this.title, this.position);
                 });
             }
 
@@ -428,12 +428,14 @@ include ("scripts/dbconnect.php");
         }
     }
 
-    function addPointToRoute(point) {
+    function addPointToRoute(name, point) {
         if (document.getElementById('directionsCheckbox').checked){
             if(!document.getElementById('firstPoint').value){
                 document.getElementById('firstPoint').value=point;
+                document.getElementById('firstPointLatLng').value=point;
             }else if(!document.getElementById('secondPoint').value){
-                document.getElementById('secondPoint').value=point;
+                document.getElementById('secondPoint').value=name;
+                document.getElementById('secondPointLatLng').value=point;
             }
         }else{
         }
