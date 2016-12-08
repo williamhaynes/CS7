@@ -14,6 +14,7 @@ include("dbconnect.php");
     $sql_query;                                                     //Initialize query
     if($currentURL == "/clubsAndSocietiesPage"){            //If page making call P&S page
         $sql_query = "SELECT * FROM clubcalender INNER JOIN club ON club.clubID=clubcalender.clubID;";                //Get all events
+        echo "<div id=calendar>";
         echo "<table id=\"allEventsCalendar\">";
         echo "<tr>";
         echo "<th>Date</th>";
@@ -23,6 +24,7 @@ include("dbconnect.php");
     }
     elseif ($currentURL == "/clubPage/" . $clubID){                                                          //Call by specific club
         $sql_query = "SELECT * FROM clubcalender INNER JOIN club ON club.clubID=clubcalender.clubID WHERE clubcalender.clubID ='".$clubID."';";     //Get specific Events
+        echo "<div id=calendar>";
         echo "<table id=\"specificClubCalendar\">";
         echo "<tr>";
         echo "<th>Date</th>";
@@ -61,6 +63,7 @@ include("dbconnect.php");
         }
     }
     echo "</table>";
+    echo "</div>";
     if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
         echo "<a id='createEventLink' href='/eventsForm'> Add Event </a>";
     }
