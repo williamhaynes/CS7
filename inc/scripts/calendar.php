@@ -47,6 +47,9 @@ include("dbconnect.php");
             echo "<td>" . $row['eventName'] . "</td>";
             //Echo event date
             echo "<td>" . $row['clubName'] . "</td>";
+            if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
+                echo "<a id='createEventLink' href='/eventsForm' class='button'> Add Event </a>";
+            }
             //End table row
             echo "</tr>";
         }
@@ -59,15 +62,15 @@ include("dbconnect.php");
             echo "<td>". $row['eventName'] . "</td>";
                 //Echo event Description
             echo "<td>". $row['eventDescription'] . "</td>";
+            if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
+                echo "<a id='createEventLink' href='/eventsForm' class='button'> Add Event </a>";
+            }
             //End table row
             echo "</tr>";
         }
     }
     echo "</tbody>";
     echo "</table>";
-        if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
-            echo "<a id='createEventLink' href='/eventsForm' class='button'> Add Event </a>";
-        }
     echo "</div>";
 
 ?>
