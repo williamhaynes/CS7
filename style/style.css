@@ -238,8 +238,7 @@ tr{
 }
 #allEventsCalendar{
     /*Deals with positioning element in centre*/
-    padding-left: 20%;
-    float: left;
+    margin: 0 auto;
     /*END OF POSITIONING ELEMENT IN CENTRE*/
 
 }
