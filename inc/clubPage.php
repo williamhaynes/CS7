@@ -100,7 +100,6 @@
                  <p id='contactEmail'>Email: $contactEmail</p>
                  <a id='websiteUrl'><img id='websiteLogo' src='' alt='' style='width:50px;height:50px;'></a>
                  <a id='facebookUrl'><img id='facebookLogo' src='' alt='' style='width:50px;height:50px;'></a>
-                 <div id='facebookFeed'></div>
                  <script>
                     var website = $website;
                     var facebook = $facebook;
@@ -131,6 +130,7 @@
                     }
                  </script>";
             echo "</article>";
+            echo "<div id='facebookFeed'></div>";
             include ("scripts/commentBox.php");
             include ("scripts/fileUploadPageClubMedia.php");
 
