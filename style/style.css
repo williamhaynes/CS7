@@ -235,6 +235,7 @@ tr{
     max-height: 300px;
     overflow-y: scroll;
     overflow-x: hidden;
+    position: relative;
 }
 #allEventsCalendar{
     /*Deals with positioning element in centre*/
