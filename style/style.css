@@ -241,8 +241,11 @@ tr{
     /*Deals with positioning element in centre*/
     margin: 0 auto;
     /*END OF POSITIONING ELEMENT IN CENTRE*/
-
 }
+#createEventLink{
+    margin: 0 auto;
+}
+
 /*
 * Clubs & Societies Page
 */
