@@ -256,6 +256,12 @@ tr{
     text-align: center;
 }
 
+#createClubFormLink{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+
 /*Button CSS
 * Code Source: https://css-tricks.com/examples/ButtonMaker/
 */
