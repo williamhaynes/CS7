@@ -447,7 +447,7 @@ include ("scripts/dbconnect.php");
 
         var start =  document.getElementById('firstPointLatLng').value;
         alert(start);
-        var end =  new google.maps.LatLng(endString);
+        var end =  document.getElementById('firstPointLatLng').value;
         /*var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
