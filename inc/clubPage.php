@@ -90,19 +90,50 @@
             }
             echo "
             <article id=\"divForClubPageDetails\">
-                 <h2 id='clubName'>{$clubName}</h2>
-                 <p id='activity'>{$activity}</p>
-                 <p>Description:</p>
-                 <p id='clubDescription'>{$clubDescription}</p>
-                 <p id='sessionTime'>{$sessionTime}</p>
-                 <p id='contactName'>Contact: $contactName</p>
-                 <p id='contactNumber'>Contact Number: $contactNumber</p>
-                 <p id='contactEmail'>Email: $contactEmail</p>
-                 <a id='websiteUrl'><img id='websiteLogo' src='' alt='' style='width:50px;height:50px;'></a>
-                 <a id='facebookUrl'><img id='facebookLogo' src='' alt='' style='width:50px;height:50px;'></a>
-                 ";
+                <div id='clubDetails'>
+                     <h2 id='clubName'>{$clubName}</h2>
+                     <p id='activity'>{$activity}</p>
+                     <p>Description:</p>
+                     <p id='clubDescription'>{$clubDescription}</p>
+                     <p id='sessionTime'>{$sessionTime}</p>
+                     <p id='contactName'>Contact: $contactName</p>
+                     <p id='contactNumber'>Contact Number: $contactNumber</p>
+                     <p id='contactEmail'>Email: $contactEmail</p>
+                     <a id='websiteUrl'><img id='websiteLogo' src='' alt='' style='width:50px;height:50px;'></a>
+                     <a id='facebookUrl'><img id='facebookLogo' src='' alt='' style='width:50px;height:50px;'></a>
+                </div>
+                <div id='facebookFeed'></div>
+                 <script>
+                    var website = $website;
+                    var facebook = $facebook;
+                    var websiteUrl = '{$websiteUrl}';
+                    var facebookUrl = '{$facebookUrl}';
+                    /*
+                     * If they have a website show the url and website logo according to what it on their website
+                     * else set logo to certain size
+                     */
+                    if (website==1){
+                        document.getElementById('websiteUrl').setAttribute ('href', websiteUrl);
+                        document.getElementById('websiteLogo').setAttribute('src','http://www.charlenebower.com/wp-content/uploads/2014/11/website-image.jpg');
+                    }else{
+                        document.getElementById('websiteLogo').setAttribute('style','width:0px;height:0px;')
+                    }
+                    /*
+                     * If they have a facebook page then display the url and and logo on the facebook page
+                     * else set logo to certain size
+                     */
+                    if (facebook==1){
+                        document.getElementById('facebookUrl').setAttribute ('href', facebookUrl);
+                        document.getElementById('facebookLogo').setAttribute('src','https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png');
+                        /*Adding a facebook feed
+                         */
+                        document.getElementById('facebookFeed').innerHTML = ('<div class=\"fb-page\" data-href=\"$facebookUrl\" data-tabs=\"timeline\" data-small-header=\"false\" data-adapt-container-width=\"true\" data-hide-cover=\"false\" data-show-facepile=\"true\"><blockquote cite=\"$facebookUrl\" class=\"fb-xfbml-parse-ignore\"><a href=\"$facebookUrl\">$clubName</a></blockquote></div>');
+                    }else{
+                        document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
+                    }
+                 </script>";
             echo "</article>";
-            echo "<div id='facebookFeed'></div>";
+            echo "";
             include ("scripts/commentBox.php");
             include ("scripts/fileUploadPageClubMedia.php");
 
@@ -133,35 +164,7 @@
 
         }
         echo "</main>";
-    echo "<script>
-                    var website = $website;
-                    var facebook = $facebook;
-                    var websiteUrl = '{$websiteUrl}';
-                    var facebookUrl = '{$facebookUrl}';
-                    /*
-                     * If they have a website show the url and website logo according to what it on their website
-                     * else set logo to certain size
-                     */
-                    if (website==1){
-                        document.getElementById('websiteUrl').setAttribute ('href', websiteUrl);
-                        document.getElementById('websiteLogo').setAttribute('src','http://www.charlenebower.com/wp-content/uploads/2014/11/website-image.jpg');
-                    }else{
-                        document.getElementById('websiteLogo').setAttribute('style','width:0px;height:0px;')
-                    }
-                    /*
-                     * If they have a facebook page then display the url and and logo on the facebook page
-                     * else set logo to certain size
-                     */
-                    if (facebook==1){
-                        document.getElementById('facebookUrl').setAttribute ('href', facebookUrl);
-                        document.getElementById('facebookLogo').setAttribute('src','https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png');
-                        /*Adding a facebook feed
-                         */
-                        document.getElementById('facebookFeed').innerHTML = ('<div class=\"fb - page\" data-href=\"$facebookUrl\" data-tabs=\"timeline\" data-small-header=\"false\" data-adapt-container-width=\"true\" data-hide-cover=\"false\" data-show-facepile=\"true\"><blockquote cite=\"$facebookUrl\" class=\"fb - xfbml - parse - ignore\"><a href=\"$facebookUrl\">$clubName</a></blockquote></div>');
-                    }else{
-                        document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
-                    }
-                 </script>";
+
              
     include ("scripts/footer.php");
 ?>
