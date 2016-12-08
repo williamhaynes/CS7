@@ -67,7 +67,7 @@ include ("scripts/dbconnect.php");
             }
         };
 
-        //Creating the legend
+        //Creating the legend with icons
         var legend = document.getElementById('legend');
         for (var key in icons) {
             var type = icons[key];
@@ -78,6 +78,11 @@ include ("scripts/dbconnect.php");
             div.innerHTML = '<img src="' + icon + '"> ' + name + '<input type="checkbox" id ='+checkboxID+' onclick="legendCheck()" checked>';
             legend.appendChild(div);
         }
+
+        var directions = document.createElement('div');
+        directions.id = directions;
+        directions.innerHTML = 'Directions '+'<input type="checkbox" id ='+directionsCheckbox+' onclick="legendCheck()" checked>';
+        legend.appendChild(directions);
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
 
