@@ -100,7 +100,7 @@ include ("scripts/dbconnect.php");
             mapFormButton.innerHTML="<a href='/mapForm' class='button'>Map Form</a>";
         <?}?>
 
-        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(mapFormButton);
 
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
