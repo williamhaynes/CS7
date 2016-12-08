@@ -304,13 +304,18 @@ tr{
 *   Health News Section
 */
 #divForHealthNews{
-    width: 60%;
-    height: 1000px;
-    overflow-x: hidden;
-    overflow-y: scroll;
+
+}
+#divForTwitterFeed{
+    width: 300px;
+    height: 600px;
 }
 #healthNewsArticle{
     font-family: 'Dosis', sans-serif;
+    text-align: center;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
     text-align: center;
 }
 #healthNewsTitle{}

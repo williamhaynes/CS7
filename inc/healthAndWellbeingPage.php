@@ -40,8 +40,8 @@ while($row = $result->fetch_array()){
         echo "<a href='Forms/healthAndWellbeingForm/{$itemID}'> Edit </a>";
     }
 }
-echo "<a class=\"twitter-timeline\" href=\"https://twitter.com/portyacad\">Tweets by portyacad</a> <script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>";
 echo "</div>";
+echo "<div id='divForTwitterFeed'><a class=\"twitter-timeline\" href=\"https://twitter.com/portyacad\">Tweets by portyacad</a> <script async src=\"//platform.twitter.com/widgets.js\" charset=\"utf-8\"></script></div>";
 echo "</main>";
 include ("scripts/footer.php");
 
