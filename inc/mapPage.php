@@ -354,30 +354,30 @@ include ("scripts/dbconnect.php");
             }
         }
         if (document.getElementById('viewpointCheckbox').checked){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(true);
+            for (var i = 0; i < arrayOfViewpoints.length; i++) {
+                arrayOfViewpoints[i].setVisible(true);
             }
         }else if(!document.getElementById('viewpointCheckbox').checked){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(false);
+            for (var i = 0; i < arrayOfViewpoints.length; i++) {
+                arrayOfViewpoints[i].setVisible(false);
             }
         }
         if (document.getElementById('areaCheckbox').checked){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(true);
+            for (var i = 0; i < arrayOfAreas.length; i++) {
+                arrayOfAreas[i].setVisible(true);
             }
         }else if(!document.getElementById('areaCheckbox').checked){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(false);
+            for (var i = 0; i < arrayOfAreas.length; i++) {
+                arrayOfAreas[i].setVisible(false);
             }
         }
         if (document.getElementById('routeCheckbox').checked){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(true);
+            for (var i = 0; i < arrayOfRoutes.length; i++) {
+                arrayOfRoutes[i].setVisible(true);
             }
         }else if(!document.getElementById('routeCheckbox').checked){
-            for (var i = 0; i < arrayOfLandmarks.length; i++) {
-                arrayOfLandmarks[i].setVisible(false);
+            for (var i = 0; i < arrayOfRoutes.length; i++) {
+                arrayOfRoutes[i].setVisible(false);
             }
         }
     }
