@@ -25,7 +25,7 @@ include ("scripts/dbconnect.php");
 
     <div id="map"></div>
     <div id="legend"><h3>Legend</h3></div>
-    <div id="switchScroll"><div id="directions-panel"><h3>Directions</h3></div></div>
+    <div id="directions-panel"><h3>Directions</h3></div>
 
 <script>
     var map;

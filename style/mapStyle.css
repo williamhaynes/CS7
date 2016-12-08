@@ -69,10 +69,6 @@
     vertical-align: middle;
 }
 
-#switchScroll{
-    direction: ltr;
-}
-
 #directions-panel{
     max-width: 300px;
     max-height: 30%;
@@ -89,8 +85,7 @@
     margin: 10px;
     border: 3px solid #000;
     border-radius: 4px 4px 4px 4px;
-    text-align: left;
-    direction: rtl;
+
 }
 
 /*
