@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET'){
 
 elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //Specifies the directory where the file is to be placed
-    $target_dir = "../uploads/clubmedia/";
+    $target_dir = "../uploads/";
 //Specifies the path of the file to be uploaded
     $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 //Boolean to control whether file is allowed to upload or not
@@ -61,8 +61,10 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file " . basename($_FILES["fileToUpload"]["name"]) . " has been uploaded.";
+            header("location:../registerPage");
         } else {
             echo "Sorry, there was an error uploading your file.";
+            header("location:404");
         }
     }
 }
