@@ -182,6 +182,7 @@ tr{
 #divForClubPageDetails{
     width: 100%;
     height: 600px;
+    min-width: 740px;
     /*Deals with positioning element in centre*/
     /*END OF POSITIONING ELEMENT IN CENTRE*/
     background-color: aliceblue;
@@ -197,8 +198,12 @@ tr{
 
 #clubDetails{
     width: 420px;
+    position: absolute;
+    left: 10px;
 }
 
 #facebookFeed{
     width: 300px;
+    position: absolute;
+    right: 10px;
 }
