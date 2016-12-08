@@ -346,6 +346,10 @@ include ("scripts/dbconnect.php");
     function legendCheck() {
         if (document.getElementById('landmarkCheckbox').checked){
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
+                arrayOfLandmarks[i].setVisible(true);
+            }
+        }else{
+            for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(false);
             }
         }
