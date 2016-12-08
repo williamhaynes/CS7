@@ -179,6 +179,10 @@ tr{
  * Club Page Specific Controls
  */
 
+#specificClubCalendar{
+    max-height: 300px;
+}
+
 #divForClubPageDetails{
     width: 600px;
     height: 410px;
@@ -192,4 +196,12 @@ tr{
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
+}
+
+/*
+ * Clubs and Societies page Controls
+ */
+
+#allEventsCalendar{
+    max-height: 300px;
 }
