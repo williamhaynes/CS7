@@ -79,7 +79,7 @@ include ("scripts/dbconnect.php");
             legend.appendChild(div);
         }
 
-        var directions document.createElement('div');
+        var directions = document.createElement('div');
         directions.id = directions;
         directions.innerHTML = 'Directions '+<input type="checkbox" id ='+directionsCheckbox+' onclick="legendCheck()" checked>';
         legend.appendChild(directions);
