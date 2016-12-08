@@ -442,8 +442,8 @@ include ("scripts/dbconnect.php");
     }
 
     function calcRoute() {
-        var start =  new google.maps.LatLng(document.getElementById('firstPointLatLng').getAttribute(value));
-        var end =  new google.maps.LatLng(document.getElementById('secondPointLatLng').getAttribute(value));
+        var start =  new google.maps.LatLng(document.getElementById('firstPointLatLng')value);
+        var end =  new google.maps.LatLng(document.getElementById('secondPointLatLng')value);
         var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
