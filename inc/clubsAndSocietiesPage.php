@@ -9,6 +9,7 @@ include ("scripts/dbconnect.php");
 include ("scripts/header.php");
 ?>
 <main>
+    <h2 class='pageHeaderText'>Clubs & Societies</h2>
     <p><?php include ("scripts/calendar.php") ?></p>
     <script>
         /*

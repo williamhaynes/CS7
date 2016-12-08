@@ -56,7 +56,7 @@ if($_SESSION['accessLevel'] == '31') {
             }
         </script>
         <div id="divForUsersAdminPage">
-        <h2 class='pageHeaderText'>Users Admin Page</h2>
+        <h2 class='pageHeaderText'>Users Administration</h2>
         <p>To modify a user select them on the table below and change the relevant value</p>
         <table id="usersTable">
             <input type="text" id="searchInput" onkeyup="searchUser()" placeholder="Search by Keyword..">
