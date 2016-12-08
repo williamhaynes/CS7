@@ -7,6 +7,12 @@ overlay to authorise/reject blog posts. As per System Requirements.-->
 <?php
 include ("scripts/dbconnect.php");
 include ("scripts/header.php");
+/*
+ * If user is administrator or has been allocated as a club administrator, can form new clubs
+ */
+if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
+            echo "<a id='createClubFormLink' href='/Forms/createClubForm' class='button'>Create Club Form</a>";
+        }
 ?>
 <main>
     <p><?php include ("scripts/calendar.php") ?></p>
@@ -57,13 +63,6 @@ include ("scripts/header.php");
     <div id="clubsAndSocietiesPageSearchBox">
     <h2>Clubs and Societies of Go Portlethen</h2>
     <p>Below is a list of all Clubs and Societies</p>
-        <?php/*
-        * If user is administrator or has been allocated as a club administrator, can form new clubs
-        */
-        if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
-        echo "<a id='createClubFormLink' href='/Forms/createClubForm' class='button'>Create New Club</a>";
-        }
-        ?>
     <table id="clubsTable">
         <input type="text" id="searchInput" onkeyup="searchByWord()" placeholder="Search by Keyword..">
         <select id="filterByOptions" onchange="searchByWord()">
