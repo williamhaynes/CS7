@@ -84,15 +84,15 @@
                      * If the current user is an admin i.e is logged into the page as a admin or has level 31 which is
                      * the access level of an admin user
                      */
+            echo "
+            <article id=\"divForClubPageDetails\">
+                <div id='clubDetails'>
+                     <h2 id='clubName'>{$clubName}</h2>";
             if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
                 echo "<a id='clubAdminFormEditLink' href='{$clubID}/clubAdminForm' class='button'>Edit Club</a>";
             } else {
             }
-            echo "
-            <article id=\"divForClubPageDetails\">
-                <div id='clubDetails'>
-                     <h2 id='clubName'>{$clubName}</h2>
-                     <p id='activity'>{$activity}</p>
+                echo "<p id='activity'>{$activity}</p>
                      <p>Description:</p>
                      <p id='clubDescription'>{$clubDescription}</p>
                      <p id='sessionTime'>{$sessionTime}</p>
