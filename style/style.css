@@ -144,7 +144,7 @@ tr{
 #whyNotRegisterText{
     text-align: center;
 }
-.loginAndRegisterPageLoginButton{
+#loginPageLoginButton{
     margin-left: 176px;
 }
 
@@ -156,7 +156,7 @@ tr{
 *   Register Page Div Controls
 */
 
-#divForRegisterPage{
+#divForRegisterPage {
     width: 400px;
     height: 315px;
     /*Deals with positioning element in centre*/
@@ -169,4 +169,8 @@ tr{
     background-color: aliceblue;
     border: solid black 5px;
     border-radius: 5px;
+}
+
+#submitRegisterButton{
+    margin-left: 169px;
 }

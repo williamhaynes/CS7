@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             <form action="loginPage" method="post">
                 <input type="text" placeholder="User Name or Email Address" name="username" class="loginAndRegisterPageTextBox">
                 <p><input type="password" placeholder="Password" name="password" class="loginAndRegisterPageTextBox"></p>
-                <p><input type="submit" class="loginAndRegisterPageLoginButton" value='Login'></p>
+                <p><input type="submit" id="loginPageLoginButton" value='Login'></p>
             </form>
             <p id="whyNotRegisterText">Not a member? Why not <a href='/registerPage'>register?</a></p>
         </div>

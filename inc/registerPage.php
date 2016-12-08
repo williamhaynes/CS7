@@ -96,7 +96,7 @@ include ("scripts/header.php");
             <p><input type="password" placeholder="Password" id="firstPassword" onchange="checkPasswordMatch()" name="password" class="loginAndRegisterPageTextBox"></p>
             <p><input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch(); checkFields();" name="confirmPassword" class="loginAndRegisterPageTextBox"></p>
             <p id="passwordConfirmer"></p>
-            <p><input type="submit" id='submitRegisterButton' value='Register' class="loginAndRegisterPageLoginButton" disabled></p>
+            <p><input type="submit" id='submitRegisterButton' value='Register' disabled></p>
             <p id="whyNotRegisterText">Already a member? Why not <a href='/loginPage'>login?</a></p>
         </form>
     </div>
