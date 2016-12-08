@@ -341,9 +341,21 @@ tr{
 * UsersAdminPage
 */
 
-#divForUsersAdminPage{}
+#divForUsersAdminPage{
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+}
 
 /*
 * ArticleAdminPage
 */
-#divForArticleAdminPage{}
+#divForArticleAdminPage{
+    text-align: center;
+    font-family: 'Dosis', sans-serif;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+}
