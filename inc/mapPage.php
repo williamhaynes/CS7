@@ -73,16 +73,10 @@ include ("scripts/dbconnect.php");
             var type = icons[key];
             var name = type.name;
             var icon = type.icon;
-            var checkbox = document.createElement('input');
-            checkbox.type = 'checkbox';
-            checkbox.id = type.id;
-            checkbox.onclick = "legendCheck()";
-            checkbox.checked = true;
+            var checkbox = type.id;
             var div = document.createElement('div');
-
-            div.innerHTML = '<img src="' + icon + '"> ' + name;
+            div.innerHTML = '<img src="' + icon + '"> ' + name + '<input type="checkbox" id = checkboxID onclick="legendCheck()" checked>';
             legend.appendChild(div);
-            legend.appendChild(checkbox);
         }
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
