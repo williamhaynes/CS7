@@ -67,7 +67,6 @@ if ($_SESSION['accessLevel']==21||$_SESSION['accessLevel']==31){
             <option value="genre">Genre</option>
             <option value="description">Description</option>
         </select>
-    </div>
         <tr>
             <th>Club Name</th>
             <th>Genre</th>
@@ -109,6 +108,7 @@ echo "</tr>";
 }
 ?>
 </table>
+    </div>
 </main>
 <?
 /*
