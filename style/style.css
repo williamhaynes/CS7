@@ -133,6 +133,7 @@ tr{
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
 }
 /* This class controls the size of text boxes on the login page */
 .loginAndRegisterPageTextBox{
@@ -168,6 +169,7 @@ tr{
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
 }
 
 #submitRegisterButton{
@@ -185,6 +187,7 @@ tr{
     position: relative;
     overflow-y: scroll;
     overflow-x: hidden;
+    font-family: 'Dosis', sans-serif;
 }
 
 #clubDetails{
@@ -348,7 +351,9 @@ tr{
     border: solid #333 5px;
     border-radius: 15px;
 }
-
+#usersTable{
+    margin: 0 auto;
+}
 /*
 * ArticleAdminPage
 */
@@ -358,4 +363,7 @@ tr{
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
+}
+#healthAndWellbeingTable{
+    margin: 0 auto;
 }
