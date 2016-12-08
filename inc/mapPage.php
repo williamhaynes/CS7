@@ -76,6 +76,7 @@ include ("scripts/dbconnect.php");
             var checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
             checkbox.id = type.id;
+            checkbox.checked = true;
             var div = document.createElement('div');
 
             div.innerHTML = '<img src="' + icon + '"> ' + name;
