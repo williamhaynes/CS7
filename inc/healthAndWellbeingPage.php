@@ -5,7 +5,7 @@ overlay to authorise/reject blog posts. As per System Requirements.-->
 include ("scripts/dbconnect.php");
 include ("scripts/header.php");
 echo "<main>
-      <h2>Health & Wellbeing</h2>
+      <h2 class='pageHeaderText'>Health & Wellbeing</h2>
       <div id='divForHealthNews'>";
 if (isset($_SESSION['username'])) {
     echo "<a id='createArticleLink' href='/createHealthAndWellbeingForm' class='button'> Create Article </a>";

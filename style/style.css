@@ -304,7 +304,7 @@ tr{
 *   Health News Section
 */
 #divForHealthNews{
-
+    text-align: center;
 }
 #divForTwitterFeed{
     width: 30%;
@@ -317,7 +317,6 @@ tr{
 #healthNewsArticle{
     list-style-type: none;
     font-family: 'Dosis', sans-serif;
-    text-align: center;
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
