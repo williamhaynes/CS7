@@ -144,7 +144,7 @@ tr{
 #whyNotRegisterText{
     text-align: center;
 }
-#loginPageLoginButton{
+.loginAndRegisterPageLoginButton{
     margin-left: 176px;
 }
 
