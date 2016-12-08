@@ -14,6 +14,7 @@ if (isset($_SESSION['userID'])) {
                 <input type="hidden" id='currentUrl' name="currentUrl" value="">
                 <p><input type="submit" value='Submit Comment'></p>
             </form>
+            <h2>Comments: </h2>
             <?php
 
 
@@ -38,7 +39,7 @@ if (isset($_SESSION['userID'])) {
                 while($row = $result2->fetch_array()){
                     $displayName = $row['displayName'];
                 }
-                echo "<li><p>$comment</p><p>Name: $displayName</p></li>";
+                echo "<li><p>".$displayName.": ". $comment."</p></li>";
             }
             ?>
         </div>
