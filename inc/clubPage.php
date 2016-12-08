@@ -132,9 +132,10 @@
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
                  </script>";
-            echo "</article>";
+
             echo "";
             include ("scripts/commentBox.php");
+            echo "</article>";
             include ("scripts/fileUploadPageClubMedia.php");
 
             /*
