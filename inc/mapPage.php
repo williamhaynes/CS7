@@ -87,7 +87,7 @@ include ("scripts/dbconnect.php");
 
         var directions = document.createElement('div');
         directions.id = directions;
-        directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'+'<p><input type="text" id ="firstPoint" readonly></p>'+'<p><input type="text" id ="secondPoint" readonly></p>'+'<p><input type="button" id ="calcRoute" onclick="calcRoute()"></p>';
+        directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'+'<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" readonly></p>'+'<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" readonly></p>'+'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"></p>';
         legend.appendChild(directions);
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
@@ -400,6 +400,18 @@ include ("scripts/dbconnect.php");
             for (var i = 0; i < arrayOfRoutes.length; i++) {
                 arrayOfRoutes[i].setVisible(false);
             }
+        }
+    }
+
+    function directionsCheck() {
+        if (document.getElementById('directionsCheckbox').checked){
+            document.getElementById('firstPoint').style.display='';
+            document.getElementById('secondPoint').style.display='';
+            document.getElementById('calcRoute').style.display='';
+        }else{
+            document.getElementById('firstPoint').style.display='none';
+            document.getElementById('secondPoint').style.display='none';
+            document.getElementById('calcRoute').style.display='none';
         }
     }
 
