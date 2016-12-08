@@ -130,6 +130,7 @@
                         document.getElementById('facebookLogo').setAttribute('style','width:0px;height:0px;')
                     }
                  </script>";
+            echo "</article>";
             include ("scripts/commentBox.php");
             include ("scripts/fileUploadPageClubMedia.php");
 
@@ -157,7 +158,7 @@
                 echo "<li><p>$comment</p><p>Name: $displayName</p></li>";
             }
 
-        echo "</article>";
+
         }
         echo "</main>";
 
