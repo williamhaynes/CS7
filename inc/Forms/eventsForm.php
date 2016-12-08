@@ -7,7 +7,8 @@ if (isset($_SESSION['username'])) {
         include(__DIR__ . "/../scripts/dbconnect.php");
         ?>
         <main>
-            <h2>Add Event to Calendar</h2>
+            <div id="divForEventsForm">
+            <h2 class="pageHeaderText">Add an Event</h2>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
             <form action="eventsForm" method="post">
@@ -20,6 +21,7 @@ if (isset($_SESSION['username'])) {
                 <textarea name="eventDescription"></textarea>
                 <input type="submit" value='Create Event'>
             </form>
+                </div>
         </main>
         <?
         include(__DIR__ . "/../scripts/footer.php");
