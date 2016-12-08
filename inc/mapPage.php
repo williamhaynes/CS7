@@ -353,6 +353,33 @@ include ("scripts/dbconnect.php");
                 arrayOfLandmarks[i].setVisible(false);
             }
         }
+        if (document.getElementById('viewpointCheckbox').checked){
+            for (var i = 0; i < arrayOfLandmarks.length; i++) {
+                arrayOfLandmarks[i].setVisible(true);
+            }
+        }else if(!document.getElementById('viewpointCheckbox').checked){
+            for (var i = 0; i < arrayOfLandmarks.length; i++) {
+                arrayOfLandmarks[i].setVisible(false);
+            }
+        }
+        if (document.getElementById('areaCheckbox').checked){
+            for (var i = 0; i < arrayOfLandmarks.length; i++) {
+                arrayOfLandmarks[i].setVisible(true);
+            }
+        }else if(!document.getElementById('areaCheckbox').checked){
+            for (var i = 0; i < arrayOfLandmarks.length; i++) {
+                arrayOfLandmarks[i].setVisible(false);
+            }
+        }
+        if (document.getElementById('routeCheckbox').checked){
+            for (var i = 0; i < arrayOfLandmarks.length; i++) {
+                arrayOfLandmarks[i].setVisible(true);
+            }
+        }else if(!document.getElementById('routeCheckbox').checked){
+            for (var i = 0; i < arrayOfLandmarks.length; i++) {
+                arrayOfLandmarks[i].setVisible(false);
+            }
+        }
     }
 
 </script>
