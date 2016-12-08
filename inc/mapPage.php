@@ -444,7 +444,7 @@ include ("scripts/dbconnect.php");
     function calcRoute() {
         var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
-/*
+
 
 
         startString.replace(/[{()}]/g, '');
@@ -457,10 +457,10 @@ include ("scripts/dbconnect.php");
 
         var start =  new google.maps.LatLng(startArray[0]+')','('+startArray[1]);
         var end =  new google.maps.LatLng(endArray[0]+')','('+endArray[1]);
-        var bounds = new google.maps.LatLngBounds();
+        /*var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
-        map.fitBounds(bounds);
+        map.fitBounds(bounds);*/
         var request = {
             origin: start,
             destination: end,
