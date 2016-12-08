@@ -221,7 +221,8 @@ include ("scripts/dbconnect.php");
                     title: results.landmarks[i].name,
                     description: results.landmarks[i].description,
                     address: results.landmarks[i].address,
-                    icon: '../style/landmark.png'
+                    icon: '../style/landmark.png',
+                    latlngCoords: coords
                 }));
 
                 arrayOfLandmarks[i].addListener('click', function(){
@@ -245,7 +246,7 @@ include ("scripts/dbconnect.php");
                     //Adding to arrayOfClickedPoints
                     arrayOfClickedPoints.push(this.position);
                     //Trying to add point to route
-                    addPointToRoute(this.title, this.position);
+                    addPointToRoute(this.title, this.latlngCoords);
                 });
             }
 
@@ -442,12 +443,14 @@ include ("scripts/dbconnect.php");
     }
 
     function calcRoute() {
-        var startString;
+        var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
 
-        var start =  document.getElementById('firstPointLatLng').value;
-        alert(start);
-        var end =  document.getElementById('firstPointLatLng').value;
+        alert(startString[0]);
+        alert(startString[1]);
+
+        var start =  new google.maps.LatLng(startString);
+        var end =  new google.maps.LatLng(endString);
         /*var bounds = new google.maps.LatLngBounds();
         bounds.extend(start);
         bounds.extend(end);
