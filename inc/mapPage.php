@@ -355,6 +355,11 @@ include ("scripts/dbconnect.php");
                 arrayOfLandmarks[i].setVisible(false);
             }
         }
+        if(document.getElementById("landmarkCheckbox").checked = true){
+            for(var i=0;i<arrayOfLandmarks.length;i++){
+                arrayOfLandmarks[i].setVisible(true);
+            }
+        }
     }
 
 </script>
