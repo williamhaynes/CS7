@@ -9,9 +9,6 @@
     //echo "<p>clubPage/" . $clubID."</p>";
     echo "<main>";
     include ("scripts/calendar.php");
-    if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
-        echo "<a id='createEventLink' href='/eventsForm'> Add Event </a>";
-    }
     echo "
 <!-- Trying to add a facebookfeed -->
                 <div id=\"fb-root\"></div>
@@ -82,12 +79,20 @@
 
             //fb logo https://facebookbrand.com/wp-content/themes/fb-branding/prj-fb-branding/assets/images/fb-art.png
             //www logo http://www.charlenebower.com/wp-content/uploads/2014/11/website-image.jpg
-
+            //<p>{$_SERVER['REQUEST_URI']}</p>
+            /*
+                     * If the current user is an admin i.e is logged into the page as a admin or has level 31 which is
+                     * the access level of an admin user
+                     */
+            if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
+                echo "<a id='clubAdminFormEditLink' href='{$clubID}/clubAdminForm'>Edit Club</a>";
+            } else {
+            }
             echo "
-            <article>
-                <p>{$_SERVER['REQUEST_URI']}</p>
+            <article id=\"divForClubPageDetails\">
                  <h2 id='clubName'>{$clubName}</h2>
                  <p id='activity'>{$activity}</p>
+                 <p>Description:</p>
                  <p id='clubDescription'>{$clubDescription}</p>
                  <p id='sessionTime'>{$sessionTime}</p>
                  <p id='contactName'>Contact: $contactName</p>
@@ -155,14 +160,7 @@
         echo "</article>";
         }
         echo "</main>";
-        /*
-         * If the current user is an admin i.e is logged into the page as a admin or has level 31 which is
-         * the access level of an admin user
-         */
-        if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
-            echo "<a id='clubAdminFormEditLink' href='{$clubID}/clubAdminForm'>Club Admin Form</a>";
-        } else {
-        }
+
              
     include ("scripts/footer.php");
 ?>

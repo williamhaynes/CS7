@@ -61,6 +61,9 @@ include("dbconnect.php");
         }
     }
     echo "</table>";
+    if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
+        echo "<a id='createEventLink' href='/eventsForm'> Add Event </a>";
+    }
 
 
 

@@ -7,95 +7,99 @@ include ("scripts/header.php");
 
 
 <main>
-    <script>
-        $(document).ready(function() {
-            //If any fields are changed by the user it runs the relevant field check or password check.
-            $('#secondPassword').keyup(checkPasswordMatch());
-            $('#firstPassword').keyup(checkPasswordMatch());
-            $('#usersname').keyup(checkFields());
-            $('#usersEmailAddress').keyup(checkFields());
-            $('#usersEmailAddress').keyup(checkFields());
-            $('#firstPassword').keyup(checkFields());
-        });
-        //variable for JS - allows functions to both access value
-        var passwordsMatch = false;
-        /*
-         * A function which compares the two password values and makes sure they match
-         */
-        function checkPasswordMatch() {
-            var password = $('#firstPassword').val();
-            var confirmPassword = $('#secondPassword').val();
+    <div id="divForRegisterPage">
+        <script>
+            $(document).ready(function() {
+                //If any fields are changed by the user it runs the relevant field check or password check.
+                $('#secondPassword').keyup(checkPasswordMatch());
+                $('#firstPassword').keyup(checkPasswordMatch());
+                $('#usersname').keyup(checkFields());
+                $('#usersEmailAddress').keyup(checkFields());
+                $('#usersEmailAddress').keyup(checkFields());
+                $('#firstPassword').keyup(checkFields());
+            });
+            //variable for JS - allows functions to both access value
+            var passwordsMatch = false;
+            /*
+             * A function which compares the two password values and makes sure they match
+             */
+            function checkPasswordMatch() {
+                var password = $('#firstPassword').val();
+                var confirmPassword = $('#secondPassword').val();
 
-            if (password != confirmPassword) {
-                $('#passwordConfirmer').html("Passwords do not match!");
-                $('#submitRegisterButton').attr("disabled", true);
-                passwordsMatch = false;
+                if (password != confirmPassword) {
+                    $('#passwordConfirmer').html("Passwords do not match!");
+                    $('#submitRegisterButton').attr("disabled", true);
+                    passwordsMatch = false;
+                }
+                else if($('#firstPassword').val() && password == confirmPassword){
+                    $('#passwordConfirmer').html("Passwords match!");
+                    passwordsMatch = true;
+                }
             }
-            else if($('#firstPassword').val() && password == confirmPassword){
-                $('#passwordConfirmer').html("Passwords match!");
-                passwordsMatch = true;
+
+            /*
+             * a function which check that all fields have had values input in to them
+             * additional check rules could be added here if necessary.
+             * Commented out console code for debugging.
+             */
+            function checkFields(){
+                var username = false;
+                var emailAddress = false;
+                var displayName = false;
+                var passwords = false;
+                var fieldsFilled = false;
+
+                if($('#usersname').val()){  //if username has value
+                    username = true;
+                    //console.log("username true");
+                } else{ username = false;}
+
+                if($('#usersEmailAddress').val()){ //if email address has value
+                    emailAddress = true;
+                    //console.log("emailaddress true");
+                } else{ emailAddress = false;}
+
+                if($('#usersDisplayName').val()){ //if displayname has been set
+                    displayName = true;
+                    //console.log("displayname true");
+                    //console.log($('#usersDisplayName').val.toString());
+                } else{ displayName = false;}
+
+                if($('#firstPassword').val()){ //if password set
+                    passwords = true;
+                    //console.log("firstpassword true");
+                    //console.log("fieldsfull should be true if passwords match");
+                } else{ passwords = false;}
+
+                //if all fields filled out
+                if(username == true && emailAddress == true && displayName == true && passwords == true){
+                    fieldsFilled = true;
+                    //console.log("fieldsfilled true");
+                } else{ fieldsFilled = false;}
+
+                //if all fields filled out and passwords match
+                if(fieldsFilled == true && passwordsMatch == true){
+                    $('#submitRegisterButton').removeAttr("disabled");  //re-enable the submit button to allow registration
+                    //console.log("enabled registerbutton");
+                }
+                else{
+                    $('#submitRegisterButton').attr("disabled", true);  //disable the submit button to prevent registration
+                }
             }
-        }
-
-        /*
-         * a function which check that all fields have had values input in to them
-         * additional check rules could be added here if necessary.
-         * Commented out console code for debugging.
-         */
-        function checkFields(){
-            var username = false;
-            var emailAddress = false;
-            var displayName = false;
-            var passwords = false;
-            var fieldsFilled = false;
-
-            if($('#usersname').val()){  //if username has value
-                username = true;
-                //console.log("username true");
-            } else{ username = false;}
-
-            if($('#usersEmailAddress').val()){ //if email address has value
-                emailAddress = true;
-                //console.log("emailaddress true");
-            } else{ emailAddress = false;}
-
-            if($('#usersDisplayName').val()){ //if displayname has been set
-                displayName = true;
-                //console.log("displayname true");
-                //console.log($('#usersDisplayName').val.toString());
-            } else{ displayName = false;}
-
-            if($('#firstPassword').val()){ //if password set
-                passwords = true;
-                //console.log("firstpassword true");
-                //console.log("fieldsfull should be true if passwords match");
-            } else{ passwords = false;}
-
-            //if all fields filled out
-            if(username == true && emailAddress == true && displayName == true && passwords == true){
-                fieldsFilled = true;
-                //console.log("fieldsfilled true");
-            } else{ fieldsFilled = false;}
-
-            //if all fields filled out and passwords match
-            if(fieldsFilled == true && passwordsMatch == true){
-                $('#submitRegisterButton').removeAttr("disabled");  //re-enable the submit button to allow registration
-                //console.log("enabled registerbutton");
-            }
-            else{
-                $('#submitRegisterButton').attr("disabled", true);  //disable the submit button to prevent registration
-            }
-        }
-    </script>
-    <form action="registerPage" method="post">
-        <input type="text" placeholder="User Name" id="usersname" onchange="checkFields()" name="username">
-        <input type="text" placeholder="Email Address" id="usersEmailAddress" onchange="checkFields()" name="emailAddress">
-        <input type="text" placeholder="Display Name" id="usersDisplayName" onchange="checkFields()" name="displayName">
-        <input type="password" placeholder="Password" id="firstPassword" onchange="checkPasswordMatch()" name="password">
-        <input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch(); checkFields();" name="confirmPassword">
-        <p id="passwordConfirmer"></p>
-        <p><input type="submit" id='submitRegisterButton' value='Register' disabled></p>
-    </form>
+        </script>
+        <h2 class="pageHeaderText">Register</h2>
+        <form action="registerPage" method="post">
+            <p><input type="text" placeholder="User Name" id="usersname" onchange="checkFields()" name="username" class="loginAndRegisterPageTextBox"></p>
+            <p><input type="text" placeholder="Email Address" id="usersEmailAddress" onchange="checkFields()" name="emailAddress" class="loginAndRegisterPageTextBox"></p>
+            <p><input type="text" placeholder="Display Name" id="usersDisplayName" onchange="checkFields()" name="displayName" class="loginAndRegisterPageTextBox"></p>
+            <p><input type="password" placeholder="Password" id="firstPassword" onchange="checkPasswordMatch()" name="password" class="loginAndRegisterPageTextBox"></p>
+            <p><input type="password" placeholder="Confirm Password" id="secondPassword" onchange="checkPasswordMatch(); checkFields();" name="confirmPassword" class="loginAndRegisterPageTextBox"></p>
+            <p id="passwordConfirmer"></p>
+            <p><input type="submit" id='submitRegisterButton' value='Register' disabled></p>
+            <p class="whyNotRegisterText">Already a member? Why not <a href='/loginPage'>login?</a></p>
+        </form>
+    </div>
 </main>
 
 <?

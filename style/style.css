@@ -81,9 +81,14 @@ nav li a :hover {
 
 #logoIMG{
     width: 206px;
-    height: 60px;
+    height: 58px;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
+}
+
+#logo{
+    width: 206px;
+    height: 58px;
 }
 
 
@@ -115,10 +120,10 @@ tr{
 /*
 *   Login Page Div Controls
 */
-
+/*this div id controls the bounding box for the login details*/
 #divForLoginPage{
     width: 400px;
-    height: 285px;
+    height: 235px;
     /*Deals with positioning element in centre*/
     position: absolute;
     top: 46%;
@@ -127,10 +132,76 @@ tr{
     transform: translate(-50%, -50%);
     /*END OF POSITIONING ELEMENT IN CENTRE*/
     background-color: aliceblue;
-    border: solid black 5px;
-    border-radius: 5px;
+    border: solid #333 5px;
+    border-radius: 15px;
+}
+/* This class controls the size of text boxes on the login page */
+.loginAndRegisterPageTextBox{
+    width: 200px;
+    margin-left: 100px;
 }
 
-.loginPageTextBox{
-    width: 200px;
+.whyNotRegisterText{
+    text-align: center;
+}
+#loginPageLoginButton{
+    margin-left: 176px;
+}
+
+.pageHeaderText{
+    text-align: center;
+}
+
+/*
+*   Register Page Div Controls
+*/
+
+#divForRegisterPage {
+    width: 400px;
+    height: 320px;
+    /*Deals with positioning element in centre*/
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    /*END OF POSITIONING ELEMENT IN CENTRE*/
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+}
+
+#submitRegisterButton{
+    margin-left: 169px;
+}
+
+/*
+ * Club Page Specific Controls
+ */
+
+#specificClubCalendar{
+    max-height: 300px;
+}
+
+#divForClubPageDetails{
+    width: 600px;
+    height: 410px;
+    /*Deals with positioning element in centre*/
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    -webkit-transform: translate(-82%, -25%);
+    transform: translate(-82%, -25%);
+    /*END OF POSITIONING ELEMENT IN CENTRE*/
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+}
+
+/*
+ * Clubs and Societies page Controls
+ */
+
+#allEventsCalendar{
+    max-height: 300px;
 }
