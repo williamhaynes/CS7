@@ -140,3 +140,14 @@ tr{
     width: 200px;
     margin-left: 100px;
 }
+
+#whyNotRegisterText{
+    text-align: center;
+}
+#loginPageLoginButton{
+    margin-left: 176px;
+}
+
+#loginPageHeaderText{
+    text-align: center;
+}
