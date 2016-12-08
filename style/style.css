@@ -1,3 +1,8 @@
+/* HEADER */
+header{
+
+}
+
 /* FOOTER */
 
 footer {
@@ -79,14 +84,14 @@ nav li a :hover {
 }
 
 #logoIMG{
-    width: 206px;
+    width: 238px;
     height: 58px;
     padding: 0px 0px 0px 0px;
     margin: 0px 0px 0px 0px;
 }
 
 #logo{
-    width: 206px;
+    width: 238px;
     height: 58px;
 }
 
@@ -150,6 +155,8 @@ tr{
 
 .pageHeaderText{
     text-align: center;
+    font-family: 'Dosis', sans-serif;
+    font-size: 150%;
 }
 
 /*
@@ -373,4 +380,41 @@ tr{
 }
 #healthAndWellbeingTable{
     margin: 0 auto;
+}
+
+/*
+* User Details CSS
+*/
+#modifyDetailsForm {
+    padding-top: 5px;
+    width: 400px;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+#modifyClubAdminFormRemoval{
+    padding-top: 5px;
+    width: 400px;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5px;
+}
+#modifyClubAdminFormAddition{
+    padding-top: 5px;
+    width: 400px;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 5px;
 }

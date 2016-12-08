@@ -66,7 +66,7 @@ if($_SESSION['accessLevel'] == '31') {
             }
         </script>
         <div id="divForArticleAdminPage">
-        <h2 class='pageHeaderText'>Health & Wellbeing Article Administration Page</h2>
+        <h2 class='pageHeaderText'>Health & Wellbeing Article Administration</h2>
         <p>To alter an article select it from the below table</p>
         <table id="healthAndWellbeingTable">
             <input type="text" id="searchInput" onkeyup="searchArticle()" placeholder="Search by Keyword..">
