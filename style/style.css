@@ -7,11 +7,11 @@ header{
 
 footer {
     background-color: #333;
-    z-index: 3;
+    z-index: 9;
     height: 32px;
     width: 100%;
     position: fixed;
-    bottom: 0px;
+    bottom: 1px;
     left: 0px;
     color: white;
     margin-bottom: 0px;
@@ -25,6 +25,7 @@ body{
     background-size: cover;
     //background-color: #FFFFFF;
     margin-bottom: 48px;
+    z-index: 5;
 }
 
 /*Landing Page Text*/
@@ -478,6 +479,7 @@ tr{
 }
 
 #divForCreateClubForm{
+    margin-top: 5px;
     background-color: aliceblue;
     border: solid #333 5px;
     border-radius: 15px;
