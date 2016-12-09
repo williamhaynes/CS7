@@ -512,8 +512,11 @@ include ("scripts/dbconnect.php");
         var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
 
+        alert(startString);
+
         var startArray = startString.split(",");
         var endArray = endString.split(",");
+
 
 
         var start =  new google.maps.LatLng(startArray[0], startArray[1]);
