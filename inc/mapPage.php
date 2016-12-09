@@ -512,34 +512,36 @@ include ("scripts/dbconnect.php");
         var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
 
-        alert(startString);
+        if (!startString==""||!endString==""||!startString==null||!endString==null) {
 
-        var startArray = startString.split(",");
-        var endArray = endString.split(",");
+            var startArray = startString.split(",");
+            var endArray = endString.split(",");
 
 
-
-        var start =  new google.maps.LatLng(startArray[0], startArray[1]);
-        var end =  new google.maps.LatLng(endArray[0], endArray[1]);
-        var bounds = new google.maps.LatLngBounds();
-        bounds.extend(start);
-        bounds.extend(end);
-        map.fitBounds(bounds);
-        var request = {
-            origin: start,
-            destination: end,
-            travelMode: google.maps.TravelMode.DRIVING
-        };
-        directionsService.route(request, function (response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setDirections(response);
-                directionsDisplay.setMap(map);
-                directionsDisplay.setPanel(document.getElementById('directions-panel'));
-                document.getElementById('directions-panel').style.visibility='visible';
-            } else {
-                alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
-            }
-        });
+            var start = new google.maps.LatLng(startArray[0], startArray[1]);
+            var end = new google.maps.LatLng(endArray[0], endArray[1]);
+            var bounds = new google.maps.LatLngBounds();
+            bounds.extend(start);
+            bounds.extend(end);
+            map.fitBounds(bounds);
+            var request = {
+                origin: start,
+                destination: end,
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+            directionsService.route(request, function (response, status) {
+                if (status == google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                    directionsDisplay.setMap(map);
+                    directionsDisplay.setPanel(document.getElementById('directions-panel'));
+                    document.getElementById('directions-panel').style.visibility = 'visible';
+                } else {
+                    alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
+                }
+            });
+        }else{
+            alert("Please Fill All Required Fields");
+        }
     }
 
 </script>
