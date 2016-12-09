@@ -24,7 +24,7 @@ if (isset($_SESSION['username'])) {
                     $resultLatLng = $db->query($sql_queryLatLng);
                     echo "<script> alert($resultLatLng) </script>";
                     while ($rowLatLng = $resultLatLng->fetch_array()) {?>
-                    echo "<script> alert('Inside') </script>";
+                        alert('Insides');
                         markerLatLng = new google.maps.LatLng(<?php print $rowLatLng['lat'];?>, <?php print $rowLatLng['lng'];?>);
                         marker = new google.maps.Marker({position: markerLatLng, map: map, title: 'Marker', draggable: true});
                     <?}?>
