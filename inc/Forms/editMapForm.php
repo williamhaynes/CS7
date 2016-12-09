@@ -2,8 +2,8 @@
 session_start();
 if (isset($_SESSION['username'])) {
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-        include ("scripts/dbconnect.php");
-        include ("scripts/header.php");
+        include ("/../scripts/dbconnect.php");
+        include ("/../scripts/header.php");
         $locationID = $params['locationID'];
         ?>
         <head>
@@ -25,6 +25,7 @@ if (isset($_SESSION['username'])) {
                             markerLatLng = new google.maps.LatLng(<?php print $rowLatLng['lat'];?>, <?php print $rowLatLng['lng'];?>);
                             marker = new google.maps.Marker({position: markerLatLng, map: map, title: 'Marker', draggable: true});
                     <?}?>
+                    alert('Hello');
                 }
             </script>
         </head>
