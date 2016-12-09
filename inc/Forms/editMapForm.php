@@ -60,7 +60,7 @@ if (isset($_SESSION['username'])) {
             <?}?>
         </form>
         <!-- Update you silly thing -->
-        <a href='/../Forms/deleteMapForm/<?$locationID?>' class="button">Delete Marker</a>
+        <a href='/../Forms/deleteMapForm/<?php Print($locationID);?>' class="button">Delete Marker</a>
         </body>
         <?
         include("/../scripts/footer.php");
