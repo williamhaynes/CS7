@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
+if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         include ("/../scripts/dbconnect.php");
         include ("/../scripts/header.php");
@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
             <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='<?php print $row['lat'];?>' readonly></p>
             <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='<?php print $row['lng'];?>' readonly></p>
             <p>Type: <input size='20' type='text' id='type' readonly></p>
-            <input type="text" name="verified" id="verified" value=0 readonly>
+            <input type="checkbox" name="verified" id="verified">
             <script>if (<?php print $row['typeID'];?>==4){
                 document.getElementById('type').value = 'Route';
             }else if(<?php print $row['typeID'];?>==3){
@@ -56,14 +56,16 @@ if (isset($_SESSION['username'])) {
             }else{
                 document.getElementById('type').value = 'Landmark';
             }
+
+            if (<?php print $row['verified'];?>==1)
+                document.getElementById('verified').checked;
+            }
+
             </script>
             <p><input type='submit' value='Submit'></p>
             <?}?>
         </form>
-        <? if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){?>
-            <script>document.getElementById('verified').value = 1;</script>
-            <a href='/../deleteMapForm/<?php Print($locationID);?>' class="button">Delete Marker</a>
-        <?}?>
+        <a href='/../deleteMapForm/<?php Print($locationID);?>' class="button">Delete Marker</a>
         </body>
         <?
         include("/../scripts/footer.php");
@@ -73,7 +75,12 @@ if (isset($_SESSION['username'])) {
         $name = $_POST["name"];
         $address = $_POST["address"];
         $description = $_POST["description"];
-        $verified = $_POST["verified"];
+        if( $_POST["verified"] == 'on') {
+            $verified = 1;
+        }
+        else{
+            $verified = 0;
+        }
         $sql = "UPDATE location SET name = '" . $name . "', address =  '" . $address . "', description = '" . $description . "', verified = ' . $verified . ' WHERE locationID = $locationID";
         if (mysqli_query($db, $sql)) {
             header("location:../mapPage");
