@@ -2,8 +2,8 @@
 System Requirements.-->
 
 <?php
-include ("scripts/header.php");
-include ("scripts/dbconnect.php");
+include("scripts/header.php");
+include("scripts/dbconnect.php");
 ?>
 <head>
     <link rel="stylesheet" type="text/css" href="/style/mapStyle.css">
@@ -13,6 +13,7 @@ include ("scripts/dbconnect.php");
         #map {
             height: 100%;
         }
+
         /* Optional: Makes the sample page fill the window. */
         html, body {
             height: 96.5%;
@@ -23,9 +24,9 @@ include ("scripts/dbconnect.php");
 </head>
 <body>
 
-    <div id="map"></div>
-    <div id="legend"><h3>Legend</h3></div>
-    <div id="directions-panel"><h3>Directions</h3></div>
+<div id="map"></div>
+<div id="legend"><h3>Legend</h3></div>
+<div id="directions-panel"><h3>Directions</h3></div>
 
 <script>
     var map;
@@ -34,11 +35,11 @@ include ("scripts/dbconnect.php");
     var arrayOfAreas = [];
     var arrayOfRoutes = [];
     var arrayOfPolylines = [];
-    var arrayOfPolygons =[];
+    var arrayOfPolygons = [];
     var directionsService;
     var directionsDisplay;
     //Hiding route div
-    document.getElementById('directions-panel').style.visibility='hidden';
+    document.getElementById('directions-panel').style.visibility = 'hidden';
 
 
     function initMap() {
@@ -80,12 +81,11 @@ include ("scripts/dbconnect.php");
             var icon = type.icon;
             var checkboxID = type.id;
             var div = document.createElement('div');
-            div.innerHTML = '<img src="' + icon + '"> ' + name + '<input type="checkbox" id ='+checkboxID+' onclick="legendCheck()" checked>';
+            div.innerHTML = '<img src="' + icon + '"> ' + name + '<input type="checkbox" id =' + checkboxID + ' onclick="legendCheck()" checked>';
             legend.appendChild(div);
         }
 
         // mode of travel
-
 
 
         //
@@ -93,25 +93,25 @@ include ("scripts/dbconnect.php");
         var directions = document.createElement('div');
         directions.id = directions;
 
-        directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'
-            +'<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" value="" readonly><input type="hidden" id ="firstPointLatLng"></p>'
-            +'<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" value="" readonly><input type="hidden" id ="secondPointLatLng"></p>'
-            +'<p id="modeOfTravelText" style="display: none">Mode of Travel       '+'<select id="mode" style="display: none"><option value="DRIVING">Driving</option><option value="WALKING">Walking</option><option value="BICYCLING">Bicycling</option><option value="TRANSIT">Transit</option></select>'
-            +'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"><input type="button" value="Reset" id ="resetRoute" style="display: none" onclick="resetRoute()"></p>';
+        directions.innerHTML = '<p>Directions' + '<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'
+            + '<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" value="" readonly><input type="hidden" id ="firstPointLatLng"></p>'
+            + '<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" value="" readonly><input type="hidden" id ="secondPointLatLng"></p>'
+            + '<p id="modeOfTravelText" style="display: none">Mode of Travel       ' + '<select id="mode" style="display: none"><option value="DRIVING">Driving</option><option value="WALKING">Walking</option><option value="BICYCLING">Bicycling</option><option value="TRANSIT">Transit</option></select>'
+            + '<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"><input type="button" value="Reset" id ="resetRoute" style="display: none" onclick="resetRoute()"></p>';
 
         legend.appendChild(directions);
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
 
         //Adding listener on to mode drop down
-        document.getElementById('mode').addEventListener('change', function() {
+        document.getElementById('mode').addEventListener('change', function () {
             calcRoute();
         });
 
         //Adding edit button to map
         var mapFormButton = document.createElement('div');
-        <? if($_SESSION['accessLevel'] == 31||$_SESSION['accessLevel'] == 11){?>
-            mapFormButton.innerHTML="<a href='/createMapForm' class='button'>Map Form</a>";
+        <? if($_SESSION['accessLevel'] == 31 || $_SESSION['accessLevel'] == 11){?>
+        mapFormButton.innerHTML = "<a href='/createMapForm' class='button'>Map Form</a>";
         <?}?>
 
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(mapFormButton);
@@ -125,50 +125,63 @@ include ("scripts/dbconnect.php");
 
         var script = document.createElement('script');
         script.innerHTML = eqfeed_callback(
-            {"landmarks": [
-                <?
+            {
+                "landmarks": [
+                    <?
 
 
-                $sql_queryLandmarks = 'SELECT * FROM location WHERE typeID = 1';
-                $resultLandmarks = $db->query($sql_queryLandmarks);
-                while ($row = $resultLandmarks->fetch_array()) {
+                    $sql_queryLandmarks = 'SELECT * FROM location WHERE typeID = 1';
+                    $resultLandmarks = $db->query($sql_queryLandmarks);
+                    while ($row = $resultLandmarks->fetch_array()) {
                     ?>
-                        {
-                            "locationID": "<?php print $row['locationID'];?>",
-                            "geometry": {"type": "Landmark", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
-                            "name": "<?php print $row['name'];?>",
-                            "address": "<?php print $row['address'];?>",
-                            "description": "<?php print $row['description'];?>"
-                            //"markerImage":"images/red.png",
+                    {
+                        "locationID": "<?php print $row['locationID'];?>",
+                        "geometry": {
+                            "type": "Landmark",
+                            "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]
                         },
+                        "name": "<?php print $row['name'];?>",
+                        "address": "<?php print $row['address'];?>",
+                        "description": "<?php print $row['description'];?>"
+                        "verified": "<?php print $row['verified'];?>"
+                        //"markerImage":"images/red.png",
+                    },
                     <?}?>
-            ],"viewpoints":[
+                ], "viewpoints": [
                 <?
                 $sql_queryViewpoints = 'SELECT * FROM location WHERE typeID = 2';
                 $resultViewpoints = $db->query($sql_queryViewpoints);
                 while ($row = $resultViewpoints->fetch_array()) {
                 ?>
-                    {
-                        "locationID": "<?php print $row['locationID'];?>",
-                        "geometry": {"type": "Viewpoint", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
-                        "name": "<?php print $row['name'];?>",
-                        "address": "<?php print $row['address'];?>",
-                        "description": "<?php print $row['description'];?>"
-                        //"markerImage":"images/red.png",
+                {
+                    "locationID": "<?php print $row['locationID'];?>",
+                    "geometry": {
+                        "type": "Viewpoint",
+                        "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]
                     },
+                    "name": "<?php print $row['name'];?>",
+                    "address": "<?php print $row['address'];?>",
+                    "description": "<?php print $row['description'];?>"
+                    //"markerImage":"images/red.png",
+                    "verified": "<?php print $row['verified'];?>"
+                },
                 <?}?>
-                    ],"areas":[
+            ], "areas": [
                 <?
                 $sql_queryAreas = 'SELECT * FROM location WHERE typeID = 3';
                 $resultAreas = $db->query($sql_queryAreas);
                 while ($row = $resultAreas->fetch_array()) {
                 ?>
                 {
-                        "locationID": "<?php print $row['locationID'];?>",
-                        "geometry": {"type": "Area", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
-                        "name": "<?php print $row['name'];?>",
-                        "address": "<?php print $row['address'];?>",
-                        "description": "<?php print $row['description'];?>",
+                    "locationID": "<?php print $row['locationID'];?>",
+                    "geometry": {
+                        "type": "Area",
+                        "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]
+                    },
+                    "name": "<?php print $row['name'];?>",
+                    "address": "<?php print $row['address'];?>",
+                    "description": "<?php print $row['description'];?>",
+                    "verified": "<?php print $row['verified'];?>"
                     <?
                     $locationID = $row['locationID'];
                     $sql_querySpecificRoute = "SELECT * FROM area WHERE locationID = $locationID";
@@ -176,34 +189,38 @@ include ("scripts/dbconnect.php");
                     while ($rowRoute = $resultSpecificRoute->fetch_array()) {
                     ?>
                     "array": "<?php print $rowRoute['array'];?>"
-                        //"markerImage":"images/red.png",
-                    },
+                    //"markerImage":"images/red.png",
+                },
                 <?}
                 }?>
-                    ],"routes":[
+            ], "routes": [
                 <?
                 $sql_queryRoutes = 'SELECT * FROM location WHERE typeID = 4';
                 $resultRoutes = $db->query($sql_queryRoutes);
                 while ($row = $resultRoutes->fetch_array()) {
                 ?>
                 {
-                        "locationID": "<?php print $row['locationID'];?>",
-                        "geometry": {"type": "Route", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
-                        "name": "<?php print $row['name'];?>",
-                        "address": "<?php print $row['address'];?>",
-                        "description": "<?php print $row['description'];?>",
+                    "locationID": "<?php print $row['locationID'];?>",
+                    "geometry": {
+                        "type": "Route",
+                        "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]
+                    },
+                    "name": "<?php print $row['name'];?>",
+                    "address": "<?php print $row['address'];?>",
+                    "description": "<?php print $row['description'];?>",
+                    "verified": "<?php print $row['verified'];?>"
                     <?
                     $locationID = $row['locationID'];
-                        $sql_querySpecificRoute = "SELECT * FROM route WHERE locationID = $locationID";
-                        $resultSpecificRoute = $db->query($sql_querySpecificRoute);
-                        while ($rowRoute = $resultSpecificRoute->fetch_array()) {
+                    $sql_querySpecificRoute = "SELECT * FROM route WHERE locationID = $locationID";
+                    $resultSpecificRoute = $db->query($sql_querySpecificRoute);
+                    while ($rowRoute = $resultSpecificRoute->fetch_array()) {
                     ?>
-                        "array": "<?php print $rowRoute['array'];?>"
-                        //"markerImage":"images/red.png",
-                    },
+                    "array": "<?php print $rowRoute['array'];?>"
+                    //"markerImage":"images/red.png",
+                },
                 <?}
                 }?>
-                ]
+            ]
             });
         document.getElementsByTagName('head')[0].appendChild(script);
         directionsService = new google.maps.DirectionsService;
@@ -211,36 +228,33 @@ include ("scripts/dbconnect.php");
     }
 
 
+    // Loop through the results array and place a marker for each
+    // set of coordinates.
+    window.eqfeed_callback = function (results) {
 
 
 
+        //Trying to add a info window
+        var infowindow = new google.maps.InfoWindow({
+            content: "loading..."
+        });
 
-        // Loop through the results array and place a marker for each
-        // set of coordinates.
-        window.eqfeed_callback = function(results) {
-
-
-
-            //Trying to add a info window
-            var infowindow = new google.maps.InfoWindow({
-                content: "loading..."
-            });
-
-            // Event that closes the Info Window with a click on the map
-            google.maps.event.addListener(map, 'click', function () {
-                infowindow.close();
-                //If click remove routes and areas
-                if (arrayOfPolylines.length > 0) {
-                    arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
-                }
-                if (arrayOfPolygons.length > 0) {
-                    arrayOfPolygons[arrayOfPolygons.length - 1].setVisible(false);
-                }
-            });
+        // Event that closes the Info Window with a click on the map
+        google.maps.event.addListener(map, 'click', function () {
+            infowindow.close();
+            //If click remove routes and areas
+            if (arrayOfPolylines.length > 0) {
+                arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
+            }
+            if (arrayOfPolygons.length > 0) {
+                arrayOfPolygons[arrayOfPolygons.length - 1].setVisible(false);
+            }
+        });
 
 
-            //Adding landmarks to map
-            for (var i = 0; i < results.landmarks.length; i++) {
+        //Adding landmarks to map
+        for (var i = 0; i < results.landmarks.length; i++) {
+            if (results.landmarks[i].verified == 1) {
                 var coords = results.landmarks[i].geometry.coordinates;
                 var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfLandmarks.push(new google.maps.Marker({
@@ -264,7 +278,7 @@ include ("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit"><a href="/editMapForm/'+this.locationID+'" class="button">Edit</a></div>'+
+                        '<div class="iw-edit"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -281,9 +295,11 @@ include ("scripts/dbconnect.php");
                     addPointToRoute(this.title, this.latlngCoords);
                 });
             }
+        }
 
-            //Adding viewpoints to map
-            for (var i = 0; i < results.viewpoints.length; i++) {
+        //Adding viewpoints to map
+        for (var i = 0; i < results.viewpoints.length; i++) {
+            if (results.viewpoints[i].verified == 1) {
                 var coords = results.viewpoints[i].geometry.coordinates;
                 var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfViewpoints.push(new google.maps.Marker({
@@ -307,7 +323,7 @@ include ("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit"><a href="/editMapForm/'+this.locationID+'" class="button">Edit</a></div>'+
+                        '<div class="iw-edit"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -324,9 +340,11 @@ include ("scripts/dbconnect.php");
                     addPointToRoute(this.title, this.latlngCoords);
                 });
             }
+        }
 
-            //Adding areas to map
-            for (var i = 0; i < results.areas.length; i++) {
+        //Adding areas to map
+        for (var i = 0; i < results.areas.length; i++) {
+            if (results.areas[i].verified == 1) {
                 var coords = results.areas[i].geometry.coordinates;
                 var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfAreas.push(new google.maps.Marker({
@@ -351,7 +369,7 @@ include ("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit"><a href="/editMapForm/'+this.locationID+'" class="button">Edit</a></div>'+
+                        '<div class="iw-edit"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -359,7 +377,7 @@ include ("scripts/dbconnect.php");
                     infowindow.open(map, this);
                     var areaArray = this.array.split(',');
                     var areaLatLng = [];
-                    for (var j = 0; j < areaArray.length-1; j = j + 2) {
+                    for (var j = 0; j < areaArray.length - 1; j = j + 2) {
                         areaLatLng.push(new google.maps.LatLng(areaArray[j], areaArray[j + 1]));
                     }
 
@@ -386,12 +404,14 @@ include ("scripts/dbconnect.php");
                     addPointToRoute(this.title, this.latlngCoords);
                 });
             }
+        }
 
 
-            //Adding routes to map
-            for (var i = 0; i < results.routes.length; i++) {
+        //Adding routes to map
+        for (var i = 0; i < results.routes.length; i++) {
+            if (results.routes[i].verified == 1) {
                 var coords = results.routes[i].geometry.coordinates;
-                var latLng = new google.maps.LatLng(coords[0],coords[1]);
+                var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfRoutes.push(new google.maps.Marker({
                     position: latLng,
                     map: map,
@@ -404,17 +424,17 @@ include ("scripts/dbconnect.php");
                     locationID: results.routes[i].locationID
                 }));
 
-                arrayOfRoutes[i].addListener('click', function(){
-                    infowindow.setContent( '<div id="iw-container">' +
-                        '<div class="iw-title">'+this.title+'</div>' +
-                        '<div class="iw-outsidecontent">'+
+                arrayOfRoutes[i].addListener('click', function () {
+                    infowindow.setContent('<div id="iw-container">' +
+                        '<div class="iw-title">' + this.title + '</div>' +
+                        '<div class="iw-outsidecontent">' +
                         '<div class="iw-content">' +
                         '<div class="iw-subTitle">Description</div>' +
                         '<img src="http://dreamatico.com/data_images/park/park-2.jpg" alt="Porcelain Factory of Vista Alegre" height="115" width="83">' +
-                        this.description+
+                        this.description +
                         '<div class="iw-subTitle">Address</div>' +
-                        this.address+
-                        '<div class="iw-edit"><a href="/editMapForm/'+this.locationID+'" class="button">Edit</a></div>'+
+                        this.address +
+                        '<div class="iw-edit"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -423,8 +443,8 @@ include ("scripts/dbconnect.php");
                     infowindow.open(map, this);
                     var routeArray = this.array.split(',');
                     var routeLatLng = [];
-                    for(var j=0;j<routeArray.length-1;j=j+2){
-                        routeLatLng.push(new google.maps.LatLng(routeArray[j],routeArray[j+1]));
+                    for (var j = 0; j < routeArray.length - 1; j = j + 2) {
+                        routeLatLng.push(new google.maps.LatLng(routeArray[j], routeArray[j + 1]));
                     }
 
                     //Trying to add point to route
@@ -437,12 +457,12 @@ include ("scripts/dbconnect.php");
                         strokeOpacity: 1.0,
                         strokeWeight: 2
                     }));
-                        if(arrayOfPolylines.length<2){
-                            arrayOfPolylines[arrayOfPolylines.length - 1].setMap(map);
-                        }else{
-                            arrayOfPolylines[arrayOfPolylines.length-2].setVisible(false);
-                            arrayOfPolylines[arrayOfPolylines.length - 1].setMap(map);
-                        }
+                    if (arrayOfPolylines.length < 2) {
+                        arrayOfPolylines[arrayOfPolylines.length - 1].setMap(map);
+                    } else {
+                        arrayOfPolylines[arrayOfPolylines.length - 2].setVisible(false);
+                        arrayOfPolylines[arrayOfPolylines.length - 1].setMap(map);
+                    }
                     //If clicked remove polygons
                     if (arrayOfPolygons.length > 0) {
                         arrayOfPolygons[arrayOfPolygons.length - 1].setVisible(false);
@@ -450,40 +470,41 @@ include ("scripts/dbconnect.php");
                 });
             }
         }
+    }
 
     function legendCheck() {
-        if (document.getElementById('landmarkCheckbox').checked){
+        if (document.getElementById('landmarkCheckbox').checked) {
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(true);
             }
-        }else if(!document.getElementById('landmarkCheckbox').checked){
+        } else if (!document.getElementById('landmarkCheckbox').checked) {
             for (var i = 0; i < arrayOfLandmarks.length; i++) {
                 arrayOfLandmarks[i].setVisible(false);
             }
         }
-        if (document.getElementById('viewpointCheckbox').checked){
+        if (document.getElementById('viewpointCheckbox').checked) {
             for (var i = 0; i < arrayOfViewpoints.length; i++) {
                 arrayOfViewpoints[i].setVisible(true);
             }
-        }else if(!document.getElementById('viewpointCheckbox').checked){
+        } else if (!document.getElementById('viewpointCheckbox').checked) {
             for (var i = 0; i < arrayOfViewpoints.length; i++) {
                 arrayOfViewpoints[i].setVisible(false);
             }
         }
-        if (document.getElementById('areaCheckbox').checked){
+        if (document.getElementById('areaCheckbox').checked) {
             for (var i = 0; i < arrayOfAreas.length; i++) {
                 arrayOfAreas[i].setVisible(true);
             }
-        }else if(!document.getElementById('areaCheckbox').checked){
+        } else if (!document.getElementById('areaCheckbox').checked) {
             for (var i = 0; i < arrayOfAreas.length; i++) {
                 arrayOfAreas[i].setVisible(false);
             }
         }
-        if (document.getElementById('routeCheckbox').checked){
+        if (document.getElementById('routeCheckbox').checked) {
             for (var i = 0; i < arrayOfRoutes.length; i++) {
                 arrayOfRoutes[i].setVisible(true);
             }
-        }else if(!document.getElementById('routeCheckbox').checked){
+        } else if (!document.getElementById('routeCheckbox').checked) {
             for (var i = 0; i < arrayOfRoutes.length; i++) {
                 arrayOfRoutes[i].setVisible(false);
             }
@@ -491,44 +512,44 @@ include ("scripts/dbconnect.php");
     }
 
     function directionsCheck() {
-        if (document.getElementById('directionsCheckbox').checked){
-            document.getElementById('firstPoint').style.display='';
-            document.getElementById('secondPoint').style.display='';
-            document.getElementById('calcRoute').style.display='';
-            document.getElementById('resetRoute').style.display='';
-            document.getElementById('modeOfTravelText').style.display='';
-            document.getElementById('mode').style.display='';
-        }else{
-            document.getElementById('firstPoint').style.display='none';
-            document.getElementById('secondPoint').style.display='none';
-            document.getElementById('calcRoute').style.display='none';
-            document.getElementById('resetRoute').style.display='none';
-            document.getElementById('modeOfTravelText').style.display='none';
-            document.getElementById('mode').style.display='none';
+        if (document.getElementById('directionsCheckbox').checked) {
+            document.getElementById('firstPoint').style.display = '';
+            document.getElementById('secondPoint').style.display = '';
+            document.getElementById('calcRoute').style.display = '';
+            document.getElementById('resetRoute').style.display = '';
+            document.getElementById('modeOfTravelText').style.display = '';
+            document.getElementById('mode').style.display = '';
+        } else {
+            document.getElementById('firstPoint').style.display = 'none';
+            document.getElementById('secondPoint').style.display = 'none';
+            document.getElementById('calcRoute').style.display = 'none';
+            document.getElementById('resetRoute').style.display = 'none';
+            document.getElementById('modeOfTravelText').style.display = 'none';
+            document.getElementById('mode').style.display = 'none';
             directionsDisplay.setMap(null);
-            document.getElementById('directions-panel').style.visibility='hidden';
+            document.getElementById('directions-panel').style.visibility = 'hidden';
         }
     }
 
     function resetRoute() {
-        document.getElementById('firstPoint').value='';
-        document.getElementById('secondPoint').value='';
-        document.getElementById('firstPointLatLng').value='';
-        document.getElementById('secondPointLatLng').value='';
+        document.getElementById('firstPoint').value = '';
+        document.getElementById('secondPoint').value = '';
+        document.getElementById('firstPointLatLng').value = '';
+        document.getElementById('secondPointLatLng').value = '';
         directionsDisplay.setMap(null);
-        document.getElementById('directions-panel').style.visibility='hidden';
+        document.getElementById('directions-panel').style.visibility = 'hidden';
     }
 
     function addPointToRoute(name, point) {
-        if (document.getElementById('directionsCheckbox').checked){
-            if(!document.getElementById('firstPoint').value){
-                document.getElementById('firstPoint').value=name;
-                document.getElementById('firstPointLatLng').value=point;
-            }else if(!document.getElementById('secondPoint').value){
-                document.getElementById('secondPoint').value=name;
-                document.getElementById('secondPointLatLng').value=point;
+        if (document.getElementById('directionsCheckbox').checked) {
+            if (!document.getElementById('firstPoint').value) {
+                document.getElementById('firstPoint').value = name;
+                document.getElementById('firstPointLatLng').value = point;
+            } else if (!document.getElementById('secondPoint').value) {
+                document.getElementById('secondPoint').value = name;
+                document.getElementById('secondPointLatLng').value = point;
             }
-        }else{
+        } else {
         }
     }
 
@@ -536,7 +557,7 @@ include ("scripts/dbconnect.php");
         var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
 
-        if (!startString==""||!startString==null,!endString==""||!endString==null) {
+        if (!startString == "" || !startString == null, !endString == "" || !endString == null) {
             var selectedMode = document.getElementById('mode').value;
             var startArray = startString.split(",");
             var endArray = endString.split(",");
@@ -563,7 +584,7 @@ include ("scripts/dbconnect.php");
                     alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
                 }
             });
-        }else{
+        } else {
             alert("Please Fill All Required Fields");
         }
     }
@@ -578,5 +599,5 @@ include ("scripts/dbconnect.php");
 </body>
 <?
 
-include ("scripts/footer.php");
+include("scripts/footer.php");
 ?>
