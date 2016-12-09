@@ -24,7 +24,7 @@ if (isset($_SESSION['username'])) {
                     while ($rowLatLng = $resultLatLng->fetch_array()) {?>
                         alert('Insides');
                         markerLatLng = new google.maps.LatLng(<?php print $rowLatLng['lat'];?>, <?php print $rowLatLng['lng'];?>);
-                        marker = new google.maps.Marker({position: markerLatLng, map: map, title: 'Marker', draggable: true});
+                        marker = new google.maps.Marker({position: markerLatLng, map: map, title: 'Marker', draggable: false});
                     <?}?>
                 }
             </script>
@@ -52,7 +52,7 @@ if (isset($_SESSION['username'])) {
                     <p>latlngString: <input size='20' type='text' id='latlngString' name='latlngString' value='<?php print $rowRoute['array'];?>'></p>
                     <p>Type: Route</p>
                 <?}?>
-            }elseif(<?php print $row['typeID'];?>==3){
+            }if else(<?php print $row['typeID'];?>==3){
                     <?
                     $sql_queryArea = "SELECT * FROM area WHERE locationID = '$locationID'";
                     $resultArea = $db->query($sql_queryArea);
@@ -60,7 +60,7 @@ if (isset($_SESSION['username'])) {
                         <p>latlngString: <input size='20' type='text' id='latlngString' name='latlngString' value='<?php print $rowArea['array'];?>'></p>
                         <p>Type: Area</p>
                     <?}?>
-                } elseif(<?php print $row['typeID'];?>==2){
+                } if else(<?php print $row['typeID'];?>==2){
                     <p>Type: Viewpoint </p>
                 }else{
                     <p>Type: Landmark </p>
