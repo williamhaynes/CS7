@@ -46,6 +46,7 @@ if (isset($_SESSION['username'])) {
             <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='<?php print $row['lat'];?>' readonly></p>
             <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='<?php print $row['lng'];?>' readonly></p>
             <p>Type: <input size='20' type='text' id='type' readonly></p>
+            <input type="hidden" id="verified" value=0>
             <script>if (<?php print $row['typeID'];?>==4){
                 document.getElementById('type').value = 'Route';
             }else if(<?php print $row['typeID'];?>==3){
@@ -60,6 +61,7 @@ if (isset($_SESSION['username'])) {
             <?}?>
         </form>
         <? if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){?>
+            <script>document.getElementById('verified').value = 1;</script>
             <a href='/../deleteMapForm/<?php Print($locationID);?>' class="button">Delete Marker</a>
         <?}?>
         </body>
@@ -71,7 +73,8 @@ if (isset($_SESSION['username'])) {
         $name = $_POST["name"];
         $address = $_POST["address"];
         $description = $_POST["description"];
-        $sql = "UPDATE location SET name = '" . $name . "', address =  '" . $address . "', description = '" . $description . "' WHERE locationID = $locationID";
+        $verified = $_POST["verified"];
+        $sql = "UPDATE location SET name = '" . $name . "', address =  '" . $address . "', description = '" . $description . "', verified = ' . $verified . ' WHERE locationID = $locationID";
         if (mysqli_query($db, $sql)) {
             header("location:../mapPage");
         } else {
