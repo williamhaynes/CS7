@@ -249,8 +249,12 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
+                    //If click remove routes and areas
                     if (arrayOfPolylines.length > 0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
+                    }
+                    if (arrayOfPolygons.length > 0) {
+                        arrayOfPolygons[arrayOfPolygons.length - 1].setVisible(false);
                     }
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
@@ -286,8 +290,12 @@ include ("scripts/dbconnect.php");
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     infowindow.open(map, this);
+                    //If click remove routes and areas
                     if (arrayOfPolylines.length > 0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
+                    }
+                    if (arrayOfPolygons.length > 0) {
+                        arrayOfPolygons[arrayOfPolygons.length - 1].setVisible(false);
                     }
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
@@ -345,6 +353,7 @@ include ("scripts/dbconnect.php");
                         arrayOfPolygons[arrayOfPolygons.length - 2].setVisible(false);
                         arrayOfPolygons[arrayOfPolygons.length - 1].setMap(map);
                     }
+                    //If click remove routes
                     if (arrayOfPolylines.length > 0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
                     }
@@ -408,6 +417,10 @@ include ("scripts/dbconnect.php");
                             arrayOfPolylines[arrayOfPolylines.length-2].setVisible(false);
                             arrayOfPolylines[arrayOfPolylines.length - 1].setMap(map);
                         }
+                    //If clicked remove polygons
+                    if (arrayOfPolygons.length > 0) {
+                        arrayOfPolygons[arrayOfPolygons.length - 1].setVisible(false);
+                    }
                 });
             }
         }
