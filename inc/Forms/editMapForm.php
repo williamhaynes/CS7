@@ -18,13 +18,7 @@ if (isset($_SESSION['username'])) {
                 var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
                 function load() {
                     map = new google.maps.Map(document.getElementById('map'), {center: portlethenLatLng, zoom: 13, mapTypeId: 'roadmap'});
-                    <?//Takes all database information from the location TABLE.
-                    $sql_queryLatLng = "'SELECT * FROM location WHERE locationID = '+$locationID";
-                    $resultLatLng = $db->query($sql_queryLatLng);
-                    while ($rowLatLng = $resultLatLng->fetch_array()) {?>
-                            markerLatLng = new google.maps.LatLng(<?php print $rowLatLng['lat'];?>, <?php print $rowLatLng['lng'];?>);
-                            marker = new google.maps.Marker({position: markerLatLng, map: map, title: 'Marker', draggable: true});
-                    <?}?>
+
                     alert('Hello');
                 }
             </script>
