@@ -320,13 +320,13 @@ include("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit" style="display: none"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        '<div class="iw-edit" id="iw-edit" style="display: none"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     <?if(isset($_SESSION['username'])==true){?>
-                    document.getElementsByClassName("iw-edit").style.display = "";
+                    document.getElementById("iw-edit").style.display = '';
                     <?}?>
                     infowindow.open(map, this);
                     //If click remove routes and areas
@@ -367,13 +367,13 @@ include("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit" style="display: none"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        '<div class="iw-edit" id="iw-edit" style="display: none"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
                     <?if(isset($_SESSION['username'])==true){?>
-                    document.getElementsByClassName("iw-edit").style.display = "";
+                    document.getElementById("iw-edit").style.display = '';
                     <?}?>
                     infowindow.open(map, this);
                     var areaArray = this.array.split(',');
