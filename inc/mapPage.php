@@ -251,6 +251,7 @@ include("scripts/dbconnect.php");
             }
         });
 
+        //Please update azure
 
         //Adding landmarks to map
         for (var i = 0; i < results.landmarks.length; i++) {
