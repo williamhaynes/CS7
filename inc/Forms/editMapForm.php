@@ -5,6 +5,7 @@ if (isset($_SESSION['username'])) {
         include ("/../scripts/dbconnect.php");
         include ("/../scripts/header.php");
         $locationID = $params['locationID'];
+
         ?>
         <head>
             <title>editMapForm</title>
@@ -38,6 +39,7 @@ if (isset($_SESSION['username'])) {
         $result = $db->query($sql_query);
         while ($row = $result->fetch_array()) {?>
         <form action='' method='post' id='mapForm'>
+            <input type='hidden' name='locationID' value="<?php print $row['locationID'];?>"><
             <p>Place Name: <input size='20' type='text' name='name' value="<?php print $row['name'];?>" placeholder='Place Name'></p>
             <p>Address: <input size='20' type='text' name='address' value="<?php print $row['address'];?>" placeholder='Address'></p>
             <p>Description: <textarea name="description" id="description"><?php print $row['description'];?></textarea></p>
@@ -62,10 +64,11 @@ if (isset($_SESSION['username'])) {
         include("scripts/footer.php");
     }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
+        $locationID = $_POST["locationID"];
         $name = $_POST["name"];
         $address = $_POST["address"];
         $description = $_POST["description"];
-        $sql = "INSERT INTO location (name, address, description) VALUES ('" . $name . "', '" . $address . "', '" . $description . "')";
+        $sql = "UPDATE location SET name = '" . $name . "', address =  '" . $address . "', description = '" . $description . "' WHERE locationID = $locationID";
         if (mysqli_query($db, $sql)) {
             header("location:../mapPage");
         } else {
