@@ -1,7 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alexy
- * Date: 09/12/2016
- * Time: 18:45
- */
+session_start();
+if (isset($_SESSION['username'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+        include("/../scripts/dbconnect.php");
+        $locationID = $params['locationID'];
+
+    }
+}
+?>
