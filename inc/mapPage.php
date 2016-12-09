@@ -263,8 +263,8 @@ include ("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '</div>' +
                         '<div class="iw-edit"><a href="/editMapForm" class="button">Edit</a></div>'+
+                        '</div>' +
                         '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
