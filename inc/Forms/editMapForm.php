@@ -22,6 +22,7 @@ if (isset($_SESSION['username'])) {
                     $sql_queryLatLng = "'SELECT * FROM location WHERE locationID = '+$locationID";
                     echo "<script> alert('Im here') </script>";
                     $resultLatLng = $db->query($sql_queryLatLng);
+                    echo "<script> alert('Im there') </script>";
                     while ($rowLatLng = $resultLatLng->fetch_array()) {?>
                     markerLatLng = new google.maps.LatLng(<?php print $rowLatLng['lat'];?>, <?php print $rowLatLng['lng'];?>);
                     marker = new google.maps.Marker({position: markerLatLng, map: map, title: 'Marker', draggable: true});
