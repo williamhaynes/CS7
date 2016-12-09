@@ -372,7 +372,7 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
-                    if(<? isset($_SESSION['username'])==true ?>){
+                    if(<?$_SESSION['accessLevel']?>==true){
                         document.getElementsByClassName("iw-edit").style.display = "";
                     }
                     infowindow.open(map, this);
