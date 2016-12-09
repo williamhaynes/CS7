@@ -17,7 +17,7 @@ if (isset($_SESSION['username'])) {
                 var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
                 function load() {
                     map = new google.maps.Map(document.getElementById('map'), {center: portlethenLatLng, zoom: 13, mapTypeId: 'roadmap'});
-                    //marker = new google.maps.Marker({position: portlethenLatLng, map: map, title: 'Marker', draggable: true});
+                    marker = new google.maps.Marker({position: portlethenLatLng, map: map, title: 'Marker', draggable: true});
 
                     //This event listener should update values of text
                     google.maps.event.addListener(marker, 'click', function (event) {
