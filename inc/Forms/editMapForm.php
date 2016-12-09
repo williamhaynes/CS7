@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
             <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='<?php print $row['lat'];?>' readonly></p>
             <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='<?php print $row['lng'];?>' readonly></p>
             <p>Type: <input size='20' type='text' id='type' readonly></p>
-            <input type="hidden" name="verified" id="verified" value=0>
+            <input type="text" name="verified" id="verified" value=0 readonly>
             <script>if (<?php print $row['typeID'];?>==4){
                 document.getElementById('type').value = 'Route';
             }else if(<?php print $row['typeID'];?>==3){
