@@ -279,9 +279,9 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
-                    if(<? isset($_SESSION['username'])==true ?>){
+                    <?if(isset($_SESSION['username'])==true){?>
                         document.getElementsByClassName("iw-edit").style.display = "";
-                    }
+                    <?}?>
                     infowindow.open(map, this);
                     //If click remove routes and areas
                     if (arrayOfPolylines.length > 0) {
@@ -372,7 +372,7 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>');
                     //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
-                    if(<?$_SESSION['accessLevel']?>==true){
+                    if(<? isset($_SESSION['username'])==true ?>){
                         document.getElementsByClassName("iw-edit").style.display = "";
                     }
                     infowindow.open(map, this);
