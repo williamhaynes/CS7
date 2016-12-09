@@ -112,7 +112,7 @@ include("scripts/dbconnect.php");
         //Adding edit button to map
         <?if (isset($_SESSION['username'])) {?>
         var mapFormButton = document . createElement('div');
-        mapFormButton . innerHTML = "<a href="/createMapForm" class='button'>Map Form</a>";
+        mapFormButton . innerHTML = "<a href='/createMapForm' class='button'>Map Form</a>";
 
         map . controls[google . maps . ControlPosition . RIGHT_BOTTOM] . push(mapFormButton);
         <?}?>
