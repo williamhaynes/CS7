@@ -512,7 +512,7 @@ include ("scripts/dbconnect.php");
         var startString = document.getElementById('firstPointLatLng').value;
         var endString = document.getElementById('secondPointLatLng').value;
 
-        if (!startString==""||!endString==""||!startString==null||!endString==null) {
+        if (!startString==""||!startString==null,!endString==""||!endString==null) {
 
             alert(endString);
             var startArray = startString.split(",");
