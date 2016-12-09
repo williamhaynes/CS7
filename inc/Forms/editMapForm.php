@@ -20,12 +20,13 @@ if (isset($_SESSION['username'])) {
                     map = new google.maps.Map(document.getElementById('map'), {center: portlethenLatLng, zoom: 13, mapTypeId: 'roadmap'});
                     <?//Takes all database information from the location TABLE.
                     $sql_queryLatLng = "'SELECT * FROM location WHERE locationID = '+$locationID";
-                    echo "<script> alert('Im here') </script>";
+                    echo "<script> alert($sql_queryLatLng) </script>";
                     $resultLatLng = $db->query($sql_queryLatLng);
-                    echo "<script> alert('Im there') </script>";
+                    echo "<script> alert($resultLatLng) </script>";
                     while ($rowLatLng = $resultLatLng->fetch_array()) {?>
-                    markerLatLng = new google.maps.LatLng(<?php print $rowLatLng['lat'];?>, <?php print $rowLatLng['lng'];?>);
-                    marker = new google.maps.Marker({position: markerLatLng, map: map, title: 'Marker', draggable: true});
+                    echo "<script> alert('Inside') </script>";
+                        markerLatLng = new google.maps.LatLng(<?php print $rowLatLng['lat'];?>, <?php print $rowLatLng['lng'];?>);
+                        marker = new google.maps.Marker({position: markerLatLng, map: map, title: 'Marker', draggable: true});
                     <?}?>
                 }
             </script>
