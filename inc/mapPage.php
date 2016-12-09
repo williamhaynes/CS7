@@ -37,6 +37,9 @@ include ("scripts/dbconnect.php");
     var arrayOfPolygons =[];
     var directionsService;
     var directionsDisplay;
+    //Hiding route div
+    document.getElementById('directions-panel').style.visibility='hidden';
+
 
     function initMap() {
         var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
