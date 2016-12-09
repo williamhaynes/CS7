@@ -19,7 +19,7 @@ if (isset($_SESSION['username'])) {
                 function load() {
                     map = new google.maps.Map(document.getElementById('map'), {center: portlethenLatLng, zoom: 13, mapTypeId: 'roadmap'});
                     <?//Takes all database information from the location TABLE.
-                    $sql_queryLatLng = 'SELECT * FROM location WHERE locationID = $locationID';
+                    $sql_queryLatLng = "SELECT * FROM location WHERE locationID = '$locationID'";
                     echo "<script> alert($sql_queryLatLng) </script>";
                     $resultLatLng = $db->query($sql_queryLatLng);
                     echo "<script> alert($resultLatLng) </script>";
@@ -37,7 +37,7 @@ if (isset($_SESSION['username'])) {
         <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
         <script>tinymce.init({selector: 'textarea'});</script>
         <?//Takes all database information from the location TABLE.
-        $sql_query = "'SELECT * FROM location WHERE locationID = '+$locationID";
+        $sql_query = "SELECT * FROM location WHERE locationID = '$locationID'";
         $result = $db->query($sql_query);
         while ($row = $result->fetch_array()) {?>
         <form action='' method='post' id='mapForm'>
@@ -48,7 +48,7 @@ if (isset($_SESSION['username'])) {
             <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='<?php print $row['lng'];?>'></p>
             <script>if (<?php print $row['typeID'];?>==4){
                 <?
-                $sql_queryRoute = "'SELECT * FROM route WHERE locationID = '+$locationID";
+                $sql_queryRoute = "SELECT * FROM route WHERE locationID = '$locationID'";
                 $resultRoute = $db->query($sql_queryRoute);
                 while ($rowRoute = $resultRoute->fetch_array()) {?>
                     <p>latlngString: <input size='20' type='text' id='latlngString' name='latlngString' value='<?php print $rowRoute['array'];?>'></p>
@@ -56,7 +56,7 @@ if (isset($_SESSION['username'])) {
                 <?}?>
             }elseif(<?php print $row['typeID'];?>==3){
                     <?
-                    $sql_queryArea = "'SELECT * FROM area WHERE locationID = '+$locationID";
+                    $sql_queryArea = "SELECT * FROM area WHERE locationID = '$locationID'";
                     $resultArea = $db->query($sql_queryArea);
                     while ($rowArea = $resultArea->fetch_array()) {?>
                         <p>latlngString: <input size='20' type='text' id='latlngString' name='latlngString' value='<?php print $rowArea['array'];?>'></p>
