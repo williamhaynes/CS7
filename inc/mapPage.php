@@ -162,7 +162,8 @@ include ("scripts/dbconnect.php");
                     "array": "<?php print $rowRoute['array'];?>"
                         //"markerImage":"images/red.png",
                     },
-                <?}?>
+                <?}
+                }?>
                     ],"routes":[
                 <?
                 $sql_queryRoutes = 'SELECT * FROM location WHERE typeID = 4';
@@ -325,12 +326,12 @@ include ("scripts/dbconnect.php");
                     var areaArray = this.array.split(',');
                     var areaLatLng = [];
                     for (i = 0; i < areaArray.length / 2; i = i + 2) {
-                        areaLatLng.push(new google.maps.LatLng(areaArrayArray[i], areaArrayArray[i + 1]));
+                        areaLatLng.push(new google.maps.LatLng(routeArray[i], routeArray[i + 1]));
                     }
 
 
                     arrayOfPolygons.push(new google.maps.Polygon({
-                        path: areaLatLng,
+                        path: routeLatLng,
                         strokeColor: '#FF0000',
                         strokeOpacity: 0.8,
                         strokeWeight: 2,
