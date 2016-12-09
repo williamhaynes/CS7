@@ -61,9 +61,9 @@ if (isset($_SESSION['username'])) {
                         <p>Type: Area</p>
                     <?}?>
                 }else if(<?php print $row['typeID'];?>==2){
-                    document.write(<p>Type: Viewpoint </p>);
+                    document.write("<p>Type: Viewpoint </p>");
                 }else{
-                    document.write(<p>Type: Landmark </p>);
+                    document.write("<p>Type: Landmark </p>");
                 }
             </script>
             <p><input type='submit' value='Submit'></p>
