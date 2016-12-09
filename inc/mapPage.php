@@ -514,6 +514,7 @@ include ("scripts/dbconnect.php");
 
         if (!startString==""||!endString==""||!startString==null||!endString==null) {
 
+            alert(endString);
             var startArray = startString.split(",");
             var endArray = endString.split(",");
 
