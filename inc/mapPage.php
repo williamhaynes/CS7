@@ -180,7 +180,7 @@ include("scripts/dbconnect.php");
                     "name": "<?php print $row['name'];?>",
                     "address": "<?php print $row['address'];?>",
                     "description": "<?php print $row['description'];?>",
-                    "verified": "<?php print $row['verified'];?>"
+                    "verified": "<?php print $row['verified'];?>",
                     <?
                     $locationID = $row['locationID'];
                     $sql_querySpecificRoute = "SELECT * FROM area WHERE locationID = $locationID";
@@ -207,7 +207,7 @@ include("scripts/dbconnect.php");
                     "name": "<?php print $row['name'];?>",
                     "address": "<?php print $row['address'];?>",
                     "description": "<?php print $row['description'];?>",
-                    "verified": "<?php print $row['verified'];?>"
+                    "verified": "<?php print $row['verified'];?>",
                     <?
                     $locationID = $row['locationID'];
                     $sql_querySpecificRoute = "SELECT * FROM route WHERE locationID = $locationID";
