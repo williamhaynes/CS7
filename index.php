@@ -37,6 +37,7 @@ $rules = array(
     'homePage' => "/",
     'AdminPages/usersAdminPage' => '/usersAdminPage',
     'AdminPages/healthAndWellBeingAdminPage' => '/healthAndWellBeingAdminPage',
+    'AdminPages/mapAdminPage' => '/mapAdminPage',
     'verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm/(?'itemID'[\w\-]+)",
     //
     // Forms Page
