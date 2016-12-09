@@ -391,6 +391,7 @@ include ("scripts/dbconnect.php");
                         routeLatLng.push(new google.maps.LatLng(routeArray[j],routeArray[j+1]));
                     }
 
+                    alert(routeLatLng);
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
 
