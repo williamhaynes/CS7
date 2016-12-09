@@ -61,7 +61,7 @@ if (isset($_SESSION['username'])) {
         </form>
         </body>
         <?
-        include("scripts/footer.php");
+        include("/../scripts/footer.php");
     }elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
         $locationID = $_POST["locationID"];
