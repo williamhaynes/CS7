@@ -155,9 +155,13 @@ if (isset($_SESSION['username'])) {
                 <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='57.062661319658496'></p>
                 <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='-2.1295508919433814'></p>
                 <p>latlngString: <input size='20' type='text' id='latlngString' name='latlngString'></p>
+                <input type="hidden" id="verified" value=0>
                 <p>Type:
                 <select name='typeID' id='typeID' onclick="checkType()">";
                     <?
+                    if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){?>
+                        <script>document.getElementById('verified').value = 1;</script>
+                    <?}
                     //Takes all database information from the Genre TABLE.
                     $sql_query = 'SELECT * FROM Type';
 
@@ -186,9 +190,10 @@ if (isset($_SESSION['username'])) {
             $lng = $_POST["lng"];
             $typeID = $_POST["typeID"];
             $latlngString = $_POST["latlngString"];
+            $verified = $_POST["verified"];
             //IF TYPEID = ROUTE
             if ($typeID==4){
-                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
+                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID, verified) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ", " . $verified . ")";
                 if (mysqli_query($db, $sql)) {
                     $sqlGetLocationID = "SELECT locationID FROM location WHERE name ='" . $name . "' AND address = '" . $address ."'";
                     $result = $db->query($sqlGetLocationID);
@@ -208,7 +213,7 @@ if (isset($_SESSION['username'])) {
             }
             //IF TYPEID = AREA
             elseif($typeID==3){
-                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
+                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID, verified) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ", " . $verified . ")";
                 if (mysqli_query($db, $sql)) {
                     $sqlGetLocationID = "SELECT locationID FROM location WHERE name ='" . $name . "' AND address = '" . $address ."'";
                     $result = $db->query($sqlGetLocationID);
@@ -228,7 +233,7 @@ if (isset($_SESSION['username'])) {
             }
             //IF TYPEID = LANDMARK OR VIEWPOINT
             else {
-                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ")";
+                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ", " . $verified . ")";
                 if (mysqli_query($db, $sql)) {
                     header("location:../mapPage");
                 } else {
