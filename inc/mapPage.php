@@ -326,7 +326,7 @@ include ("scripts/dbconnect.php");
                     infowindow.open(map, this);
                     var areaArray = this.array.split(',');
                     var areaLatLng = [];
-                    for (i = 0; i < areaArray.length; i = i + 2) {
+                    for (i = 0; i < areaArray.length-1; i = i + 2) {
                         areaLatLng.push(new google.maps.LatLng(areaArray[i], areaArray[i + 1]));
                     }
 
