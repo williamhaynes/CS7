@@ -326,12 +326,9 @@ include ("scripts/dbconnect.php");
                     infowindow.open(map, this);
                     var areaArray = this.array.split(',');
                     var areaLatLng = [];
-                    for (i = 0; i < areaArray.length-1; i = i + 2) {
-                        areaLatLng.push(new google.maps.LatLng(areaArray[i], areaArray[i + 1]));
+                    for (var j = 0; j < areaArray.length-1; j = j + 2) {
+                        areaLatLng.push(new google.maps.LatLng(areaArray[j], areaArray[j + 1]));
                     }
-
-                    alert(this.array);
-                    alert(areaLatLng);
 
                     arrayOfPolygons.push(new google.maps.Polygon({
                         path: areaLatLng,
@@ -390,7 +387,7 @@ include ("scripts/dbconnect.php");
                     infowindow.open(map, this);
                     var routeArray = this.array.split(',');
                     var routeLatLng = [];
-                    for(i=0;i<routeArray.length/2;i=i+2){
+                    for(var j=0;j<routeArray.length/2;j=j+2){
                         routeLatLng.push(new google.maps.LatLng(routeArray[i],routeArray[i+1]));
                     }
 
