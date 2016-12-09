@@ -130,7 +130,7 @@ include("scripts/dbconnect.php");
                     <?
 
 
-                    $sql_queryLandmarks = 'SELECT * FROM location WHERE typeID = 1';
+                    $sql_queryLandmarks = 'SELECT * FROM location WHERE typeID = 1 AND verified = 1';
                     $resultLandmarks = $db->query($sql_queryLandmarks);
                     while ($row = $resultLandmarks->fetch_array()) {
                     ?>
@@ -149,7 +149,7 @@ include("scripts/dbconnect.php");
                     <?}?>
                 ], "viewpoints": [
                 <?
-                $sql_queryViewpoints = 'SELECT * FROM location WHERE typeID = 2';
+                $sql_queryViewpoints = 'SELECT * FROM location WHERE typeID = 2 AND verified = 1';
                 $resultViewpoints = $db->query($sql_queryViewpoints);
                 while ($row = $resultViewpoints->fetch_array()) {
                 ?>
@@ -168,7 +168,7 @@ include("scripts/dbconnect.php");
                 <?}?>
             ], "areas": [
                 <?
-                $sql_queryAreas = 'SELECT * FROM location WHERE typeID = 3';
+                $sql_queryAreas = 'SELECT * FROM location WHERE typeID = 3 AND verified = 1';
                 $resultAreas = $db->query($sql_queryAreas);
                 while ($row = $resultAreas->fetch_array()) {
                 ?>
@@ -195,7 +195,7 @@ include("scripts/dbconnect.php");
                 }?>
             ], "routes": [
                 <?
-                $sql_queryRoutes = 'SELECT * FROM location WHERE typeID = 4';
+                $sql_queryRoutes = 'SELECT * FROM location WHERE typeID = 4 AND verified = 1';
                 $resultRoutes = $db->query($sql_queryRoutes);
                 while ($row = $resultRoutes->fetch_array()) {
                 ?>
