@@ -111,7 +111,7 @@ include ("scripts/dbconnect.php");
         //Adding edit button to map
         var mapFormButton = document.createElement('div');
         <? if($_SESSION['accessLevel'] == 31||$_SESSION['accessLevel'] == 11){?>
-            mapFormButton.innerHTML="<a href='/mapForm' class='button'>Map Form</a>";
+            mapFormButton.innerHTML="<a href='/createMapForm' class='button'>Map Form</a>";
         <?}?>
 
         map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(mapFormButton);

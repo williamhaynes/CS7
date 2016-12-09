@@ -12,7 +12,8 @@ $rules = array(
     'Forms/clubAdminForm' => "/clubPage/(?'clubID'[\w\-]+)/clubAdminForm",
     'Forms/healthAndWellbeingForm' => "/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
     'Forms/createHealthAndWellbeingForm' => "/createHealthAndWellbeingForm",
-    'Forms/mapForm' => "/mapForm",
+    'Forms/createMapForm' => "/createMapForm",
+    'Forms/editMapForm' => "/editMapForm",
     'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm/",
     '/Forms/eventsForm' => "/eventsForm",
     //verifyHealthAndWellbeingForm/{$itemID}
