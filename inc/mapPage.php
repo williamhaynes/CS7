@@ -147,7 +147,8 @@ include ("scripts/dbconnect.php");
                 $sql_queryAreas = 'SELECT * FROM location WHERE typeID = 3';
                 $resultAreas = $db->query($sql_queryAreas);
                 while ($row = $resultAreas->fetch_array()) {
-                ?>                    {
+                ?>
+                {
                         "locationID": "<?php print $row['locationID'];?>",
                         "geometry": {"type": "Area", "coordinates": [<?php print $row['lat'];?>, <?php print $row['lng'];?>]},
                         "name": "<?php print $row['name'];?>",
@@ -326,12 +327,12 @@ include ("scripts/dbconnect.php");
                     var areaArray = this.array.split(',');
                     var areaLatLng = [];
                     for (i = 0; i < areaArray.length / 2; i = i + 2) {
-                        areaLatLng.push(new google.maps.LatLng(routeArray[i], routeArray[i + 1]));
+                        areaLatLng.push(new google.maps.LatLng(areaArray[i], areaArray[i + 1]));
                     }
 
 
                     arrayOfPolygons.push(new google.maps.Polygon({
-                        path: routeLatLng,
+                        path: areaLatLng,
                         strokeColor: '#FF0000',
                         strokeOpacity: 0.8,
                         strokeWeight: 2,
