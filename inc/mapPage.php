@@ -488,6 +488,7 @@ include ("scripts/dbconnect.php");
         document.getElementById('firstPointLatLng').value='';
         document.getElementById('secondPointLatLng').value='';
         directionsDisplay.setMap(null);
+        document.getElementById('directions-panel').style.visibility='hidden';
     }
 
     function addPointToRoute(name, point) {
@@ -527,6 +528,7 @@ include ("scripts/dbconnect.php");
                 directionsDisplay.setDirections(response);
                 directionsDisplay.setMap(map);
                 directionsDisplay.setPanel(document.getElementById('directions-panel'));
+                document.getElementById('directions-panel').style.visibility='visible';
             } else {
                 alert("Directions Request from " + start.toUrlValue(6) + " to " + end.toUrlValue(6) + " failed: " + status);
             }
