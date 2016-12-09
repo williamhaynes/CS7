@@ -59,6 +59,7 @@ if (isset($_SESSION['username'])) {
             <p><input type='submit' value='Submit'></p>
             <?}?>
         </form>
+        <a href="deleteMapForm.php" class="button"></a>
         </body>
         <?
         include("/../scripts/footer.php");
