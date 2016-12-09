@@ -233,7 +233,7 @@ if (isset($_SESSION['username'])) {
             }
             //IF TYPEID = LANDMARK OR VIEWPOINT
             else {
-                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ", " . $verified . ")";
+                $sql = "INSERT INTO location (name, address, description, lat, lng, typeID, verified) VALUES ('" . $name . "', '" . $address . "', '" . $description . "', " . $lat . ", " . $lng . ", " . $typeID . ", " . $verified . ")";
                 if (mysqli_query($db, $sql)) {
                     header("location:../mapPage");
                 } else {
