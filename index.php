@@ -13,7 +13,7 @@ $rules = array(
     'Forms/healthAndWellbeingForm' => "/healthAndWellbeingForm/(?'itemID'[\w\-]+)",
     'Forms/createHealthAndWellbeingForm' => "/createHealthAndWellbeingForm",
     'Forms/createMapForm' => "/createMapForm",
-    'Forms/editMapForm' => "/editMapForm",
+    'Forms/editMapForm' => "/editMapForm/(?'locationID'[\w\-]+)",
     'Forms/verifyHealthAndWellbeingForm' => "/verifyHealthAndWellbeingForm/",
     '/Forms/eventsForm' => "/eventsForm",
     //verifyHealthAndWellbeingForm/{$itemID}

@@ -250,7 +250,8 @@ include ("scripts/dbconnect.php");
                     description: results.landmarks[i].description,
                     address: results.landmarks[i].address,
                     icon: '../style/landmark.png',
-                    latlngCoords: coords
+                    latlngCoords: coords,
+                    locationID: results.landmarks[i].locationID
                 }));
 
                 arrayOfLandmarks[i].addListener('click', function () {
@@ -263,7 +264,7 @@ include ("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit"><a href="/editMapForm" class="button">Edit</a></div>'+
+                        '<div class="iw-edit"><a href="/editMapForm/'+this.locationID+'" class="button">Edit</a></div>'+
                         '</div>' +
                         '</div>' +
                         '</div>');
