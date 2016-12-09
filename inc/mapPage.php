@@ -110,11 +110,12 @@ include("scripts/dbconnect.php");
         });
 
         //Adding edit button to map
-        var mapFormButton = document.createElement('div');
-        mapFormButton.innerHTML = "<a href='/createMapForm' class='button'>Map Form</a>";
+        <?if (isset($_SESSION['username'])) {?>
+        var mapFormButton = document . createElement('div');
+        mapFormButton . innerHTML = "<a href="/createMapForm" class='button'>Map Form</a>";
 
-        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(mapFormButton);
-
+        map . controls[google . maps . ControlPosition . RIGHT_BOTTOM] . push(mapFormButton);
+        <?}?>
 
         // Create a <script> tag and set the USGS URL as the source.
         //var script = document.createElement('script');
