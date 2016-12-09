@@ -278,7 +278,7 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>' +
                         '</div>');
-                    //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
+
                     <?if(isset($_SESSION['username'])==true){?>
                         document.getElementById("iw-edit").style.display = '';
                     <?}?>
@@ -324,7 +324,7 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>' +
                         '</div>');
-                    //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
+
                     <?if(isset($_SESSION['username'])==true){?>
                     document.getElementById("iw-edit").style.display = '';
                     <?}?>
@@ -371,7 +371,7 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>' +
                         '</div>');
-                    //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
+
                     <?if(isset($_SESSION['username'])==true){?>
                     document.getElementById("iw-edit").style.display = '';
                     <?}?>
@@ -437,7 +437,7 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>' +
                         '</div>');
-                    //$("<div class='iw-outsidecontent'></div>").wrap("<div class='iw-content'></div>");
+
                     <?if(isset($_SESSION['username'])==true){?>
                     document.getElementById("iw-edit").style.display = '';
                     <?}?>
