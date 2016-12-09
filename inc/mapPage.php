@@ -96,7 +96,7 @@ include ("scripts/dbconnect.php");
         directions.innerHTML = '<p>Directions'+'<input type="checkbox" id ="directionsCheckbox" onclick="directionsCheck()"></p>'
             +'<p><input type="text" id ="firstPoint" placeholder="Click 1st icon" style="display: none" value="" readonly><input type="hidden" id ="firstPointLatLng"></p>'
             +'<p><input type="text" id ="secondPoint" placeholder="Click 2nd icon" style="display: none" value="" readonly><input type="hidden" id ="secondPointLatLng"></p>'
-            +'<p>Mode of Travel  '+'<select id="mode" style="display: none"><option value="DRIVING">Driving</option><option value="WALKING">Walking</option><option value="BICYCLING">Bicycling</option><option value="TRANSIT">Transit</option></select>'
+            +'<p id="modeOfTravelText" style="display: none">Mode of Travel  '+'<select id="mode" style="display: none"><option value="DRIVING">Driving</option><option value="WALKING">Walking</option><option value="BICYCLING">Bicycling</option><option value="TRANSIT">Transit</option></select>'
             +'<p><input type="button" value="Calculate Route" id ="calcRoute" style="display: none" onclick="calcRoute()"><input type="button" value="Reset" id ="resetRoute" style="display: none" onclick="resetRoute()"></p>';
 
         legend.appendChild(directions);
@@ -483,11 +483,15 @@ include ("scripts/dbconnect.php");
             document.getElementById('secondPoint').style.display='';
             document.getElementById('calcRoute').style.display='';
             document.getElementById('resetRoute').style.display='';
+            document.getElementById('modeOfTravelText').style.display='';
+            document.getElementById('mode').style.display='';
         }else{
             document.getElementById('firstPoint').style.display='none';
             document.getElementById('secondPoint').style.display='none';
             document.getElementById('calcRoute').style.display='none';
             document.getElementById('resetRoute').style.display='none';
+            document.getElementById('modeOfTravelText').style.display='none';
+            document.getElementById('mode').style.display='none';
             directionsDisplay.setMap(null);
             document.getElementById('directions-panel').style.visibility='hidden';
         }
