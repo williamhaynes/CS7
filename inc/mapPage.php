@@ -130,7 +130,7 @@ include("scripts/dbconnect.php");
                     <?
 
 
-                    $sql_queryLandmarks = "SELECT * FROM location WHERE typeID = 1 AND verified = '1'";
+                    $sql_queryLandmarks = "SELECT * FROM location WHERE typeID = 1 AND verified = 1";
                     $resultLandmarks = $db->query($sql_queryLandmarks);
                     while ($row = $resultLandmarks->fetch_array()) {
                     ?>
@@ -149,7 +149,7 @@ include("scripts/dbconnect.php");
                     <?}?>
                 ], "viewpoints": [
                 <?
-                $sql_queryViewpoints = "SELECT * FROM location WHERE typeID = 2 AND verified = '1'";
+                $sql_queryViewpoints = "SELECT * FROM location WHERE typeID = 2 AND verified = 1";
                 $resultViewpoints = $db->query($sql_queryViewpoints);
                 while ($row = $resultViewpoints->fetch_array()) {
                 ?>
@@ -168,7 +168,7 @@ include("scripts/dbconnect.php");
                 <?}?>
             ], "areas": [
                 <?
-                $sql_queryAreas = "SELECT * FROM location WHERE typeID = 3 AND verified = '1'";
+                $sql_queryAreas = "SELECT * FROM location WHERE typeID = 3 AND verified = 1";
                 $resultAreas = $db->query($sql_queryAreas);
                 while ($row = $resultAreas->fetch_array()) {
                 ?>
@@ -195,7 +195,7 @@ include("scripts/dbconnect.php");
                 }?>
             ], "routes": [
                 <?
-                $sql_queryRoutes = "SELECT * FROM location WHERE typeID = 4 AND verified = '1'";
+                $sql_queryRoutes = "SELECT * FROM location WHERE typeID = 4 AND verified = 1";
                 $resultRoutes = $db->query($sql_queryRoutes);
                 while ($row = $resultRoutes->fetch_array()) {
                 ?>
@@ -268,7 +268,7 @@ include("scripts/dbconnect.php");
                     locationID: results.landmarks[i].locationID
                 }));
 
-                arrayOfLandmarks[i].addListener('click', function () {
+                arrayOfLandmarks[arrayOfLandmarks.length-1].addListener('click', function () {
                     infowindow.setContent('<div id="iw-container">' +
                         '<div class="iw-title">' + this.title + '</div>' +
                         '<div class="iw-outsidecontent">' +
@@ -313,7 +313,7 @@ include("scripts/dbconnect.php");
                     locationID: results.viewpoints[i].locationID
                 }));
 
-                arrayOfViewpoints[i].addListener('click', function () {
+                arrayOfViewpoints[arrayOfViewpoints-1].addListener('click', function () {
                     infowindow.setContent('<div id="iw-container">' +
                         '<div class="iw-title">' + this.title + '</div>' +
                         '<div class="iw-outsidecontent">' +
@@ -359,7 +359,7 @@ include("scripts/dbconnect.php");
                     locationID: results.areas[i].locationID
                 }));
 
-                arrayOfAreas[i].addListener('click', function () {
+                arrayOfAreas[arrayOfAreas.length-1].addListener('click', function () {
                     infowindow.setContent('<div id="iw-container">' +
                         '<div class="iw-title">' + this.title + '</div>' +
                         '<div class="iw-outsidecontent">' +
@@ -424,7 +424,7 @@ include("scripts/dbconnect.php");
                     locationID: results.routes[i].locationID
                 }));
 
-                arrayOfRoutes[i].addListener('click', function () {
+                arrayOfRoutes[arrayOfRoutes.length-1].addListener('click', function () {
                     infowindow.setContent('<div id="iw-container">' +
                         '<div class="iw-title">' + this.title + '</div>' +
                         '<div class="iw-outsidecontent">' +
