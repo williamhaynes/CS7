@@ -330,6 +330,8 @@ include ("scripts/dbconnect.php");
                         areaLatLng.push(new google.maps.LatLng(areaArray[i], areaArray[i + 1]));
                     }
 
+                    alert(this.array);
+                    alert(areaLatLng);
 
                     arrayOfPolygons.push(new google.maps.Polygon({
                         path: areaLatLng,
