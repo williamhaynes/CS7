@@ -306,6 +306,7 @@ include ("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
+                        '<div class="iw-edit"><a href="/editMapForm/'+this.locationID+'" class="button">Edit</a></div>'+
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -348,6 +349,7 @@ include ("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
+                        '<div class="iw-edit"><a href="/editMapForm/'+this.locationID+'" class="button">Edit</a></div>'+
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -409,6 +411,7 @@ include ("scripts/dbconnect.php");
                         this.description+
                         '<div class="iw-subTitle">Address</div>' +
                         this.address+
+                        '<div class="iw-edit"><a href="/editMapForm/'+this.locationID+'" class="button">Edit</a></div>'+
                         '</div>' +
                         '</div>' +
                         '</div>');
