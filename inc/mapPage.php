@@ -142,8 +142,7 @@ include("scripts/dbconnect.php");
                         },
                         "name": "<?php print $row['name'];?>",
                         "address": "<?php print $row['address'];?>",
-                        "description": "<?php print $row['description'];?>",
-                        "verified": "<?php print $row['verified'];?>"
+                        "description": "<?php print $row['description'];?>"
                         //"markerImage":"images/red.png",
                     },
                     <?}?>
@@ -161,9 +160,8 @@ include("scripts/dbconnect.php");
                     },
                     "name": "<?php print $row['name'];?>",
                     "address": "<?php print $row['address'];?>",
-                    "description": "<?php print $row['description'];?>",
+                    "description": "<?php print $row['description'];?>"
                     //"markerImage":"images/red.png",
-                    "verified": "<?php print $row['verified'];?>"
                 },
                 <?}?>
             ], "areas": [
@@ -181,7 +179,6 @@ include("scripts/dbconnect.php");
                     "name": "<?php print $row['name'];?>",
                     "address": "<?php print $row['address'];?>",
                     "description": "<?php print $row['description'];?>",
-                    "verified": "<?php print $row['verified'];?>",
                     <?
                     $locationID = $row['locationID'];
                     $sql_querySpecificRoute = "SELECT * FROM area WHERE locationID = $locationID";
@@ -208,7 +205,6 @@ include("scripts/dbconnect.php");
                     "name": "<?php print $row['name'];?>",
                     "address": "<?php print $row['address'];?>",
                     "description": "<?php print $row['description'];?>",
-                    "verified": "<?php print $row['verified'];?>",
                     <?
                     $locationID = $row['locationID'];
                     $sql_querySpecificRoute = "SELECT * FROM route WHERE locationID = $locationID";
@@ -255,7 +251,6 @@ include("scripts/dbconnect.php");
 
         //Adding landmarks to map
         for (var i = 0; i < results.landmarks.length; i++) {
-            if (results.landmarks[i].verified == 1) {
                 var coords = results.landmarks[i].geometry.coordinates;
                 var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfLandmarks.push(new google.maps.Marker({
@@ -279,7 +274,9 @@ include("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        if(<? isset($_SESSION['username'])==true ?>){
+                            '<div class="iw-edit"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        }
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -295,12 +292,10 @@ include("scripts/dbconnect.php");
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
                 });
-            }
         }
 
         //Adding viewpoints to map
         for (var i = 0; i < results.viewpoints.length; i++) {
-            if (results.viewpoints[i].verified == 1) {
                 var coords = results.viewpoints[i].geometry.coordinates;
                 var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfViewpoints.push(new google.maps.Marker({
@@ -340,12 +335,10 @@ include("scripts/dbconnect.php");
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
                 });
-            }
         }
 
         //Adding areas to map
         for (var i = 0; i < results.areas.length; i++) {
-            if (results.areas[i].verified == 1) {
                 var coords = results.areas[i].geometry.coordinates;
                 var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfAreas.push(new google.maps.Marker({
@@ -404,13 +397,11 @@ include("scripts/dbconnect.php");
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
                 });
-            }
         }
 
 
         //Adding routes to map
         for (var i = 0; i < results.routes.length; i++) {
-            if (results.routes[i].verified == 1) {
                 var coords = results.routes[i].geometry.coordinates;
                 var latLng = new google.maps.LatLng(coords[0], coords[1]);
                 arrayOfRoutes.push(new google.maps.Marker({
@@ -435,7 +426,9 @@ include("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        if(<? isset($_SESSION['username'])==true ?>){
+                            '<div class="iw-edit"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        }
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -469,7 +462,6 @@ include("scripts/dbconnect.php");
                         arrayOfPolygons[arrayOfPolygons.length - 1].setVisible(false);
                     }
                 });
-            }
         }
     }
 
