@@ -388,7 +388,7 @@ include ("scripts/dbconnect.php");
                     var routeArray = this.array.split(',');
                     var routeLatLng = [];
                     for(var j=0;j<routeArray.length-1;j=j+2){
-                        routeLatLng.push(new google.maps.LatLng(routeArray[i],routeArray[i+1]));
+                        routeLatLng.push(new google.maps.LatLng(routeArray[j],routeArray[j+1]));
                     }
 
                     //Trying to add point to route
