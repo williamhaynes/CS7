@@ -293,7 +293,8 @@ include ("scripts/dbconnect.php");
                     description: results.viewpoints[i].description,
                     address: results.viewpoints[i].address,
                     icon: '../style/viewpoint.png',
-                    latlngCoords: coords
+                    latlngCoords: coords,
+                    locationID: results.landmarks[i].locationID
                 }));
 
                 arrayOfViewpoints[i].addListener('click', function () {
@@ -336,7 +337,8 @@ include ("scripts/dbconnect.php");
                     address: results.areas[i].address,
                     array: results.areas[i].array,
                     icon: '../style/area.png',
-                    latlngCoords: coords
+                    latlngCoords: coords,
+                    locationID: results.landmarks[i].locationID
                 }));
 
                 arrayOfAreas[i].addListener('click', function () {
@@ -398,7 +400,8 @@ include ("scripts/dbconnect.php");
                     address: results.routes[i].address,
                     array: results.routes[i].array,
                     icon: '../style/route.png',
-                    latlngCoords: coords
+                    latlngCoords: coords,
+                    locationID: results.landmarks[i].locationID
                 }));
 
                 arrayOfRoutes[i].addListener('click', function(){
