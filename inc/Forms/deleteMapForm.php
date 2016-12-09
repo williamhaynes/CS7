@@ -2,7 +2,7 @@
 
 <?php
 session_start();
-if (isset($_SESSION['username'])) {
+if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
     if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         include("/../scripts/dbconnect.php");
         $locationID = $params['locationID'];
