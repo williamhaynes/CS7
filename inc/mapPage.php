@@ -214,8 +214,12 @@ include ("scripts/dbconnect.php");
             // Event that closes the Info Window with a click on the map
             google.maps.event.addListener(map, 'click', function () {
                 infowindow.close();
+                //If click remove routes and areas
                 if (arrayOfPolylines.length > 0) {
                     arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
+                }
+                if (arrayOfPolygons.length > 0) {
+                    arrayOfPolygons[arrayOfPolygons.length - 1].setVisible(false);
                 }
             });
 
@@ -400,7 +404,6 @@ include ("scripts/dbconnect.php");
                         routeLatLng.push(new google.maps.LatLng(routeArray[j],routeArray[j+1]));
                     }
 
-                    alert(routeLatLng);
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
 
