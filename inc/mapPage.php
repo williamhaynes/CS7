@@ -141,7 +141,7 @@ include("scripts/dbconnect.php");
                         },
                         "name": "<?php print $row['name'];?>",
                         "address": "<?php print $row['address'];?>",
-                        "description": "<?php print $row['description'];?>"
+                        "description": "<?php print $row['description'];?>",
                         "verified": "<?php print $row['verified'];?>"
                         //"markerImage":"images/red.png",
                     },
@@ -160,7 +160,7 @@ include("scripts/dbconnect.php");
                     },
                     "name": "<?php print $row['name'];?>",
                     "address": "<?php print $row['address'];?>",
-                    "description": "<?php print $row['description'];?>"
+                    "description": "<?php print $row['description'];?>",
                     //"markerImage":"images/red.png",
                     "verified": "<?php print $row['verified'];?>"
                 },
