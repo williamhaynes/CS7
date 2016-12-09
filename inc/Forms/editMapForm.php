@@ -19,7 +19,7 @@ if (isset($_SESSION['username'])) {
                 function load() {
                     map = new google.maps.Map(document.getElementById('map'), {center: portlethenLatLng, zoom: 13, mapTypeId: 'roadmap'});
                     <?//Takes all database information from the location TABLE.
-                    $sql_queryLatLng = "'SELECT * FROM location WHERE locationID = '+$locationID";
+                    $sql_queryLatLng = 'SELECT * FROM location WHERE locationID = $locationID';
                     echo "<script> alert($sql_queryLatLng) </script>";
                     $resultLatLng = $db->query($sql_queryLatLng);
                     echo "<script> alert($resultLatLng) </script>";
