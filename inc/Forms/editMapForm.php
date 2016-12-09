@@ -14,25 +14,17 @@ if (isset($_SESSION['username'])) {
                 var count = 0;
                 var map;
                 var marker;
+                var markerLatLng;
                 var portlethenLatLng = new google.maps.LatLng(57.062661319658496, -2.1295508919433814);
                 function load() {
                     map = new google.maps.Map(document.getElementById('map'), {center: portlethenLatLng, zoom: 13, mapTypeId: 'roadmap'});
-                    marker = new google.maps.Marker({position: portlethenLatLng, map: map, title: 'Marker', draggable: true});
-
-                    //This event listener should update values of text
-                    google.maps.event.addListener(marker, 'click', function (event) {
-                        document.getElementById('latbox').value = event.latLng.lat();
-                        document.getElementById('lngbox').value = event.latLng.lng();
-                    });
-
-                    google.maps.event.addListener(marker, 'dragend', function (event) {
-                        document.getElementById('latbox').value = this.getPosition().lat();
-                        document.getElementById('lngbox').value = this.getPosition().lng();
-                    });
-
-                    // This event listener calls addMarker() when the map is clicked.
-
-
+                    <?//Takes all database information from the location TABLE.
+                    $sql_queryLatLng = "'SELECT lat,lng FROM location WHERE locationID = '+$locationID";
+                    $resultLatLng = $db->query($sql_queryLatLng);
+                    while ($rowLatLng = $resultLatLng->fetch_array()) {?>
+                            markerLatLng = new google.maps.LatLng(<?php print $rowLatLng['lat'];?>, <?php print $rowLatLng['lng'];?>);
+                            marker = new google.maps.Marker({position: markerLatLng, map: map, title: 'Marker', draggable: true});
+                        <?}?>
                 }
 
 
