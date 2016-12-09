@@ -59,6 +59,7 @@ if (isset($_SESSION['username'])) {
             <p><input type='submit' value='Submit'></p>
             <?}?>
         </form>
+        <!-- Update you silly thing -->
         <a href='/../Forms/deleteMapForm/<?$locationID?>' class="button">Delete Marker</a>
         </body>
         <?
