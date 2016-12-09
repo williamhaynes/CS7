@@ -103,6 +103,11 @@ include ("scripts/dbconnect.php");
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
 
+        //Adding listener on to mode drop down
+        document.getElementById('mode').addEventListener('change', function() {
+            calcRoute();
+        });
+
         //Adding edit button to map
         var mapFormButton = document.createElement('div');
         <? if($_SESSION['accessLevel'] == 31||$_SESSION['accessLevel'] == 11){?>
@@ -524,7 +529,7 @@ include ("scripts/dbconnect.php");
         var endString = document.getElementById('secondPointLatLng').value;
 
         if (!startString==""||!startString==null,!endString==""||!endString==null) {
-
+            var selectedMode = document.getElementById('mode').value;
             var startArray = startString.split(",");
             var endArray = endString.split(",");
 
@@ -538,7 +543,7 @@ include ("scripts/dbconnect.php");
             var request = {
                 origin: start,
                 destination: end,
-                travelMode: google.maps.TravelMode.DRIVING
+                travelMode: google.maps.TravelMode[selectedMode]
             };
             directionsService.route(request, function (response, status) {
                 if (status == google.maps.DirectionsStatus.OK) {
