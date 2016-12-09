@@ -91,34 +91,3 @@
     border-radius: 4px 4px 4px 4px;
 
 }
-
-/*
-CSS TO DO WITH Driving Directions
-#directions-panel {
-    font-family: 'Roboto','sans-serif';
-    line-height: 30px;
-    padding-left: 10px;
-}
-
-#directions-panel select, #right-panel input {
-    font-size: 15px;
-}
-
-#directions-panel select {
-    width: 100%;
-}
-
-#directions-panel i {
-    font-size: 12px;
-}
-#directions-panel {
-    height: 100%;
-    float: right;
-    width: 390px;
-    overflow: auto;
-}
-
-#directions-panel {
-    float: none;
-    width: auto;
-}*/
