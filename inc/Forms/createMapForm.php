@@ -155,12 +155,12 @@ if (isset($_SESSION['username'])) {
                 <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='57.062661319658496'></p>
                 <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='-2.1295508919433814'></p>
                 <p>latlngString: <input size='20' type='text' id='latlngString' name='latlngString'></p>
-                <input type="hidden" id="verified" value=0>
+                <input type="hidden" name="verified" id="verified" value='0'>
                 <p>Type:
                 <select name='typeID' id='typeID' onclick="checkType()">";
                     <?
                     if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){?>
-                        <script>document.getElementById('verified').value = 1;</script>
+                        <script>document.getElementById('verified').value = '1';</script>
                     <?}
                     //Takes all database information from the Genre TABLE.
                     $sql_query = 'SELECT * FROM Type';
