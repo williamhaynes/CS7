@@ -320,7 +320,10 @@ include("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        '<div class="iw-edit" style="display: none"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        if(<? isset($_SESSION['username'])==true ?>){
+                            document.getElementsByClassName("iw-edit").style.display = "";
+                        }
                         '</div>' +
                         '</div>' +
                         '</div>');
