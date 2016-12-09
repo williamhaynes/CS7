@@ -482,6 +482,7 @@ include ("scripts/dbconnect.php");
             document.getElementById('calcRoute').style.display='none';
             document.getElementById('resetRoute').style.display='none';
             directionsDisplay.setMap(null);
+            document.getElementById('directions-panel').style.visibility='hidden';
         }
     }
 
