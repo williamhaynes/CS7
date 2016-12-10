@@ -80,7 +80,7 @@ if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
         else{
             $verified = 0;
         }
-        $sql = "UPDATE location SET name = '" . $name . "', address =  '" . $address . "', description = '" . $description . "', verified = ' . $verified . ' WHERE locationID = $locationID";
+        $sql = "UPDATE location SET name = '" . $name . "', address =  '" . $address . "', description = '" . $description . "', verified = $verified  WHERE locationID = $locationID";
         if (mysqli_query($db, $sql)) {
             header("location:../mapPage");
         } else {
