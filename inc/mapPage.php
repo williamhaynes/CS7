@@ -1,5 +1,4 @@
-<!--Functional Requirement: Will have a number of popup overlays to display additional information as required in
-System Requirements.-->
+<!-- MAP PAGE -->
 
 <?php
 session_start();
