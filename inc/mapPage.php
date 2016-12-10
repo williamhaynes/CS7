@@ -276,12 +276,12 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>');
 
+                    infowindow.open(map, this);
+
                     //If signed in as NKPAG or SiteAdmin show edit button
                     <?if(isset($_SESSION['username'])==true){?>
-                        document.getElementById("iw-edit").style.visibility = 'visible';
+                    document.getElementById("iw-edit").style.visibility = 'visible';
                     <?}?>
-
-                    infowindow.open(map, this);
 
                     //If click remove routes and areas
                     if (arrayOfPolylines.length > 0) {
