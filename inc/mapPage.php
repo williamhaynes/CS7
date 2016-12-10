@@ -326,10 +326,12 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>');
 
-                    <?if(isset($_SESSION['username'])==true){?>
-                    document.getElementById("iw-edit").style.display = '';
-                    <?}?>
                     infowindow.open(map, this);
+                    //If signed in as NKPAG or SiteAdmin show edit button
+                    <?if($_SESSION['accessLevel']==31||$_SESSION['accessLevel']==11){?>
+                        document.getElementById("iw-edit").style.visibility = 'visible';
+                    <?}?>
+
                     //If click remove routes and areas
                     if (arrayOfPolylines.length > 0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
@@ -373,10 +375,13 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>');
 
-                    <?if(isset($_SESSION['username'])==true){?>
-                    document.getElementById("iw-edit").style.display = '';
-                    <?}?>
                     infowindow.open(map, this);
+
+                    //If signed in as NKPAG or SiteAdmin show edit button
+                    <?if($_SESSION['accessLevel']==31||$_SESSION['accessLevel']==11){?>
+                    document.getElementById("iw-edit").style.visibility = 'visible';
+                    <?}?>
+
                     var areaArray = this.array.split(',');
                     var areaLatLng = [];
                     for (var j = 0; j < areaArray.length - 1; j = j + 2) {
@@ -439,10 +444,13 @@ include("scripts/dbconnect.php");
                         '</div>' +
                         '</div>');
 
-                    <?if(isset($_SESSION['username'])==true){?>
-                    document.getElementById("iw-edit").style.display = '';
-                    <?}?>
                     infowindow.open(map, this);
+
+                    //If signed in as NKPAG or SiteAdmin show edit button
+                    <?if($_SESSION['accessLevel']==31||$_SESSION['accessLevel']==11){?>
+                    document.getElementById("iw-edit").style.visibility = 'visible';
+                    <?}?>
+
                     var routeArray = this.array.split(',');
                     var routeLatLng = [];
                     for (var j = 0; j < routeArray.length - 1; j = j + 2) {
