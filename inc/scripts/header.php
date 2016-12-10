@@ -26,13 +26,21 @@ session_start(); //start the session
                   * My Account: the page that has all the details of the user
                   */
                 if (isset($_SESSION['username'])) {
-                                        if($_SESSION['accessLevel'] == 31){
+                    if($_SESSION['accessLevel'] == 31){
                         /*
                          * If the user is logged in and they have an access level of 31 then the following buttons will be displayed
                          * User Admin Page: the user admin page displaying information on the site
                          */
                         echo "<li><a href='/usersAdminPage'>User Admin Page</a></li>";
                         echo "<li><a href='/healthAndWellBeingAdminPage'>Article Admin Page</a></li>";
+                        echo "<li><a href='/mapAdminPage'>Map Admin Page</a></li>";
+                    }
+                    if($_SESSION['accessLevel'] == 11){
+                        /*
+                         * If the user is logged in and they have an access level of 11 then the following buttons will be displayed
+                         * mapAdminPage: the map admin page displaying information of map markers
+                         */
+                        echo "<li><a href='/mapAdminPage'>Map Admin Page</a></li>";
                     }
                     echo "<li><a href='/userDetailsPage/". $_SESSION['userID'] ."'>My Account</a></li>";
                     echo "<li id='logoutButton'><a href='/logoutPage'>Logout</a></li>";
