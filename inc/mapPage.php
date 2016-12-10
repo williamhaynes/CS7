@@ -321,7 +321,7 @@ include("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit" id="iw-edit" style="display: none"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        '<div class="iw-edit" id="iw-edit" style="visibility: hidden"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -370,7 +370,7 @@ include("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit" id="iw-edit" style="display: none"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        '<div class="iw-edit" id="iw-edit" style="visibility: hidden"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
@@ -439,7 +439,7 @@ include("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit" id="iw-edit" style="display: none"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        '<div class="iw-edit" id="iw-edit" style="visibility: hidden"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
