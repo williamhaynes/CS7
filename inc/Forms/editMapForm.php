@@ -46,7 +46,7 @@ if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
             <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='<?php print $row['lat'];?>' readonly></p>
             <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='<?php print $row['lng'];?>' readonly></p>
             <p>Type: <input size='20' type='text' id='type' readonly></p>
-            <input type="checkbox" name="verified" id="verified">
+            <p>Verified: <input type="checkbox" name="verified" id="verified"></p>
             <script>if (<?php print $row['typeID'];?>==4){
                 document.getElementById('type').value = 'Route';
             }else if(<?php print $row['typeID'];?>==3){
@@ -57,7 +57,7 @@ if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
                 document.getElementById('type').value = 'Landmark';
             }
 
-            if (<?php print $row['verified'];?>==1)
+            if (<?php print $row['verified'];?>==1){
                 document.getElementById('verified').checked;
             }
 
