@@ -271,15 +271,18 @@ include("scripts/dbconnect.php");
                         this.description +
                         '<div class="iw-subTitle">Address</div>' +
                         this.address +
-                        '<div class="iw-edit" id="iw-edit" style="display: none"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
+                        '<div class="iw-edit" id="iw-edit" style="visibility: hidden"><a href="/editMapForm/' + this.locationID + '" class="button">Edit</a></div>' +
                         '</div>' +
                         '</div>' +
                         '</div>');
 
+                    //If signed in as NKPAG or SiteAdmin show edit button
                     <?if(isset($_SESSION['username'])==true){?>
-                        document.getElementById("iw-edit").style.display = '';
+                        document.getElementById("iw-edit").style.visibility = 'visible';
                     <?}?>
+
                     infowindow.open(map, this);
+
                     //If click remove routes and areas
                     if (arrayOfPolylines.length > 0) {
                         arrayOfPolylines[arrayOfPolylines.length - 1].setVisible(false);
@@ -290,6 +293,7 @@ include("scripts/dbconnect.php");
                     //Trying to add point to route
                     addPointToRoute(this.title, this.latlngCoords);
                 });
+
         }
 
         //Adding viewpoints to map
