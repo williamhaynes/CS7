@@ -69,8 +69,8 @@ if($_SESSION['accessLevel'] == '31'||$_SESSION['accessLevel'] == '11') {
             }
         </script>
         <div id="divForMapAdminPage">
-            <h2 class='pageHeaderText'>Health & Wellbeing Article Administration</h2>
-            <p>To alter an article select it from the below table</p>
+            <h2 class='pageHeaderText'>Map Administration</h2>
+            <p>To alter information select it from the below table</p>
             <table id="mapTable">
                 <input type="text" id="searchInput" onkeyup="searchArticle()" placeholder="Search by Keyword..">
                 <select id="filterByOptions" onchange="searchArticle()">
