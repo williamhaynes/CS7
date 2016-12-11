@@ -154,7 +154,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             else
             {
                 try {
-                    $msg= upload();  //this will upload your image
+                    $msg= upload($db);  //this will upload your image
                     echo $msg;  //Message showing success or failure.
                 }
                 catch(Exception $e) {
@@ -162,10 +162,10 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                     echo 'Sorry, could not upload file';
                 }
             }
-            function upload() {
+            function upload($db) {
+                include(__DIR__ . "/../scripts/dbconnect.php");
                 session_start();
                 $imageClubID = $_SESSION['clubID'];
-                include "file_constants.php";
                 $maxsize = 10000000; //set to approx 10 MB
 
                 //check associated error code
@@ -191,7 +191,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                                 $sql = "INSERT INTO images(image, name, image_clubID)VALUES('{$imgData}', '{$_FILES['userfile']['name']}', '{$imageClubID}');";
 
                                 // insert the image
-                                mysqli_query($sql) or die("Error in Query: " . mysqli_error());
+                                mysqli_query($db, $sql);
                                 $msg='<p>Image successfully saved in database with id ='. mysqli_insert_id().' </p>';
                             }
                             else
