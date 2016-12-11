@@ -25,7 +25,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             </script>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
-            <form action='' method="post">
+            <form action='Forms/clubAdminForm' method="post">
                 <p>Club Name: </p><input type="text" name="clubName" value="<?php print $_SESSION["clubName"];?>" placeholder="Club Name">
                 <p>Activity: </p><input type="text" name="activity" value="<?php print $_SESSION["activity"];?>" placeholder="Activity">
                 <p>Club Description: </p><textarea name="clubDescription"><?php print $_SESSION["clubDescription"];?></textarea>
@@ -136,27 +136,37 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 
         }
         elseif(!empty($_POST['uploadImage'])){
+            include("../scripts/dbconnect.php");
+            session_start();
             $imageClubID = $_SESSION['clubID'];
-            $filename =$_FILES['$fileToUpload'];
-//Get the file contents
-            $imageDate = file_get_contents($filename);
-//Get the file size
-            $imageSize = getimagesize($filename);
+            $fileName = $_FILES['fileToUpload']['name'];
+            $tmpName  = $_FILES['fileToUpload']['tmp_name'];
+            $fileSize = $_FILES['fileToUpload']['size'];
+            $fileType = $_FILES['fileToUpload']['type'];
 //Boolean to control whether file is allowed to upload or not
             $uploadOk = 1;
-//Holds the file extension of the file
-            $imageFileType = pathinfo($filename, PATHINFO_EXTENSION);
+
+            $fp      = fopen($tmpName, 'r');
+            $content = fread($fp, filesize($tmpName));
+            $content = addslashes($content);
+            fclose($fp);
+            $sql="INSERT INTO images(image_type, image, image_size, image_clubID, image_name)
+              VALUES($fileType, $content, $fileSize, $imageClubID, $fileName";
 // Check file size - currently set to 500KB
             if ($_FILES["fileToUpload"]["size"] > 500000) {
                 echo "Sorry, your file is too large.";
                 $uploadOk = 0;
             }
+
+
+            $imageClubID = $_SESSION['clubID'];
+            $filename =$_FILES['$fileToUpload'];
+
 // Allow certain file formats
-            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-                && $imageFileType != "gif"
+            if ($fileType != "jpg" || $fileType != "png" || $fileType != "jpeg"
+                || $fileType != "gif"
             ) {
                 echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-                echo $imageFileType;
                 $uploadOk = 0;
             }
 // Check if $uploadOk is set to 0 by an error
@@ -164,8 +174,6 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
             } else {
-                $sql="INSERT INTO images(image_type, image, image_size, image_clubID, image_name)
-              VALUES($imageFileType, $filename, $imageSize, $imageClubID, ".$filename['file'].")";
                 if (mysqli_query($db, $sql)) {
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);

@@ -13,7 +13,7 @@ include("dbconnect.php");
  */
 if ($_SERVER['REQUEST_METHOD'] === 'GET'){
     echo "<div id='divForUploadImage'>";
-    echo "<form action=\"upload.php\" method=\"post\" enctype=\"multipart/form-data\">";
+    echo "<form action=\"Forms/clubAdminForm\" method=\"post\" enctype=\"multipart/form-data\">";
     echo "Select image to upload:";
     echo "<input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\">";
     echo "<input type=\"submit\" value=\"Upload Image\" name=\"uploadImage\">";
@@ -50,6 +50,7 @@ elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         && $imageFileType != "gif"
     ) {
         echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+        echo "Oh my I'm loading the wrong script";
         $uploadOk = 0;
     }
 // Check if $uploadOk is set to 0 by an error
