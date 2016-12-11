@@ -62,7 +62,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 <?php
                     include(__DIR__ . "/../scripts/uploadImage.php");
                 ?>
-                <p><input type="submit" value='Submit'></p>
+                <p><input type="submit" name="updateClub" value='Submit'></p>
             </form>
             </div>
         </main>
@@ -74,44 +74,42 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         include(__DIR__."/../scripts/footer.php");
 
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        include (__DIR__ . "/../scripts/dbconnect.php");
-        $clubID = $_SESSION["clubID"];
-        $clubName = $_POST["clubName"];
-        $activity = $_POST["activity"];
-        $clubDescription = $_POST["clubDescription"];
-        $sessionTime = $_POST["sessionTime"];
-        $contactName = $_POST['contactName'];
-        $contactNumber = $_POST['contactNumber'];
-        $contactEmail = $_POST['contactEmail'];
-        if( $_POST["website"] == 'on') {
-            $website = 1;
-            $websiteUrl = $_POST["websiteUrl"];
-        }
-        else{
-            $website = 0;
-            $websiteUrl = NULL;
-        }
-        if( $_POST["facebook"] == 'on') {
-            $facebook = 1;
-            $facebookUrl = $_POST["websiteUrl"];
-        }
-        else{
-            $facebook = 0;
-            $facebookUrl = NULL;
-        }
-        $genreID = $_POST['genreID'];
-        $adminID = $_SESSION["userID"];
+        if (!empty($_POST['updateClub'])) {
+            include(__DIR__ . "/../scripts/dbconnect.php");
+            $clubID = $_SESSION["clubID"];
+            $clubName = $_POST["clubName"];
+            $activity = $_POST["activity"];
+            $clubDescription = $_POST["clubDescription"];
+            $sessionTime = $_POST["sessionTime"];
+            $contactName = $_POST['contactName'];
+            $contactNumber = $_POST['contactNumber'];
+            $contactEmail = $_POST['contactEmail'];
+            if ($_POST["website"] == 'on') {
+                $website = 1;
+                $websiteUrl = $_POST["websiteUrl"];
+            } else {
+                $website = 0;
+                $websiteUrl = NULL;
+            }
+            if ($_POST["facebook"] == 'on') {
+                $facebook = 1;
+                $facebookUrl = $_POST["websiteUrl"];
+            } else {
+                $facebook = 0;
+                $facebookUrl = NULL;
+            }
+            $genreID = $_POST['genreID'];
+            $adminID = $_SESSION["userID"];
 
 
             $sql = "UPDATE Club 
-                    SET clubName = '" .$clubName."', activity = '".$activity."', clubDescription = '".$clubDescription."', sessionTime = '".$sessionTime."', contactName = '".$contactName."', contactNumber = '".$contactNumber."', contactEmail = '".$contactEmail."', website = ".$website.", websiteUrl = '".$websiteUrl."', facebook = ".$facebook.", facebookUrl = '".$facebookUrl."', genreID = '".$genreID."', adminID = '".$adminID."' 
+                    SET clubName = '" . $clubName . "', activity = '" . $activity . "', clubDescription = '" . $clubDescription . "', sessionTime = '" . $sessionTime . "', contactName = '" . $contactName . "', contactNumber = '" . $contactNumber . "', contactEmail = '" . $contactEmail . "', website = " . $website . ", websiteUrl = '" . $websiteUrl . "', facebook = " . $facebook . ", facebookUrl = '" . $facebookUrl . "', genreID = '" . $genreID . "', adminID = '" . $adminID . "' 
                     WHERE clubID = $clubID";
             if (mysqli_query($db, $sql)) {
                 header("location:../$clubID");
             } else {
                 echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
             }
-
 
 
 //            UNNEEDED CHECK BECAUSE IF YOU ARE AT THIS PAGE THERE MUST ALREADY BE A CLUB SHOULD HAVE
@@ -136,8 +134,54 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 //        }
 
 
+        }
+        elseif(!empty($_POST['uploadImage'])){
+            $imageClubID = $_SESSION['clubID'];
+            $filename =$_FILES['$fileToUpload'];
+//Get the file contents
+            $imageDate = file_get_contents($filename);
+//Get the file size
+            $imageSize = getimagesize($filename);
+//Boolean to control whether file is allowed to upload or not
+            $uploadOk = 1;
+//Holds the file extension of the file
+            $imageFileType = pathinfo($filename, PATHINFO_EXTENSION);
+// Check if image file is a actual image or fake image{
+            $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+            if ($check !== false) {
+                echo "File is an image - " . $check["mime"] . ".";
+                $uploadOk = 1;
+            } else {
+                echo "File is not an image.";
+                $uploadOk = 0;
+            }
+// Check file size - currently set to 500KB
+            if ($_FILES["fileToUpload"]["size"] > 500000) {
+                echo "Sorry, your file is too large.";
+                $uploadOk = 0;
+            }
+// Allow certain file formats
+            if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+                && $imageFileType != "gif"
+            ) {
+                echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                $uploadOk = 0;
+            }
+// Check if $uploadOk is set to 0 by an error
+            if ($uploadOk == 0) {
+                echo "Sorry, your file was not uploaded.";
+// if everything is ok, try to upload file
+            } else {
+                $sql="INSERT INTO images(image_type, image, image_size, image_clubID, image_name)
+              VALUES($imageFileType, $filename, $imageSize, $imageClubID, ".$filename['file'].")";
+                if (mysqli_query($db, $sql)) {
+                } else {
+                    echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
+                }
+
+            }
+        }
     }
-//test
 } else {
     header("location:loginPage");
 }
