@@ -63,7 +63,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             </form>
                 <?php
                 echo "<div id='divForUploadImage'>";
-                echo "<form action=\"Forms/clubAdminForm\" method=\"post\" enctype=\"multipart/form-data\">";
+                echo "<form action='' method=\"post\" enctype=\"multipart/form-data\">";
                 echo "Select an image to upload:";
                 echo "<input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\">";
                 echo "<input type=\"submit\" value=\"Upload Image\" name=\"uploadImage\">";
