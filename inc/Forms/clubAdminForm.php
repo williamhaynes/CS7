@@ -157,7 +157,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             $content = addslashes($content);
             fclose($fp);
             $sql="INSERT INTO images(image_type, image, image_size, image_clubID, image_name)
-              VALUES($fileType, $content, $fileSize, $imageClubID, $fileName";
+              VALUES($fileType, $content, $fileSize, $imageClubID, $fileName);";
 // Check file size - currently set to 500KB
             if ($_FILES["fileToUpload"]["size"] > 500000) {
                 echo "Sorry, your file is too large.";
