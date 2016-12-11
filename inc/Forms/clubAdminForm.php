@@ -165,6 +165,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 && $imageFileType != "gif"
             ) {
                 echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+                echo $imageFileType;
                 $uploadOk = 0;
             }
 // Check if $uploadOk is set to 0 by an error
