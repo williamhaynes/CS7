@@ -169,8 +169,8 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             $filename =$_FILES['$fileToUpload'];
 
 // Allow certain file formats
-            if ($fileType != "jpg" || $fileType != "png" || $fileType != "jpeg"
-                || $fileType != "gif"
+            if ($fileType != "image/jpg" && $fileType != "image/png" && $fileType != "image/jpeg"
+                && $fileType != "image/gif"
             ) {
                 echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 echo "<p>".$fileType."</p>";
