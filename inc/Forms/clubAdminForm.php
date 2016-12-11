@@ -157,6 +157,10 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             $content = fread($fp, filesize($tmpName));
             $content = addslashes($content);
             fclose($fp);
+            if(!get_magic_quotes_gpc())
+            {
+                $fileName = addslashes($fileName);
+            }
 // Check file size - currently set to 500KB
             if ($_FILES["fileToUpload"]["size"] > 500000) {
                 echo "Sorry, your file is too large.";
@@ -174,7 +178,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 echo "<p>".$fileType."</p>";
                 $uploadOk = 0;
-            } else{
+            } /*else{
                 switch ($fileType){
                     case "image/jpg":
                         $ext = "jpg";
@@ -191,7 +195,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                     default:
                         $ext = "unrecognized";
                 }
-            }
+            }*/
 
 // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
@@ -199,7 +203,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 // if everything is ok, try to upload file
             } else {
                 $sql="INSERT INTO images(image_type, image, image_size, image_clubID, image_name)
-              VALUES('".$ext."', '".$content."', '".$fileSize."', '".$imageClubID."', '".$fileName."');";
+              VALUES('".$fileType."', '".$content."', '".$fileSize."', '".$imageClubID."', '".$fileName."');";
                 if (mysqli_query($db, $sql)) {
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
