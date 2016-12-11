@@ -59,11 +59,11 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 
                     ?>
                 </select>
-                <?php
-                    include(__DIR__ . "/../scripts/uploadImage.php");
-                ?>
                 <p><input type="submit" name="updateClub" value='Submit'></p>
             </form>
+                <?php
+                include(__DIR__ . "/../scripts/uploadImage.php");
+                ?>
             </div>
         </main>
         <script>
