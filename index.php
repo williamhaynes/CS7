@@ -27,6 +27,7 @@ $rules = array(
     //
     //user auth pages
     //
+    'checkImageFile' => "/checkImageFile",
     'loginPage' => "/loginPage",
     'logoutPage' => "/logoutPage",
     'registerPage' => "/registerPage",
