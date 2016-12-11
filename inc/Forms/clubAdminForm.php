@@ -149,6 +149,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             $tmpName  = $_FILES['fileToUpload']['tmp_name'];
             $fileSize = $_FILES['fileToUpload']['size'];
             $fileType = $_FILES['fileToUpload']['type'];
+            $ext = "fail";
 //Boolean to control whether file is allowed to upload or not
             $uploadOk = 1;
 
@@ -156,8 +157,6 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             $content = fread($fp, filesize($tmpName));
             $content = addslashes($content);
             fclose($fp);
-            $sql="INSERT INTO images(image_type, image, image_size, image_clubID, image_name)
-              VALUES('".$fileType."', '".$content."', '".$fileSize."', '".$imageClubID."', '".$fileName."');";
 // Check file size - currently set to 500KB
             if ($_FILES["fileToUpload"]["size"] > 500000) {
                 echo "Sorry, your file is too large.";
@@ -175,12 +174,32 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 echo "<p>".$fileType."</p>";
                 $uploadOk = 0;
+            } else{
+                switch ($fileType){
+                    case "image/jpg":
+                        $ext = "jpg";
+                        break;
+                    case "image/png":
+                        $ext = "png";
+                        break;
+                    case "image/jpeg":
+                        $ext = "jpeg";
+                        break;
+                    case "image/gif":
+                        $ext = "gif";
+                        break;
+                    default:
+                        $ext = "unrecognized";
+                }
             }
+
 // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
                 echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
             } else {
+                $sql="INSERT INTO images(image_type, image, image_size, image_clubID, image_name)
+              VALUES('".$ext."', '".$content."', '".$fileSize."', '".$imageClubID."', '".$fileName."');";
                 if (mysqli_query($db, $sql)) {
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
