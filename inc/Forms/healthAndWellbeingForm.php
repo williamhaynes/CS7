@@ -48,8 +48,8 @@ if($_SESSION['accessLevel']==31) {
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
         $itemID = $_SESSION["itemID"];
-        $title = $_POST["title"];
-        $content = $_POST["content"];
+        $title = filter_var($_POST["title"], FILTER_SANITIZE_STRING);
+        $content = filter_var($_POST["content"], FILTER_SANITIZE_STRING);
         $verified = 1;
         //Check verified status
         if( $_POST["verified"] == 'on') {
@@ -58,7 +58,7 @@ if($_SESSION['accessLevel']==31) {
         else{
             $verified = 0;
         }
-        $authorName = $_POST["authorName"];
+        $authorName = filter_var($_POST["authorName"], FILTER_SANITIZE_STRING);
 
         $sql = "UPDATE healthnews 
                     SET title = '" .$title."', content = '".$content."', authorName = '".$authorName."', verified = ".$verified."
