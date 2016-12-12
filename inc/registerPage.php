@@ -155,6 +155,7 @@ include ("scripts/footer.php");
      * If the details are already in use then the page will display an error message
      */
     else{
+        echo "<p id='wrongText'>Username already in use, please login</p>"; //error message to display if wrong username or password
         header("location:../registerPage");
         print('That username or email address is already in use');
     }
