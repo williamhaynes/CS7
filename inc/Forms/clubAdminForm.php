@@ -154,7 +154,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 
             $fp      = fopen($tmpName, 'r');
             $content = fread($fp, filesize($tmpName));
-            $content = addslashes($content);
+            //$content = addslashes($content);
             fclose($fp);
 
 // Check file size - currently set to 500KB
