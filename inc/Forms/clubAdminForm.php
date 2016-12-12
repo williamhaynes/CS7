@@ -141,9 +141,9 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 //        }
 
 
-        }
-        elseif(!empty($_POST['uploadImage'])){
+        } elseif (!empty($_POST['uploadImage'])) {
             include("../scripts/dbconnect.php");
+            //Doesn't work.
             $fileName = $_FILES['fileToUpload']['name'];
             $tmpName  = $_FILES['fileToUpload']['tmp_name'];
             $fileSize = $_FILES['fileToUpload']['size'];
@@ -198,10 +198,12 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
             } else {
+                //$content = stripslashes($content);
+                $content = mysqli_real_escape_string($db, $content);
                 //$sanitizedContent = $db->real_escape_string($content);
                 //echo "<p>".$sanitizedContent."</p>";
                 $sql="INSERT INTO images(image_type, image, image_clubID, name)
-              VALUES('".$fileType."', '". $content ."', ".$imageClubID.", '".$fileName."');";
+              VALUES('".$fileType."', ". $content .", ".$imageClubID.", '".$fileName."');";
                 if (mysqli_query($db, $sql)) {
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
@@ -209,7 +211,11 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 
             }
         }
-    }
+    }/*
+            $image = file_get_contents($_FILES['fileToUpload']);
+            file_put_contents('../uploads/', $image); //save the image on your server
+        }
+    }*/
 } else {
     header("location:loginPage");
 }
