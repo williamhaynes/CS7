@@ -504,3 +504,13 @@ tr{
     font-family: 'Dosis', sans-serif;
     text-align: center;
 }
+
+#divForEditMapForm {
+    margin-top: 5px;
+    background-color: aliceblue;
+    border: solid #333 5px;
+    border-radius: 15px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+}
+

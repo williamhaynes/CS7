@@ -38,7 +38,7 @@ if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
         $sql_query = "SELECT * FROM location WHERE locationID = '$locationID'";
         $result = $db->query($sql_query);
         while ($row = $result->fetch_array()) {?>
-        <div id="editMapForm">
+        <div id="divForEditMapForm">
             <form action='' method='post' id='mapForm'>
                 <input type='hidden' name='locationID' value="<?php print $row['locationID'];?>"><
                 <p>Place Name: <input size='20' type='text' name='name' value="<?php print $row['name'];?>" placeholder='Place Name'></p>
