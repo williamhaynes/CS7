@@ -66,16 +66,16 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
-        $clubName = $_POST["clubName"];
-        $activity = $_POST["activity"];
-        $clubDescription = $_POST["clubDescription"];
-        $sessionTime = $_POST["sessionTime"];
-        $contactName = $_POST["contactName"];
-        $contactNumber = $_POST["contactNumber"];
-        $contactEmail = $_POST["contactEmail"];
+        $clubName = filter_var($_POST["clubName"], FILTER_SANITIZE_STRING);
+        $activity = filter_var($_POST["activity"], FILTER_SANITIZE_STRING);
+        $clubDescription = filter_var($_POST["clubDescription"], FILTER_SANITIZE_STRING);
+        $sessionTime = filter_var($_POST["sessionTime"], FILTER_SANITIZE_STRING);
+        $contactName = filter_var( $_POST["contactName"], FILTER_SANITIZE_STRING);
+        $contactNumber = filter_var($_POST["contactNumber"], FILTER_SANITIZE_STRING);
+        $contactEmail = filter_var($_POST["contactEmail"], FILTER_SANITIZE_STRING);
         if( $_POST["website"] == 'on') {
             $website = 1;
-            $websiteUrl = $_POST["websiteUrl"];
+            $websiteUrl = filter_var($_POST["websiteUrl"], FILTER_SANITIZE_STRING);
         }
         else{
             $website = 0;
@@ -83,14 +83,14 @@ if (isset($_SESSION['username']))
         }
         if( $_POST["facebook"] == 'on') {
             $facebook = 1;
-            $facebookUrl = $_POST["websiteUrl"];
+            $facebookUrl = filter_var($_POST["websiteUrl"], FILTER_SANITIZE_STRING);
         }
         else{
             $facebook = 0;
             $facebookUrl = NULL;
         }
-        $genreID = $_POST["genreID"];
-        $adminID = $_SESSION["userID"];
+        $genreID = filter_var($_POST["genreID"], FILTER_SANITIZE_STRING);
+        $adminID = filter_var($_SESSION["userID"], FILTER_SANITIZE_STRING);
 
 
         //IF clubDescription, contactInformation or clubName is blank it will just add a blank to that column
