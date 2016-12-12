@@ -18,7 +18,7 @@ include("scripts/dbconnect.php");
 
         /* Optional: Makes the sample page fill the window. */
         html, body {
-            height: 96.5%;
+            height: 90%;
             margin: 0;
             padding: 0;
         }
