@@ -100,7 +100,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             }
             if ($_POST["facebook"] == 'on') {
                 $facebook = 1;
-                $facebookUrl = filter_var($_POST["websiteUrl"], FILTER_SANITIZE_STRING);
+                $facebookUrl = filter_var($_POST["facebookUrl"], FILTER_SANITIZE_STRING);
             } else {
                 $facebook = 0;
                 $facebookUrl = NULL;
