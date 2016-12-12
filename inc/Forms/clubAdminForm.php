@@ -156,10 +156,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
             $content = fread($fp, filesize($tmpName));
             $content = addslashes($content);
             fclose($fp);
-            if(!get_magic_quotes_gpc())
-            {
-                $fileName = addslashes($fileName);
-            }
+
 // Check file size - currently set to 500KB
             if ($_FILES["fileToUpload"]["size"] > 500000) {
                 echo "Sorry, your file is too large.";
