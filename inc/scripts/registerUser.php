@@ -4,10 +4,10 @@
 
 include("dbconnect.php");
 //Access the posted variables
-$userName = $_POST['userName'];
-$emailAddress = $_POST['emailAddress'];
-$displayName = $_POST['displayName'];
-$password = $_POST['password'];
+$userName = htmlentities($_POST['userName']);
+$emailAddress = htmlentities($_POST['emailAddress']);
+$displayName = htmlentities($_POST['displayName']);
+$password = htmlentities($_POST['password']);
 
 //deprecated
 
