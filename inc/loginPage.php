@@ -21,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     include("scripts/dbconnect.php");
 
-    $username =  $_POST['username'];
-    $password = $_POST['password'];
+    $username =  mysqli::escape_string($_POST['username']);
+    $password = mysqli::escape_string($_POST['password']);
 
     /*
      * A function to check the login details
