@@ -47,9 +47,9 @@ if($_SESSION['accessLevel']==31) {
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
-        $itemID = mysqli_real_escape_string($db, $_SESSION["itemID"]);
-        $title = mysqli_real_escape_string($db, $_POST["title"]);
-        $content = mysqli_real_escape_string($db, $_POST["content"]);
+        $itemID = $_SESSION["itemID"];
+        $title = $_POST["title"];
+        $content = $_POST["content"];
         $verified = 1;
         //Check verified status
         if( $_POST["verified"] == 'on') {
@@ -58,7 +58,7 @@ if($_SESSION['accessLevel']==31) {
         else{
             $verified = 0;
         }
-        $authorName = mysqli_real_escape_string($db, $_POST["authorName"]);
+        $authorName = $_POST["authorName"];
 
         $sql = "UPDATE healthnews 
                     SET title = '" .$title."', content = '".$content."', authorName = '".$authorName."', verified = ".$verified."

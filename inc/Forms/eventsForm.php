@@ -28,11 +28,11 @@ if (isset($_SESSION['username'])) {
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include(__DIR__ . "/../scripts/dbconnect.php");
         //variables
-        $clubID = mysqli_real_escape_string($db, $_SESSION['clubID']);
-        $eventName = mysqli_real_escape_string($db, $_POST["eventName"]);
-        $eventStartDate = mysqli_real_escape_string($db, $_POST["eventStartDate"]);
-        $eventEndDate = mysqli_real_escape_string($db, $_POST["eventEndDate"]);
-        $eventDescription = mysqli_real_escape_string($db, $_POST["eventDescription"]);
+        $clubID = $_SESSION['clubID'];
+        $eventName = $_POST["eventName"];
+        $eventStartDate = $_POST["eventStartDate"];
+        $eventEndDate = $_POST["eventEndDate"];
+        $eventDescription = $_POST["eventDescription"];
 
         $sql = "INSERT INTO clubcalender (clubID, eventName, eventStartDate, eventEndDate, eventDescription) VALUES ('" . $clubID . "', '" . $eventName . "', '" . $eventStartDate . "', '" . $eventEndDate . "', '".$eventDescription."');";
         if (mysqli_query($db, $sql)) {

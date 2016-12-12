@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     include("scripts/dbconnect.php");
-    
-    $username = mysqli_real_escape_string($db, $username);
-    $password = mysqli_real_escape_string($db, $_POST['password']);
+
+    $username = $username;
+    $password = $_POST['password'];
 
     /*
      * A function to check the login details
