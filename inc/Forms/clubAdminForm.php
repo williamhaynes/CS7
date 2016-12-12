@@ -66,7 +66,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "<form action='' method=\"post\" enctype=\"multipart/form-data\">";
                 echo "Select an image to upload (Supported Formats):";
                 echo "<input type=\"hidden\" name=\"MAX_FILE_SIZE\" value=\"10000000\"/>";
-                echo "<input type=\"file\" name=\"userfile\" id=\"fileToUpload\">";
+                echo "<input type=\"file\" name=\"fileToUpload\" id=\"fileToUpload\">";
                 echo "<input type=\"submit\" value=\"Upload Image\" name=\"uploadImage\">";
                 echo "</form>";
                 echo "</div>";
@@ -201,8 +201,8 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
             } else {
-                $sql="INSERT INTO images(image_type, image, image_size, image_clubID, image_name)
-              VALUES('".$fileType."', '".$content."', '".$fileSize."', '".$imageClubID."', '".$fileName."');";
+                $sql="INSERT INTO images(image_type, image, image_clubID, name)
+              VALUES('".$fileType."', '".mysqli_escape_string($content)."', ".$imageClubID.", '".$fileName."');";
                 if (mysqli_query($db, $sql)) {
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
