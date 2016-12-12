@@ -114,10 +114,10 @@ include ("scripts/footer.php");
      * displayName: The display name of the user
      * password; The password of the user
      */
-    $username = $_POST['username'];
-    $emailAddress = $_POST['emailAddress'];
-    $displayName = $_POST['displayName'];
-    $password = $_POST['password'];
+    $username = htmlentities($_POST['username']);
+    $emailAddress = htmlentities($_POST['emailAddress']);
+    $displayName = htmlentities($_POST['displayName']);
+    $password = htmlentities($_POST['password']);
 
     /*
      * A function checkUserUnique to make sure each user login is unique
