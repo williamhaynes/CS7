@@ -1,4 +1,6 @@
 <!-- MAP PAGE -->
+<!-- MAP ICONS FROM https://mapicons.mapsmarker.com/ -->
+
 
 <?php
 session_start();

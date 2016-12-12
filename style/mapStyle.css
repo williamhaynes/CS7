@@ -12,6 +12,8 @@
 .gm-style-iw {
 
 }
+
+/* INFO WINDOW CSS ADAPTED FROM http://en.marnoto.com/2014/09/5-formas-de-personalizar-infowindow.html */
 #iw-container {
     /* Controls width of info window */
     min-width: 400px;
