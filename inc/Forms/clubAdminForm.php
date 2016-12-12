@@ -198,7 +198,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
             } else {
-                $sanitizedContent = $db->real_escape_string($content);
+                //$sanitizedContent = $db->real_escape_string($content);
                 echo "<p>".$sanitizedContent."</p>";
                 $sql="INSERT INTO images(image_type, image, image_clubID, name)
               VALUES('".$fileType."', '". $sanitizedContent ."', ".$imageClubID.", '".$fileName."');";
