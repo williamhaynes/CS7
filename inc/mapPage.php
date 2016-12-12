@@ -111,7 +111,7 @@ include("scripts/dbconnect.php");
         var printDiv = document.createElement('div');
         printDiv.innerHTML = '<button onclick="window.print();">CLICK HERE TO PRINT!</button>';
         printButton.appendChild(printDiv);
-        map.controls[google.maps.ControlPosition.BOTTOM_LEFT].push(printButton);
+        map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(printButton);
 
         //Adding listener on to mode drop down
         document.getElementById('mode').addEventListener('change', function () {
