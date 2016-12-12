@@ -19,7 +19,7 @@ include("scripts/dbconnect.php");
         /* Optional: Makes the sample page fill the window. */
         html, body {
             height: 96.5%;
-            margin: 0;
+            margin-bottom: 200px;
             padding: 0;
         }
     </style>
@@ -29,6 +29,7 @@ include("scripts/dbconnect.php");
 <div id="map"></div>
 <div id="legend"><h3>Legend</h3></div>
 <div id="directions-panel"><h3>Directions</h3></div>
+<div id="printButton"></div>
 
 <script>
     var map;
@@ -104,6 +105,13 @@ include("scripts/dbconnect.php");
         legend.appendChild(directions);
 
         map.controls[google.maps.ControlPosition.RIGHT_TOP].push(legend);
+
+        //Adding print button to map
+        var printButton = document.getElementById('printButton');
+        var printDiv = document.createElement('div');
+        printDiv.innerHTML = '<button onclick="window.print();">CLICK HERE TO PRINT!</button>';
+        printButton.appendChild(printDiv);
+        map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(printButton);
 
         //Adding listener on to mode drop down
         document.getElementById('mode').addEventListener('change', function () {

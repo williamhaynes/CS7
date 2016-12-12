@@ -24,13 +24,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     
+    //doesnt work at the moment - commented out for now!!
+    //$username = stripslashes($username);
+    //$username = mysql_real_escape_string($username);
+
+    //$password = stripslashes($password);
+    //$password = mysql_real_escape_string($password);
+
+
+
+
+    
 
     /*
      * A function to check the login details
      * Using the database to check if the details stored are the ones being entered
      */
     function checklogin($username, $password, $db){
-        $sql_query = "SELECT * FROM User WHERE userName ='" . $username . "' OR emailAddress = '". $username ."' AND password = '" . $password ."';";
+        $sql_query = "SELECT * FROM User WHERE userName ='" . $username . "' AND password = '" . $password ."' OR emailAddress = '". $username ."' AND password = '" . $password ."';";
         $result = $db->query($sql_query);
         while($row = $result->fetch_array()){
             return true;
