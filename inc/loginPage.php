@@ -87,7 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         print('success!');
     }
     else{
-        echo "<p>Wrong Username or Password</p>"; //error message to display if wrong username or password
+        echo "<p id='wrongText'>Wrong Username or Password</p>"; //error message to display if wrong username or password
         header("location:loginPage");
         print('wrong password or username');
     }
