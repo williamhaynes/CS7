@@ -40,7 +40,7 @@ if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
         while ($row = $result->fetch_array()) {?>
         <div id="divForEditMapForm">
             <form action='' method='post' id='mapForm'>
-                <input type='hidden' name='locationID' value="<?php print $row['locationID'];?>"><
+                <input type='hidden' name='locationID' value="<?php print $row['locationID'];?>">
                 <p>Place Name: <input size='20' type='text' name='name' value="<?php print $row['name'];?>" placeholder='Place Name'></p>
                 <p>Address: <input size='20' type='text' name='address' value="<?php print $row['address'];?>" placeholder='Address'></p>
                 <p>Description: <textarea name="description" id="description"><?php print $row['description'];?></textarea></p>
