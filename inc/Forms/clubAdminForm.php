@@ -154,12 +154,9 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 
             $fp      = fopen($tmpName, 'r');
             $content = fread($fp, filesize($tmpName));
-            $content = addslashes($content);
+            //$content = addslashes($content);
             fclose($fp);
-            if(!get_magic_quotes_gpc())
-            {
-                $fileName = addslashes($fileName);
-            }
+
 // Check file size - currently set to 500KB
             if ($_FILES["fileToUpload"]["size"] > 500000) {
                 echo "Sorry, your file is too large.";
@@ -201,9 +198,10 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
             } else {
-                $sanitisedContent = $mysqli->real_esape_string($content);
+                //$sanitizedContent = $db->real_escape_string($content);
+                //echo "<p>".$sanitizedContent."</p>";
                 $sql="INSERT INTO images(image_type, image, image_clubID, name)
-              VALUES('".$fileType."', '".$sanitisedContent."', ".$imageClubID.", '".$fileName."');";
+              VALUES('".$fileType."', '". $content ."', ".$imageClubID.", '".$fileName."');";
                 if (mysqli_query($db, $sql)) {
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
