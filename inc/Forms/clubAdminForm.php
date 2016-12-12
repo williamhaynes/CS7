@@ -198,7 +198,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
             } else {
-                $content = stripslashes($content);
+                //$content = stripslashes($content);
                 $content = mysqli_real_escape_string($db, $content);
                 //$sanitizedContent = $db->real_escape_string($content);
                 //echo "<p>".$sanitizedContent."</p>";
