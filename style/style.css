@@ -503,6 +503,7 @@ tr{
     border-radius: 15px;
     font-family: 'Dosis', sans-serif;
     text-align: center;
+    float: left;
 }
 
 #divForEditMapForm {
@@ -512,5 +513,6 @@ tr{
     border-radius: 15px;
     font-family: 'Dosis', sans-serif;
     text-align: center;
+    float: left;
 }
 
