@@ -23,9 +23,9 @@ if (isset($_SESSION['username']))
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
-        $articleName = $_POST["articleName"];
-        $articleText = $_POST["articleText"];
-        $authorName = $_SESSION["displayName"];
+        $articleName = filter_var($_POST["articleName"], FILTER_SANITIZE_STRING);
+        $articleText = filter_var($_POST["articleText"], FILTER_SANITIZE_STRING);
+        $authorName =  filter_var($_SESSION["displayName"], FILTER_SANITIZE_STRING);
         //If admin the verified value should be 1 and not 0
         if($_SESSION['accessLevel'] == '31'){
             $verified = 1;
