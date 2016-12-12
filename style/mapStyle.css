@@ -30,6 +30,7 @@
 }
 #iw-container .iw-outsidecontent {
     direction: ltr;
+    unicode-bidi:bidi-override;
 }
 #iw-container .iw-content {
     font-size: 13px;
@@ -44,7 +45,6 @@
     overflow-x: hidden!important;
     overflow: scroll;
     direction:rtl;
-    unicode-bidi:bidi-override;
 }
 .iw-content img {
     float: right;
