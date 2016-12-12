@@ -30,7 +30,6 @@
 }
 #iw-container .iw-outsidecontent {
     direction: ltr;
-    unicode-bidi:bidi-override;
 }
 #iw-container .iw-content {
     font-size: 13px;
