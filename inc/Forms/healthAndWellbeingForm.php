@@ -47,7 +47,7 @@ if($_SESSION['accessLevel']==31) {
         include(__DIR__."/../scripts/footer.php");
     } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
         include (__DIR__ . "/../scripts/dbconnect.php");
-        $itemID = $_SESSION["itemID"];
+        $itemID = filter_var($_SESSION["itemID"], FILTER_SANITIZE_STRING);
         $title = filter_var($_POST["title"], FILTER_SANITIZE_STRING);
         $content = filter_var($_POST["content"], FILTER_SANITIZE_STRING);
         $verified = 1;
