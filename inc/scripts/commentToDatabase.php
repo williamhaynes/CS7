@@ -2,8 +2,8 @@
 session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     include(__DIR__ . "/../scripts/dbconnect.php");
-    $comment = $_POST["comment"];
-    $currentUrl = $_POST["currentUrl"];
+    $comment = htmlentities($_POST["comment"]);
+    $currentUrl = htmlentities($_POST["currentUrl"]);
     $clubID = $_SESSION['clubID'];
     $userID = $_SESSION["userID"];
     $sql = "INSERT INTO comment (comment,clubID,userID) VALUES ('" . $comment . "','" . $clubID . "', '" . $userID . "')";
