@@ -311,7 +311,7 @@ include("scripts/dbconnect.php");
                     locationID: results.viewpoints[i].locationID
                 }));
 
-                arrayOfViewpoints[arrayOfViewpoints-1].addListener('click', function () {
+                arrayOfViewpoints[arrayOfViewpoints.length-1].addListener('click', function () {
                     infowindow.setContent('<div id="iw-container">' +
                         '<div class="iw-title">' + this.title + '</div>' +
                         '<div class="iw-outsidecontent">' +
