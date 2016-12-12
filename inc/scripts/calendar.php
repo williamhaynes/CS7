@@ -20,9 +20,6 @@ include("dbconnect.php");
         echo "<th>Date</th>";
         echo "<th>Event Name</th>";
         echo "<th>Club</th>";
-        if (($_SESSION['userID']!=NULL&&$_SESSION['userID']==$_SESSION['adminID']||$_SESSION['accessLevel']==31)) {
-            echo "<a id='createEventLink' href='/eventsForm' class='button'> Add Event </a>";
-        }
         echo "</tr>";
     }
     elseif ($currentURL == "/clubPage/" . $clubID){                                                          //Call by specific club
