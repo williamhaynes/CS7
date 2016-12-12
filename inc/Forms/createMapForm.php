@@ -148,7 +148,7 @@ if (isset($_SESSION['username'])) {
             <div id='map' style='width: 1000px; height: 600px'></div>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
-            <div id="createMapForm">
+            <div id="divForCreateMapForm">
                 <form action='' method='post' id='mapForm'>
                     <p>Place Name: <input size='20' type='text' name='name' placeholder='Place Name'></p>
                     <p>Address: <input size='20' type='text' name='address' placeholder='Address'></p>
