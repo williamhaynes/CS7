@@ -321,7 +321,6 @@ tr{
 */
 #divForHealthNews{
     text-align: center;
-    margin-bottom: 100px;
 }
 #divForTwitterFeed{
     width: 30%;
@@ -343,6 +342,7 @@ tr{
     margin-left: 10px;
     margin-right: 10px;
     padding: 10px;
+    margin-bottom: 100px;
 }
 #healthNewsTitle{}
 #healthNewsContent{}
