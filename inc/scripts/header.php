@@ -7,7 +7,7 @@ session_start(); //start the session
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/style/style.css">
-    <title>header</title>
+    <title>Portlethen Go</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
