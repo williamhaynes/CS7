@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         //Iterate through the values and create a html form for the user to see
         while ($row = $result->fetch_array()) {
             echo "<main>";
-            echo "<h2 class='pageHeaderText'>My Account</h2>";
+            echo "<h2 class='pageHeaderText'>Account Details</h2>";
             echo "<div id=\"modifyDetailsForm\">";
             echo "<form action=\"" . $userID . "\" method=\"post\">";
             echo "<p>UserName:</p>";
