@@ -198,8 +198,10 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
             } else {
+                $sanitizedContent = $db->real_escape_string($content);
+                echo "<p>".$sanitizedContent."</p>";
                 $sql="INSERT INTO images(image_type, image, image_clubID, name)
-              VALUES('".$fileType."', '".mysqli_real_escape_string($db, $content)."', ".$imageClubID.", '".$fileName."');";
+              VALUES('".$fileType."', '". $sanitizedContent ."', ".$imageClubID.", '".$fileName."');";
                 if (mysqli_query($db, $sql)) {
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
