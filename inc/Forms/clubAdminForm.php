@@ -61,7 +61,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 </select>
                 <p><input type="submit" name="updateClub" value='Submit'></p>
             </form>
-                <?php/* Commented out due to not correctly working
+                <?php
                 echo "<div id='divForUploadImage'>";
                 echo "<form action='' method=\"post\" enctype=\"multipart/form-data\">";
                 echo "Select an image to upload (Supported Formats):";
@@ -70,7 +70,6 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "<input type=\"submit\" value=\"Upload Image\" name=\"uploadImage\">";
                 echo "</form>";
                 echo "</div>";
-*/
                 ?>
             </div>
         </main>
@@ -145,7 +144,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
         } elseif (!empty($_POST['uploadImage'])) {
             include("../scripts/dbconnect.php");
             //Doesn't work.
-            /*$fileName = $_FILES['fileToUpload']['name'];
+            $fileName = $_FILES['fileToUpload']['name'];
             $tmpName  = $_FILES['fileToUpload']['tmp_name'];
             $fileSize = $_FILES['fileToUpload']['size'];
             $fileType = $_FILES['fileToUpload']['type'];
@@ -175,7 +174,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 echo "<p>".$fileType."</p>";
                 $uploadOk = 0;
-            }*//* /*else{
+            }/* /*else{
                 switch ($fileType){
                     case "image/jpg":
                         $ext = "jpg";
@@ -192,13 +191,15 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                     default:
                         $ext = "unrecognized";
                 }
-            }*//*
+            }*/
 
 // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
                 echo "Sorry, your file was not uploaded.";
 // if everything is ok, try to upload file
             } else {
+                $content = stripslashes($content);
+                $content = mysqli_real_escape_string($db, $content);
                 //$sanitizedContent = $db->real_escape_string($content);
                 //echo "<p>".$sanitizedContent."</p>";
                 $sql="INSERT INTO images(image_type, image, image_clubID, name)
@@ -210,11 +211,11 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 
             }
         }
-    }*/
+    }/*
             $image = file_get_contents($_FILES['fileToUpload']);
             file_put_contents('../uploads/', $image); //save the image on your server
         }
-    }
+    }*/
 } else {
     header("location:loginPage");
 }
