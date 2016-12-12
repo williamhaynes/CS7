@@ -21,8 +21,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     include("scripts/dbconnect.php");
 
-    $username =  $_POST['username'];
-    $password =  $_POST['password'];
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
     /*
      * A function to check the login details
