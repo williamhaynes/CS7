@@ -21,15 +21,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
     include("scripts/dbconnect.php");
 
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    
-    //doesnt work at the moment - commented out for now!!
-    //$username = stripslashes($username);
-    //$username = mysql_real_escape_string($username);
+    $username = mysqli_real_escape_string($db, $_POST['username']);
+    $password = mysqli_real_escape_string($db, $_POST['password']);
 
-    //$password = stripslashes($password);
-    //$password = mysql_real_escape_string($password);
+    //doesnt work at the moment - commented out for now!!
+
 
 
 
