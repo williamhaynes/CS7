@@ -202,7 +202,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 // if everything is ok, try to upload file
             } else {
                 $sql="INSERT INTO images(image_type, image, image_clubID, name)
-              VALUES('".$fileType."', '".$content."', ".$imageClubID.", '".$fileName."');";
+              VALUES('".$fileType."', '".mysqli_escape_string($content)."', ".$imageClubID.", '".$fileName."');";
                 if (mysqli_query($db, $sql)) {
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
