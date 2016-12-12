@@ -43,8 +43,8 @@ if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
             <p>Place Name: <input size='20' type='text' name='name' value="<?php print $row['name'];?>" placeholder='Place Name'></p>
             <p>Address: <input size='20' type='text' name='address' value="<?php print $row['address'];?>" placeholder='Address'></p>
             <p>Description: <textarea name="description" id="description"><?php print $row['description'];?></textarea></p>
-            <p>Latitude: <input size='20' type='text' id='latbox' name='lat' value='<?php print $row['lat'];?>' readonly></p>
-            <p>Longitude: <input size='20' type='text' id='lngbox' name='lng' value='<?php print $row['lng'];?>' readonly></p>
+            <input size='20' type='hidden' id='latbox' name='lat' value='<?php print $row['lat'];?>'>
+            <input size='20' type='hidden' id='lngbox' name='lng' value='<?php print $row['lng'];?>'>
             <p>Type: <input size='20' type='text' id='type' readonly></p>
             <p>Verified: <input type="checkbox" name="verified" id="verified" <?php
                 if($row['verified']==1){
