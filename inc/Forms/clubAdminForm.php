@@ -141,10 +141,9 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
 //        }
 
 
-        }
-        elseif(!empty($_POST['uploadImage'])){
+        } elseif (!empty($_POST['uploadImage'])) {
             include("../scripts/dbconnect.php");
-            $fileName = $_FILES['fileToUpload']['name'];
+            /*$fileName = $_FILES['fileToUpload']['name'];
             $tmpName  = $_FILES['fileToUpload']['tmp_name'];
             $fileSize = $_FILES['fileToUpload']['size'];
             $fileType = $_FILES['fileToUpload']['type'];
@@ -174,7 +173,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
                 echo "<p>".$fileType."</p>";
                 $uploadOk = 0;
-            }/* /*else{
+            }*//* /*else{
                 switch ($fileType){
                     case "image/jpg":
                         $ext = "jpg";
@@ -191,7 +190,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                     default:
                         $ext = "unrecognized";
                 }
-            }*/
+            }*//*
 
 // Check if $uploadOk is set to 0 by an error
             if ($uploadOk == 0) {
@@ -208,6 +207,10 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 }
 
             }
+        }
+    }*/
+            $image = file_get_contents($_FILES['fileToUpload']);
+            file_put_contents('../uploads/', $image); //save the image on your server
         }
     }
 } else {
