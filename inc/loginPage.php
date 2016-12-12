@@ -24,11 +24,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $username = $_POST['username'];
     $password = $_POST['password'];
     
-    $username = stripslashes($username);
-    $username = mysql_real_escape_string($username);
+    //doesnt work at the moment - commented out for now!!
+    //$username = stripslashes($username);
+    //$username = mysql_real_escape_string($username);
 
-    $password = stripslashes($password);
-    $password = mysql_real_escape_string($password);
+    //$password = stripslashes($password);
+    //$password = mysql_real_escape_string($password);
 
 
 
