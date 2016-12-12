@@ -65,8 +65,8 @@ if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
                 <p><input type='submit' value='Submit'></p>
                 <?}?>
             </form>
+            <a href='/../deleteMapForm/<?php Print($locationID);?>' class="button">Delete Marker</a>
         </div>
-        <a href='/../deleteMapForm/<?php Print($locationID);?>' class="button">Delete Marker</a>
         </body>
         <?
         include("/../scripts/footer.php");
