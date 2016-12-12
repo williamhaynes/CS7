@@ -203,7 +203,7 @@ if ($_SESSION['userID']==$_SESSION['adminID'] || $_SESSION['accessLevel'] == '31
                 //$sanitizedContent = $db->real_escape_string($content);
                 //echo "<p>".$sanitizedContent."</p>";
                 $sql="INSERT INTO images(image_type, image, image_clubID, name)
-              VALUES('".$fileType."', '". $content ."', ".$imageClubID.", '".$fileName."');";
+              VALUES('".$fileType."', ". $content .", ".$imageClubID.", '".$fileName."');";
                 if (mysqli_query($db, $sql)) {
                 } else {
                     echo "Error: " . $sql . "<br>Error Message:" . mysqli_error($db);
