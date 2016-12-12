@@ -38,32 +38,34 @@ if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){
         $sql_query = "SELECT * FROM location WHERE locationID = '$locationID'";
         $result = $db->query($sql_query);
         while ($row = $result->fetch_array()) {?>
-        <form action='' method='post' id='mapForm'>
-            <input type='hidden' name='locationID' value="<?php print $row['locationID'];?>"><
-            <p>Place Name: <input size='20' type='text' name='name' value="<?php print $row['name'];?>" placeholder='Place Name'></p>
-            <p>Address: <input size='20' type='text' name='address' value="<?php print $row['address'];?>" placeholder='Address'></p>
-            <p>Description: <textarea name="description" id="description"><?php print $row['description'];?></textarea></p>
-            <input size='20' type='hidden' id='latbox' name='lat' value='<?php print $row['lat'];?>'>
-            <input size='20' type='hidden' id='lngbox' name='lng' value='<?php print $row['lng'];?>'>
-            <p>Type: <input size='20' type='text' id='type' readonly></p>
-            <p>Verified: <input type="checkbox" name="verified" id="verified" <?php
-                if($row['verified']==1){
-                    echo "checked";
+        <div id="editMapForm">
+            <form action='' method='post' id='mapForm'>
+                <input type='hidden' name='locationID' value="<?php print $row['locationID'];?>"><
+                <p>Place Name: <input size='20' type='text' name='name' value="<?php print $row['name'];?>" placeholder='Place Name'></p>
+                <p>Address: <input size='20' type='text' name='address' value="<?php print $row['address'];?>" placeholder='Address'></p>
+                <p>Description: <textarea name="description" id="description"><?php print $row['description'];?></textarea></p>
+                <input size='20' type='hidden' id='latbox' name='lat' value='<?php print $row['lat'];?>'>
+                <input size='20' type='hidden' id='lngbox' name='lng' value='<?php print $row['lng'];?>'>
+                <p>Type: <input size='20' type='text' id='type' readonly></p>
+                <p>Verified: <input type="checkbox" name="verified" id="verified" <?php
+                    if($row['verified']==1){
+                        echo "checked";
+                    }
+                    ?>></p>
+                <script>if (<?php print $row['typeID'];?>==4){
+                    document.getElementById('type').value = 'Route';
+                }else if(<?php print $row['typeID'];?>==3){
+                    document.getElementById('type').value = 'Area';
+                }else if(<?php print $row['typeID'];?>==2){
+                    document.getElementById('type').value = 'Viewpoint';
+                }else{
+                    document.getElementById('type').value = 'Landmark';
                 }
-                ?>></p>
-            <script>if (<?php print $row['typeID'];?>==4){
-                document.getElementById('type').value = 'Route';
-            }else if(<?php print $row['typeID'];?>==3){
-                document.getElementById('type').value = 'Area';
-            }else if(<?php print $row['typeID'];?>==2){
-                document.getElementById('type').value = 'Viewpoint';
-            }else{
-                document.getElementById('type').value = 'Landmark';
-            }
-            </script>
-            <p><input type='submit' value='Submit'></p>
-            <?}?>
-        </form>
+                </script>
+                <p><input type='submit' value='Submit'></p>
+                <?}?>
+            </form>
+        </div>
         <a href='/../deleteMapForm/<?php Print($locationID);?>' class="button">Delete Marker</a>
         </body>
         <?

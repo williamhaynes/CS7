@@ -148,36 +148,38 @@ if (isset($_SESSION['username'])) {
             <div id='map' style='width: 1000px; height: 600px'></div>
             <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
             <script>tinymce.init({selector: 'textarea'});</script>
-            <form action='' method='post' id='mapForm'>
-                <p>Place Name: <input size='20' type='text' name='name' placeholder='Place Name'></p>
-                <p>Address: <input size='20' type='text' name='address' placeholder='Address'></p>
-                <p>Description: <textarea name="description" id="description"></textarea></p>
-                <input size='20' type='hidden' id='latbox' name='lat' value='57.062661319658496'>
-                <input size='20' type='hidden' id='lngbox' name='lng' value='-2.1295508919433814'>
-                <input size='20' type='hidden' id='latlngString' name='latlngString'>
-                <input type="hidden" name="verified" id="verified" value='0'>
-                <p>Type:
-                <select name='typeID' id='typeID' onclick="checkType()">";
-                    <?
-                    if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){?>
-                        <script>document.getElementById('verified').value = '1';</script>
-                    <?}
-                    //Takes all database information from the Genre TABLE.
-                    $sql_query = 'SELECT * FROM Type';
+            <div id="createMapForm">
+                <form action='' method='post' id='mapForm'>
+                    <p>Place Name: <input size='20' type='text' name='name' placeholder='Place Name'></p>
+                    <p>Address: <input size='20' type='text' name='address' placeholder='Address'></p>
+                    <p>Description: <textarea name="description" id="description"></textarea></p>
+                    <input size='20' type='hidden' id='latbox' name='lat' value='57.062661319658496'>
+                    <input size='20' type='hidden' id='lngbox' name='lng' value='-2.1295508919433814'>
+                    <input size='20' type='hidden' id='latlngString' name='latlngString'>
+                    <input type="hidden" name="verified" id="verified" value='0'>
+                    <p>Type:
+                    <select name='typeID' id='typeID' onclick="checkType()">";
+                        <?
+                        if($_SESSION['accessLevel']==11||$_SESSION['accessLevel']==31){?>
+                            <script>document.getElementById('verified').value = '1';</script>
+                        <?}
+                        //Takes all database information from the Genre TABLE.
+                        $sql_query = 'SELECT * FROM Type';
 
-                    //Process the query
-                    $result = $db->query($sql_query);
+                        //Process the query
+                        $result = $db->query($sql_query);
 
-                    // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
-                    while ($row = $result->fetch_array()) {
-                        $typeID = $row['typeID'];
-                        $typeName = $row['typeName'];
-                        echo "<option id='{$typeID}' value='{$typeID}'>$typeName</option>";
-                    }
-                    ?>
-                </select></p>
-                <p><input type='submit' value='Submit'></p>
-            </form>
+                        // Iterate through the result and present data (This needs to be tidied into a displayable format, but does grab all available data)
+                        while ($row = $result->fetch_array()) {
+                            $typeID = $row['typeID'];
+                            $typeName = $row['typeName'];
+                            echo "<option id='{$typeID}' value='{$typeID}'>$typeName</option>";
+                        }
+                        ?>
+                    </select></p>
+                    <p><input type='submit' value='Submit'></p>
+                </form>
+            </div>
             </body>
         <?
         include("scripts/footer.php");
